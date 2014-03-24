@@ -15,6 +15,18 @@ INVS envoi direct à l'INVS
 
 
 ```r
+library("epicalc")
+```
+
+```
+## Loading required package: foreign
+## Loading required package: survival
+## Loading required package: splines
+## Loading required package: MASS
+## Loading required package: nnet
+```
+
+```r
 file <- "../DATA/data3.csv"
 d <- read.table(file, header = TRUE, sep = ";")
 nrow(d)
@@ -248,6 +260,40 @@ summary(as.factor(d$LOGICIEL))
 ##                        1                        1                        5 
 ##               TU-OruPaca                   UrQual                     NA's 
 ##                        2                        8                      465
+```
+
+```r
+tab1(d$LOGICIEL, missing = FALSE, sort.group = "increasing", main = "Logiciels utilisés", 
+    xlab = "Fréquence")
+```
+
+![plot of chunk unnamed-chunk-1](figure/unnamed-chunk-15.png) 
+
+```
+## d$LOGICIEL : 
+##                          Frequency   %(NA+)   %(NA-)
+## emed                             1      0.2      1.6
+## Inclus dans GHPSO                1      0.2      1.6
+## Millenium (Cerner)               1      0.2      1.6
+## Polymedis                        1      0.2      1.6
+## Sillage                          1      0.2      1.6
+## TechnoWeb (dev int)              1      0.2      1.6
+## Diamm Micro6                     2      0.4      3.1
+## expert santé                     2      0.4      3.1
+## Hopital Manager                  2      0.4      3.1
+## Osiris                           2      0.4      3.1
+## TU-OruPaca                       2      0.4      3.1
+## Cora                             3      0.6      4.7
+## Osoft                            3      0.6      4.7
+## myvisit                          4      0.8      6.2
+## Clinicom                         5      0.9      7.8
+## CristalNet                       5      0.9      7.8
+## Track Care (InterSystem)         5      0.9      7.8
+## DXCare                           7      1.3     10.9
+## ResUrgences                      8      1.5     12.5
+## UrQual                           8      1.5     12.5
+## <NA>                           465     87.9      0.0
+##   Total                        529    100.0    100.0
 ```
 
 

@@ -14,6 +14,7 @@ Fichier .csv: le fichier source est enregistré sous le nom de data3 avec les op
 INVS envoi direct à l'INVS
 
 ```{r}
+library("epicalc")
 file <- "../DATA/data3.csv"
 d <- read.table(file, header=TRUE, sep=";")
 nrow(d)
@@ -68,5 +69,6 @@ barplot(t(prop.table(t,1)), las=3, ylab="pourcentage")
 table(d$RPU.QUI, d$RPU.CAPA)
 
 summary(as.factor(d$LOGICIEL))
+tab1(d$LOGICIEL, missing=FALSE, sort.group="increasing", main="Logiciels utilisés", xlab="Fréquence")
 ```
 
