@@ -1,0 +1,72 @@
+Title
+========================================================
+
+Fichier origine:
+
+Fichier .csv: le fichier source est enregistré sous le nom de data3 avec les options:
+- UTF8
+- mettre des guillements autour des nom (sinon plantage à la lecture de R)
+- séparateur = ';'
+
+- SR serveur régional
+- NR non réponse
+- NA non disponible (Non Avalaible)
+INVS envoi direct à l'INVS
+
+```{r}
+file <- "../DATA/data3.csv"
+d <- read.table(file, header=TRUE, sep=";")
+nrow(d)
+names(d)
+str(d)
+
+# colnne LOGICIEL
+a <- as.character(d$LOGICIEL)
+a[a==""] <- NA
+a[a=="autre"] <- NA
+a[a=="Christalnet (module DMU)"] <- "Cristalnet"
+a[a=="Clinicom (Siemens)"] <- "Clinicom"
+a[a=="CORA McKesson"] <- "Cora"
+a[a=="CrystalNet"] <- "Cristalnet"
+a[a=="DMU (CristalNet)"] <- "Cristalnet"
+a[a=="DxCare MEDASYS"] <- "DXCare"
+a[a=="RESURGENCE"] <- "ResUrgences"
+a[a=="Resurgences"] <- "ResUrgences"
+a[a=="RESURGENCE (Adulte) DxCare Medasys (Pédiatrie)"] <- "ResUrgences"
+a[a=="urqual"] <- "UrQual"
+a[a=="UrQual (McKesson)"] <- "UrQual"
+a[a=="Urqual (McKesson)"] <- "UrQual"
+a[a=="DXCARE (Medasys)"] <- "DXCare"
+a[a=="Cristalnet"] <- "CristalNet"
+a[a=="CORA"] <- "Cora"
+a[a=="CLINICOM (Creil)"] <- "Clinicom"
+a[a=="DxCare (Medasys)"] <- "DXCare"
+a[a=="hopital manager"] <- "Hopital Manager"
+a[a=="Osiris (Cormin)"] <- "Osiris"
+a[a=="OSIRIS Evolucare"] <- "Osiris"
+a[a=="OSOFT"] <- "Osoft"
+a[a=="ﾠ"] <- NA
+a[a=="cf ch lodeve"] <- NA
+a[a=="Etablissement prioritaire !"] <- NA
+a[a=="Pas de SAU"] <- NA
+d$LOGICIEL <- a
+
+summary(d$REGION)
+barplot(summary(d$REGION), main="Nombre d'établissements avec service d'urgence", ylab="Nombre", las=3)
+
+summary(d$RPU.CAPA)
+t <- table(d$REGION, d$RPU.CAPA)
+t
+barplot(t(t), las=3)
+
+summary(d$RPU.QUI)
+t <- table(d$REGION, d$RPU.QUI)
+t
+barplot(t(t), las=3)
+barplot(t(prop.table(t,1)), las=3, ylab="pourcentage")
+
+table(d$RPU.QUI, d$RPU.CAPA)
+
+summary(as.factor(d$LOGICIEL))
+```
+
