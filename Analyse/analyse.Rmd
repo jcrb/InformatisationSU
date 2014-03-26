@@ -1,7 +1,9 @@
-Title
+Consolidation OSIS-SAU (Novembre 2013)
 ========================================================
 
 Fichier origine:
+
+NB: utiliser le fichier **data3.csv** pour les modifications.
 
 Fichier .csv: le fichier source est enregistré sous le nom de data3 avec les options:
 - UTF8
@@ -11,12 +13,17 @@ Fichier .csv: le fichier source est enregistré sous le nom de data3 avec les op
 - SR serveur régional
 - NR non réponse
 - NA non disponible (Non Avalaible)
-INVS envoi direct à l'INVS
+- INVS envoi direct à l'INVS
+- INFORM. Le SU est-il informatisé ? (oui/non)
+- CAPA Capacité à renvoyer des RPU ? (oui/non)
 
 ```{r}
 library("epicalc")
 file <- "../DATA/data3.csv"
 d <- read.table(file, header=TRUE, sep=";")
+d$INFORM.[d$INFORM. == ""] <- NA
+d$INFORM. <- factor(d$INFORM.)
+
 nrow(d)
 names(d)
 str(d)
@@ -60,13 +67,55 @@ t <- table(d$REGION, d$RPU.CAPA)
 t
 barplot(t(t), las=3)
 
+
+```
+
+Analyse globale
+===============
+
+Informatisation des urgences
+----------------------------
+La question n'a été posée qu'aux régions suivantes:
+- Martinique
+- Midi-Pyrénées
+- Nord Pas de Calais
+- Pays de Loire
+- Picardie
+- Poitou-Charentes
+- PACA
+- Rhone-Alpes
+- Guyane
+
+```{r regions_su}
+table(d$REGION, d$INFORM., useNA="always")
+```
+
+Capacité à remonter des RPU
+---------------------------
+
+```{r region_capa}
+table(d$REGION, d$RPU.CAPA, useNA="always")
+```
+
+Où vont les remontés les RPU ?
+-----------------------------
+
+```{r qui}
 summary(d$RPU.QUI)
-t <- table(d$REGION, d$RPU.QUI)
+table(d$REGION, d$RPU.QUI, useNA="always")
 t
 barplot(t(t), las=3)
 barplot(t(prop.table(t,1)), las=3, ylab="pourcentage")
 
 table(d$RPU.QUI, d$RPU.CAPA)
+```
+
+Quels sont les logiciels utilisés ?
+------------------------------------
+
+```{r logiciels}
+
+table(d$REGION, d$LOGICIEL, useNA="always")
 
 summary(as.factor(d$LOGICIEL))
 tab1(d$LOGICIEL, missing=FALSE, sort.group="increasing", main="Logiciels utilisés", xlab="Fréquence")
