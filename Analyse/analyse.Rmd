@@ -3,7 +3,7 @@ Consolidation OSIS-SAU (Novembre 2013)
 
 Fichier origine:
 
-NB: utiliser le fichier **data3.csv** pour les modifications.
+NB: utiliser le fichier **data4.csv** pour les modifications.
 
 Fichier .csv: le fichier source est enregistré sous le nom de data3 avec les options:
 - UTF8
@@ -17,9 +17,12 @@ Fichier .csv: le fichier source est enregistré sous le nom de data3 avec les op
 - INFORM. Le SU est-il informatisé ? (oui/non)
 - CAPA Capacité à renvoyer des RPU ? (oui/non)
 
+#### 2014-04-28 
+__data4.csv__ enregistrement du fichier source au format .csv. Ajout des logiciels pour Champagne-Ardennes et complément pur Basse-Normandie
+
 ```{r}
 library("epicalc")
-file <- "../DATA/data3.csv"
+file <- "../DATA/data4.csv"
 d <- read.table(file, header=TRUE, sep=";")
 d$INFORM.[d$INFORM. == ""] <- NA
 d$INFORM. <- factor(d$INFORM.)
@@ -37,18 +40,24 @@ a[a=="Clinicom (Siemens)"] <- "Clinicom"
 a[a=="CORA McKesson"] <- "Cora"
 a[a=="CrystalNet"] <- "Cristalnet"
 a[a=="DMU (CristalNet)"] <- "Cristalnet"
-a[a=="DxCare MEDASYS"] <- "DXCare"
+
 a[a=="RESURGENCE"] <- "ResUrgences"
 a[a=="Resurgences"] <- "ResUrgences"
 a[a=="RESURGENCE (Adulte) DxCare Medasys (Pédiatrie)"] <- "ResUrgences"
 a[a=="urqual"] <- "UrQual"
 a[a=="UrQual (McKesson)"] <- "UrQual"
 a[a=="Urqual (McKesson)"] <- "UrQual"
-a[a=="DXCARE (Medasys)"] <- "DXCare"
+
 a[a=="Cristalnet"] <- "CristalNet"
 a[a=="CORA"] <- "Cora"
 a[a=="CLINICOM (Creil)"] <- "Clinicom"
+
 a[a=="DxCare (Medasys)"] <- "DXCare"
+a[a=="DXCARE (Medasys)"] <- "DXCare"
+a[a=="DxCare MEDASYS"] <- "DXCare"
+a[a=="dxcare (vittel)"] <- "DXCare"
+a[a=="DxCare"] <- "DXCare"
+
 a[a=="hopital manager"] <- "Hopital Manager"
 a[a=="Osiris (Cormin)"] <- "Osiris"
 a[a=="OSIRIS Evolucare"] <- "Osiris"
@@ -57,7 +66,10 @@ a[a=="ﾠ"] <- NA
 a[a=="cf ch lodeve"] <- NA
 a[a=="Etablissement prioritaire !"] <- NA
 a[a=="Pas de SAU"] <- NA
+a[!is.na(a) & nchar(a) < 3] <- NA
 d$LOGICIEL <- a
+
+levels(as.factor(d$LOGICIEL))
 
 summary(d$REGION)
 barplot(summary(d$REGION), main="Nombre d'établissements avec service d'urgence", ylab="Nombre", las=3)
