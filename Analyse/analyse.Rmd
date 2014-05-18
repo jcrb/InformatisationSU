@@ -72,7 +72,13 @@ d$LOGICIEL <- a
 levels(as.factor(d$LOGICIEL))
 
 summary(d$REGION)
-barplot(summary(d$REGION), main="Nombre d'établissements avec service d'urgence", ylab="Nombre", las=3)
+barplot(summary(d$REGION), main="Nombre d'établissements avec service d'urgence", ylab="Nombre", las=3, cex.names=0.7)
+
+total.etablissements <- sum(summary(d$REGION))
+total.region <- nlevels(d$REGION)
+moyenne.etab.par.region <- total.etablissements / total.region
+moyenne.etab.par.region
+
 
 summary(d$RPU.CAPA)
 t <- table(d$REGION, d$RPU.CAPA)

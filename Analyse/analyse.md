@@ -3,7 +3,7 @@ Consolidation OSIS-SAU (Novembre 2013)
 
 Fichier origine:
 
-NB: utiliser le fichier **data3.csv** pour les modifications.
+NB: utiliser le fichier **data4.csv** pour les modifications.
 
 Fichier .csv: le fichier source est enregistré sous le nom de data3 avec les options:
 - UTF8
