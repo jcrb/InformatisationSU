@@ -73,6 +73,7 @@ levels(as.factor(d$LOGICIEL))
 
 summary(d$REGION)
 barplot(summary(d$REGION), main="Nombre d'établissements avec service d'urgence", ylab="Nombre", las=3, cex.names=0.7)
+text(8,80, "moyenne: 24 établissements/région")
 
 total.etablissements <- sum(summary(d$REGION))
 total.region <- nlevels(d$REGION)
