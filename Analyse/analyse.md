@@ -18,7 +18,17 @@ Fichier .csv: le fichier source est enregistré sous le nom de data3 avec les op
 - CAPA Capacité à renvoyer des RPU ? (oui/non)
 
 #### 2014-04-28 
-__data4.csv__ enregistrement du fichier source au format .csv. Ajout des logiciels pour Champagne-Ardennes et complément pur Basse-Normandie
+__data4.csv__ enregistrement du fichier source au format .csv. Ajout des logiciels pour Champagne-Ardennes et complément pour Basse-Normandie
+
+#### Juin 2014
+
+ENQUETE LOGICIEL su_France.csv
+fichier principal partage sur drive 
+Enregistre dans le dossier sous le nom de __ENQUETE LOGICIEL su_France.csv__. Il semblerait qu'il ne soit plus possible d'exporter directement au format csv.
+
+Creation de __functions.R__ pour normaliser les noms des logiciels. Creation  de __Logiciels.ods__ pour lister les logiciels existants et les firme correspondantes.
+
+
 
 
 ```r
@@ -34,8 +44,13 @@ library("epicalc")
 ```
 
 ```r
-file <- "../DATA/data4.csv"
-d <- read.table(file, header = TRUE, sep = ";")
+# obsolete
+# file <- "../DATA/data4.csv"
+# d <- read.table(file, header = TRUE, sep = ";")
+
+file <- "ENQUETE LOGICIEL su_France.csv"
+d <- read.csv(file, header = TRUE)
+
 d$INFORM.[d$INFORM. == ""] <- NA
 d$INFORM. <- factor(d$INFORM.)
 
@@ -73,7 +88,7 @@ str(d)
 
 ```r
 
-# colnne LOGICIEL
+# colonne LOGICIEL
 a <- as.character(d$LOGICIEL)
 a[a == ""] <- NA
 a[a == "autre"] <- NA

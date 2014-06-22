@@ -20,6 +20,21 @@ Fichier .csv: le fichier source est enregistré sous le nom de data3 avec les op
 #### 2014-04-28 
 __data4.csv__ enregistrement du fichier source au format .csv. Ajout des logiciels pour Champagne-Ardennes et complément pur Basse-Normandie
 
+#### Juin 2014
+
+ENQUETE LOGICIEL su_France.csv
+fichier principal partage sur drive 
+Enregistre dans le dossier sous le nom de __ENQUETE LOGICIEL su_France.csv__. Il semblerait qu'il ne soit plus possible d'exporter directement au format csv.
+
+Creation de __functions.R__ pour normaliser les noms des logiciels. Creation  de __Logiciels.ods__ pour lister les logiciels existants et les firme correspondantes.
+
+```{r juin}
+source("functions.R")
+x <- standardise_logiciels(d$logiciel)
+levels(trim(x))
+
+```
+
 ```{r}
 library("epicalc")
 file <- "../DATA/data4.csv"
