@@ -1,0 +1,36 @@
+---
+title: "Analyse2"
+author: "Jcb"
+date: "13/07/2014"
+output: html_document
+---
+
+#### Juin 2014
+
+ENQUETE LOGICIEL su_France.csv
+fichier principal partage sur drive 
+Enregistre dans le dossier sous le nom de __ENQUETE LOGICIEL su_France.csv__. Il semblerait qu'il ne soit plus possible d'exporter directement au format csv.
+
+Creation de __functions.R__ pour normaliser les noms des logiciels. Creation  de __Logiciels.ods__ pour lister les logiciels existants et les firme correspondantes.
+
+```{r juin}
+source("../functions.R")
+file <- "../ENQUETE LOGICIEL su_France.csv"
+library(stringr)
+d <- read.csv(file, header = TRUE)
+x <- standardise_logiciels(d$logiciel)
+level <- levels(as.factor(str_trim(x)))
+level
+summary(as.factor(str_trim(x)))
+```
+
+```{r region}
+total.etablissements <- sum(summary(d$Région))
+total.region <- nlevels(d$Région)
+moyenne.etab.par.region <- total.etablissements / total.region
+moyenne.etab.par.region
+
+barplot(sort(summary(d$Région)), main="Nombre d'établissements avec service d'urgence", ylab="Nombre", las=3, cex.names=0.7)
+text(8,65, paste("moyenne: ", round(moyenne.etab.par.region,0), " établissements/région"))
+```
+
