@@ -1,0 +1,76 @@
+Enquête FEDORU
+========================================================
+
+La FEDORU a décidé de faire sa propre enquête concernant les logiciels utilisés dans les servives d'urgence. RESURAL a été chargé de cette enquête.
+
+Méthodologie
+------------
+
+La liste des SU a été récupérée à partir du fichier [FINESS](adresse ?) en sélectionnant toutes les régions de France + médecine d'urgence. L'export se fait en utilisabt le format étendu. Le fichier résultant est enregistré sous __DATA/SU_France_2014.csv__. A partir de ce fichier, les colonnes ... ont été isolées. Le fichier obtenu a été mis en ligne via __google drive__ et mis à la disposition des membres du CA.
+
+Google ayant modifié les conditions d'accès au _drive_, il faut procéder en trois temps pour récupérer les données:
+1. ouvrir le fichier dans drive et importer le fichier au format .csv.
+2. l'ouvrir dans calc et le réenregisterer au format .csv en précisant que les champs doivent être entourés de guillemets (sinon ça plante)
+2. transférer le ficher dans le répertoire de travail et le renommer __su_France_ + AAAAMMJJ + .csv__.
+
+```{r init}
+date <- "20140815"
+file <- paste0("~/Documents/Resural/FEDORU/InformatisationSU/su_France_", date, ".csv")
+d <- read.table(file, header=TRUE, sep=",")
+names(d)
+str(d)
+```
+### Normalisation des logiciels
+
+```{r normaliser}
+library(stringr)
+a <- as.character(d$logiciel)
+a <- str_trim(a)
+
+a[a==""] <- NA
+a[a=="autre"] <- NA
+a[a=="Christalnet (module DMU)"] <- "Cristalnet"
+a[a=="Clinicom (Siemens)"] <- "Clinicom"
+a[a=="CORA McKesson"] <- "Cora"
+a[a=="CrystalNet"] <- "Cristalnet"
+a[a=="DMU (CristalNet)"] <- "Cristalnet"
+
+a[a=="RESURGENCE"] <- "ResUrgences"
+a[a=="Resurgences"] <- "ResUrgences"
+a[a=="RESURGENCE (Adulte) DxCare Medasys (Pédiatrie)"] <- "ResUrgences"
+a[a=="urqual"] <- "UrQual"
+a[a=="UrQual (McKesson)"] <- "UrQual"
+a[a=="Urqual (McKesson)"] <- "UrQual"
+
+a[a=="Cristalnet"] <- "CristalNet"
+a[a=="CORA"] <- "Cora"
+a[a=="CLINICOM (Creil)"] <- "Clinicom"
+
+a[a=="DxCare (Medasys)"] <- "DXCare"
+a[a=="DXCARE (Medasys)"] <- "DXCare"
+a[a=="DxCare MEDASYS"] <- "DXCare"
+a[a=="dxcare (vittel)"] <- "DXCare"
+a[a=="DxCare"] <- "DXCare"
+
+a[a=="hopital manager"] <- "Hopital Manager"
+a[a=="Osiris (Cormin)"] <- "Osiris"
+a[a=="OSIRIS Evolucare"] <- "Osiris"
+a[a=="OSOFT"] <- "Osoft"
+a[a=="ﾠ"] <- NA
+a[a=="cf ch lodeve"] <- NA
+a[a=="Etablissement prioritaire !"] <- NA
+a[a=="Pas de SAU"] <- NA
+a[!is.na(a) & nchar(a) < 3] <- NA
+
+a <- toupper(a)
+d$logiciel <- a
+```
+
+
+```{r tri}
+summary(as.factor(d$logiciel))
+summary(d$Région)
+table(d$Région, d$logiciel)
+
+```
+Comparer public, privé et PSPH
