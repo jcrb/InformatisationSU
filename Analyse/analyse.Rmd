@@ -20,6 +20,8 @@ Fichier .csv: le fichier source est enregistré sous le nom de data3 avec les op
 #### 2014-04-28 
 __data4.csv__ enregistrement du fichier source au format .csv. Ajout des logiciels pour Champagne-Ardennes et complément pur Basse-Normandie
 
+
+
 ```{r}
 library("epicalc")
 file <- "../DATA/data4.csv"

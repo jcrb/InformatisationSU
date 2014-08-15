@@ -1,0 +1,19 @@
+---
+title: "Lire depuis GoogleSheet"
+author: "Jcb"
+date: "13/07/2014"
+output: html_document
+---
+
+```{r}
+library(XML)
+source("googlesheet.R")
+#file <- "https://docs.google.com/spreadsheets/d/13qXw4AMY3B2-0AmseEyQX42y6XBxOYLYEZKZnisEVMs/pubhtml"
+#file <- "http://docs.google.com/spreadsheet/pub?key=0Aieb-IfcCNcXdExWbTlPSXNHRlFfRVpPcl80X2ZlNVE&output=html"
+file <- "https://docs.google.com/spreadsheets/d/13qXw4AMY3B2-0AmseEyQX42y6XBxOYLYEZKZnisEVMs/edit#gid=89296620"
+elem <- readGoogleSheet(file)
+
+m <- cleanGoogleTable(elem, table=1)
+
+head(m)
+```
