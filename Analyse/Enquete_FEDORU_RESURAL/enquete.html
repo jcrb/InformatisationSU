@@ -59,11 +59,12 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <div id="methodologie" class="section level2">
 <h2>Méthodologie</h2>
 <p>La liste des SU a été récupérée à partir du fichier <a href="adresse%20?">FINESS</a> en sélectionnant toutes les régions de France + médecine d’urgence. L’export se fait en utilisabt le format étendu. Le fichier résultant est enregistré sous <strong>DATA/SU_France_2014.csv</strong>. A partir de ce fichier, les colonnes … ont été isolées. Le fichier obtenu a été mis en ligne via <strong>google drive</strong> et mis à la disposition des membres du CA.</p>
-<p>Google ayant modifié les conditions d’accès au <em>drive</em>, il faut procéder en trois temps pour récupérer les données: 1. ouvrir le fichier dans drive et importer le fichier au format .csv. 2. l’ouvrir dans calc et le réenregisterer au format .csv en précisant que les champs doivent être entourés de guillemets (sinon ça plante) 2. transférer le ficher dans le répertoire de travail et le renommer <strong>su_France_ + AAAAMMJJ + .csv</strong>.</p>
-<pre class="r"><code>date &lt;- &quot;20140815&quot;
-file &lt;- paste0(&quot;~/Documents/Resural/FEDORU/InformatisationSU/su_France_&quot;, date, &quot;.csv&quot;)
-d &lt;- read.table(file, header=TRUE, sep=&quot;,&quot;)
-names(d)</code></pre>
+<p>Google ayant modifié les conditions d’accès au <em>drive</em>, il faut procéder en trois temps pour récupérer les données:</p>
+<ol style="list-style-type: decimal">
+<li>ouvrir le fichier dans drive et importer le fichier au format .csv.</li>
+<li>l’ouvrir dans calc et le réenregisterer au format .csv en précisant que les champs doivent être entourés de guillemets (sinon ça plante)</li>
+<li>transférer le ficher dans le répertoire de travail et le renommer <strong>su_France_ + AAAAMMJJ + .csv</strong>.</li>
+</ol>
 <pre><code>##  [1] &quot;Colonne1&quot;                &quot;Région&quot;                 
 ##  [3] &quot;Dpt&quot;                     &quot;FINNES&quot;                 
 ##  [5] &quot;Raison.sociale&quot;          &quot;Complement.distribution&quot;
@@ -71,9 +72,9 @@ names(d)</code></pre>
 ##  [9] &quot;Code.postal&quot;             &quot;Libelle.routage&quot;        
 ## [11] &quot;Tel&quot;                     &quot;nom.correspondant&quot;      
 ## [13] &quot;mail&quot;                    &quot;logiciel&quot;               
-## [15] &quot;RPU..oui.non.&quot;</code></pre>
-<pre class="r"><code>str(d)</code></pre>
-<pre><code>## 'data.frame':    697 obs. of  15 variables:
+## [15] &quot;editeur&quot;                 &quot;RPU..OUI.NON.&quot;          
+## [17] &quot;Remarque&quot;</code></pre>
+<pre><code>## 'data.frame':    697 obs. of  17 variables:
 ##  $ Colonne1               : int  437 438 439 440 441 442 443 444 445 446 ...
 ##  $ Région                 : Factor w/ 23 levels &quot;ALSACE&quot;,&quot;AQUITAINE&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ Dpt                    : Factor w/ 100 levels &quot;Ain&quot;,&quot;Aine&quot;,&quot;Allier&quot;,..: 12 12 12 12 12 12 12 12 12 42 ...
@@ -85,221 +86,22 @@ names(d)</code></pre>
 ##  $ Code.postal            : Factor w/ 675 levels &quot;1000&quot;,&quot;10003&quot;,..: 409 414 416 412 415 411 408 408 410 421 ...
 ##  $ Libelle.routage        : Factor w/ 630 levels &quot;ABBEVILLE CEDEX&quot;,..: 566 253 503 629 506 565 566 566 567 396 ...
 ##  $ Tel                    : Factor w/ 669 levels &quot;&quot;,&quot;01 30 69 45 00 OU 15&quot;,..: 356 355 362 360 361 358 357 359 356 366 ...
-##  $ nom.correspondant      : Factor w/ 174 levels &quot;&quot;,&quot;Antenne SMUR&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ nom.correspondant      : Factor w/ 178 levels &quot;&quot;,&quot; &quot;,&quot;Antenne SMUR&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ mail                   : Factor w/ 329 levels &quot;&quot;,&quot;abdelattif.diani@ch-ghsa.fr&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ logiciel               : Factor w/ 97 levels &quot;&quot;,&quot;-&quot;,&quot;ATALANTE&quot;,..: 35 77 35 3 8 35 NA 64 35 3 ...
-##  $ RPU..oui.non.          : Factor w/ 22 levels &quot;&quot;,&quot;non&quot;,&quot;NON&quot;,..: 9 9 9 9 9 9 3 9 9 9 ...</code></pre>
-<div id="normalisation-des-logiciels" class="section level3">
-<h3>Normalisation des logiciels</h3>
-<pre class="r"><code>library(stringr)
-a &lt;- as.character(d$logiciel)
-a &lt;- str_trim(a)
-
-a[a==&quot;&quot;] &lt;- NA
-a[a==&quot;autre&quot;] &lt;- NA
-a[a==&quot;Christalnet (module DMU)&quot;] &lt;- &quot;Cristalnet&quot;
-a[a==&quot;Clinicom (Siemens)&quot;] &lt;- &quot;Clinicom&quot;
-a[a==&quot;CORA McKesson&quot;] &lt;- &quot;Cora&quot;
-a[a==&quot;CrystalNet&quot;] &lt;- &quot;Cristalnet&quot;
-a[a==&quot;DMU (CristalNet)&quot;] &lt;- &quot;Cristalnet&quot;
-
-a[a==&quot;RESURGENCE&quot;] &lt;- &quot;ResUrgences&quot;
-a[a==&quot;Resurgences&quot;] &lt;- &quot;ResUrgences&quot;
-a[a==&quot;RESURGENCE (Adulte) DxCare Medasys (Pédiatrie)&quot;] &lt;- &quot;ResUrgences&quot;
-a[a==&quot;urqual&quot;] &lt;- &quot;UrQual&quot;
-a[a==&quot;UrQual (McKesson)&quot;] &lt;- &quot;UrQual&quot;
-a[a==&quot;Urqual (McKesson)&quot;] &lt;- &quot;UrQual&quot;
-
-a[a==&quot;Cristalnet&quot;] &lt;- &quot;CristalNet&quot;
-a[a==&quot;CORA&quot;] &lt;- &quot;Cora&quot;
-a[a==&quot;CLINICOM (Creil)&quot;] &lt;- &quot;Clinicom&quot;
-
-a[a==&quot;DxCare (Medasys)&quot;] &lt;- &quot;DXCare&quot;
-a[a==&quot;DXCARE (Medasys)&quot;] &lt;- &quot;DXCare&quot;
-a[a==&quot;DxCare MEDASYS&quot;] &lt;- &quot;DXCare&quot;
-a[a==&quot;dxcare (vittel)&quot;] &lt;- &quot;DXCare&quot;
-a[a==&quot;DxCare&quot;] &lt;- &quot;DXCare&quot;
-
-a[a==&quot;hopital manager&quot;] &lt;- &quot;Hopital Manager&quot;
-a[a==&quot;Osiris (Cormin)&quot;] &lt;- &quot;Osiris&quot;
-a[a==&quot;OSIRIS Evolucare&quot;] &lt;- &quot;Osiris&quot;
-a[a==&quot;OSOFT&quot;] &lt;- &quot;Osoft&quot;
-a[a==&quot;ﾠ&quot;] &lt;- NA
-a[a==&quot;cf ch lodeve&quot;] &lt;- NA
-a[a==&quot;Etablissement prioritaire !&quot;] &lt;- NA
-a[a==&quot;Pas de SAU&quot;] &lt;- NA
-a[!is.na(a) &amp; nchar(a) &lt; 3] &lt;- NA
-
-a &lt;- toupper(a)
-d$logiciel &lt;- a</code></pre>
-<pre class="r"><code>summary(as.factor(d$logiciel))</code></pre>
-<pre><code>##                                                                ATALANTE 
-##                                                                       6 
-##                                                           ATALANTE PMSI 
-##                                                                       1 
-##                                                                 AXIGATE 
-##                                                                       5 
-##                                                                 AXIPAGE 
-##                                                                       1 
-##                                                 CAPCIR- CORPUS URGENCES 
-##                                                                       1 
-##                                                                CLINICOM 
-##                                                                       4 
-##                                               CLINICOM - EASILY EN 2015 
-##                                                                       1 
-##                                      CLINICOM PUIS \nSILLAGE DS QQ MOIS 
-##                                                                       1 
-##                                                                    CORA 
-##                                                                       4 
-##                                                           CORA URGENCES 
-##                                                                       2 
-##                                                                 CORTEXE 
-##                                                                       1 
-##                                                                  CORWIN 
-##                                                                       1 
-##                                                                 COTEXTE 
-##                                                                       1 
-##                                               C PAGE \nMEDASYS EN COURS 
-##                                                                       1 
-##                                                              CRISTALNET 
-##                                                                       8 
-##                                                                CROSSWAY 
-##                                                                       6 
-##                                                     CROSSWAY (MCKESSON) 
-##                                                                       3 
-##                                                                 CROSWAY 
-##                                                                       1 
-##                                                        DEVELOP. INTERNE 
-##                                                                       1 
-##                                                   DÉVELOPPEMENT INTERNE 
-##                                                                       1 
-##                                                                   DIAMM 
-##                                                                       1 
-##                                                                     DMU 
-##                                                                       2 
-##                                                          DMU CRISTALNET 
-##                                                                       1 
-##                                    DOPASOINS MODULE URGENCES (WEBSANTÉ) 
-##                                                                       1 
-##                                                               DOPATIENT 
-##                                                                       3 
-##                                                           DOPA URGENCES 
-##                                                                       2 
-##                                                                     DPU 
-##                                                                       4 
-##                                                                  DXCARE 
-##                                                                       7 
-##                                                                 DX CARE 
-##                                                                       9 
-##                                                       DX CARE (MEDASYS) 
-##                                                                       2 
-##                                                                    EMED 
-##                                                                       1 
-##                                EQUALIFE \nFIRSNET MILLENIUM FIN D'ANNÉE 
-##                                                                       1 
-##                                                            EXPERT SANTE 
-##                                                                       1 
-##                                                            EXPERT SANTÉ 
-##                                                                       1 
-##                                                        FIRSTNET URGENCE 
-##                                                                       1 
-##                                                       FISTNET DE CERNET 
-##                                                                       1 
-##                                                                     H++ 
-##                                                                       1 
-##                                                         HOPITAL MANAGER 
-##                                                                       1 
-##                                                 MAIL ATTENTE DE REPONSE 
-##                                                                      17 
-##                                                    MAIL ATTENTE REPONSE 
-##                                                                     151 
-##                         MAIL ENVOYÉ SUR LE SITE RUBRIQUE NOUS CONTACTER 
-##                                                                       7 
-##                                           MAIL LE 15/07 ATTENTE RÉPONSE 
-##                                                                       1 
-##                            MATRIX.\nSILLAGE URGENCE À PARTIR DU 16 JUIN 
-##                                                                       1 
-##                                      MCKESSON - CROSSWAY HÔPITAL ADAPTÉ 
-##                                                                       1 
-##                                                        MEDIBASE (OSOFT) 
-##                                                                       1 
-##                                                               MEDIBOARD 
-##                                                                       2 
-##                                                          MÉDICAL OBJECT 
-##                                                                       2 
-##                                                                MEDINTUX 
-##                                                                       1 
-##                                                               MEDIS URG 
-##                                                                       1 
-##                                                               MILLENIUM 
-##                                                                       1 
-##                                                    MILLENIUM - FIRSTNET 
-##                                                                       4 
-##                                                                  M-PLUS 
-##                                                                       1 
-##                                                                  NAFAMA 
-##                                                                       1 
-##                                                         NON INFORMATISÉ 
-##                                                                       1 
-##                                                                   ORBIS 
-##                                                                       4 
-##                                                         ORIRIS (CORMIN) 
-##                                                                       1 
-##                                                                  OSIRIS 
-##                                                                       1 
-##                                                                   OSOFT 
-##                                                                       1 
-##                                                         PAS DE LOGICIEL 
-##                                                                       1 
-##                                       PAS DE LOGICIEL DX CARE EN PROJET 
-##                                                                       1 
-##           PAS DE LOGICIEL UNIQUEMENT LOGICIEL DE GESTION ADMINISTRATIVE 
-##                                                                       1 
-##        PAS D'INFORMATISATION DÉPLOIEMENT PARTIEL PAR \nSILLAGE NOV 2014 
-##                                                                       1 
-##                                                    POLIMEDIS - EQUAFILE 
-##                                                                       1 
-##                                                               POLYMEDIS 
-##                                                                       6 
-##                                                     POLYMEDIS - H+ACUTE 
-##                                                                       1 
-##                                                  QCARE DE LA SOCIÉTÉ C3 
-##                                                                       1 
-##                                                             RESURGENCES 
-##                                                                      46 
-##                                                                 SANOCOM 
-##                                                                       2 
-##                                                  SHAREGATE (WARESYSTEM) 
-##                                                                       2 
-##                                                                   SIDSU 
-##                                                                       9 
-##                                                                  SIGEMS 
-##                                                                       2 
-##                                                                 SILLAGE 
-##                                                                       4 
-##                                                       SILLAGE -URGENCES 
-##                                                                       2 
-##                                  SITE ST JULIEN URQUAL\nSITE DEVÉ ICARE 
-##                                                                       1 
-##                                                        SPEC (CALYSTÈNE) 
-##                                                                       1 
-##                                                              TRACK CARE 
-##                                                                       4 
-##                                                              TRACK-CARE 
-##                                                                       1 
-##                                                              TU-ORUPACA 
-##                                                                      47 
-##                                                                  URQUAL 
-##                                                                      20 
-##                                                       URQUAL (MCKESSON) 
-##                                                                       2 
-## URQUAL (MIGRATION VERS ORBIS EN COURS)\nGYNÉCO MAT : ORBIS (PAS DE RPU) 
-##                                                                       1 
-##                                                                XPERTHIS 
-##                                                                       1 
-##                                                                    NA's 
-##                                                                     249</code></pre>
-<pre class="r"><code>summary(d$Région)</code></pre>
+##  $ logiciel               : Factor w/ 73 levels &quot;&quot;,&quot;AGFA EXAGON&quot;,..: 23 54 23 4 8 23 NA 46 23 4 ...
+##  $ editeur                : Factor w/ 28 levels &quot;&quot;,&quot;\n&quot;,&quot;(Calystène)&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ RPU..OUI.NON.          : Factor w/ 11 levels &quot;&quot;,&quot;\n&quot;,&quot;NON&quot;,..: 6 6 6 6 6 6 3 6 6 6 ...
+##  $ Remarque               : Factor w/ 13 levels &quot;&quot;,&quot;\n&quot;,&quot;depuis mars 2014&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<div id="normalisation-du-fichier" class="section level4">
+<h4>Normalisation du fichier</h4>
+<ul>
+<li>Suppression des blancs</li>
+<li>suppression des caractères accentués</li>
+<li>correction du nom des logiciels (+++)</li>
+</ul>
+</div>
+<div id="nombre-theorique-de-su-par-region" class="section level4">
+<h4>Nombre (théorique) de SU par région:</h4>
 <pre><code>##               ALSACE            AQUITAINE             AUVERGNE 
 ##                   19                   41                   20 
 ##      BASSE NORMANDIE            BOURGOGNE             BRETAGNE 
@@ -316,807 +118,333 @@ d$logiciel &lt;- a</code></pre>
 ##                   53                   21                   21 
 ##    POITOU CHANRENTES          RHONE ALPES 
 ##                   24                   71</code></pre>
-<pre class="r"><code>table(d$Région, d$logiciel)</code></pre>
+</div>
+<div id="table-des-logiciels-repertories" class="section level4">
+<h4>Table des logiciels répertoriés</h4>
+<p>On exclu les colonnes:</p>
+<ul>
+<li>“MAIL ENVOYÉ SUR LE SITE RUBRIQUE NOUS CONTACTER” (28)</li>
+<li>“MAIL ATTENTE REPONSE” (27)</li>
+<li>“NON INFORMATISÉ” (39)</li>
+</ul>
+<pre><code>##           AGFA EXAGON      AGFA HEALTH CARE              ATALANTE 
+##                     1                     1                     8 
+##               AXIGATE               AXIPAGE              CLINICOM 
+##                     5                     1                     9 
+##                  CORA             CORETEXTE                CORWIN 
+##                     8                     3                     1 
+##        CRISTALNET-DMU              CROSSWAY DEVELOPPEMENT INTERNE 
+##                    26                    14                     2 
+##                 DIAMM             DOPASOINS             DOPATIENT 
+##                     1                     1                     3 
+##         DOPA URGENCES                   DPU                DXCARE 
+##                     2                     3                    17 
+##               DX CARE                  EMED              EQUALIFE 
+##                     1                     1                     1 
+##          EXPERT SANTE              FIRSTNET                   H++ 
+##                     2                     2                     1 
+##       HOPITAL MANAGER                 ICARE                MATRIX 
+##                     1                     1                     1 
+##              MEDIBASE             MEDIBOARD        MEDICAL OBJECT 
+##                     1                     5                     2 
+##              MEDINTUX             MEDIS URG             MILLENIUM 
+##                     1                     1                     5 
+##                M-PLUS                NAFAMA       NON INFORMATISE 
+##                     1                     1                     5 
+##                 ORBIS                OSIRIS                 OSOFT 
+##                     6                     2                     2 
+##  POLIMEDIS - EQUAFILE             POLYMEDIS                 QCARE 
+##                     1                     7                     1 
+##           RESURGENCES            SAMUSCRIPT               SANOCOM 
+##                    51                     1                     2 
+##             SHAREGATE                 SIDSU                SIGEMS 
+##                     2                     9                     2 
+##               SILLAGE       SOFTWAY MEDICAL                  SPEC 
+##                     7                     3                     1 
+##            TRACK CARE            TU-ORUPACA                URQUAL 
+##                     5                    47                    31 
+##              XPERTHIS                  NA's 
+##                     1                   220</code></pre>
+<p>SU non informatisés: 6</p>
+<p>SU contactés en attente de réponse: 157</p>
+</div>
+<div id="table-logiciels-par-region" class="section level4">
+<h4>Table logiciels par région:</h4>
 <pre><code>##                       
-##                        ATALANTE ATALANTE PMSI AXIGATE AXIPAGE
-##   ALSACE                      6             0       0       0
-##   AQUITAINE                   0             0       1       0
-##   AUVERGNE                    0             0       0       0
-##   BASSE NORMANDIE             0             1       1       0
-##   BOURGOGNE                   0             0       0       0
-##   BRETAGNE                    0             0       0       0
-##   CENTRE                      0             0       1       0
-##   CHAMPAGNE ARDENNES          0             0       0       0
-##   CORSE                       0             0       0       0
-##   DOM                         0             0       0       0
-##   FRANCHE CONTE               0             0       0       0
-##   HAUTE NORMANDIE             0             0       2       0
-##   ILE DE France               0             0       0       1
-##   LANGUEDOC ROUSSILLON        0             0       0       0
-##   LIMOUSIN                    0             0       0       0
-##   LORRAINE                    0             0       0       0
-##   MIDI PYRENEES               0             0       0       0
-##   NORD PAS DE CALAIS          0             0       0       0
-##   PACA                        0             0       0       0
-##   PAYS DE LA LOIRE            0             0       0       0
-##   PICARDIE                    0             0       0       0
-##   POITOU CHANRENTES           0             0       0       0
-##   RHONE ALPES                 0             0       0       0
+##                        AGFA EXAGON AGFA HEALTH CARE ATALANTE AXIGATE
+##   ALSACE                         0                0        6       0
+##   AQUITAINE                      0                0        0       1
+##   AUVERGNE                       0                0        0       0
+##   BASSE NORMANDIE                0                0        1       1
+##   BOURGOGNE                      1                0        1       0
+##   BRETAGNE                       0                0        0       0
+##   CENTRE                         0                0        0       1
+##   CHAMPAGNE ARDENNES             0                0        0       0
+##   CORSE                          0                0        0       0
+##   DOM                            0                1        0       0
+##   FRANCHE CONTE                  0                0        0       0
+##   HAUTE NORMANDIE                0                0        0       2
+##   ILE DE France                  0                0        0       0
+##   LANGUEDOC ROUSSILLON           0                0        0       0
+##   LIMOUSIN                       0                0        0       0
+##   LORRAINE                       0                0        0       0
+##   MIDI PYRENEES                  0                0        0       0
+##   NORD PAS DE CALAIS             0                0        0       0
+##   PACA                           0                0        0       0
+##   PAYS DE LA LOIRE               0                0        0       0
+##   PICARDIE                       0                0        0       0
+##   POITOU CHANRENTES              0                0        0       0
+##   RHONE ALPES                    0                0        0       0
 ##                       
-##                        CAPCIR- CORPUS URGENCES CLINICOM
-##   ALSACE                                     0        1
-##   AQUITAINE                                  0        1
-##   AUVERGNE                                   0        0
-##   BASSE NORMANDIE                            0        0
-##   BOURGOGNE                                  0        0
-##   BRETAGNE                                   0        0
-##   CENTRE                                     0        0
-##   CHAMPAGNE ARDENNES                         0        0
-##   CORSE                                      0        0
-##   DOM                                        0        0
-##   FRANCHE CONTE                              0        0
-##   HAUTE NORMANDIE                            0        0
-##   ILE DE France                              0        0
-##   LANGUEDOC ROUSSILLON                       0        0
-##   LIMOUSIN                                   0        0
-##   LORRAINE                                   1        0
-##   MIDI PYRENEES                              0        0
-##   NORD PAS DE CALAIS                         0        2
-##   PACA                                       0        0
-##   PAYS DE LA LOIRE                           0        0
-##   PICARDIE                                   0        0
-##   POITOU CHANRENTES                          0        0
-##   RHONE ALPES                                0        0
+##                        AXIPAGE CLINICOM CORA CORETEXTE CORWIN
+##   ALSACE                     0        1    0         0      0
+##   AQUITAINE                  0        1    0         0      0
+##   AUVERGNE                   0        0    0         0      0
+##   BASSE NORMANDIE            0        0    1         0      0
+##   BOURGOGNE                  0        0    0         0      0
+##   BRETAGNE                   0        0    0         0      0
+##   CENTRE                     0        1    1         0      0
+##   CHAMPAGNE ARDENNES         0        0    0         0      0
+##   CORSE                      0        0    0         0      0
+##   DOM                        0        0    0         0      0
+##   FRANCHE CONTE              0        0    0         0      0
+##   HAUTE NORMANDIE            0        1    0         0      0
+##   ILE DE France              1        0    0         0      0
+##   LANGUEDOC ROUSSILLON       0        0    1         0      0
+##   LIMOUSIN                   0        0    0         0      0
+##   LORRAINE                   0        0    0         1      0
+##   MIDI PYRENEES              0        0    0         2      1
+##   NORD PAS DE CALAIS         0        3    2         0      0
+##   PACA                       0        0    0         0      0
+##   PAYS DE LA LOIRE           0        1    2         0      0
+##   PICARDIE                   0        0    0         0      0
+##   POITOU CHANRENTES          0        0    0         0      0
+##   RHONE ALPES                0        1    1         0      0
 ##                       
-##                        CLINICOM - EASILY EN 2015
-##   ALSACE                                       0
-##   AQUITAINE                                    0
-##   AUVERGNE                                     0
-##   BASSE NORMANDIE                              0
-##   BOURGOGNE                                    0
-##   BRETAGNE                                     0
-##   CENTRE                                       0
-##   CHAMPAGNE ARDENNES                           0
-##   CORSE                                        0
-##   DOM                                          0
-##   FRANCHE CONTE                                0
-##   HAUTE NORMANDIE                              0
-##   ILE DE France                                0
-##   LANGUEDOC ROUSSILLON                         0
-##   LIMOUSIN                                     0
-##   LORRAINE                                     0
-##   MIDI PYRENEES                                0
-##   NORD PAS DE CALAIS                           1
-##   PACA                                         0
-##   PAYS DE LA LOIRE                             0
-##   PICARDIE                                     0
-##   POITOU CHANRENTES                            0
-##   RHONE ALPES                                  0
+##                        CRISTALNET-DMU CROSSWAY DEVELOPPEMENT INTERNE DIAMM
+##   ALSACE                            3        0                     0     0
+##   AQUITAINE                         0        3                     0     0
+##   AUVERGNE                          0        0                     0     0
+##   BASSE NORMANDIE                   1        0                     0     0
+##   BOURGOGNE                         6        3                     0     0
+##   BRETAGNE                          0        0                     0     0
+##   CENTRE                            0        0                     0     0
+##   CHAMPAGNE ARDENNES                3        0                     0     0
+##   CORSE                             0        0                     0     0
+##   DOM                               0        0                     0     0
+##   FRANCHE CONTE                     0        1                     0     0
+##   HAUTE NORMANDIE                   0        0                     0     0
+##   ILE DE France                     0        0                     0     0
+##   LANGUEDOC ROUSSILLON              0        0                     0     0
+##   LIMOUSIN                          0        0                     0     0
+##   LORRAINE                          0        1                     1     0
+##   MIDI PYRENEES                     0        6                     1     1
+##   NORD PAS DE CALAIS                2        0                     0     0
+##   PACA                              2        0                     0     0
+##   PAYS DE LA LOIRE                  0        0                     0     0
+##   PICARDIE                          1        0                     0     0
+##   POITOU CHANRENTES                 0        0                     0     0
+##   RHONE ALPES                       8        0                     0     0
 ##                       
-##                        CLINICOM PUIS \nSILLAGE DS QQ MOIS CORA
-##   ALSACE                                                0    0
-##   AQUITAINE                                             0    0
-##   AUVERGNE                                              0    0
-##   BASSE NORMANDIE                                       0    1
-##   BOURGOGNE                                             0    0
-##   BRETAGNE                                              0    0
-##   CENTRE                                                0    1
-##   CHAMPAGNE ARDENNES                                    0    0
-##   CORSE                                                 0    0
-##   DOM                                                   0    0
-##   FRANCHE CONTE                                         0    0
-##   HAUTE NORMANDIE                                       1    0
-##   ILE DE France                                         0    0
-##   LANGUEDOC ROUSSILLON                                  0    0
-##   LIMOUSIN                                              0    0
-##   LORRAINE                                              0    0
-##   MIDI PYRENEES                                         0    0
-##   NORD PAS DE CALAIS                                    0    2
-##   PACA                                                  0    0
-##   PAYS DE LA LOIRE                                      0    0
-##   PICARDIE                                              0    0
-##   POITOU CHANRENTES                                     0    0
-##   RHONE ALPES                                           0    0
+##                        DOPASOINS DOPATIENT DOPA URGENCES DPU DXCARE
+##   ALSACE                       0         0             0   0      4
+##   AQUITAINE                    1         0             0   0      5
+##   AUVERGNE                     0         0             0   0      0
+##   BASSE NORMANDIE              0         0             0   0      0
+##   BOURGOGNE                    0         0             0   0      0
+##   BRETAGNE                     0         0             0   0      0
+##   CENTRE                       0         0             0   0      1
+##   CHAMPAGNE ARDENNES           0         0             2   0      1
+##   CORSE                        0         0             0   0      0
+##   DOM                          0         0             0   0      0
+##   FRANCHE CONTE                0         0             0   0      0
+##   HAUTE NORMANDIE              0         0             0   0      1
+##   ILE DE France                0         0             0   0      0
+##   LANGUEDOC ROUSSILLON         0         0             0   0      0
+##   LIMOUSIN                     0         0             0   0      0
+##   LORRAINE                     0         0             0   0      1
+##   MIDI PYRENEES                0         3             0   1      2
+##   NORD PAS DE CALAIS           0         0             0   0      2
+##   PACA                         0         0             0   0      0
+##   PAYS DE LA LOIRE             0         0             0   0      0
+##   PICARDIE                     0         0             0   0      0
+##   POITOU CHANRENTES            0         0             0   0      0
+##   RHONE ALPES                  0         0             0   2      0
 ##                       
-##                        CORA URGENCES CORTEXE CORWIN COTEXTE
-##   ALSACE                           0       0      0       0
-##   AQUITAINE                        0       0      0       0
-##   AUVERGNE                         0       0      0       0
-##   BASSE NORMANDIE                  0       0      0       0
-##   BOURGOGNE                        0       0      0       0
-##   BRETAGNE                         0       0      0       0
-##   CENTRE                           0       0      0       0
-##   CHAMPAGNE ARDENNES               0       0      0       0
-##   CORSE                            0       0      0       0
-##   DOM                              0       0      0       0
-##   FRANCHE CONTE                    0       0      0       0
-##   HAUTE NORMANDIE                  0       0      0       0
-##   ILE DE France                    0       0      0       0
-##   LANGUEDOC ROUSSILLON             0       0      0       0
-##   LIMOUSIN                         0       0      0       0
-##   LORRAINE                         0       0      0       0
-##   MIDI PYRENEES                    0       1      1       1
-##   NORD PAS DE CALAIS               0       0      0       0
-##   PACA                             0       0      0       0
-##   PAYS DE LA LOIRE                 2       0      0       0
-##   PICARDIE                         0       0      0       0
-##   POITOU CHANRENTES                0       0      0       0
-##   RHONE ALPES                      0       0      0       0
+##                        DX CARE EMED EQUALIFE EXPERT SANTE FIRSTNET H++
+##   ALSACE                     0    0        0            0        0   0
+##   AQUITAINE                  0    0        0            0        0   0
+##   AUVERGNE                   0    0        0            0        0   0
+##   BASSE NORMANDIE            0    0        0            0        0   0
+##   BOURGOGNE                  0    0        0            0        0   0
+##   BRETAGNE                   0    0        0            0        0   0
+##   CENTRE                     0    0        0            0        1   0
+##   CHAMPAGNE ARDENNES         0    0        0            0        0   0
+##   CORSE                      0    0        0            0        0   0
+##   DOM                        1    0        0            0        0   0
+##   FRANCHE CONTE              0    0        1            0        1   0
+##   HAUTE NORMANDIE            0    0        0            0        0   0
+##   ILE DE France              0    0        0            0        0   1
+##   LANGUEDOC ROUSSILLON       0    0        0            0        0   0
+##   LIMOUSIN                   0    0        0            0        0   0
+##   LORRAINE                   0    0        0            0        0   0
+##   MIDI PYRENEES              0    1        0            1        0   0
+##   NORD PAS DE CALAIS         0    0        0            0        0   0
+##   PACA                       0    0        0            0        0   0
+##   PAYS DE LA LOIRE           0    0        0            0        0   0
+##   PICARDIE                   0    0        0            0        0   0
+##   POITOU CHANRENTES          0    0        0            0        0   0
+##   RHONE ALPES                0    0        0            1        0   0
 ##                       
-##                        C PAGE \nMEDASYS EN COURS CRISTALNET CROSSWAY
-##   ALSACE                                       0          3        0
-##   AQUITAINE                                    0          0        0
-##   AUVERGNE                                     0          0        0
-##   BASSE NORMANDIE                              0          1        0
-##   BOURGOGNE                                    0          0        0
-##   BRETAGNE                                     0          0        0
-##   CENTRE                                       0          0        0
-##   CHAMPAGNE ARDENNES                           0          3        0
-##   CORSE                                        0          0        0
-##   DOM                                          0          0        0
-##   FRANCHE CONTE                                0          0        0
-##   HAUTE NORMANDIE                              0          0        0
-##   ILE DE France                                0          0        0
-##   LANGUEDOC ROUSSILLON                         1          0        0
-##   LIMOUSIN                                     0          0        0
-##   LORRAINE                                     0          0        0
-##   MIDI PYRENEES                                0          0        6
-##   NORD PAS DE CALAIS                           0          1        0
-##   PACA                                         0          0        0
-##   PAYS DE LA LOIRE                             0          0        0
-##   PICARDIE                                     0          0        0
-##   POITOU CHANRENTES                            0          0        0
-##   RHONE ALPES                                  0          0        0
+##                        HOPITAL MANAGER ICARE MATRIX MEDIBASE MEDIBOARD
+##   ALSACE                             0     0      0        0         0
+##   AQUITAINE                          0     0      0        1         0
+##   AUVERGNE                           0     0      1        0         0
+##   BASSE NORMANDIE                    0     0      0        0         0
+##   BOURGOGNE                          0     0      0        0         0
+##   BRETAGNE                           0     0      0        0         0
+##   CENTRE                             0     0      0        0         0
+##   CHAMPAGNE ARDENNES                 0     0      0        0         0
+##   CORSE                              0     0      0        0         0
+##   DOM                                0     0      0        0         0
+##   FRANCHE CONTE                      0     0      0        0         0
+##   HAUTE NORMANDIE                    0     1      0        0         0
+##   ILE DE France                      0     0      0        0         0
+##   LANGUEDOC ROUSSILLON               0     0      0        0         0
+##   LIMOUSIN                           0     0      0        0         0
+##   LORRAINE                           0     0      0        0         0
+##   MIDI PYRENEES                      0     0      0        0         2
+##   NORD PAS DE CALAIS                 1     0      0        0         0
+##   PACA                               0     0      0        0         0
+##   PAYS DE LA LOIRE                   0     0      0        0         0
+##   PICARDIE                           0     0      0        0         0
+##   POITOU CHANRENTES                  0     0      0        0         0
+##   RHONE ALPES                        0     0      0        0         3
 ##                       
-##                        CROSSWAY (MCKESSON) CROSWAY DEVELOP. INTERNE
-##   ALSACE                                 0       0                0
-##   AQUITAINE                              3       0                0
-##   AUVERGNE                               0       0                0
-##   BASSE NORMANDIE                        0       0                0
-##   BOURGOGNE                              0       0                0
-##   BRETAGNE                               0       0                0
-##   CENTRE                                 0       0                0
-##   CHAMPAGNE ARDENNES                     0       0                0
-##   CORSE                                  0       0                0
-##   DOM                                    0       0                0
-##   FRANCHE CONTE                          0       1                0
-##   HAUTE NORMANDIE                        0       0                0
-##   ILE DE France                          0       0                0
-##   LANGUEDOC ROUSSILLON                   0       0                0
-##   LIMOUSIN                               0       0                0
-##   LORRAINE                               0       0                0
-##   MIDI PYRENEES                          0       0                1
-##   NORD PAS DE CALAIS                     0       0                0
-##   PACA                                   0       0                0
-##   PAYS DE LA LOIRE                       0       0                0
-##   PICARDIE                               0       0                0
-##   POITOU CHANRENTES                      0       0                0
-##   RHONE ALPES                            0       0                0
+##                        MEDICAL OBJECT MEDINTUX MEDIS URG MILLENIUM M-PLUS
+##   ALSACE                            0        0         0         0      0
+##   AQUITAINE                         0        0         0         0      1
+##   AUVERGNE                          0        0         0         0      0
+##   BASSE NORMANDIE                   0        0         0         0      0
+##   BOURGOGNE                         0        0         0         0      0
+##   BRETAGNE                          0        0         1         0      0
+##   CENTRE                            0        0         0         0      0
+##   CHAMPAGNE ARDENNES                0        0         0         0      0
+##   CORSE                             0        0         0         0      0
+##   DOM                               0        0         0         0      0
+##   FRANCHE CONTE                     0        0         0         4      0
+##   HAUTE NORMANDIE                   0        0         0         0      0
+##   ILE DE France                     0        0         0         0      0
+##   LANGUEDOC ROUSSILLON              0        0         0         0      0
+##   LIMOUSIN                          0        0         0         0      0
+##   LORRAINE                          0        0         0         0      0
+##   MIDI PYRENEES                     2        0         0         0      0
+##   NORD PAS DE CALAIS                0        0         0         1      0
+##   PACA                              0        1         0         0      0
+##   PAYS DE LA LOIRE                  0        0         0         0      0
+##   PICARDIE                          0        0         0         0      0
+##   POITOU CHANRENTES                 0        0         0         0      0
+##   RHONE ALPES                       0        0         0         0      0
 ##                       
-##                        DÉVELOPPEMENT INTERNE DIAMM DMU DMU CRISTALNET
-##   ALSACE                                   0     0   0              0
-##   AQUITAINE                                0     0   0              0
-##   AUVERGNE                                 0     0   0              0
-##   BASSE NORMANDIE                          0     0   0              0
-##   BOURGOGNE                                0     0   0              0
-##   BRETAGNE                                 0     0   0              0
-##   CENTRE                                   0     0   0              0
-##   CHAMPAGNE ARDENNES                       0     0   0              0
-##   CORSE                                    0     0   0              0
-##   DOM                                      0     0   0              0
-##   FRANCHE CONTE                            0     0   0              0
-##   HAUTE NORMANDIE                          0     0   0              0
-##   ILE DE France                            0     0   0              0
-##   LANGUEDOC ROUSSILLON                     0     0   0              0
-##   LIMOUSIN                                 0     0   0              0
-##   LORRAINE                                 1     0   0              0
-##   MIDI PYRENEES                            0     1   0              0
-##   NORD PAS DE CALAIS                       0     0   0              1
-##   PACA                                     0     0   2              0
-##   PAYS DE LA LOIRE                         0     0   0              0
-##   PICARDIE                                 0     0   0              0
-##   POITOU CHANRENTES                        0     0   0              0
-##   RHONE ALPES                              0     0   0              0
+##                        NAFAMA NON INFORMATISE OSIRIS OSOFT
+##   ALSACE                    0               0      0     0
+##   AQUITAINE                 0               0      0     0
+##   AUVERGNE                  0               0      0     0
+##   BASSE NORMANDIE           0               0      1     0
+##   BOURGOGNE                 0               0      0     0
+##   BRETAGNE                  0               2      0     0
+##   CENTRE                    0               1      0     0
+##   CHAMPAGNE ARDENNES        1               0      0     0
+##   CORSE                     0               0      0     0
+##   DOM                       0               0      0     0
+##   FRANCHE CONTE             0               0      0     0
+##   HAUTE NORMANDIE           0               0      0     0
+##   ILE DE France             0               0      0     0
+##   LANGUEDOC ROUSSILLON      0               0      0     0
+##   LIMOUSIN                  0               0      0     0
+##   LORRAINE                  0               0      0     0
+##   MIDI PYRENEES             0               0      0     0
+##   NORD PAS DE CALAIS        0               0      1     1
+##   PACA                      0               0      0     0
+##   PAYS DE LA LOIRE          0               0      0     0
+##   PICARDIE                  0               1      0     0
+##   POITOU CHANRENTES         0               1      0     0
+##   RHONE ALPES               0               0      0     1
 ##                       
-##                        DOPASOINS MODULE URGENCES (WEBSANTÉ) DOPATIENT
-##   ALSACE                                                  0         0
-##   AQUITAINE                                               1         0
-##   AUVERGNE                                                0         0
-##   BASSE NORMANDIE                                         0         0
-##   BOURGOGNE                                               0         0
-##   BRETAGNE                                                0         0
-##   CENTRE                                                  0         0
-##   CHAMPAGNE ARDENNES                                      0         0
-##   CORSE                                                   0         0
-##   DOM                                                     0         0
-##   FRANCHE CONTE                                           0         0
-##   HAUTE NORMANDIE                                         0         0
-##   ILE DE France                                           0         0
-##   LANGUEDOC ROUSSILLON                                    0         0
-##   LIMOUSIN                                                0         0
-##   LORRAINE                                                0         0
-##   MIDI PYRENEES                                           0         3
-##   NORD PAS DE CALAIS                                      0         0
-##   PACA                                                    0         0
-##   PAYS DE LA LOIRE                                        0         0
-##   PICARDIE                                                0         0
-##   POITOU CHANRENTES                                       0         0
-##   RHONE ALPES                                             0         0
+##                        POLIMEDIS - EQUAFILE POLYMEDIS QCARE RESURGENCES
+##   ALSACE                                  0         0     0           1
+##   AQUITAINE                               0         0     0           1
+##   AUVERGNE                                0         0     0           0
+##   BASSE NORMANDIE                         0         0     0           2
+##   BOURGOGNE                               0         0     0           3
+##   BRETAGNE                                0         0     0           3
+##   CENTRE                                  0         0     0           0
+##   CHAMPAGNE ARDENNES                      0         5     0           1
+##   CORSE                                   0         0     0           0
+##   DOM                                     0         0     0           0
+##   FRANCHE CONTE                           1         0     0           3
+##   HAUTE NORMANDIE                         0         0     0           1
+##   ILE DE France                           0         0     0           0
+##   LANGUEDOC ROUSSILLON                    0         0     0           0
+##   LIMOUSIN                                0         0     0           7
+##   LORRAINE                                0         1     0          17
+##   MIDI PYRENEES                           0         0     0           0
+##   NORD PAS DE CALAIS                      0         1     0           4
+##   PACA                                    0         0     1           2
+##   PAYS DE LA LOIRE                        0         0     0           3
+##   PICARDIE                                0         0     0           0
+##   POITOU CHANRENTES                       0         0     0           2
+##   RHONE ALPES                             0         0     0           1
 ##                       
-##                        DOPA URGENCES DPU DXCARE DX CARE DX CARE (MEDASYS)
-##   ALSACE                           0   0      0       4                 0
-##   AQUITAINE                        0   0      5       0                 0
-##   AUVERGNE                         0   1      0       0                 0
-##   BASSE NORMANDIE                  0   0      0       0                 0
-##   BOURGOGNE                        0   0      0       0                 0
-##   BRETAGNE                         0   0      0       0                 0
-##   CENTRE                           0   0      0       1                 0
-##   CHAMPAGNE ARDENNES               2   0      0       1                 0
-##   CORSE                            0   0      0       0                 0
-##   DOM                              0   0      0       0                 0
-##   FRANCHE CONTE                    0   0      0       0                 0
-##   HAUTE NORMANDIE                  0   0      0       1                 0
-##   ILE DE France                    0   0      0       0                 0
-##   LANGUEDOC ROUSSILLON             0   0      0       0                 0
-##   LIMOUSIN                         0   0      0       0                 0
-##   LORRAINE                         0   0      0       1                 0
-##   MIDI PYRENEES                    0   1      2       0                 0
-##   NORD PAS DE CALAIS               0   0      0       1                 2
-##   PACA                             0   0      0       0                 0
-##   PAYS DE LA LOIRE                 0   0      0       0                 0
-##   PICARDIE                         0   0      0       0                 0
-##   POITOU CHANRENTES                0   0      0       0                 0
-##   RHONE ALPES                      0   2      0       0                 0
+##                        SAMUSCRIPT SANOCOM SHAREGATE SIDSU SIGEMS SILLAGE
+##   ALSACE                        0       0         0     0      0       0
+##   AQUITAINE                     0       2         2     9      2       2
+##   AUVERGNE                      0       0         0     0      0       0
+##   BASSE NORMANDIE               0       0         0     0      0       1
+##   BOURGOGNE                     0       0         0     0      0       0
+##   BRETAGNE                      0       0         0     0      0       3
+##   CENTRE                        0       0         0     0      0       0
+##   CHAMPAGNE ARDENNES            0       0         0     0      0       0
+##   CORSE                         0       0         0     0      0       0
+##   DOM                           0       0         0     0      0       0
+##   FRANCHE CONTE                 0       0         0     0      0       0
+##   HAUTE NORMANDIE               0       0         0     0      0       0
+##   ILE DE France                 1       0         0     0      0       0
+##   LANGUEDOC ROUSSILLON          0       0         0     0      0       0
+##   LIMOUSIN                      0       0         0     0      0       0
+##   LORRAINE                      0       0         0     0      0       0
+##   MIDI PYRENEES                 0       0         0     0      0       0
+##   NORD PAS DE CALAIS            0       0         0     0      0       1
+##   PACA                          0       0         0     0      0       0
+##   PAYS DE LA LOIRE              0       0         0     0      0       0
+##   PICARDIE                      0       0         0     0      0       0
+##   POITOU CHANRENTES             0       0         0     0      0       0
+##   RHONE ALPES                   0       0         0     0      0       0
 ##                       
-##                        EMED EQUALIFE \nFIRSNET MILLENIUM FIN D'ANNÉE
-##   ALSACE                  0                                        0
-##   AQUITAINE               0                                        0
-##   AUVERGNE                0                                        0
-##   BASSE NORMANDIE         0                                        0
-##   BOURGOGNE               0                                        0
-##   BRETAGNE                0                                        0
-##   CENTRE                  0                                        0
-##   CHAMPAGNE ARDENNES      0                                        0
-##   CORSE                   0                                        0
-##   DOM                     0                                        0
-##   FRANCHE CONTE           0                                        1
-##   HAUTE NORMANDIE         0                                        0
-##   ILE DE France           0                                        0
-##   LANGUEDOC ROUSSILLON    0                                        0
-##   LIMOUSIN                0                                        0
-##   LORRAINE                0                                        0
-##   MIDI PYRENEES           1                                        0
-##   NORD PAS DE CALAIS      0                                        0
-##   PACA                    0                                        0
-##   PAYS DE LA LOIRE        0                                        0
-##   PICARDIE                0                                        0
-##   POITOU CHANRENTES       0                                        0
-##   RHONE ALPES             0                                        0
-##                       
-##                        EXPERT SANTE EXPERT SANTÉ FIRSTNET URGENCE
-##   ALSACE                          0            0                0
-##   AQUITAINE                       0            0                0
-##   AUVERGNE                        0            0                0
-##   BASSE NORMANDIE                 0            0                0
-##   BOURGOGNE                       0            0                0
-##   BRETAGNE                        0            0                0
-##   CENTRE                          0            0                0
-##   CHAMPAGNE ARDENNES              0            0                0
-##   CORSE                           0            0                0
-##   DOM                             0            0                0
-##   FRANCHE CONTE                   0            0                1
-##   HAUTE NORMANDIE                 0            0                0
-##   ILE DE France                   0            0                0
-##   LANGUEDOC ROUSSILLON            0            0                0
-##   LIMOUSIN                        0            0                0
-##   LORRAINE                        0            0                0
-##   MIDI PYRENEES                   0            1                0
-##   NORD PAS DE CALAIS              0            0                0
-##   PACA                            0            0                0
-##   PAYS DE LA LOIRE                0            0                0
-##   PICARDIE                        0            0                0
-##   POITOU CHANRENTES               0            0                0
-##   RHONE ALPES                     1            0                0
-##                       
-##                        FISTNET DE CERNET H++ HOPITAL MANAGER
-##   ALSACE                               0   0               0
-##   AQUITAINE                            0   0               0
-##   AUVERGNE                             0   0               0
-##   BASSE NORMANDIE                      0   0               0
-##   BOURGOGNE                            0   0               0
-##   BRETAGNE                             0   0               0
-##   CENTRE                               1   0               0
-##   CHAMPAGNE ARDENNES                   0   0               0
-##   CORSE                                0   0               0
-##   DOM                                  0   0               0
-##   FRANCHE CONTE                        0   0               0
-##   HAUTE NORMANDIE                      0   0               0
-##   ILE DE France                        0   1               0
-##   LANGUEDOC ROUSSILLON                 0   0               0
-##   LIMOUSIN                             0   0               0
-##   LORRAINE                             0   0               0
-##   MIDI PYRENEES                        0   0               0
-##   NORD PAS DE CALAIS                   0   0               1
-##   PACA                                 0   0               0
-##   PAYS DE LA LOIRE                     0   0               0
-##   PICARDIE                             0   0               0
-##   POITOU CHANRENTES                    0   0               0
-##   RHONE ALPES                          0   0               0
-##                       
-##                        MAIL ATTENTE DE REPONSE MAIL ATTENTE REPONSE
-##   ALSACE                                     0                    0
-##   AQUITAINE                                  0                    0
-##   AUVERGNE                                   0                   11
-##   BASSE NORMANDIE                            0                    6
-##   BOURGOGNE                                  0                    0
-##   BRETAGNE                                   0                    7
-##   CENTRE                                     0                   16
-##   CHAMPAGNE ARDENNES                         0                    0
-##   CORSE                                      0                    0
-##   DOM                                        0                   13
-##   FRANCHE CONTE                              0                    0
-##   HAUTE NORMANDIE                            0                    7
-##   ILE DE France                              0                   16
-##   LANGUEDOC ROUSSILLON                       0                    7
-##   LIMOUSIN                                   0                    0
-##   LORRAINE                                   0                    0
-##   MIDI PYRENEES                              0                    0
-##   NORD PAS DE CALAIS                         0                    0
-##   PACA                                       0                    0
-##   PAYS DE LA LOIRE                           0                    9
-##   PICARDIE                                   0                   11
-##   POITOU CHANRENTES                         17                    0
-##   RHONE ALPES                                0                   48
-##                       
-##                        MAIL ENVOYÉ SUR LE SITE RUBRIQUE NOUS CONTACTER
-##   ALSACE                                                             0
-##   AQUITAINE                                                          0
-##   AUVERGNE                                                           0
-##   BASSE NORMANDIE                                                    0
-##   BOURGOGNE                                                          0
-##   BRETAGNE                                                           0
-##   CENTRE                                                             0
-##   CHAMPAGNE ARDENNES                                                 0
-##   CORSE                                                              0
-##   DOM                                                                0
-##   FRANCHE CONTE                                                      0
-##   HAUTE NORMANDIE                                                    0
-##   ILE DE France                                                      0
-##   LANGUEDOC ROUSSILLON                                               0
-##   LIMOUSIN                                                           0
-##   LORRAINE                                                           0
-##   MIDI PYRENEES                                                      0
-##   NORD PAS DE CALAIS                                                 0
-##   PACA                                                               0
-##   PAYS DE LA LOIRE                                                   0
-##   PICARDIE                                                           0
-##   POITOU CHANRENTES                                                  0
-##   RHONE ALPES                                                        7
-##                       
-##                        MAIL LE 15/07 ATTENTE RÉPONSE
-##   ALSACE                                           0
-##   AQUITAINE                                        0
-##   AUVERGNE                                         0
-##   BASSE NORMANDIE                                  0
-##   BOURGOGNE                                        0
-##   BRETAGNE                                         0
-##   CENTRE                                           0
-##   CHAMPAGNE ARDENNES                               0
-##   CORSE                                            0
-##   DOM                                              0
-##   FRANCHE CONTE                                    1
-##   HAUTE NORMANDIE                                  0
-##   ILE DE France                                    0
-##   LANGUEDOC ROUSSILLON                             0
-##   LIMOUSIN                                         0
-##   LORRAINE                                         0
-##   MIDI PYRENEES                                    0
-##   NORD PAS DE CALAIS                               0
-##   PACA                                             0
-##   PAYS DE LA LOIRE                                 0
-##   PICARDIE                                         0
-##   POITOU CHANRENTES                                0
-##   RHONE ALPES                                      0
-##                       
-##                        MATRIX.\nSILLAGE URGENCE À PARTIR DU 16 JUIN
-##   ALSACE                                                          0
-##   AQUITAINE                                                       0
-##   AUVERGNE                                                        1
-##   BASSE NORMANDIE                                                 0
-##   BOURGOGNE                                                       0
-##   BRETAGNE                                                        0
-##   CENTRE                                                          0
-##   CHAMPAGNE ARDENNES                                              0
-##   CORSE                                                           0
-##   DOM                                                             0
-##   FRANCHE CONTE                                                   0
-##   HAUTE NORMANDIE                                                 0
-##   ILE DE France                                                   0
-##   LANGUEDOC ROUSSILLON                                            0
-##   LIMOUSIN                                                        0
-##   LORRAINE                                                        0
-##   MIDI PYRENEES                                                   0
-##   NORD PAS DE CALAIS                                              0
-##   PACA                                                            0
-##   PAYS DE LA LOIRE                                                0
-##   PICARDIE                                                        0
-##   POITOU CHANRENTES                                               0
-##   RHONE ALPES                                                     0
-##                       
-##                        MCKESSON - CROSSWAY HÔPITAL ADAPTÉ MEDIBASE (OSOFT)
-##   ALSACE                                                0                0
-##   AQUITAINE                                             0                1
-##   AUVERGNE                                              0                0
-##   BASSE NORMANDIE                                       0                0
-##   BOURGOGNE                                             0                0
-##   BRETAGNE                                              0                0
-##   CENTRE                                                0                0
-##   CHAMPAGNE ARDENNES                                    0                0
-##   CORSE                                                 0                0
-##   DOM                                                   0                0
-##   FRANCHE CONTE                                         0                0
-##   HAUTE NORMANDIE                                       0                0
-##   ILE DE France                                         0                0
-##   LANGUEDOC ROUSSILLON                                  0                0
-##   LIMOUSIN                                              0                0
-##   LORRAINE                                              1                0
-##   MIDI PYRENEES                                         0                0
-##   NORD PAS DE CALAIS                                    0                0
-##   PACA                                                  0                0
-##   PAYS DE LA LOIRE                                      0                0
-##   PICARDIE                                              0                0
-##   POITOU CHANRENTES                                     0                0
-##   RHONE ALPES                                           0                0
-##                       
-##                        MEDIBOARD MÉDICAL OBJECT MEDINTUX MEDIS URG
-##   ALSACE                       0              0        0         0
-##   AQUITAINE                    0              0        0         0
-##   AUVERGNE                     0              0        0         0
-##   BASSE NORMANDIE              0              0        0         0
-##   BOURGOGNE                    0              0        0         0
-##   BRETAGNE                     0              0        0         1
-##   CENTRE                       0              0        0         0
-##   CHAMPAGNE ARDENNES           0              0        0         0
-##   CORSE                        0              0        0         0
-##   DOM                          0              0        0         0
-##   FRANCHE CONTE                0              0        0         0
-##   HAUTE NORMANDIE              0              0        0         0
-##   ILE DE France                0              0        0         0
-##   LANGUEDOC ROUSSILLON         0              0        0         0
-##   LIMOUSIN                     0              0        0         0
-##   LORRAINE                     0              0        0         0
-##   MIDI PYRENEES                2              2        0         0
-##   NORD PAS DE CALAIS           0              0        0         0
-##   PACA                         0              0        1         0
-##   PAYS DE LA LOIRE             0              0        0         0
-##   PICARDIE                     0              0        0         0
-##   POITOU CHANRENTES            0              0        0         0
-##   RHONE ALPES                  0              0        0         0
-##                       
-##                        MILLENIUM MILLENIUM - FIRSTNET M-PLUS NAFAMA
-##   ALSACE                       0                    0      0      0
-##   AQUITAINE                    0                    0      1      0
-##   AUVERGNE                     0                    0      0      0
-##   BASSE NORMANDIE              0                    0      0      0
-##   BOURGOGNE                    0                    0      0      0
-##   BRETAGNE                     0                    0      0      0
-##   CENTRE                       0                    0      0      0
-##   CHAMPAGNE ARDENNES           0                    0      0      1
-##   CORSE                        0                    0      0      0
-##   DOM                          0                    0      0      0
-##   FRANCHE CONTE                0                    4      0      0
-##   HAUTE NORMANDIE              0                    0      0      0
-##   ILE DE France                0                    0      0      0
-##   LANGUEDOC ROUSSILLON         0                    0      0      0
-##   LIMOUSIN                     0                    0      0      0
-##   LORRAINE                     0                    0      0      0
-##   MIDI PYRENEES                0                    0      0      0
-##   NORD PAS DE CALAIS           1                    0      0      0
-##   PACA                         0                    0      0      0
-##   PAYS DE LA LOIRE             0                    0      0      0
-##   PICARDIE                     0                    0      0      0
-##   POITOU CHANRENTES            0                    0      0      0
-##   RHONE ALPES                  0                    0      0      0
-##                       
-##                        NON INFORMATISÉ ORBIS ORIRIS (CORMIN) OSIRIS OSOFT
-##   ALSACE                             0     1               0      0     0
-##   AQUITAINE                          0     0               0      0     0
-##   AUVERGNE                           0     2               0      0     0
-##   BASSE NORMANDIE                    0     0               1      0     0
-##   BOURGOGNE                          0     0               0      0     0
-##   BRETAGNE                           1     1               0      0     0
-##   CENTRE                             0     0               0      0     0
-##   CHAMPAGNE ARDENNES                 0     0               0      0     0
-##   CORSE                              0     0               0      0     0
-##   DOM                                0     0               0      0     0
-##   FRANCHE CONTE                      0     0               0      0     0
-##   HAUTE NORMANDIE                    0     0               0      0     0
-##   ILE DE France                      0     0               0      0     0
-##   LANGUEDOC ROUSSILLON               0     0               0      0     0
-##   LIMOUSIN                           0     0               0      0     0
-##   LORRAINE                           0     0               0      0     0
-##   MIDI PYRENEES                      0     0               0      0     0
-##   NORD PAS DE CALAIS                 0     0               0      1     1
-##   PACA                               0     0               0      0     0
-##   PAYS DE LA LOIRE                   0     0               0      0     0
-##   PICARDIE                           0     0               0      0     0
-##   POITOU CHANRENTES                  0     0               0      0     0
-##   RHONE ALPES                        0     0               0      0     0
-##                       
-##                        PAS DE LOGICIEL PAS DE LOGICIEL DX CARE EN PROJET
-##   ALSACE                             0                                 0
-##   AQUITAINE                          0                                 0
-##   AUVERGNE                           0                                 0
-##   BASSE NORMANDIE                    0                                 0
-##   BOURGOGNE                          0                                 0
-##   BRETAGNE                           0                                 0
-##   CENTRE                             0                                 0
-##   CHAMPAGNE ARDENNES                 0                                 0
-##   CORSE                              0                                 0
-##   DOM                                0                                 0
-##   FRANCHE CONTE                      0                                 0
-##   HAUTE NORMANDIE                    0                                 0
-##   ILE DE France                      0                                 0
-##   LANGUEDOC ROUSSILLON               0                                 0
-##   LIMOUSIN                           0                                 0
-##   LORRAINE                           0                                 0
-##   MIDI PYRENEES                      0                                 0
-##   NORD PAS DE CALAIS                 0                                 0
-##   PACA                               0                                 0
-##   PAYS DE LA LOIRE                   0                                 0
-##   PICARDIE                           0                                 1
-##   POITOU CHANRENTES                  1                                 0
-##   RHONE ALPES                        0                                 0
-##                       
-##                        PAS DE LOGICIEL UNIQUEMENT LOGICIEL DE GESTION ADMINISTRATIVE
-##   ALSACE                                                                           0
-##   AQUITAINE                                                                        0
-##   AUVERGNE                                                                         0
-##   BASSE NORMANDIE                                                                  0
-##   BOURGOGNE                                                                        0
-##   BRETAGNE                                                                         0
-##   CENTRE                                                                           1
-##   CHAMPAGNE ARDENNES                                                               0
-##   CORSE                                                                            0
-##   DOM                                                                              0
-##   FRANCHE CONTE                                                                    0
-##   HAUTE NORMANDIE                                                                  0
-##   ILE DE France                                                                    0
-##   LANGUEDOC ROUSSILLON                                                             0
-##   LIMOUSIN                                                                         0
-##   LORRAINE                                                                         0
-##   MIDI PYRENEES                                                                    0
-##   NORD PAS DE CALAIS                                                               0
-##   PACA                                                                             0
-##   PAYS DE LA LOIRE                                                                 0
-##   PICARDIE                                                                         0
-##   POITOU CHANRENTES                                                                0
-##   RHONE ALPES                                                                      0
-##                       
-##                        PAS D'INFORMATISATION DÉPLOIEMENT PARTIEL PAR \nSILLAGE NOV 2014
-##   ALSACE                                                                              0
-##   AQUITAINE                                                                           0
-##   AUVERGNE                                                                            0
-##   BASSE NORMANDIE                                                                     0
-##   BOURGOGNE                                                                           0
-##   BRETAGNE                                                                            1
-##   CENTRE                                                                              0
-##   CHAMPAGNE ARDENNES                                                                  0
-##   CORSE                                                                               0
-##   DOM                                                                                 0
-##   FRANCHE CONTE                                                                       0
-##   HAUTE NORMANDIE                                                                     0
-##   ILE DE France                                                                       0
-##   LANGUEDOC ROUSSILLON                                                                0
-##   LIMOUSIN                                                                            0
-##   LORRAINE                                                                            0
-##   MIDI PYRENEES                                                                       0
-##   NORD PAS DE CALAIS                                                                  0
-##   PACA                                                                                0
-##   PAYS DE LA LOIRE                                                                    0
-##   PICARDIE                                                                            0
-##   POITOU CHANRENTES                                                                   0
-##   RHONE ALPES                                                                         0
-##                       
-##                        POLIMEDIS - EQUAFILE POLYMEDIS POLYMEDIS - H+ACUTE
-##   ALSACE                                  0         0                   0
-##   AQUITAINE                               0         0                   0
-##   AUVERGNE                                0         0                   0
-##   BASSE NORMANDIE                         0         0                   0
-##   BOURGOGNE                               0         0                   0
-##   BRETAGNE                                0         0                   0
-##   CENTRE                                  0         0                   0
-##   CHAMPAGNE ARDENNES                      0         5                   0
-##   CORSE                                   0         0                   0
-##   DOM                                     0         0                   0
-##   FRANCHE CONTE                           1         0                   0
-##   HAUTE NORMANDIE                         0         0                   0
-##   ILE DE France                           0         0                   0
-##   LANGUEDOC ROUSSILLON                    0         0                   0
-##   LIMOUSIN                                0         0                   0
-##   LORRAINE                                0         0                   1
-##   MIDI PYRENEES                           0         0                   0
-##   NORD PAS DE CALAIS                      0         1                   0
-##   PACA                                    0         0                   0
-##   PAYS DE LA LOIRE                        0         0                   0
-##   PICARDIE                                0         0                   0
-##   POITOU CHANRENTES                       0         0                   0
-##   RHONE ALPES                             0         0                   0
-##                       
-##                        QCARE DE LA SOCIÉTÉ C3 RESURGENCES SANOCOM
-##   ALSACE                                    0           1       0
-##   AQUITAINE                                 0           1       2
-##   AUVERGNE                                  0           0       0
-##   BASSE NORMANDIE                           0           2       0
-##   BOURGOGNE                                 0           0       0
-##   BRETAGNE                                  0           3       0
-##   CENTRE                                    0           0       0
-##   CHAMPAGNE ARDENNES                        0           1       0
-##   CORSE                                     0           0       0
-##   DOM                                       0           0       0
-##   FRANCHE CONTE                             0           3       0
-##   HAUTE NORMANDIE                           0           1       0
-##   ILE DE France                             0           0       0
-##   LANGUEDOC ROUSSILLON                      0           0       0
-##   LIMOUSIN                                  0           7       0
-##   LORRAINE                                  0          17       0
-##   MIDI PYRENEES                             0           0       0
-##   NORD PAS DE CALAIS                        0           4       0
-##   PACA                                      1           2       0
-##   PAYS DE LA LOIRE                          0           3       0
-##   PICARDIE                                  0           0       0
-##   POITOU CHANRENTES                         0           1       0
-##   RHONE ALPES                               0           0       0
-##                       
-##                        SHAREGATE (WARESYSTEM) SIDSU SIGEMS SILLAGE
-##   ALSACE                                    0     0      0       0
-##   AQUITAINE                                 2     9      2       0
-##   AUVERGNE                                  0     0      0       0
-##   BASSE NORMANDIE                           0     0      0       1
-##   BOURGOGNE                                 0     0      0       0
-##   BRETAGNE                                  0     0      0       2
-##   CENTRE                                    0     0      0       0
-##   CHAMPAGNE ARDENNES                        0     0      0       0
-##   CORSE                                     0     0      0       0
-##   DOM                                       0     0      0       0
-##   FRANCHE CONTE                             0     0      0       0
-##   HAUTE NORMANDIE                           0     0      0       0
-##   ILE DE France                             0     0      0       0
-##   LANGUEDOC ROUSSILLON                      0     0      0       0
-##   LIMOUSIN                                  0     0      0       0
-##   LORRAINE                                  0     0      0       0
-##   MIDI PYRENEES                             0     0      0       0
-##   NORD PAS DE CALAIS                        0     0      0       1
-##   PACA                                      0     0      0       0
-##   PAYS DE LA LOIRE                          0     0      0       0
-##   PICARDIE                                  0     0      0       0
-##   POITOU CHANRENTES                         0     0      0       0
-##   RHONE ALPES                               0     0      0       0
-##                       
-##                        SILLAGE -URGENCES
-##   ALSACE                               0
-##   AQUITAINE                            2
-##   AUVERGNE                             0
-##   BASSE NORMANDIE                      0
-##   BOURGOGNE                            0
-##   BRETAGNE                             0
-##   CENTRE                               0
-##   CHAMPAGNE ARDENNES                   0
-##   CORSE                                0
-##   DOM                                  0
-##   FRANCHE CONTE                        0
-##   HAUTE NORMANDIE                      0
-##   ILE DE France                        0
-##   LANGUEDOC ROUSSILLON                 0
-##   LIMOUSIN                             0
-##   LORRAINE                             0
-##   MIDI PYRENEES                        0
-##   NORD PAS DE CALAIS                   0
-##   PACA                                 0
-##   PAYS DE LA LOIRE                     0
-##   PICARDIE                             0
-##   POITOU CHANRENTES                    0
-##   RHONE ALPES                          0
-##                       
-##                        SITE ST JULIEN URQUAL\nSITE DEVÉ ICARE
-##   ALSACE                                                    0
-##   AQUITAINE                                                 0
-##   AUVERGNE                                                  0
-##   BASSE NORMANDIE                                           0
-##   BOURGOGNE                                                 0
-##   BRETAGNE                                                  0
-##   CENTRE                                                    0
-##   CHAMPAGNE ARDENNES                                        0
-##   CORSE                                                     0
-##   DOM                                                       0
-##   FRANCHE CONTE                                             0
-##   HAUTE NORMANDIE                                           1
-##   ILE DE France                                             0
-##   LANGUEDOC ROUSSILLON                                      0
-##   LIMOUSIN                                                  0
-##   LORRAINE                                                  0
-##   MIDI PYRENEES                                             0
-##   NORD PAS DE CALAIS                                        0
-##   PACA                                                      0
-##   PAYS DE LA LOIRE                                          0
-##   PICARDIE                                                  0
-##   POITOU CHANRENTES                                         0
-##   RHONE ALPES                                               0
-##                       
-##                        SPEC (CALYSTÈNE) TRACK CARE TRACK-CARE TU-ORUPACA
-##   ALSACE                              0          0          0          0
-##   AQUITAINE                           0          0          1          0
-##   AUVERGNE                            0          0          0          0
-##   BASSE NORMANDIE                     0          0          0          0
-##   BOURGOGNE                           0          0          0          0
-##   BRETAGNE                            0          0          0          0
-##   CENTRE                              0          0          0          0
-##   CHAMPAGNE ARDENNES                  0          0          0          0
-##   CORSE                               0          0          0          4
-##   DOM                                 0          0          0          0
-##   FRANCHE CONTE                       0          0          0          0
-##   HAUTE NORMANDIE                     0          0          0          0
-##   ILE DE France                       0          0          0          0
-##   LANGUEDOC ROUSSILLON                0          0          0          1
-##   LIMOUSIN                            1          0          0          0
-##   LORRAINE                            0          0          0          0
-##   MIDI PYRENEES                       0          0          0          2
-##   NORD PAS DE CALAIS                  0          4          0          0
-##   PACA                                0          0          0         40
-##   PAYS DE LA LOIRE                    0          0          0          0
-##   PICARDIE                            0          0          0          0
-##   POITOU CHANRENTES                   0          0          0          0
-##   RHONE ALPES                         0          0          0          0
-##                       
-##                        URQUAL URQUAL (MCKESSON)
-##   ALSACE                    1                 0
-##   AQUITAINE                 1                 2
-##   AUVERGNE                  1                 0
-##   BASSE NORMANDIE           0                 0
-##   BOURGOGNE                 0                 0
-##   BRETAGNE                  1                 0
-##   CENTRE                    0                 0
-##   CHAMPAGNE ARDENNES        3                 0
-##   CORSE                     0                 0
-##   DOM                       0                 0
-##   FRANCHE CONTE             0                 0
-##   HAUTE NORMANDIE           0                 0
-##   ILE DE France             0                 0
-##   LANGUEDOC ROUSSILLON      1                 0
-##   LIMOUSIN                  2                 0
-##   LORRAINE                  0                 0
-##   MIDI PYRENEES             5                 0
-##   NORD PAS DE CALAIS        3                 0
-##   PACA                      2                 0
-##   PAYS DE LA LOIRE          0                 0
-##   PICARDIE                  0                 0
-##   POITOU CHANRENTES         0                 0
-##   RHONE ALPES               0                 0
-##                       
-##                        URQUAL (MIGRATION VERS ORBIS EN COURS)\nGYNÉCO MAT : ORBIS (PAS DE RPU)
-##   ALSACE                                                                                     0
-##   AQUITAINE                                                                                  0
-##   AUVERGNE                                                                                   0
-##   BASSE NORMANDIE                                                                            0
-##   BOURGOGNE                                                                                  0
-##   BRETAGNE                                                                                   0
-##   CENTRE                                                                                     0
-##   CHAMPAGNE ARDENNES                                                                         0
-##   CORSE                                                                                      0
-##   DOM                                                                                        0
-##   FRANCHE CONTE                                                                              0
-##   HAUTE NORMANDIE                                                                            0
-##   ILE DE France                                                                              0
-##   LANGUEDOC ROUSSILLON                                                                       0
-##   LIMOUSIN                                                                                   0
-##   LORRAINE                                                                                   0
-##   MIDI PYRENEES                                                                              0
-##   NORD PAS DE CALAIS                                                                         0
-##   PACA                                                                                       0
-##   PAYS DE LA LOIRE                                                                           1
-##   PICARDIE                                                                                   0
-##   POITOU CHANRENTES                                                                          0
-##   RHONE ALPES                                                                                0
+##                        SOFTWAY MEDICAL SPEC TRACK CARE TU-ORUPACA URQUAL
+##   ALSACE                             0    0          0          0      1
+##   AQUITAINE                          0    0          1          0      3
+##   AUVERGNE                           0    0          0          0      1
+##   BASSE NORMANDIE                    0    0          0          0      0
+##   BOURGOGNE                          3    0          0          0      3
+##   BRETAGNE                           0    0          0          0      1
+##   CENTRE                             0    0          0          0      0
+##   CHAMPAGNE ARDENNES                 0    0          0          0      3
+##   CORSE                              0    0          0          4      0
+##   DOM                                0    0          0          0      0
+##   FRANCHE CONTE                      0    0          0          0      0
+##   HAUTE NORMANDIE                    0    0          0          0      1
+##   ILE DE France                      0    0          0          0      1
+##   LANGUEDOC ROUSSILLON               0    0          0          1      1
+##   LIMOUSIN                           0    1          0          0      2
+##   LORRAINE                           0    0          0          0      0
+##   MIDI PYRENEES                      0    0          0          2      5
+##   NORD PAS DE CALAIS                 0    0          4          0      4
+##   PACA                               0    0          0         40      2
+##   PAYS DE LA LOIRE                   0    0          0          0      2
+##   PICARDIE                           0    0          0          0      0
+##   POITOU CHANRENTES                  0    0          0          0      0
+##   RHONE ALPES                        0    0          0          0      1
 ##                       
 ##                        XPERTHIS
 ##   ALSACE                      0
@@ -1142,6 +470,42 @@ d$logiciel &lt;- a</code></pre>
 ##   PICARDIE                    0
 ##   POITOU CHANRENTES           0
 ##   RHONE ALPES                 0</code></pre>
+</div>
+<div id="comparaison-nb-sulogiciels-par-region" class="section level4">
+<h4>Comparaison nb SU/Logiciels par région</h4>
+<ul>
+<li>SU: nombre de services d’urgence</li>
+<li>Logiciels: nombre de logiciels répertorié (au 1/9/2014)</li>
+<li>Rapport: % d’équipement</li>
+</ul>
+<pre><code>##                      Logiciels SU rapport
+## ALSACE                      16 19   84.21
+## AQUITAINE                   35 41   85.37
+## AUVERGNE                     2 20   10.00
+## BASSE NORMANDIE              8 25   32.00
+## BOURGOGNE                   20 23   86.96
+## BRETAGNE                    10 32   31.25
+## CENTRE                       6 28   21.43
+## CHAMPAGNE ARDENNES          16 20   80.00
+## CORSE                        4  8   50.00
+## DOM                          2 14   14.29
+## FRANCHE CONTE               11 13   84.62
+## HAUTE NORMANDIE              7 21   33.33
+## ILE DE France                4 97    4.12
+## LANGUEDOC ROUSSILLON         3 35    8.57
+## LIMOUSIN                    10 10  100.00
+## LORRAINE                    23 27   85.19
+## MIDI PYRENEES               30 37   81.08
+## NORD PAS DE CALAIS          27 37   72.97
+## PACA                        48 53   90.57
+## PAYS DE LA LOIRE             8 21   38.10
+## PICARDIE                     2 21    9.52
+## POITOU CHANRENTES            3 24   12.50
+## RHONE ALPES                 19 71   26.76</code></pre>
+<ul>
+<li>nombre de logiciels répertoriés: 314</li>
+<li>nombre de services répertoriés: 697 . Le nombre de SU est surestimé par le répertoire FINESS (par ex. des établissements sans SU mais avec une antenne SMUR saisonnière y figurent).</li>
+</ul>
 <p>Comparer public, privé et PSPH</p>
 </div>
 </div>

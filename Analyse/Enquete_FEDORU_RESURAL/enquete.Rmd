@@ -9,23 +9,31 @@ Méthodologie
 La liste des SU a été récupérée à partir du fichier [FINESS](adresse ?) en sélectionnant toutes les régions de France + médecine d'urgence. L'export se fait en utilisabt le format étendu. Le fichier résultant est enregistré sous __DATA/SU_France_2014.csv__. A partir de ce fichier, les colonnes ... ont été isolées. Le fichier obtenu a été mis en ligne via __google drive__ et mis à la disposition des membres du CA.
 
 Google ayant modifié les conditions d'accès au _drive_, il faut procéder en trois temps pour récupérer les données:
+
 1. ouvrir le fichier dans drive et importer le fichier au format .csv.
 2. l'ouvrir dans calc et le réenregisterer au format .csv en précisant que les champs doivent être entourés de guillemets (sinon ça plante)
 2. transférer le ficher dans le répertoire de travail et le renommer __su_France_ + AAAAMMJJ + .csv__.
 
-```{r init}
-date <- "20140815"
+```{r init, echo=FALSE}
+date <- "20140904"
 file <- paste0("~/Documents/Resural/FEDORU/InformatisationSU/su_France_", date, ".csv")
 d <- read.table(file, header=TRUE, sep=",")
 names(d)
 str(d)
 ```
-### Normalisation des logiciels
+#### Normalisation du fichier
 
-```{r normaliser}
+- Suppression des blancs
+- suppression des caractères accentués
+- correction du nom des logiciels (+++)
+
+```{r normaliser, echo=FALSE}
 library(stringr)
 a <- as.character(d$logiciel)
 a <- str_trim(a)
+a <- gsub("é","e", a, fixed=TRUE)
+a <- gsub("É","E", a, fixed=TRUE)
+
 
 a[a==""] <- NA
 a[a=="autre"] <- NA
@@ -66,11 +74,57 @@ a <- toupper(a)
 d$logiciel <- a
 ```
 
+#### Nombre (théorique) de SU par région:
 
-```{r tri}
-summary(as.factor(d$logiciel))
+```{r, echo=FALSE}
 summary(d$Région)
-table(d$Région, d$logiciel)
+```
+
+#### Table des logiciels répertoriés
+
+On exclu les colonnes:
+
+ - "MAIL ENVOYÉ SUR LE SITE RUBRIQUE NOUS CONTACTER" (28)
+ - "MAIL ATTENTE REPONSE" (27)
+ - "NON INFORMATISÉ" (39)
+```{r, echo=FALSE}
+logiciels <- summary(as.factor(d$logiciel))
+a <- logiciels[c(-27,-28)]
+a
+```
+SU non informatisés: `r logiciels[39]`
+
+SU contactés en attente de réponse: `r logiciels[27] + logiciels[28]`
+
+#### Table logiciels par région:
+
+```{r tri, echo=FALSE}
+reg.log <- table(d$Région, d$logiciel)
+reg.log <- reg.log[, c(-27,-28,-39)]
+reg.log
+```
+
+ 
+
+```{r, echo=FALSE}
+sreg.log <- rowSums(reg.log) # Nombre de logiciels répertoriés par région
+```
+
+#### Comparaison nb SU/Logiciels par région
+
+- SU: nombre de services d'urgence
+- Logiciels: nombre de logiciels répertorié (au 1/9/2014)
+- Rapport: % d'équipement
+
+```{r ,echo=FALSE}
+su.log <- cbind(rowSums(reg.log), summary(d$Région))
+colnames(su.log) <- c("Logiciels", "SU")
+q <- as.data.frame.matrix(su.log)
+q$rapport <- round(q$Logiciels * 100 /q$SU, 2)
+q
 
 ```
+- nombre de logiciels répertoriés: `r sum(q$Logiciels)`
+- nombre de services répertoriés: `r sum(q$SU)` . Le nombre de SU est surestimé par le répertoire FINESS (par ex. des établissements sans SU mais avec une antenne SMUR saisonnière y figurent).
+ 
 Comparer public, privé et PSPH
