@@ -117,10 +117,15 @@ sreg.log <- rowSums(reg.log) # Nombre de logiciels répertoriés par région
 - Rapport: % d'équipement
 
 ```{r ,echo=FALSE}
-su.log <- cbind(rowSums(reg.log), summary(d$Région))
+sum.log <- rowSums(reg.log) # nb total de logiciels par région
+sum.su <- summary(d$Région) # nb de SU par région
+su.log <- cbind(sum.log, sum.su)
 colnames(su.log) <- c("Logiciels", "SU")
 q <- as.data.frame.matrix(su.log)
 q$rapport <- round(q$Logiciels * 100 /q$SU, 2)
+reg <- c(42,72,83,25,26,53,24,21,94,100,43,23,11,91,74,41,73,31,93,52,22,54,82)
+q$reg.id <- reg
+
 q
 
 ```
@@ -128,3 +133,39 @@ q
 - nombre de services répertoriés: `r sum(q$SU)` . Le nombre de SU est surestimé par le répertoire FINESS (par ex. des établissements sans SU mais avec une antenne SMUR saisonnière y figurent).
  
 Comparer public, privé et PSPH
+
+Cartographie
+============
+
+```{r carto, echo=FALSE}
+file <- "~/Documents/CartographieR/RCarto/france_region.RData"
+load(file)
+reg <- region@data
+plot(region)
+# ajout des centroïdes régionaux
+x <- 0
+y <- 0
+for(i in 1:22){ a = region@polygons[[i]]@labpt; x[i] = a[1]; y[i] = a[2]}
+region@data$x <- x
+region@data$y <- y
+# on merge reg et q. Le merging désorganise l'ordre des lignes du dataframe de region. En le réordonnant par ordre alphabétique, on retrove l'ordre initial.
+region@data <- merge(region@data, q, by="reg.id", all.x = TRUE)
+region@data <- region@data[order(region@data$reg.nom),]
+
+
+# affichage sur la carte du nombre de SU par région
+text(region@data$x, region@data$y, region@data$SU)
+
+# couleur
+library("RColorBrewer", lib.loc="/usr/lib/R/site-library")
+vPal4 <- rev(brewer.pal(n = 4, name = "RdYlBu"))
+eq.quart <- quantile(region@data$rapport, names = TRUE)
+eq <- as.character(cut(region@data$rapport, breaks = eq.quart, labels = vPal4, include.lowest = TRUE, right = FALSE))
+
+leg <- as.character(levels(cut(region@data$rapport, breaks = eq.quart, include.lowest = TRUE, right = FALSE)))
+
+plot(region, col=eq, border="white")
+legend("bottomleft", legend=leg, bty="n", fill=vPal4, cex=0.8, title="Densité")
+title(main="Taux de réponses (au 1/09/2014)")
+```
+
