@@ -1,3 +1,11 @@
+---
+output:
+  html_document:
+    fig_caption: yes
+    fig_height: 7
+    keep_md: yes
+    toc: yes
+---
 Enquête FEDORU
 ========================================================
 
@@ -15,7 +23,7 @@ Google ayant modifié les conditions d'accès au _drive_, il faut procéder en t
 2. transférer le ficher dans le répertoire de travail et le renommer __su_France_ + AAAAMMJJ + .csv__.
 
 ```{r init, echo=FALSE}
-date <- "20140904"
+date <- "20140915"
 file <- paste0("~/Documents/Resural/FEDORU/InformatisationSU/su_France_", date, ".csv")
 d <- read.table(file, header=TRUE, sep=",")
 names(d)
@@ -59,6 +67,7 @@ a[a=="DXCARE (Medasys)"] <- "DXCare"
 a[a=="DxCare MEDASYS"] <- "DXCare"
 a[a=="dxcare (vittel)"] <- "DXCare"
 a[a=="DxCare"] <- "DXCare"
+a[a=="Dx Care"] <- "DXCare"
 
 a[a=="hopital manager"] <- "Hopital Manager"
 a[a=="Osiris (Cormin)"] <- "Osiris"
@@ -88,10 +97,28 @@ On exclu les colonnes:
  - "MAIL ATTENTE REPONSE" (27)
  - "NON INFORMATISÉ" (39)
 ```{r, echo=FALSE}
+library("epicalc")
+
 logiciels <- summary(as.factor(d$logiciel))
 a <- logiciels[c(-27,-28)]
 a
+
+l <- d$logiciel[d$logiciel != "MAIL ENVOYE SUR LE SITE RUBRIQUE NOUS CONTACTER" & d$logiciel != "MAIL ATTENTE REPONSE"]
+tab1(l, missing=FALSE, sort.group = "increasing", cex = 0.6, cex.names = 0.6, main="Logiciels utilisés dans les SU")
+
+nr <- a["NA's"] # non réponses
+log.identifies <- sum(a) - nr # nombre de logiciels identifiés
+
 ```
+
+Nombre total de SU identifiés: `r nrow(d)`
+
+Nombre total de logiciels identifiés: `r log.identifies`
+
+Taux d'exhaustivité: `r round(log.identifies * 100 / nrow(d), 2)` %
+
+Nombre de fournisseurs identifiés: `r length(a)`
+
 SU non informatisés: `r logiciels[39]`
 
 SU contactés en attente de réponse: `r logiciels[27] + logiciels[28]`
@@ -116,17 +143,19 @@ sreg.log <- rowSums(reg.log) # Nombre de logiciels répertoriés par région
 - Logiciels: nombre de logiciels répertorié (au 1/9/2014)
 - Rapport: % d'équipement
 
-```{r ,echo=FALSE}
+```{r, echo=FALSE, comment=""}
 sum.log <- rowSums(reg.log) # nb total de logiciels par région
 sum.su <- summary(d$Région) # nb de SU par région
 su.log <- cbind(sum.log, sum.su)
 colnames(su.log) <- c("Logiciels", "SU")
 q <- as.data.frame.matrix(su.log)
+
 q$rapport <- round(q$Logiciels * 100 /q$SU, 2)
 reg <- c(42,72,83,25,26,53,24,21,94,100,43,23,11,91,74,41,73,31,93,52,22,54,82)
 q$reg.id <- reg
 
 q
+q[order(q$rapport),]
 
 ```
 - nombre de logiciels répertoriés: `r sum(q$Logiciels)`
@@ -138,10 +167,16 @@ Cartographie
 ============
 
 ```{r carto, echo=FALSE}
+
+library(sp)
+
 file <- "~/Documents/CartographieR/RCarto/france_region.RData"
 load(file)
 reg <- region@data
+
+par(mar=c(0,0,1,0))
 plot(region)
+title(main="Nombre de SU (Répertoire FINESS au 1/06/2014)")
 # ajout des centroïdes régionaux
 x <- 0
 y <- 0
@@ -151,19 +186,26 @@ region@data$y <- y
 # on merge reg et q. Le merging désorganise l'ordre des lignes du dataframe de region. En le réordonnant par ordre alphabétique, on retrove l'ordre initial.
 region@data <- merge(region@data, q, by="reg.id", all.x = TRUE)
 region@data <- region@data[order(region@data$reg.nom),]
-
+reg <- region@data
+names(reg)
 
 # affichage sur la carte du nombre de SU par région
-text(region@data$x, region@data$y, region@data$SU)
+text(region@data$x, region@data$y, region@data$SU, cex=0.8)
+
+# Logiciels répertoriés
+plot(region)
+title(main="Nombre de logiciels répertoriés au 15/09/2014")
+text(region@data$x, region@data$y, region@data$Logiciels, cex=0.8)
 
 # couleur
-library("RColorBrewer", lib.loc="/usr/lib/R/site-library")
-vPal4 <- rev(brewer.pal(n = 4, name = "RdYlBu"))
+library("RColorBrewer")
+vPal4 <- rev(brewer.pal(n = 4, name = "RdYlBu")) # palette divergente de 4 couleurs
 eq.quart <- quantile(region@data$rapport, names = TRUE)
 eq <- as.character(cut(region@data$rapport, breaks = eq.quart, labels = vPal4, include.lowest = TRUE, right = FALSE))
 
 leg <- as.character(levels(cut(region@data$rapport, breaks = eq.quart, include.lowest = TRUE, right = FALSE)))
 
+par(mar=c(0,0,1,0))
 plot(region, col=eq, border="white")
 legend("bottomleft", legend=leg, bty="n", fill=vPal4, cex=0.8, title="Densité")
 title(main="Taux de réponses (au 1/09/2014)")
