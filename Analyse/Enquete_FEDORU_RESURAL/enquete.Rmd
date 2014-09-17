@@ -23,7 +23,7 @@ Google ayant modifié les conditions d'accès au _drive_, il faut procéder en t
 2. transférer le ficher dans le répertoire de travail et le renommer __su_France_ + AAAAMMJJ + .csv__.
 
 ```{r init, echo=FALSE}
-date <- "20140915"
+date <- "20140917"
 file <- paste0("~/Documents/Resural/FEDORU/InformatisationSU/su_France_", date, ".csv")
 d <- read.table(file, header=TRUE, sep=",")
 names(d)
@@ -85,7 +85,7 @@ d$logiciel <- a
 
 #### Nombre (théorique) de SU par région:
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, comment=""}
 summary(d$Région)
 ```
 
@@ -96,18 +96,22 @@ On exclu les colonnes:
  - "MAIL ENVOYÉ SUR LE SITE RUBRIQUE NOUS CONTACTER" (28)
  - "MAIL ATTENTE REPONSE" (27)
  - "NON INFORMATISÉ" (39)
-```{r, echo=FALSE}
+```{r, echo=FALSE, comment="", fig.height=10,fig.width=10}
+
 library("epicalc")
 
 logiciels <- summary(as.factor(d$logiciel))
-a <- logiciels[c(-27,-28)]
+a <- logiciels[c(-27,-26)]
 a
 
 l <- d$logiciel[d$logiciel != "MAIL ENVOYE SUR LE SITE RUBRIQUE NOUS CONTACTER" & d$logiciel != "MAIL ATTENTE REPONSE"]
 tab1(l, missing=FALSE, sort.group = "increasing", cex = 0.6, cex.names = 0.6, main="Logiciels utilisés dans les SU")
 
-nr <- a["NA's"] # non réponses
-log.identifies <- sum(a) - nr # nombre de logiciels identifiés
+n.logiciels <- length(l)
+logi <- summary(as.factor(l))
+
+nr <- logi["NA's"] # non réponses
+log.identifies <- sum(n.logiciels) - nr # nombre de logiciels identifiés
 
 ```
 
@@ -121,11 +125,11 @@ Nombre de fournisseurs identifiés: `r length(a)`
 
 SU non informatisés: `r logiciels[39]`
 
-SU contactés en attente de réponse: `r logiciels[27] + logiciels[28]`
+SU contactés en attente de réponse: `r logiciels[27] + logiciels[26]`
 
 #### Table logiciels par région:
 
-```{r tri, echo=FALSE}
+```{r tri, echo=FALSE, comment=""}
 reg.log <- table(d$Région, d$logiciel)
 reg.log <- reg.log[, c(-27,-28,-39)]
 reg.log
@@ -133,7 +137,7 @@ reg.log
 
  
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, comment=""}
 sreg.log <- rowSums(reg.log) # Nombre de logiciels répertoriés par région
 ```
 
@@ -166,7 +170,7 @@ Comparer public, privé et PSPH
 Cartographie
 ============
 
-```{r carto, echo=FALSE}
+```{r carto, echo=FALSE, comment=""}
 
 library(sp)
 
@@ -209,5 +213,23 @@ par(mar=c(0,0,1,0))
 plot(region, col=eq, border="white")
 legend("bottomleft", legend=leg, bty="n", fill=vPal4, cex=0.8, title="Densité")
 title(main="Taux de réponses (au 1/09/2014)")
+```
+
+Transmission des RPU
+-------------------
+
+```{r, echo=FALSE, comment=""}
+on <- str_trim(toupper(as.character(d$RPU..OUI.NON.))) # on oui/non
+on[on == ""] <- "NA"
+d$RPU..OUI.NON. <- on
+
+# on <- as.factor(on) 
+summary(as.factor(on))
+
+# on ajoute une 4ème col = % de non. Plus le chiffre est élevé, moins le logiciel est bon
+t.log.on <- table(d$logiciel, on, useNA="no")
+t.log.on <- cbind(t.log.on, round(t.log.on[,3]*100/t.log.on[,4], 2))
+t.log.on
+
 ```
 
