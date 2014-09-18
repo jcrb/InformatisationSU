@@ -77,6 +77,8 @@ Google ayant modifié les conditions d'accès au _drive_, il faut procéder en t
                   24                   71 
 ```
 
+![plot of chunk region](./enquete_files/figure-html/region.png) 
+
 #### Table des logiciels répertoriés
 
 On exclu les colonnes:
@@ -134,7 +136,7 @@ Loading required package: nnet
                    35                     1                   194 
 ```
 
-![plot of chunk unnamed-chunk-2](./enquete_files/figure-html/unnamed-chunk-2.png) 
+![plot of chunk unnamed-chunk-1](./enquete_files/figure-html/unnamed-chunk-1.png) 
 
 ```
 l : 
@@ -607,64 +609,64 @@ Transmission des RPU
 ```
 
 ```
-                                                ?  NA NON OUI       
-AGFA EXAGON                                     0   1   0   0    NaN
-AGFA HEALTH CARE                                0   0   1   0    Inf
-ATALANTE                                        0   1   0   8   0.00
-AXIGATE                                         0   0   2   5  40.00
-AXIPAGE                                         0   0   1   0    Inf
-CLINICOM                                        0   0   1   8  12.50
-CORA                                            0   0   0   8   0.00
-CORETEXTE                                       0   0   1   2  50.00
-CORWIN                                          0   0   0   1   0.00
-CRISTALNET-DMU                                  0   4   1  21   4.76
-CROSSWAY                                        0   2   1  11   9.09
-DEVELOPPEMENT INTERNE                           0   0   0   2   0.00
-DIAMM                                           0   0   0   1   0.00
-DOPASOINS                                       0   0   0   1   0.00
-DOPATIENT                                       0   0   0   3   0.00
-DOPA URGENCES                                   0   0   0   2   0.00
-DPU                                             0   0   0   3   0.00
-DXCARE                                          0   0   1  18   5.56
-EMED                                            0   0   0   1   0.00
-EQUALIFE                                        0   0   0   1   0.00
-EXPERT SANTE                                    0   0   0   2   0.00
-FIRSTNET                                        0   0   1   1 100.00
-H++                                             0   0   0   1   0.00
-HOPITAL MANAGER                                 0   0   1   0    Inf
-ICARE                                           0   0   1   0    Inf
-MAIL ATTENTE REPONSE                            0 123   1  26   3.85
-MAIL ENVOYE SUR LE SITE RUBRIQUE NOUS CONTACTER 0   6   0   0    NaN
-MATRIX                                          0   0   0   1   0.00
-MEDIBASE                                        0   0   0   1   0.00
-MEDIBOARD                                       0   0   0   5   0.00
-MEDICAL OBJECT                                  0   0   0   2   0.00
-MEDINTUX                                        0   0   0   1   0.00
-MEDIQ                                           0   1   0   0    NaN
-MEDIS URG                                       0   0   0   1   0.00
-MILLENIUM                                       0   0   0   5   0.00
-M-PLUS                                          0   0   0   1   0.00
-NAFAMA                                          0   0   0   1   0.00
-NON INFORMATISE                                 0   0   1   4  25.00
-ORBIS                                           0   0   1   5  20.00
-OSIRIS                                          0   0   0   2   0.00
-OSOFT                                           0   0   0   2   0.00
-POLIMEDIS - EQUAFILE                            0   0   0   1   0.00
-POLYMEDIS                                       0   0   0   7   0.00
-QCARE                                           0   0   0   1   0.00
-RESURGENCES                                     0   3   2  48   4.17
-SAMUSCRIPT                                      0   0   1   0    Inf
-SANOCOM                                         0   0   0   2   0.00
-SHAREGATE                                       0   0   0   2   0.00
-SIDSU                                           0   0   0   9   0.00
-SIGEMS                                          0   0   2   0    Inf
-SILLAGE                                         0   0   3   4  75.00
-SOFTWAY MEDICAL                                 0   3   0   0    NaN
-SPEC                                            0   0   0   1   0.00
-TRACK CARE                                      0   0   0   5   0.00
-TU-ORUPACA                                      0   0   3  44   6.82
-URCAL                                           0   0   0   1   0.00
-URQUAL                                          1   3   3  28  10.71
-XPERTHIS                                        0   0   0   1   0.00
+                                                NON OUI     V5
+ATALANTE                                          0   8   0.00
+CORA                                              0   8   0.00
+CORWIN                                            0   1   0.00
+DEVELOPPEMENT INTERNE                             0   2   0.00
+DIAMM                                             0   1   0.00
+DOPASOINS                                         0   1   0.00
+DOPATIENT                                         0   3   0.00
+DOPA URGENCES                                     0   2   0.00
+DPU                                               0   3   0.00
+EMED                                              0   1   0.00
+EQUALIFE                                          0   1   0.00
+EXPERT SANTE                                      0   2   0.00
+H++                                               0   1   0.00
+MATRIX                                            0   1   0.00
+MEDIBASE                                          0   1   0.00
+MEDIBOARD                                         0   5   0.00
+MEDICAL OBJECT                                    0   2   0.00
+MEDINTUX                                          0   1   0.00
+MEDIS URG                                         0   1   0.00
+MILLENIUM                                         0   5   0.00
+M-PLUS                                            0   1   0.00
+NAFAMA                                            0   1   0.00
+OSIRIS                                            0   2   0.00
+OSOFT                                             0   2   0.00
+POLIMEDIS - EQUAFILE                              0   1   0.00
+POLYMEDIS                                         0   7   0.00
+QCARE                                             0   1   0.00
+SANOCOM                                           0   2   0.00
+SHAREGATE                                         0   2   0.00
+SIDSU                                             0   9   0.00
+SPEC                                              0   1   0.00
+TRACK CARE                                        0   5   0.00
+URCAL                                             0   1   0.00
+XPERTHIS                                          0   1   0.00
+MAIL ATTENTE REPONSE                              1  26   3.85
+RESURGENCES                                       2  48   4.17
+CRISTALNET-DMU                                    1  21   4.76
+DXCARE                                            1  18   5.56
+TU-ORUPACA                                        3  44   6.82
+CROSSWAY                                          1  11   9.09
+URQUAL                                            3  28  10.71
+CLINICOM                                          1   8  12.50
+ORBIS                                             1   5  20.00
+NON INFORMATISE                                   1   4  25.00
+AXIGATE                                           2   5  40.00
+CORETEXTE                                         1   2  50.00
+SILLAGE                                           3   4  75.00
+FIRSTNET                                          1   1 100.00
+AGFA HEALTH CARE                                  1   0    Inf
+AXIPAGE                                           1   0    Inf
+HOPITAL MANAGER                                   1   0    Inf
+ICARE                                             1   0    Inf
+SAMUSCRIPT                                        1   0    Inf
+SIGEMS                                            2   0    Inf
+AGFA EXAGON                                       0   0    NaN
+MAIL ENVOYE SUR LE SITE RUBRIQUE NOUS CONTACTER   0   0    NaN
+MEDIQ                                             0   0    NaN
+SOFTWAY MEDICAL                                   0   0    NaN
 ```
 

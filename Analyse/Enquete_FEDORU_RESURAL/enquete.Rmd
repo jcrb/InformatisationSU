@@ -85,8 +85,11 @@ d$logiciel <- a
 
 #### Nombre (théorique) de SU par région:
 
-```{r, echo=FALSE, comment=""}
+```{r region, echo=FALSE, comment=""}
 summary(d$Région)
+
+barplot(summary(d$Région), main="Nombre d'établissements avec service d'urgence", ylab="Nombre", las=3, cex.names=0.7)
+text(6,85, "moyenne: 24 établissements/région")
 ```
 
 #### Table des logiciels répertoriés
@@ -174,7 +177,8 @@ Cartographie
 
 library(sp)
 
-file <- "~/Documents/CartographieR/RCarto/france_region.RData"
+file <- "~/Documents/CartographieR/RCarto/france_region.RData" # fichier source
+file <- "../../france_region.RData" # copie
 load(file)
 reg <- region@data
 
@@ -229,7 +233,10 @@ summary(as.factor(on))
 # on ajoute une 4ème col = % de non. Plus le chiffre est élevé, moins le logiciel est bon
 t.log.on <- table(d$logiciel, on, useNA="no")
 t.log.on <- cbind(t.log.on, round(t.log.on[,3]*100/t.log.on[,4], 2))
-t.log.on
+# t.log.on
 
+a <- data.frame(t.log.on)
+a <- a[order(a$V5),]
+a[, 3:5]
 ```
 

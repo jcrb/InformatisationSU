@@ -1,0 +1,74 @@
+Informatisation SU
+========================================================
+author: Dr Bartier - FEDORU
+date: 18/09/2014
+
+First Slide
+========================================================
+
+```{r init, echo=FALSE}
+date <- "20140917"
+file <- paste0("~/Documents/Resural/FEDORU/InformatisationSU/su_France_", date, ".csv")
+d <- read.table(file, header=TRUE, sep=",")
+library(stringr)
+a <- as.character(d$logiciel)
+a <- str_trim(a)
+a <- gsub("é","e", a, fixed=TRUE)
+a <- gsub("É","E", a, fixed=TRUE)
+
+
+a[a==""] <- NA
+a[a=="autre"] <- NA
+a[a=="Christalnet (module DMU)"] <- "Cristalnet"
+a[a=="Clinicom (Siemens)"] <- "Clinicom"
+a[a=="CORA McKesson"] <- "Cora"
+a[a=="CrystalNet"] <- "Cristalnet"
+a[a=="DMU (CristalNet)"] <- "Cristalnet"
+
+a[a=="RESURGENCE"] <- "ResUrgences"
+a[a=="Resurgences"] <- "ResUrgences"
+a[a=="RESURGENCE (Adulte) DxCare Medasys (Pédiatrie)"] <- "ResUrgences"
+a[a=="urqual"] <- "UrQual"
+a[a=="UrQual (McKesson)"] <- "UrQual"
+a[a=="Urqual (McKesson)"] <- "UrQual"
+
+a[a=="Cristalnet"] <- "CristalNet"
+a[a=="CORA"] <- "Cora"
+a[a=="CLINICOM (Creil)"] <- "Clinicom"
+
+a[a=="DxCare (Medasys)"] <- "DXCare"
+a[a=="DXCARE (Medasys)"] <- "DXCare"
+a[a=="DxCare MEDASYS"] <- "DXCare"
+a[a=="dxcare (vittel)"] <- "DXCare"
+a[a=="DxCare"] <- "DXCare"
+a[a=="Dx Care"] <- "DXCare"
+
+a[a=="hopital manager"] <- "Hopital Manager"
+a[a=="Osiris (Cormin)"] <- "Osiris"
+a[a=="OSIRIS Evolucare"] <- "Osiris"
+a[a=="OSOFT"] <- "Osoft"
+a[a=="ﾠ"] <- NA
+a[a=="cf ch lodeve"] <- NA
+a[a=="Etablissement prioritaire !"] <- NA
+a[a=="Pas de SAU"] <- NA
+a[!is.na(a) & nchar(a) < 3] <- NA
+
+a <- toupper(a)
+d$logiciel <- a
+
+table(d$Région)
+```
+
+Slide With Code
+========================================================
+
+```{r}
+summary(cars)
+```
+
+Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+plot(cars)
+```
