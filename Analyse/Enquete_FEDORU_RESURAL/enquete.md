@@ -670,3 +670,43 @@ MEDIQ                                             0   0    NaN
 SOFTWAY MEDICAL                                   0   0    NaN
 ```
 
+Table logiciels - Finess
+=========================
+
+
+```r
+a <- d[, c("FINNES", "logiciel")]
+a <- a[!is.na(a$logiciel),]
+a <- a[a$logiciel != "MAIL ATTENTE REPONSE",]
+a <- a[a$logiciel != "NON INFORMATISE",]
+a <- a[a$logiciel != "MAIL ENVOYE SUR LE SITE RUBRIQUE NOUS CONTACTER",]
+names(a) <- c("FINESS_GEO", "LOGICIEL")
+write.csv2(a, file="logiciels_Finess_20140915.csv", row.names = FALSE)
+
+# le top ten
+x <- tab1(a$LOGICIEL, missing=FALSE, sort.group = "increasing", cex = 0.6, cex.names = 0.6, main="Logiciels utilisés dans les SU")
+```
+
+![plot of chunk logfiness](./enquete_files/figure-html/logfiness.png) 
+
+```r
+x1 <- x$output.table
+x2 <- tail(x1, 11)
+x2 <- x2[-11,]
+x2[order(x2[,1], decreasing = TRUE),]
+```
+
+```
+##                Frequency Percent Cum. percent
+## RESURGENCES           53    16.2        100.0
+## TU-ORUPACA            47    14.4         83.8
+## URQUAL                35    10.7         69.4
+## CRISTALNET-DMU        26     8.0         58.7
+## DXCARE                19     5.8         50.8
+## CROSSWAY              14     4.3         45.0
+## ATALANTE               9     2.8         35.2
+## CLINICOM               9     2.8         37.9
+## SIDSU                  9     2.8         40.7
+## CORA                   8     2.4         32.4
+```
+

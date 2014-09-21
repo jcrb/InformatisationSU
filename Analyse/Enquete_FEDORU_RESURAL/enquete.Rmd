@@ -240,3 +240,38 @@ a <- a[order(a$V5),]
 a[, 3:5]
 ```
 
+Table logiciels - Finess
+=========================
+
+```{r logfiness}
+a <- d[, c("FINNES", "logiciel")]
+a <- a[!is.na(a$logiciel),]
+a <- a[a$logiciel != "MAIL ATTENTE REPONSE",]
+a <- a[a$logiciel != "NON INFORMATISE",]
+a <- a[a$logiciel != "MAIL ENVOYE SUR LE SITE RUBRIQUE NOUS CONTACTER",]
+names(a) <- c("FINESS_GEO", "LOGICIEL")
+write.csv2(a, file="logiciels_Finess_20140915.csv", row.names = FALSE)
+
+# le top ten
+x <- tab1(a$LOGICIEL, missing=FALSE, sort.group = "increasing", cex = 0.6, cex.names = 0.6, main="Logiciels utilisés dans les SU")
+x1 <- x$output.table
+x2 <- tail(x1, 11)
+x2 <- x2[-11,]
+x2[order(x2[,1], decreasing = TRUE),]
+
+top10 <- sum(x2[,2]) # % représenté par les 10 premiers
+```
+
+Table Régionales
+================
+
+lr <- d[d$Région == "LANGUEDOC ROUSSILLON",]
+br <- d[d$Région == "BRETAGNE",]
+npc <- d[d$Région == "NORD PAS DE CALAIS",]
+
+
+write.csv2(lr, file="LanguedocR.csv")
+write.csv2(br, file="Bretagne.csv")
+write.csv2(npc, file="NordPC.csv")
+
+
