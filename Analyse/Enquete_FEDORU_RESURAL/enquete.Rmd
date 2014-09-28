@@ -23,7 +23,10 @@ Google ayant modifié les conditions d'accès au _drive_, il faut procéder en t
 2. transférer le ficher dans le répertoire de travail et le renommer __su_France_ + AAAAMMJJ + .csv__.
 
 ```{r init, echo=FALSE}
-date <- "20140917"
+
+source("../../functions.R")
+
+date <- "20140928"
 file <- paste0("~/Documents/Resural/FEDORU/InformatisationSU/su_France_", date, ".csv")
 d <- read.table(file, header=TRUE, sep=",")
 names(d)
@@ -86,10 +89,15 @@ d$logiciel <- a
 #### Nombre (théorique) de SU par région:
 
 ```{r region, echo=FALSE, comment=""}
-summary(d$Région)
+s <- summary(d$Région)
+s
+ss <- summary(s)
+ss
+barplot(s, main="Nombre d'établissements avec service d'urgence", ylab="Nombre", las=3, cex.names=0.7)
 
-barplot(summary(d$Région), main="Nombre d'établissements avec service d'urgence", ylab="Nombre", las=3, cex.names=0.7)
-text(6,85, "moyenne: 24 établissements/région")
+text(6,85, paste0("moyenne: ", round(ss["Mean"],0), " établissements/région"))
+text(6,80, paste0("médiane: ", ss["Median"], " établissements/région"))
+
 ```
 
 #### Table des logiciels répertoriés
@@ -104,8 +112,17 @@ On exclu les colonnes:
 library("epicalc")
 
 logiciels <- summary(as.factor(d$logiciel))
-a <- logiciels[c(-27,-26)]
+a <- logiciels
+a["MAIL ENVOYE SUR LE SITE RUBRIQUE NOUS CONTACTER"] <- NA
+a["MAIL ATTENTE REPONSE"] <- NA
+a["NON INFORMATISÉ"] <- NA
+a["NA's"] <- NA
+a <- a[!is.na(a)]
+
 a
+
+logs <- cbind(names(a))
+write.csv2(logs, file = "Logiciels_RPU.csv", row.names = FALSE, col.names = FALSE)
 
 l <- d$logiciel[d$logiciel != "MAIL ENVOYE SUR LE SITE RUBRIQUE NOUS CONTACTER" & d$logiciel != "MAIL ATTENTE REPONSE"]
 tab1(l, missing=FALSE, sort.group = "increasing", cex = 0.6, cex.names = 0.6, main="Logiciels utilisés dans les SU")
@@ -126,22 +143,22 @@ Taux d'exhaustivité: `r round(log.identifies * 100 / nrow(d), 2)` %
 
 Nombre de fournisseurs identifiés: `r length(a)`
 
-SU non informatisés: `r logiciels[39]`
+SU non informatisés: `r logiciels["NON INFORMATISE"]`
 
-SU contactés en attente de réponse: `r logiciels[27] + logiciels[26]`
+SU contactés en attente de réponse: `r logiciels["MAIL ATTENTE REPONSE"] + logiciels["MAIL ENVOYE SUR LE SITE RUBRIQUE NOUS CONTACTER"]`
 
 #### Table logiciels par région:
 
 ```{r tri, echo=FALSE, comment=""}
-reg.log <- table(d$Région, d$logiciel)
-reg.log <- reg.log[, c(-27,-28,-39)]
+reg.log <- as.data.frame.matrix(table(d$logiciel, d$Région))
+reg.log <- reg.log[!rownames(reg.log) %in% c("MAIL ENVOYE SUR LE SITE RUBRIQUE NOUS CONTACTER","MAIL ATTENTE REPONSE","NON INFORMATISE"),]
 reg.log
 ```
 
  
 
 ```{r, echo=FALSE, comment=""}
-sreg.log <- rowSums(reg.log) # Nombre de logiciels répertoriés par région
+sreg.log <- colSums(reg.log) # Nombre de logiciels répertoriés par région
 ```
 
 #### Comparaison nb SU/Logiciels par région
@@ -151,7 +168,7 @@ sreg.log <- rowSums(reg.log) # Nombre de logiciels répertoriés par région
 - Rapport: % d'équipement
 
 ```{r, echo=FALSE, comment=""}
-sum.log <- rowSums(reg.log) # nb total de logiciels par région
+sum.log <- colSums(reg.log) # nb total de logiciels par région
 sum.su <- summary(d$Région) # nb de SU par région
 su.log <- cbind(sum.log, sum.su)
 colnames(su.log) <- c("Logiciels", "SU")
@@ -177,7 +194,7 @@ Cartographie
 
 library(sp)
 
-file <- "~/Documents/CartographieR/RCarto/france_region.RData" # fichier source
+# file <- "~/Documents/CartographieR/RCarto/france_region.RData" # fichier source
 file <- "../../france_region.RData" # copie
 load(file)
 reg <- region@data
@@ -191,6 +208,7 @@ y <- 0
 for(i in 1:22){ a = region@polygons[[i]]@labpt; x[i] = a[1]; y[i] = a[2]}
 region@data$x <- x
 region@data$y <- y
+
 # on merge reg et q. Le merging désorganise l'ordre des lignes du dataframe de region. En le réordonnant par ordre alphabétique, on retrove l'ordre initial.
 region@data <- merge(region@data, q, by="reg.id", all.x = TRUE)
 region@data <- region@data[order(region@data$reg.nom),]
@@ -209,14 +227,23 @@ text(region@data$x, region@data$y, region@data$Logiciels, cex=0.8)
 library("RColorBrewer")
 vPal4 <- rev(brewer.pal(n = 4, name = "RdYlBu")) # palette divergente de 4 couleurs
 eq.quart <- quantile(region@data$rapport, names = TRUE)
-eq <- as.character(cut(region@data$rapport, breaks = eq.quart, labels = vPal4, include.lowest = TRUE, right = FALSE))
 
-leg <- as.character(levels(cut(region@data$rapport, breaks = eq.quart, include.lowest = TRUE, right = FALSE)))
+eq.quart <- cut(region@data$rapport, breaks = c(-Inf, 24.99999, 49.99999, 74.99999, Inf), names = TRUE)
+
+# eq <- as.character(cut(region@data$rapport, breaks = eq.quart, labels = vPal4, include.lowest = TRUE, right = FALSE))
+
+b <- c(0,50,75,90,100)
+eq <- as.character(cut(region@data$rapport, breaks = b, labels = vPal4, include.lowest = TRUE, right = FALSE))
+
+#leg <- as.character(levels(cut(region@data$rapport, breaks = c(0, 25, 50, 75, 100), include.lowest = TRUE, right = FALSE)))
+leg <- as.character(levels(cut(region@data$rapport, breaks = b, include.lowest = TRUE, right = FALSE)))
 
 par(mar=c(0,0,1,0))
 plot(region, col=eq, border="white")
 legend("bottomleft", legend=leg, bty="n", fill=vPal4, cex=0.8, title="Densité")
-title(main="Taux de réponses (au 1/09/2014)")
+title(main="% de SU ayant déclaré un logiciel (au 28/09/2014)")
+copyright()
+
 ```
 
 Transmission des RPU
@@ -250,7 +277,7 @@ a <- a[a$logiciel != "MAIL ATTENTE REPONSE",]
 a <- a[a$logiciel != "NON INFORMATISE",]
 a <- a[a$logiciel != "MAIL ENVOYE SUR LE SITE RUBRIQUE NOUS CONTACTER",]
 names(a) <- c("FINESS_GEO", "LOGICIEL")
-write.csv2(a, file="logiciels_Finess_20140915.csv", row.names = FALSE)
+write.csv2(a, file="logiciels_Finess_20140927.csv", row.names = FALSE)
 
 # le top ten
 x <- tab1(a$LOGICIEL, missing=FALSE, sort.group = "increasing", cex = 0.6, cex.names = 0.6, main="Logiciels utilisés dans les SU")
@@ -270,8 +297,8 @@ br <- d[d$Région == "BRETAGNE",]
 npc <- d[d$Région == "NORD PAS DE CALAIS",]
 
 
-write.csv2(lr, file="LanguedocR.csv")
-write.csv2(br, file="Bretagne.csv")
-write.csv2(npc, file="NordPC.csv")
+write.csv2(lr, file="LanguedocR.csv")  
+write.csv2(br, file="Bretagne.csv")   
+write.csv2(npc, file="NordPC.csv")   
 
 

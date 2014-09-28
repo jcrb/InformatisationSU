@@ -60,3 +60,23 @@ a[!is.na(a) & nchar(a) < 3] <- NA
 as.factor(toupper(a))
 
 }
+
+#===========================================================================
+# copyrigth
+#===========================================================================
+#'@title copyrigth
+#'@author JcB
+#'@description Place un copyright Resural sur un graphique. 
+#'Par défaut la phrase est inscrite verticalement sur le bord droit de l'image
+#'@param an (str) année du copyright (par défaut 2013)
+#'@param side coté de l'écriture (défaut = 4)
+#'@param line distance par rapport au bord. Défaut=-1, immédiatement à l'intérieur du cadre
+#'@param titre
+#'@param cex taille du texte (défaut 0.8)
+#'@return "© 2012 Resural"
+#'@usage copyright()
+#'
+copyright<-function(an ="2014",side=4,line=-1,cex=0.8, titre = "IGN & FEDORU"){
+  titre<-paste("©", an, titre, sep=" ")
+  mtext(titre,side=side,line=line,cex=cex)
+}
