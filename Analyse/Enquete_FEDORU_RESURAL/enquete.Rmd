@@ -88,15 +88,21 @@ d$logiciel <- a
 
 #### Nombre (théorique) de SU par région:
 
-```{r region, echo=FALSE, comment=""}
+```{r region, echo=FALSE, comment="", fig.height=8}
 s <- summary(d$Région)
 s
 ss <- summary(s)
 ss
-barplot(s, main="Nombre d'établissements avec service d'urgence", ylab="Nombre", las=3, cex.names=0.7)
 
-text(6,85, paste0("moyenne: ", round(ss["Mean"],0), " établissements/région"))
-text(6,80, paste0("médiane: ", ss["Median"], " établissements/région"))
+# barplot(sort(s), main="Nombre d'établissements avec service d'urgence", ylab="Nombre", las=3, cex.names=0.7, horiz = TRUE)
+# text(6,85, paste0("moyenne: ", round(ss["Mean"],0), " établissements/région"))
+# text(6,80, paste0("médiane: ", ss["Median"], " établissements/région"))
+
+par(mar=c(2,9,1,1))
+barplot(sort(s), main="Nombre d'établissements avec service d'urgence", ylab="", las=1, cex.names=0.7, horiz = TRUE, xlim=c(0,100))
+text(60,5, paste0("moyenne: ", round(ss["Mean"],0), " établissements/région"))
+text(60,4, paste0("médiane: ", ss["Median"], " établissements/région"))
+abline(v=30, lty=2, col="red")
 
 ```
 

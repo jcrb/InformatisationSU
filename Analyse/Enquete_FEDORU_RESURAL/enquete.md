@@ -42,7 +42,7 @@ Google ayant modifié les conditions d'accès au _drive_, il faut procéder en t
 ##  $ Tel                    : Factor w/ 657 levels "","01 30 69 45 00 OU 15",..: 351 350 357 355 356 353 352 354 351 361 ...
 ##  $ nom.correspondant      : Factor w/ 219 levels ""," ","A Blanchard informaticien",..: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ mail                   : Factor w/ 356 levels "","abdelattif.diani@ch-ghsa.fr",..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ logiciel               : Factor w/ 83 levels "","AGFA EXAGON",..: 24 57 24 4 8 24 4 49 24 4 ...
+##  $ logiciel               : Factor w/ 82 levels "","AGFA EXAGON",..: 24 56 24 4 8 24 4 49 24 4 ...
 ##  $ editeur                : Factor w/ 47 levels "","\n","AGFA",..: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ RPU..OUI.NON.          : Factor w/ 10 levels "","?","\n","NON",..: 8 8 8 8 8 8 8 8 8 8 ...
 ##  $ Remarque               : Factor w/ 28 levels "","\n","à partir de janvier 2015 : Logiciel DxCare V7.4",..: 1 1 1 1 1 1 3 1 1 1 ...
@@ -127,22 +127,20 @@ HOPITAL MANAGER URGENCES                    ICARE                   MATRIX
                        1                        5                        1 
                   NAFAMA          NON INFORMATISE                    ORBIS 
                        1                        4                        7 
-                  OSIRIS                    OSOFT                POLIMEDIS 
-                       3                        5                        1 
-               POLYMEDIS                    QCARE              RESURGENCES 
-                       7                        1                       61 
-              SAMUSCRIPT                  SANOCOM                SHAREGATE 
-                       1                        2                        2 
-                   SIDSU                   SIGEMS                 SIGESOFT 
-                       9                        2                        8 
-                 SILLAGE              SILLAGE DMU         SILLAGE URGENCES 
-                       5                        3                        4 
-         SOFTWAY MEDICAL                     SPEC               TRACK CARE 
-                       3                        1                        5 
-              TU-ORUPACA                   URQUAL                W-DOSSIER 
-                      47                       46                        2 
-                XPERTHIS 
-                       1 
+                  OSIRIS                    OSOFT                POLYMEDIS 
+                       3                        5                        8 
+                   QCARE              RESURGENCES               SAMUSCRIPT 
+                       1                       61                        1 
+                 SANOCOM                SHAREGATE                    SIDSU 
+                       2                        2                        9 
+                  SIGEMS                 SIGESOFT                  SILLAGE 
+                       2                        8                        5 
+             SILLAGE DMU         SILLAGE URGENCES          SOFTWAY MEDICAL 
+                       3                        4                        3 
+                    SPEC               TRACK CARE               TU-ORUPACA 
+                       1                        5                       47 
+                  URQUAL                W-DOSSIER                 XPERTHIS 
+                      46                        2                        1 
 ```
 
 ```
@@ -173,7 +171,6 @@ MEDIS                            1      0.2      0.3
 MEDIS URG                        1      0.2      0.3
 M-PLUS                           1      0.2      0.3
 NAFAMA                           1      0.2      0.3
-POLIMEDIS                        1      0.2      0.3
 QCARE                            1      0.2      0.3
 SAMUSCRIPT                       1      0.2      0.3
 SPEC                             1      0.2      0.3
@@ -203,8 +200,8 @@ TRACK CARE                       5      0.9      1.3
 MEDIBOARD                        6      1.1      1.6
 AXIGATE                          7      1.3      1.8
 ORBIS                            7      1.3      1.8
-POLYMEDIS                        7      1.3      1.8
 CORA                             8      1.5      2.1
+POLYMEDIS                        8      1.5      2.1
 SIGESOFT                         8      1.5      2.1
 ATALANTE                         9      1.7      2.4
 SIDSU                            9      1.7      2.4
@@ -225,7 +222,7 @@ Nombre total de logiciels identifiés: 380
 
 Taux d'exhaustivité: 56.21 %
 
-Nombre de fournisseurs identifiés: 61
+Nombre de fournisseurs identifiés: 60
 
 SU non informatisés: 4
 
@@ -276,7 +273,6 @@ NAFAMA                        0         0        0               0
 ORBIS                         1         0        3               0
 OSIRIS                        0         0        0               1
 OSOFT                         0         0        0               0
-POLIMEDIS                     0         0        0               0
 POLYMEDIS                     0         0        0               0
 QCARE                         0         0        0               0
 RESURGENCES                   1         1        0               3
@@ -337,7 +333,6 @@ NAFAMA                           0        0      0                  1
 ORBIS                            0        2      0                  0
 OSIRIS                           0        0      0                  0
 OSOFT                            0        1      0                  0
-POLIMEDIS                        0        0      0                  0
 POLYMEDIS                        0        0      0                  5
 QCARE                            0        0      0                  0
 RESURGENCES                      3        7      0                  1
@@ -398,8 +393,7 @@ NAFAMA                       0   0             0               0
 ORBIS                        0   0             0               0
 OSIRIS                       0   0             0               0
 OSOFT                        0   0             0               0
-POLIMEDIS                    0   0             1               0
-POLYMEDIS                    0   0             0               0
+POLYMEDIS                    0   0             1               0
 QCARE                        0   0             0               0
 RESURGENCES                  0   0             5               1
 SAMUSCRIPT                   0   0             0               0
@@ -459,7 +453,6 @@ NAFAMA                               0                    0        0
 ORBIS                                0                    0        0
 OSIRIS                               0                    1        0
 OSOFT                                0                    2        0
-POLIMEDIS                            0                    0        0
 POLYMEDIS                            0                    0        0
 QCARE                                0                    0        0
 RESURGENCES                          0                    3        7
@@ -520,7 +513,6 @@ NAFAMA                          0             0                  0    0
 ORBIS                           0             0                  0    0
 OSIRIS                          0             0                  1    0
 OSOFT                           0             0                  1    0
-POLIMEDIS                       0             0                  0    0
 POLYMEDIS                       1             0                  1    0
 QCARE                           0             0                  0    1
 RESURGENCES                    17             0                  4    2
@@ -581,7 +573,6 @@ NAFAMA                                  0        0                 0
 ORBIS                                   0        0                 0
 OSIRIS                                  0        0                 0
 OSOFT                                   0        0                 0
-POLIMEDIS                               0        0                 0
 POLYMEDIS                               0        0                 0
 QCARE                                   0        0                 0
 RESURGENCES                             3        0                 2
@@ -642,7 +633,6 @@ NAFAMA                             0
 ORBIS                              1
 OSIRIS                             0
 OSOFT                              1
-POLIMEDIS                          0
 POLYMEDIS                          0
 QCARE                              0
 RESURGENCES                        1
@@ -780,8 +770,7 @@ M-PLUS                                            0   1   0.00
 NAFAMA                                            0   1   0.00
 OSIRIS                                            0   3   0.00
 OSOFT                                             0   5   0.00
-POLIMEDIS                                         0   1   0.00
-POLYMEDIS                                         0   7   0.00
+POLYMEDIS                                         0   8   0.00
 QCARE                                             0   1   0.00
 SANOCOM                                           0   2   0.00
 SHAREGATE                                         0   2   0.00
