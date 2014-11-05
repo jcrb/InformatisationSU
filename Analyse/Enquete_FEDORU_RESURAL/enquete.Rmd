@@ -28,7 +28,7 @@ Google ayant modifié les conditions d'accès au _drive_, il faut procéder en t
 
 source("../../functions.R")
 
-date <- "20140928"
+date <- "20141105"
 file <- paste0("~/Documents/Resural/FEDORU/InformatisationSU/su_France_", date, ".csv")
 d <- read.table(file, header=TRUE, sep=",")
 names(d)
@@ -39,6 +39,9 @@ str(d)
 - Suppression des blancs
 - suppression des caractères accentués
 - correction du nom des logiciels (+++)
+- CENTRE HOSPITALIER DE GONESSE volontairement dupliqué car 2 SU avec 2 logiciels différents
+- CENTRE HOSPITALIER M JACQUET MELUN idem
+- ORSAY idem
 
 ```{r normaliser, echo=FALSE}
 library(stringr)
