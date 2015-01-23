@@ -33,21 +33,21 @@ Google ayant modifié les conditions d'accès au _drive_, il faut procéder en t
 ## 'data.frame':	671 obs. of  17 variables:
 ##  $ X                      : int  437 438 439 440 441 442 443 444 445 446 ...
 ##  $ Région                 : Factor w/ 23 levels "ALSACE","AQUITAINE",..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ Dpt                    : Factor w/ 99 levels "Ain","Aine","Allier",..: 12 12 12 12 12 12 12 12 12 42 ...
+##  $ Dpt                    : Factor w/ 99 levels "Ain","Aine","Allier",..: 12 12 12 12 12 12 12 12 12 37 ...
 ##  $ FINNES                 : Factor w/ 664 levels "","100000090",..: 399 400 401 402 403 404 405 406 407 408 ...
-##  $ Raison.sociale         : Factor w/ 661 levels "AMERICAN MEMORIAL HOSPITAL CHU REIMS",..: 519 56 376 310 98 468 432 466 522 434 ...
-##  $ Complement.distribution: Factor w/ 50 levels "","2-avr.","30 AVENUE DU 14 JUILLET",..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ Adresse                : Factor w/ 650 levels "","100 BOULEVARD DU GENERAL LECLERC",..: 133 429 114 195 192 444 270 98 123 164 ...
-##  $ Lieudit.BP             : Factor w/ 296 levels "","2 AV DU 11 NOVEMBRE 1918",..: 157 147 75 73 120 1 242 1 1 31 ...
+##  $ Raison.sociale         : Factor w/ 661 levels "AMERICAN MEMORIAL HOSPITAL CHU REIMS",..: 523 87 341 292 127 472 435 473 525 436 ...
+##  $ Complement.distribution: Factor w/ 50 levels "","2-avr.","3-juin",..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ Adresse                : Factor w/ 650 levels "","1 ALLEE DU CHATEAU",..: 19 437 163 242 239 431 212 156 9 50 ...
+##  $ Lieudit.BP             : Factor w/ 296 levels "","2 AV DU 11 NOVEMBRE 1918",..: 157 148 76 74 120 1 244 1 1 31 ...
 ##  $ Code.postal            : Factor w/ 647 levels "1000","10003",..: 384 389 391 387 390 386 383 383 385 396 ...
-##  $ Libelle.routage        : Factor w/ 602 levels "ABBEVILLE CEDEX",..: 538 240 479 601 482 537 538 538 539 377 ...
+##  $ Libelle.routage        : Factor w/ 602 levels "ABBEVILLE CEDEX",..: 541 240 479 601 482 540 541 541 542 377 ...
 ##  $ Tel                    : Factor w/ 647 levels "","01 30 63 85 90",..: 345 344 351 349 350 347 346 348 345 355 ...
-##  $ nom.correspondant      : Factor w/ 281 levels ""," ","A Blanchard informaticien",..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ mail                   : Factor w/ 397 levels "","abdelattif.diani@ch-ghsa.fr",..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ logiciel               : Factor w/ 94 levels "","AGFA EXAGON",..: 28 66 28 5 10 28 5 58 28 5 ...
-##  $ editeur                : Factor w/ 47 levels "","\n","AGFA",..: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ RPU..OUI.NON.          : Factor w/ 12 levels "","\n","non",..: 8 8 8 8 8 8 8 8 8 8 ...
-##  $ Remarque               : Factor w/ 37 levels "","\n","(adulte)",..: 1 1 1 1 1 1 6 1 1 1 ...
+##  $ nom.correspondant      : Factor w/ 281 levels "","\nDominique CALAFAT\nPhilippe GODARD\n",..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ mail                   : Factor w/ 397 levels "","à vérifier",..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ logiciel               : Factor w/ 94 levels "","\nEQUAFILE",..: 31 66 31 7 12 31 7 58 31 7 ...
+##  $ editeur                : Factor w/ 47 levels "","\n","- EASILY en 2015",..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ RPU..OUI.NON.          : Factor w/ 12 levels "","\n"," OUI",..: 9 9 9 9 9 9 9 9 9 9 ...
+##  $ Remarque               : Factor w/ 37 levels "","\n","- (ORBIS)",..: 1 1 1 1 1 1 6 1 1 1 ...
 ```
 #### Normalisation du fichier
 
@@ -87,7 +87,7 @@ Google ayant modifié les conditions d'accès au _drive_, il faut procéder en t
    8.00   17.50   23.00   29.17   33.50   99.00 
 ```
 
-![](./enquete_files/figure-html/region-1.png) 
+![](enquete_files/figure-html/region-1.png) 
 
 #### Table des logiciels répertoriés
 
@@ -116,26 +116,26 @@ Loading required package: nnet
                        3                        1                       26 
                 CROSSWAY    DEVELOPPEMENT INTERNE                    DIAMM 
                       15                        4                        1 
-                     DMU                DOPASOINS        DOPASOIN URGENCES 
-                       3                        1                        1 
-               DOPATIENT            DOPA URGENCES                      DPU 
-                       3                        2                        3 
-                  DXCARE                  DX CARE                     EMED 
-                      20                        4                        4 
+                     DMU            DOPA URGENCES        DOPASOIN URGENCES 
+                       3                        2                        1 
+               DOPASOINS                DOPATIENT                      DPU 
+                       1                        3                        3 
+                 DX CARE                   DXCARE                     EMED 
+                       4                       20                        4 
                 EQUAFILE                 EQUALIFE             EXPERT SANTE 
                        1                        1                        5 
                 FIRSTNET                     H ++                 H+ ACUTE 
                        2                        1                        1 
          HOPITAL MANAGER HOPITAL MANAGER URGENCES                 HYPERCAR 
                        1                        1                        1 
-                   ICARE         LOGICIEL INTERNE                   MATRIX 
+                   ICARE         LOGICIEL INTERNE                   M-PLUS 
                        1                        1                        1 
-                MEDIBASE                MEDIBOARD           MEDICAL OBJECT 
-                       1                        6                        2 
-                MEDINTUX                    MEDIQ                    MEDIS 
-                       1                        1                        1 
-               MEDIS URG                MILLENIUM                   M-PLUS 
-                       1                        5                        1 
+                  MATRIX                 MEDIBASE                MEDIBOARD 
+                       1                        1                        6 
+          MEDICAL OBJECT                 MEDINTUX                    MEDIQ 
+                       2                        1                        1 
+                   MEDIS                MEDIS URG                MILLENIUM 
+                       1                        1                        5 
                   NAFAMA          NON INFORMATISE                    ORBIS 
                        1                        4                       10 
                   OSIRIS                    OSOFT            OSOFT WEP SHS 
@@ -161,7 +161,7 @@ Warning in write.csv2(logs, file = "Logiciels_RPU.csv", row.names = FALSE,
 : attempt to set 'col.names' ignored
 ```
 
-![](./enquete_files/figure-html/unnamed-chunk-1-1.png) 
+![](enquete_files/figure-html/unnamed-chunk-1-1.png) 
 
 ```
 l : 
@@ -172,8 +172,8 @@ AXIPAGE                          1      0.2      0.2
 CALYSTENE                        1      0.2      0.2
 CORWIN                           1      0.2      0.2
 DIAMM                            1      0.2      0.2
-DOPASOINS                        1      0.2      0.2
 DOPASOIN URGENCES                1      0.2      0.2
+DOPASOINS                        1      0.2      0.2
 EQUAFILE                         1      0.2      0.2
 EQUALIFE                         1      0.2      0.2
 H ++                             1      0.2      0.2
@@ -183,13 +183,13 @@ HOPITAL MANAGER URGENCES         1      0.2      0.2
 HYPERCAR                         1      0.2      0.2
 ICARE                            1      0.2      0.2
 LOGICIEL INTERNE                 1      0.2      0.2
+M-PLUS                           1      0.2      0.2
 MATRIX                           1      0.2      0.2
 MEDIBASE                         1      0.2      0.2
 MEDINTUX                         1      0.2      0.2
 MEDIQ                            1      0.2      0.2
 MEDIS                            1      0.2      0.2
 MEDIS URG                        1      0.2      0.2
-M-PLUS                           1      0.2      0.2
 NAFAMA                           1      0.2      0.2
 OSOFT WEP SHS                    1      0.2      0.2
 QCARE                            1      0.2      0.2
@@ -275,13 +275,13 @@ CROSSWAY                      0         3        0               0
 DEVELOPPEMENT INTERNE         0         0        0               0
 DIAMM                         0         0        0               0
 DMU                           0         0        0               0
-DOPASOINS                     0         1        0               0
-DOPASOIN URGENCES             0         0        0               0
-DOPATIENT                     0         0        0               0
 DOPA URGENCES                 0         0        0               0
+DOPASOIN URGENCES             0         0        0               0
+DOPASOINS                     0         1        0               0
+DOPATIENT                     0         0        0               0
 DPU                           0         0        0               0
-DXCARE                        4         5        0               0
 DX CARE                       0         0        0               0
+DXCARE                        4         5        0               0
 EMED                          0         0        0               0
 EQUAFILE                      0         0        0               0
 EQUALIFE                      0         0        0               0
@@ -294,6 +294,7 @@ HOPITAL MANAGER URGENCES      0         0        0               0
 HYPERCAR                      0         0        0               0
 ICARE                         0         0        0               0
 LOGICIEL INTERNE              0         0        0               0
+M-PLUS                        0         1        0               0
 MATRIX                        0         0        1               0
 MEDIBASE                      0         1        0               0
 MEDIBOARD                     0         0        0               0
@@ -303,7 +304,6 @@ MEDIQ                         0         0        0               0
 MEDIS                         0         0        0               0
 MEDIS URG                     0         0        0               0
 MILLENIUM                     0         0        0               0
-M-PLUS                        0         1        0               0
 NAFAMA                        0         0        0               0
 ORBIS                         1         0        3               0
 OSIRIS                        0         0        0               1
@@ -347,13 +347,13 @@ CROSSWAY                         3        0      0                  0
 DEVELOPPEMENT INTERNE            0        0      0                  0
 DIAMM                            0        0      0                  0
 DMU                              0        0      0                  0
-DOPASOINS                        0        0      0                  0
-DOPASOIN URGENCES                0        0      0                  0
-DOPATIENT                        0        0      0                  0
 DOPA URGENCES                    0        0      0                  2
+DOPASOIN URGENCES                0        0      0                  0
+DOPASOINS                        0        0      0                  0
+DOPATIENT                        0        0      0                  0
 DPU                              0        0      0                  0
-DXCARE                           0        0      2                  1
 DX CARE                          0        0      0                  0
+DXCARE                           0        0      2                  1
 EMED                             0        0      0                  0
 EQUAFILE                         0        0      0                  0
 EQUALIFE                         0        0      0                  0
@@ -366,6 +366,7 @@ HOPITAL MANAGER URGENCES         0        0      0                  0
 HYPERCAR                         0        0      0                  0
 ICARE                            0        0      0                  0
 LOGICIEL INTERNE                 0        0      0                  0
+M-PLUS                           0        0      0                  0
 MATRIX                           0        0      0                  0
 MEDIBASE                         0        0      0                  0
 MEDIBOARD                        0        1      0                  0
@@ -375,7 +376,6 @@ MEDIQ                            0        0      0                  0
 MEDIS                            0        1      0                  0
 MEDIS URG                        0        1      0                  0
 MILLENIUM                        0        0      0                  0
-M-PLUS                           0        0      0                  0
 NAFAMA                           0        0      0                  1
 ORBIS                            0        2      0                  0
 OSIRIS                           0        0      0                  0
@@ -419,13 +419,13 @@ CROSSWAY                     0   0             1               0
 DEVELOPPEMENT INTERNE        0   0             0               0
 DIAMM                        0   0             0               0
 DMU                          0   0             0               0
-DOPASOINS                    0   0             0               0
-DOPASOIN URGENCES            0   0             0               0
-DOPATIENT                    0   0             0               0
 DOPA URGENCES                0   0             0               0
+DOPASOIN URGENCES            0   0             0               0
+DOPASOINS                    0   0             0               0
+DOPATIENT                    0   0             0               0
 DPU                          0   0             0               0
-DXCARE                       0   1             0               1
 DX CARE                      0   0             0               0
+DXCARE                       0   1             0               1
 EMED                         0   0             0               0
 EQUAFILE                     0   0             0               0
 EQUALIFE                     0   0             1               0
@@ -438,6 +438,7 @@ HOPITAL MANAGER URGENCES     0   0             0               0
 HYPERCAR                     0   0             0               0
 ICARE                        0   0             0               1
 LOGICIEL INTERNE             0   0             0               0
+M-PLUS                       0   0             0               0
 MATRIX                       0   0             0               0
 MEDIBASE                     0   0             0               0
 MEDIBOARD                    0   0             0               0
@@ -447,7 +448,6 @@ MEDIQ                        0   0             0               0
 MEDIS                        0   0             0               0
 MEDIS URG                    0   0             0               0
 MILLENIUM                    0   0             4               0
-M-PLUS                       0   0             0               0
 NAFAMA                       0   0             0               0
 ORBIS                        0   0             0               0
 OSIRIS                       0   0             0               0
@@ -491,13 +491,13 @@ CROSSWAY                             1                    0        0
 DEVELOPPEMENT INTERNE                0                    2        0
 DIAMM                                0                    0        0
 DMU                                  3                    0        0
-DOPASOINS                            0                    0        0
-DOPASOIN URGENCES                    1                    0        0
-DOPATIENT                            0                    0        0
 DOPA URGENCES                        0                    0        0
+DOPASOIN URGENCES                    1                    0        0
+DOPASOINS                            0                    0        0
+DOPATIENT                            0                    0        0
 DPU                                  0                    0        0
-DXCARE                               0                    1        0
 DX CARE                              4                    0        0
+DXCARE                               0                    1        0
 EMED                                 2                    1        0
 EQUAFILE                             1                    0        0
 EQUALIFE                             0                    0        0
@@ -510,6 +510,7 @@ HOPITAL MANAGER URGENCES             0                    1        0
 HYPERCAR                             1                    0        0
 ICARE                                0                    0        0
 LOGICIEL INTERNE                     1                    0        0
+M-PLUS                               0                    0        0
 MATRIX                               0                    0        0
 MEDIBASE                             0                    0        0
 MEDIBOARD                            0                    0        0
@@ -519,7 +520,6 @@ MEDIQ                                1                    0        0
 MEDIS                                0                    0        0
 MEDIS URG                            0                    0        0
 MILLENIUM                            0                    0        0
-M-PLUS                               0                    0        0
 NAFAMA                               0                    0        0
 ORBIS                                3                    0        0
 OSIRIS                               0                    1        0
@@ -563,13 +563,13 @@ CROSSWAY                        1             6                  0    0
 DEVELOPPEMENT INTERNE           1             1                  0    0
 DIAMM                           0             1                  0    0
 DMU                             0             0                  0    0
-DOPASOINS                       0             0                  0    0
-DOPASOIN URGENCES               0             0                  0    0
-DOPATIENT                       0             3                  0    0
 DOPA URGENCES                   0             0                  0    0
+DOPASOIN URGENCES               0             0                  0    0
+DOPASOINS                       0             0                  0    0
+DOPATIENT                       0             3                  0    0
 DPU                             0             1                  0    0
-DXCARE                          1             2                  2    0
 DX CARE                         0             0                  0    0
+DXCARE                          1             2                  2    0
 EMED                            0             1                  0    0
 EQUAFILE                        0             0                  0    0
 EQUALIFE                        0             0                  0    0
@@ -582,6 +582,7 @@ HOPITAL MANAGER URGENCES        0             0                  0    0
 HYPERCAR                        0             0                  0    0
 ICARE                           0             0                  0    0
 LOGICIEL INTERNE                0             0                  0    0
+M-PLUS                          0             0                  0    0
 MATRIX                          0             0                  0    0
 MEDIBASE                        0             0                  0    0
 MEDIBOARD                       0             2                  0    0
@@ -591,7 +592,6 @@ MEDIQ                           0             0                  0    0
 MEDIS                           0             0                  0    0
 MEDIS URG                       0             0                  0    0
 MILLENIUM                       0             0                  1    0
-M-PLUS                          0             0                  0    0
 NAFAMA                          0             0                  0    0
 ORBIS                           0             0                  0    0
 OSIRIS                          0             0                  1    0
@@ -635,13 +635,13 @@ CROSSWAY                                0        0                 0
 DEVELOPPEMENT INTERNE                   0        0                 0
 DIAMM                                   0        0                 0
 DMU                                     0        0                 0
-DOPASOINS                               0        0                 0
-DOPASOIN URGENCES                       0        0                 0
-DOPATIENT                               0        0                 0
 DOPA URGENCES                           0        0                 0
+DOPASOIN URGENCES                       0        0                 0
+DOPASOINS                               0        0                 0
+DOPATIENT                               0        0                 0
 DPU                                     0        0                 0
-DXCARE                                  0        0                 0
 DX CARE                                 0        0                 0
+DXCARE                                  0        0                 0
 EMED                                    0        0                 0
 EQUAFILE                                0        0                 0
 EQUALIFE                                0        0                 0
@@ -654,6 +654,7 @@ HOPITAL MANAGER URGENCES                0        0                 0
 HYPERCAR                                0        0                 0
 ICARE                                   0        0                 0
 LOGICIEL INTERNE                        0        0                 0
+M-PLUS                                  0        0                 0
 MATRIX                                  0        0                 0
 MEDIBASE                                0        0                 0
 MEDIBOARD                               0        0                 0
@@ -663,7 +664,6 @@ MEDIQ                                   0        0                 0
 MEDIS                                   0        0                 0
 MEDIS URG                               0        0                 0
 MILLENIUM                               0        0                 0
-M-PLUS                                  0        0                 0
 NAFAMA                                  0        0                 0
 ORBIS                                   0        0                 0
 OSIRIS                                  0        0                 0
@@ -707,13 +707,13 @@ CROSSWAY                           0
 DEVELOPPEMENT INTERNE              0
 DIAMM                              0
 DMU                                0
-DOPASOINS                          0
-DOPASOIN URGENCES                  0
-DOPATIENT                          0
 DOPA URGENCES                      0
+DOPASOIN URGENCES                  0
+DOPASOINS                          0
+DOPATIENT                          0
 DPU                                2
-DXCARE                             0
 DX CARE                            0
+DXCARE                             0
 EMED                               0
 EQUAFILE                           0
 EQUALIFE                           0
@@ -726,6 +726,7 @@ HOPITAL MANAGER URGENCES           0
 HYPERCAR                           0
 ICARE                              0
 LOGICIEL INTERNE                   0
+M-PLUS                             0
 MATRIX                             0
 MEDIBASE                           0
 MEDIBOARD                          3
@@ -735,7 +736,6 @@ MEDIQ                              0
 MEDIS                              0
 MEDIS URG                          0
 MILLENIUM                          0
-M-PLUS                             0
 NAFAMA                             0
 ORBIS                              1
 OSIRIS                             0
@@ -842,7 +842,7 @@ Cartographie
 [7] "rapport"  
 ```
 
-![](./enquete_files/figure-html/carto-1.png) ![](./enquete_files/figure-html/carto-2.png) ![](./enquete_files/figure-html/carto-3.png) 
+![](enquete_files/figure-html/carto-1.png) ![](enquete_files/figure-html/carto-2.png) ![](enquete_files/figure-html/carto-3.png) 
 
 Transmission des RPU
 -------------------
@@ -869,18 +869,19 @@ CROSSWAY                                         12       0  Inf
 DEVELOPPEMENT INTERNE                             3       0  Inf
 DIAMM                                             1       0  Inf
 DMU                                               3       0  Inf
+DOPA URGENCES                                     2       0  Inf
 DOPASOINS                                         1       0  Inf
 DOPATIENT                                         3       0  Inf
-DOPA URGENCES                                     2       0  Inf
 DPU                                               3       0  Inf
-DXCARE                                           18       0  Inf
 DX CARE                                           3       0  Inf
+DXCARE                                           18       0  Inf
 EMED                                              4       0  Inf
 EQUALIFE                                          1       0  Inf
 EXPERT SANTE                                      5       0  Inf
 FIRSTNET                                          1       0  Inf
 H+ ACUTE                                          1       0  Inf
 HYPERCAR                                          1       0  Inf
+M-PLUS                                            1       0  Inf
 MAIL ATTENTE REPONSE                             18       0  Inf
 MATRIX                                            1       0  Inf
 MEDIBASE                                          1       0  Inf
@@ -890,7 +891,6 @@ MEDINTUX                                          1       0  Inf
 MEDIS                                             1       0  Inf
 MEDIS URG                                         1       0  Inf
 MILLENIUM                                         5       0  Inf
-M-PLUS                                            1       0  Inf
 NAFAMA                                            1       0  Inf
 NON INFORMATISE                                   3       0  Inf
 ORBIS                                             6       0  Inf
@@ -948,7 +948,7 @@ write.csv2(a, file="logiciels_Finess_20140927.csv", row.names = FALSE)
 x <- tab1(a$LOGICIEL, missing=FALSE, sort.group = "increasing", cex = 0.6, cex.names = 0.6, main="Logiciels utilisés dans les SU")
 ```
 
-![](./enquete_files/figure-html/logfiness-1.png) 
+![](enquete_files/figure-html/logfiness-1.png) 
 
 ```r
 x1 <- x$output.table
