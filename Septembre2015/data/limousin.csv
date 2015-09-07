@@ -1,0 +1,46 @@
+"Période : 1er trimestre 2015 soit du 
+01/01/2015 00:00 au 31/03/2015 23:59.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,"forcément 100% car recherche des passages par rapport à la date d'entrée","se déduit de l'adresseur en Limousin","le champ provenance en Limousin ne permet pas de retrouver tous les items demander dans le format RPU V2",,,,,,"ne garder au dénominateur que les mutations, transferts et retour à domicile","ne garder au dénominateur que les mutations et transferts",,,,
+"Région","Dpt","FINNES","Raison sociale","Code postal","Libelle routage","Logiciel 2013-2014","Editeur","RPU transmis
+(OUI/NON)","Nombre de RPU transmis 1er trimestre 2015","Logiciel 2015","Version (en fonctionnement durant la période retenue) si changement de version le noter","Commentaire","Fréquence de remontées des données (en minutes)","Date de naissance",,"Diagnostic",,"Mode de sortie",,"Nombre de jours manquants","Commentaire","RPU Code postal","RPU Commune","RPU Sexe","RPU Date entrée","RPU Mode entrée","RPU Provenance","RPU Mode de transport","RPU Mode de prise en charge","RPU Motif de recours","RPU CCMU","RPU Date de sortie","RPU Destination","RPU Orientation",,,,
+,,"FINNES","Raison.sociale","Code.postal","Libelle.routage","Logiciel 2013-2014","editeur","RPU (OUI/NON/partellement)",,,,,,"Exhaustivité","Conformité","Exhaustivité","Conformité","Exhaustivité","Conformité",,,"RPU Code postal","RPU Commune","RPU Sexe","RPU Date entrée","RPU Mode entrée","RPU Provenance","RPU Mode de transport","RPU Mode de prise en charge","RPU Motif de recours","RPU CCMU","RPU Date de sortie","RPU Destination","RPU Orientation",,"RPU Date de naissance","RPU Diagnostic principal","RPU Mode de sortie"
+"LIMOUSIN","Creuse",230004657,"CENTRE HOSPITALIER AUBUSSON",23200,"AUBUSSON","ResUrgences","Improove","OUI",1406,"ResUrgences","v4.4.5FR.12",,60,"100,00%","100,00%","99,79%","99,79%","99,93%","99,93%",0,,"100,00%","100,00%","100,00%","100,00%","99,93%","99,86%","100,00%","0,07%","97,80%","99,93%","99,93%","13,16%",,,"100,00%","99,79%","99,93%"
+"LIMOUSIN","Corrèze",190000018,"CENTRE HOSPITALIER DUBOIS BRIVE",19312,"BRIVE LA GAILLARDE CEDEX","ResUrgences","Improove","OUI",8119,"ResUrgences","v4.4.5GW.16B",,60,"99,99%","99,99%","97,57%","97,57%","99,98%","99,98%",0,,"99,98%","99,98%","99,99%","100,00%","99,29%","99,22%","99,26%","0,62%","98,56%","98,03%","99,94%","30,57%",,,"99,99%","97,57%","99,98%"
+"LIMOUSIN","Creuse",230000820,"CENTRE HOSPITALIER GUERET",23011,"GUERET CEDEX","ResUrgences","Improove","OUI",4974,"ResUrgences","v4.5ZLB.12",,60,"100,00%","100,00%","97,25%","97,25%","100,00%","100,00%",0,,"100,00%","100,00%","100,00%","100,00%","99,78%","99,80%","99,96%","0,28%","82,69%","97,61%","100,00%","33,45%",,,"100,00%","97,25%","100,00%"
+"LIMOUSIN","Hte Vienne",870000098,"CENTRE HOSPITALIER SAINT JUNIEN",87205,"ST JUNIEN CEDEX","ResUrgences","Improove","OUI",3466,"ResUrgences","v4.4.5GA.12",,60,"100,00%","100,00%","98,56%","98,56%","100,00%","100,00%",0,,"100,00%","100,00%","100,00%","100,00%","99,97%","99,97%","100,00%","0,03%","99,57%","98,96%","100,00%","10,13%",,,"100,00%","98,56%","100,00%"
+"LIMOUSIN","Hte Vienne",870000270,"CTRE HOSPITALIER  J BOUTARD  ST YRIEIX",87500,"ST YRIEIX LA PERCHE","ResUrgences","Improove","OUI",2148,"ResUrgences","v4.4.5FL.14",,60,"99,95%","99,95%","98,98%","98,98%","100,00%","100,00%",0,,"99,30%","99,30%","99,95%","100,00%","99,72%","99,72%","100,00%","0,23%","84,26%","99,12%","100,00%","14,11%",,,"99,95%","98,98%","100,00%"
+"LIMOUSIN","Corrèze",190000026,"CENTRE HOSPITALIER TULLE",19012,"TULLE CEDEX","ResUrgences","Improove","OUI",4697,"ResUrgences","v4.4.5FG",,60,"100,00%","100,00%","97,93%","97,93%","100,00%","100,00%",0,,"100,00%","100,00%","100,00%","100,00%","99,87%","99,83%","99,87%","0,13%","88,67%","98,38%","100,00%","14,37%",,,"100,00%","97,93%","100,00%"
+"LIMOUSIN","Hte Vienne",870000064,"C H U  DUPUYTREN  LIMOGES",87042,"LIMOGES CEDEX 1","Urqual","maincare","OUI",10417,"Urqual","version 7.1.7.2",,60,"100,00%","100,00%","98,87%","98,87%","99,64%","99,64%",0,,"99,74%","99,75%","100,00%","100,00%","99,73%","99,73%","99,73%","100,00%","99,73%","99,22%","99,51%","33,70%",,,"100,00%","98,87%","99,64%"
+"LIMOUSIN","Corrèze",190000091,"CENTRE HOSPITALIER D'USSEL",19208,"USSEL CEDEX","ResUrgences","Improove","OUI",2748,"ResUrgences","v4.4.5HH.14",,60,"100,00%","100,00%","98,11%","98,11%","100,00%","100,00%",0,,"99,82%","99,82%","100,00%","100,00%","99,96%","99,96%","100,00%",,"94,25%","99,60%","100,00%","3,71%",,,"100,00%","98,11%","100,00%"
+"LIMOUSIN","Hte Vienne",870014859,"HOPITAL DE LA MERE ET DE L'ENFANT",87000,"LIMOGES","Urqual","maincare","OUI",6390,"Urqual","version 7.1.7.2",,60,"100,00%","100,00%","98,51%","98,51%","99,39%","99,39%",0,,"99,86%","99,86%","100,00%","100,00%","99,77%","99,77%","99,80%","100,00%","99,81%","98,62%","99,41%","8,72%",,,"100,00%","98,51%","99,39%"
+"LIMOUSIN","Hte Vienne",870000288,"CLINIQUE FRANCOIS CHENIEUX",87039,"LIMOGES CEDEX 1","SPEC 4D",,"OUI",7015,"SPEC 4D",,,60,"100,00%","100,00%","85,57%","85,57%","99,97%","99,97%",0,,"99,81%","99,87%","100,00%","100,00%","94,14%","90,35%","98,73%","100,00%","74,87%","99,77%","100,00%","18,22%",,,"100,00%","85,57%","99,97%"
+,,,,,,,,,,,,,,,,,,,,,,"Nombre de RPU pour lesquels le critère CP est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère commune est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère sexe est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère date d'entrée est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode d'entrée est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère provenance est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode de transport est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode de PEC est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère motif est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère CCMU est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère DDS est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU avec mode de sortie =6 ou 7 pour lesquels la destination est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis","Nombre de RPU avec mode de sortie =6 ou 7 pour lesquels l'orientation est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis",,"J'ai replacé tes données dans les colonnes, à valider ..",,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"Nombre de RPU avec mode de sortie =6 ou 7 ou 8 pour lesquels la destination est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis",,,,,

@@ -1,0 +1,72 @@
+"Période : 1er trimestre 2015 soit du 
+01/01/2015 00:00 au 31/03/2015 23:59.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Région","Dpt","FINNES","Raison sociale","Code postal","Libelle routage","Logiciel 2013-2014","Editeur","RPU transmis
+(OUI/NON)","Nombre de RPU transmis 1er trimestre 2015","Logiciel 2015","Version (en fonctionnement durant la période retenue) si changement de version le noter","Commentaire","Fréquence de remontées des données (en minutes)","Date de naissance",,"Diagnostic",,"Mode de sortie",,"Nombre de jours manquants","Commentaire","RPU Code postal","RPU Commune","RPU Sexe","RPU Date entrée","RPU Mode entrée","RPU Provenance","RPU Mode de transport","RPU Mode de prise en charge","RPU Motif de recours","RPU CCMU","RPU Date de sortie","RPU Destination","RPU Orientation"
+,,"FINNES","Raison.sociale","Code.postal","Libelle.routage","Logiciel 2013-2014","editeur","RPU (OUI/NON/partellement)",,,,,,"Exhaustivité","Conformité","Exhaustivité","Conformité","Exhaustivité","Conformité",,,,,"RPU Sexe","RPU Date entrée","RPU Mode entrée","RPU Provenance","RPU Mode de transport","RPU Mode de prise en charge","RPU Motif de recours","RPU CCMU","RPU Date de sortie","RPU Destination","RPU Orientation"
+"AQUITAINE","Dordogne",240000190,"PCL FRANCHEVILLE",24004,"PERIGUEUX CEDEX","DOPASOINS","module Urgences (WebSanté)","OUI",2811,"DOPA URGENCES",,,1440,"100,0%","100,0%","62,9%","62,9%","82,6%","82,6%",0,,,,,,,,,,,,,,
+"AQUITAINE","Dordogne",240000372,"CH BERGERAC",24108,"BERGERAC CEDEX","CROSSWAY","(McKesson)","OUI",2134,"CROSSWAY",,"Teminal Urgences sera le futur outil",1440,"100,0%","100,0%","0,0%","0,0%","1,5%","1,5%",63,,,,,,,,,,,,,,
+"AQUITAINE","Dordogne",240000489,"CH PERIGUEUX",24019,"PERIGUEUX CEDEX","DXCARE","(Medasys)","OUI",6828,"DXUrgences",,,1440,"100,0%","100,0%","52,6%","52,6%","99,8%","99,8%",0,,,,,,,,,,,,,,
+"AQUITAINE","Dordogne",240000687,"CH SARLAT",24206,"SARLAT LA CANEDA CEDEX","SIDSU","RESURA","OUI",2931,"SIDSU","2.62","DxUrgences sera le nouvel outil",1440,"100,0%","100,0%","93,8%","93,8%","99,5%","99,5%",0,,,,,,,,,,,,,,
+"AQUITAINE","Gironde",330000555,"CH ARCACHON",33164,"LA TESTE CEDEX","SIDSU","RESURA","OUI",6686,"SIDSU","2.62","Teminal Urgences ou Urqual sera l'outil suivant",1440,"100,0%","100,0%","86,5%","86,5%","99,9%","99,9%",0,,,,,,,,,,,,,,
+"AQUITAINE","Gironde",330000571,"CH HAUTE GIRONDE",33394,"BLAYE CEDEX","CROSSWAY","(McKesson)","NON",,"CROSSWAY",,"Terminal Urgences sera le nouvel outil",,,,,,,,,,,,,,,,,,,,,,
+"AQUITAINE","Gironde",330000589,"CH SUD GIRONDE LANGON",33212,"LANGON CEDEX","SILLAGE","SIB","OUI",5330,"SILLAGE URGENCES",,,1440,"100,0%","100,0%","76,5%","76,5%","98,3%","98,3%",0,,,,,,,,,,,,,,
+"AQUITAINE","Gironde",330000597,"CH SUD GIRONDE LA REOLE",33192,"LA REOLE CEDEX","SILLAGE","SIB","OUI",1120,"SILLAGE URGENCES",,,1440,"100,0%","100,0%","87,1%","87,1%","99,4%","99,4%",0,,,,,,,,,,,,,,
+"AQUITAINE","Gironde",330000605,"CH LIBOURNE",33505,"LIBOURNE CEDEX","URQUAL","(McKesson)","OUI",11865,"URQUAL",,,1440,"100,0%","100,0%","0,0%","0,0%","99,7%","99,7%",0,,,,,,,,,,,,,,
+"AQUITAINE","Gironde",330000613,"CH STE FOY LA GRANDE",33220,"STE FOY LA GRANDE","URQUAL","(McKesson)","OUI",2547,"URQUAL",,,1440,"100,0%","100,0%","0,0%","0,0%","100,0%","100,0%",0,,,,,,,,,,,,,,
+"AQUITAINE","Gironde",330780263,"PCL BORDEAUX RIVE DROITE",33310,"LORMONT","SIDSU","RESURA","OUI",6584,"SIDSU","2.62","Expertiz Santé sera probablement le futur outil",1440,"100,0%","100,0%","27,3%","27,3%","99,2%","99,2%",0,,,,,,,,,,,,,,
+"AQUITAINE","Gironde",330780479,"PCL BORDEAUX-NORD",33377,"BORDEAUX cedex","SIDSU","RESURA","OUI",7005,"SIDSU","2.62","Expertiz Santé sera probablement le futur outil",1440,"100,0%","100,0%","95,8%","95,8%","99,2%","99,2%",0,,,,,,,,,,,,,,
+"AQUITAINE","Gironde",330780495,"CL MUTUALISTE DU MEDOC",33340,"LESPARRE MEDOC","SANOCOM",,"OUI",3693,"SANOCOM",,"changement d'outil prévu",1440,"100,0%","100,0%","83,3%","83,3%","100,0%","100,0%",0,,,,,,,,,,,,,,
+"AQUITAINE","Gironde",330780529,"CL MUTUALISTE DE PESSAC",33608,"PESSAC CEDEX","SANOCOM",,"OUI",3457,"SANOCOM",,"changement d'outil prévu",1440,"100,0%","100,0%","76,7%","76,7%","100,0%","100,0%",0,,,,,,,,,,,,,,
+"AQUITAINE","Gironde",330780537,"CMC WALLERSTEIN",33740,"ARES","SIGEMS",,"OUI",3266,"SIGEMS",,"changement d'outil prévu",1440,"100,0%","100,0%","8,4%","8,4%","99,9%","99,9%",0,,,,,,,,,,,,,,
+"AQUITAINE","Gironde",330781303,"HIA ROBERT PICQUE",33882,"VILLENAVE D ORNON CEDEX","CROSSWAY","McKesson","OUI",6840,"CROSSWAY",,"changement d'outil prévu",1440,"100,0%","100,0%","94,4%","94,3%","95,1%","95,0%",0,,,,,,,,,,,,,,
+"AQUITAINE","Gironde",330781352,"CHU - HOPITAL SAINT-ANDRE ",33075,"BORDEAUX CEDEX","DXCARE","(Medasys)","OUI",5090,"DXUrgences",,,1440,"100,0%","100,0%","97,4%","97,4%","100,0%","100,0%",0,,,,,,,,,,,,,,
+"AQUITAINE","Gironde",330781360,"CHU - PELLEGRIN ADULTES",33076,"BORDEAUX CEDEX","DXCARE","Medasys","OUI",13290,"DXUrgences",,,1440,"100,0%","100,0%","68,8%","68,8%","100,0%","100,0%",0,,,,,,,,,,,,,,
+"AQUITAINE","Gironde","330781360e","CHU - PELLEGRIN PEDIATRIE",33076,"BORDEAUX CEDEX","DXCARE","Medasys","OUI",10137,"DXUrgences",,,1440,"100,0%","100,0%","98,9%","98,9%","100,0%","100,0%",0,,,,,,,,,,,,,,
+"AQUITAINE","Gironde",330783648,"CHU - HOPITAL HAUT-LEVEQUE",33604,"PESSAC CEDEX","DXCARE","Medasys","OUI",1258,"DxCare",,,1440,"100,0%","100,0%","35,0%","35,0%","100,0%","100,0%",0,,,,,,,,,,,,,,
+"AQUITAINE","Landes",400000105,"CH DAX",40107,"DAX CEDEX","M-PLUS",,"OUI",9970,"M-Plus",,"Terminal Urgences sera le nouvel outil",1440,"100,0%","100,0%","83,5%","83,5%","16,8%","16,8%",0,,,,,,,,,,,,,,
+"AQUITAINE","Landes",400000139,"CH MONT DE MARSAN",40024,"MONT DE MARSAN CEDEX","SIDSU","RESURA","OUI",7583,"SIDSU","2.62","Terminal Urgences sera le nouvel outil",1440,"100,0%","100,0%","96,7%","96,7%","100,0%","100,0%",0,,,,,,,,,,,,,,
+"AQUITAINE","Landes",400782769,"PCL LES CHENES",40801,"AIRE SUR L ADOUR CEDEX","SIGEMS",,"NON",,"SIGEMS",,"Terminal Urgences sera le nouvel outil",,,,,,,,,,,,,,,,,,,,,,
+"AQUITAINE","Lot et Garonne",470000027,"CL ESQUIROL-SAINT-HILAIRE",47002,"AGEN CEDEX","SHAREGATE","(WareSystem)","OUI",5790,"SHAREGATE",,,1440,"100,0%","100,0%","0,0%","0,0%","100,0%","100,0%",0,,,,,,,,,,,,,,
+"AQUITAINE","Lot et Garonne",470000423,"CH AGEN",47923,"AGEN CEDEX 9","URQUAL ","McKesson","OUI",8312,"URQUAL",,"Terminal Urgences est installé depuis Juin",1440,"100,0%","100,0%","93,1%","93,1%","93,1%","93,1%",0,,,,,,,,,,,,,,
+"AQUITAINE","Lot et Garonne",470000431,"CH VILLENEUVE/LOT",47307,"VILLENEUVE SUR LOT CEDEX","AXIGATE",,"OUI",4282,"AXIGATE",,"Terminal Urgences sera le nouvel outil",1440,"100,0%","100,0%","0,0%","0,0%","100,0%","99,9%",0,,,,,,,,,,,,,,
+"AQUITAINE","Lot et Garonne",470000480,"CH MARMANDE",47207,"MARMANDE CEDEX","SIDSU","RESURA","OUI",5959,"SIDSU","2.62","Terminal Urgences sera le nouvel outil",1440,"100,0%","100,0%","96,3%","96,3%","98,2%","98,2%",0,,,,,,,,,,,,,,
+"AQUITAINE","Pyrénées Atlantiques",640000162,"CH COTE BASQUE - BAYONNE",64109,"BAYONNE CEDEX","TRACK CARE",,"OUI",11345,"TRACK CARE",,,1440,"100,0%","100,0%","96,3%","96,3%","98,3%","98,3%",0,,,,,,,,,,,,,,
+"AQUITAINE","Pyrénées Atlantiques",640000402,"CH ORTHEZ",64300,"ORTHEZ","SIDSU","RESURA","OUI",3083,"SIDSU","2.62",,1440,"100,0%","100,0%","99,8%","99,8%","100,0%","100,0%",0,,,,,,,,,,,,,,
+"AQUITAINE","Pyrénées Atlantiques",640000410,"CH OLORON",64404,"OLORON STE MARIE CEDEX","DXCARE","Medasys","OUI",3475,"DxCARE",,,1440,"100,0%","100,0%","0,0%","0,0%","99,9%","99,9%",0,,,,,,,,,,,,,,
+"AQUITAINE","Pyrénées Atlantiques",640000600,"CH PAU",64046,"PAU CEDEX","CLINICOM",,"NON",,,,"Urqual sera le futur outil",,,,,,,,,,,,,,,,,,,,,,
+"AQUITAINE","Pyrénées Atlantiques",640017646,"CH SAINT-PALAIS",64120,"ST PALAIS","SIDSU","RESURA","OUI",2037,"SIDSU","2.62","Track Care sera le nouvel outil",1440,"100,0%","100,0%","98,5%","98,5%","99,7%","99,7%",0,,,,,,,,,,,,,,
+"AQUITAINE","Pyrénées Atlantiques",640780433,"CL ST-ETIENNE",64115,"BAYONNE CEDEX","SIDSU","RESURA","OUI",2533,"SIDSU","2.62","Mediboard sera le nouvel outil",1440,"100,0%","100,0%","88,8%","88,8%","99,4%","99,4%",0,,,,,,,,,,,,,,
+"AQUITAINE","Pyrénées Atlantiques",640780490,"PCL AGUILERA",64201,"BIARRITZ CEDEX","RESURGENCES","Berger Levrault","OUI",3032,"RESURGENCES",,"Mediboard depuis Avril",1440,"100,0%","100,0%","98,1%","98,1%","0,0%","0,0%",0,,,,,,,,,,,,,,
+"AQUITAINE","Pyrénées Atlantiques",640780748,"PCL COTE BASQUE SUD",64501,"ST JEAN DE LUZ CEDEX","MEDIBASE","(OSOFT)","OUI",2913,"MEDIBASE",,,1440,"100,0%","100,0%","96,4%","96,4%","65,7%","65,7%",0,,,,,,,,,,,,,,
+"AQUITAINE","Pyrénées Atlantiques",640780938,"PCL MARZET",64000,"PAU","SHAREGATE","(WareSystem)","OUI",2849,"SHAREGATE",,,1440,"100,0%","100,0%","0,1%","0,1%","100,0%","100,0%",0,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,"Nombre de RPU pour lesquels le critère CP est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère commune est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère sexe est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère date d'entrée est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode d'entrée est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère provenance est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode de transport est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode de PEC est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère motif est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère CCMU est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère DDS est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU avec mode de sortie =6 ou 7 pour lesquels la destination est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis","Nombre de RPU avec mode de sortie =6 ou 7 pour lesquels l'orientation est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis"
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"Nombre de RPU avec mode de sortie =6 ou 7 ou 8 pour lesquels la destination est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis",

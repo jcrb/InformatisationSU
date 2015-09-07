@@ -1,0 +1,55 @@
+"Période : 1er trimestre 2015 soit du 
+01/01/2015 00:00 au 31/03/2015 23:59.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Région","Dpt","FINNES","Raison sociale","Code postal","Libelle routage","Logiciel 2013-2014","Editeur","RPU transmis
+(OUI/NON)","Nombre de RPU transmis 1er trimestre 2015","Logiciel 2015","Version (en fonctionnement durant la période retenue) si changement de version le noter","Commentaire","Fréquence de remontées des données (en minutes)","Date de naissance",,"Diagnostic",,"Mode de sortie",,"Nombre de jours manquants","Commentaire","RPU Code postal","RPU Commune","RPU Sexe","RPU Date entrée","RPU Mode entrée","RPU Provenance","RPU Mode de transport","RPU Mode de prise en charge","RPU Motif de recours","RPU CCMU","RPU Date de sortie","RPU Destination","RPU Orientation",,"RPU Date de naissance","RPU Diagnostic principal","RPU Mode de sortie"
+,,"FINNES","Raison.sociale","Code.postal","Libelle.routage","Logiciel 2013-2014","editeur","RPU (OUI/NON/partellement)",,,,,,"Exhaustivité","Conformité","Exhaustivité","Conformité","Exhaustivité","Conformité",,,"RPU Code postal","RPU Commune","RPU Sexe","RPU Date entrée","RPU Mode entrée","RPU Provenance","RPU Mode de transport","RPU Mode de prise en charge","RPU Motif de recours","RPU CCMU","RPU Date de sortie","RPU Destination","RPU Orientation",,"RPU Date de naissance","RPU Diagnostic principal","RPU Mode de sortie"
+"ALSACE","Bas Rhin",670000025,"HOPITAL CIVIL / NOUVEL HOPITAL CIVIL",67091,"STRASBOURG CEDEX","DXCARE",,"OUI",7759,"DX CARE URGENCES","7.5 R 12 + programpme des Hus qui extrait les données",,1440,"100,00","100,00","52,24","52,24","21,05","21,05",0,,"100,00","100,00","100,00","100,00","100,00","0,28","28,42","1,22","54,50","63,41","95,18","100,00","97,23",,"100,00","52,24","21,05"
+"ALSACE","Bas Rhin",670000157,"CENTRE HOSPITALIER DE HAGUENAU",67504,"HAGUENAU CEDEX","RESURGENCE",,"OUI",11308,"RESURGENCE",,,1440,"100,00","100,00","76,00","76,00","90,22","90,22",0,,"100,00","99,81","100,00","100,00","75,50","54,04","68,19","86,72","25,57","73,81","88,04","98,07","88,34",,"100,00","76,00","90,22"
+"ALSACE","Bas Rhin",670000165,"CH SAINTE-CATHERINE DE SAVERNE",67703,"SAVERNE CEDEX","DXCARE",,"OUI",7460,"DX CARE ","7.5.16",,1440,"100,00","100,00","9,10","9,10","88,63","88,63",0,,"100,00","100,00","100,00","100,00","100,00","3,49","0,00","0,00","48,55","52,75","89,25","100,00","93,97",,"100,00","9,10","88,63"
+"ALSACE","Bas Rhin",670000272,"CH INTERCOMMUNAL DE LA LAUTER",67166,"WISSEMBOURG CEDEX","ATALANTE",,"OUI",3204,"ATALANTE","7.2.1",,1440,"100,00","100,00","88,48","88,48","95,63","95,63",0,,"100,00","100,00","100,00","100,00","99,56","98,85","98,85","99,66","99,31","96,07","94,32","100,00","97,99",,"100,00","88,48","95,63"
+"ALSACE","Bas Rhin",670000397,"CENTRE HOSPITALIER DE SELESTAT",67606,"SELESTAT CEDEX","CLINICOM",,"OUI",7023,"CLINICOM","2014.01.0006",,1440,"100,00","100,00","96,14","96,14","100,00","100,00",4,,"100,00","100,00","100,00","100,00","100,00","100,00","99,64","100,00","98,42","97,15","96,48","100,00","100,00",,"100,00","96,14","100,00"
+"ALSACE","Bas Rhin",670016237,"CLINIQUE SAINTE ODILE",67100,"STRASBOURG","DXCARE",,"OUI",6045,"ANTARES V2 de INOVACUM","2.28.0.4",,1440,"100,00","100,00","45,84","45,84","84,48","84,48",1,,"100,00","99,98","100,00","100,00","100,00","0,00","93,36","0,13","88,24","86,53","84,58","100,00","90,28",,"100,00","45,84","84,48"
+"ALSACE","Bas Rhin",670780162,"CLINIQUE DES DIACONESSES",67085,"STRASBOURG CEDEX","ATALANTE",,"OUI",2929,"ANTARES V2 de INOVACUM","2.28.0.4",,1440,"100,00","100,00","90,51","90,51","83,99","83,99",0,,"100,00","100,00","100,00","100,00","100,00","0,68","97,95","97,95","96,65","90,65","84,29","100,00","99,61",,"100,00","90,51","83,99"
+"ALSACE","Bas Rhin",670780212,"CLINIQUE SAINTE-ANNE",67085,"STRASBOURG CEDEX","ORBIS",,"OUI",3025,"ORBIS","8.4.22",,1440,"100,00","100,00","0,00","0,00","15,70","15,70",25,,"100,00","100,00","100,00","100,00","100,00","100,00","0,00","0,00","0,00","0,00","99,80","100,00","0,00",,"100,00","0,00","15,70"
+"ALSACE","Bas Rhin",670783273,"HOPITAL DE HAUTEPIERRE",67098,"STRASBOURG CEDEX 2","DXCARE",,"OUI",19679,"DX CARE URGENCES","7.5 R 12 + programpme des Hus qui extrait les données",,1440,"100,00","100,00","52,24","52,24","21,05","21,05",0,,"100,00","100,00","100,00","100,00","100,00","0,28","28,42","1,22","54,50","63,41","95,18","100,00","97,23",,"100,00","52,24","21,05"
+"ALSACE","Haut Rhin",680000320,"CLINIQUE DIACONAT FONDERIE",68054,"MULHOUSE CEDEX 1","ATALANTE",,"OUI",7128,"ATALANTE","7.2.1.0",,1440,"100,00","100,00","39,80","39,80","99,14","99,14",0,,"100,00","100,00","100,00","100,00","99,78","99,79","100,00","99,93","97,71","98,95","100,00","100,00","98,10",,"100,00","39,80","99,14"
+"ALSACE","Haut Rhin",680000494,"CLINIQUE DIACONAT ROOSEVELT",68200,"MULHOUSE","ATALANTE",,"OUI",1852,"ATALANTE","7.2.1.0",,1440,"100,00","100,00","7,34","7,34","80,94","80,94",0,,"100,00","100,00","100,00","100,00","98,11","99,24","99,30","99,30","88,55","99,35","100,00","100,00","34,78",,"100,00","7,34","80,94"
+"ALSACE","Haut Rhin",680000544,"CENTRE HOSPITALIER D'ALTKIRCH",68134,"ALTKIRCH CEDEX","ATALANTE",,"OUI",4013,"ATALANTE","7.2.2",,1440,"100,00","100,00","18,04","18,04","30,03","30,03",0,,"100,00","100,00","100,00","100,00","82,53","0,32","98,38","7,72","18,81","70,72","28,11","100,00","94,89",,"100,00","18,04","30,03"
+"ALSACE","Haut Rhin",680000601,"CENTRE HOSPITALIER DE THANN",68802,"THANN CEDEX","NA",,"NON","NA","NA","NA","SU non informatisé",1440,"NA","NA","NA","NA","NA","NA","NA",,"NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA","NA",,"NA","NA","NA"
+"ALSACE","Haut Rhin",680000627,"HOPITAL DU HASENRAIN",68051,"MULHOUSE CEDEX 1","CRISTALNET-DMU",,"OUI","NA","ATALANTE","7.1.1","Même FINESS que CH E. Muller",1440,"100,00","100,00","18,04","18,04","30,03","30,03",1,,"100,00","100,00","100,00","100,00","82,53","0,32","98,38","7,72","18,81","70,72","28,11","100,00","94,89",,"100,00","18,04","30,03"
+"ALSACE","Haut Rhin",680000684,"HOPITAL LOUIS PASTEUR",68024,"COLMAR CEDEX","CRISTALNET-DMU",,"OUI",16564,"CRISTALNET-DMU","3.5.23",,1440,"100,00","100,00","86,08","86,08","97,41","97,41",1,,"100,00","100,00","100,00","100,00","100,00","100,00","99,23","99,23","0,00","99,35","99,18","98,80","97,06",,"100,00","86,08 ?","97,41"
+"ALSACE","Haut Rhin",680000700,"CENTRE HOSPITALIER DE GUEBWILLER",68504,"GUEBWILLER CEDEX","ATALANTE",,"OUI",3699,"ATALANTE","7.2.1",,1440,"100,00","100,00","98,95","98,95","93,24","93,24",0,,"100,00","100,00","100,00","100,00","94,30","0,57","98,13","91,59","99,68","98,62","98,81","100,00","62,86",,"100,00","98,95","93,24"
+"ALSACE","Haut Rhin",680001245,"CENTRE MERE ENFANT 'LE PARC'",68020,"COLMAR CEDEX","CRISTALNET-DMU",,"OUI","NA","CRISTALNET-DMU","3.5.23","Même FINESS que Hôpital Pasteur",1440,"100,00","100,00","86,08 ?","86,08 ?","97,41","97,41",1,,"100,00","100,00","100,00","100,00","100,00","100,00","99,23","99,23","0,00","99,35","99,18","98,80","97,06",,"100,00","86,08 ?","97,41"
+"ALSACE","Haut Rhin",680004546,"HOPITAL EMILE MULLER",68051,"MULHOUSE CEDEX 1","URQUAL",,"OUI",15383,"ATALANTE","7.1.1",,1440,"100,00","100,00","18,04","18,04","30,03","30,03",1,,"100,00","100,00","100,00","100,00","82,53","0,32","98,38","7,72","18,81","70,72","28,11","100,00","94,89",,"100,00","18,04","30,03"
+"ALSACE","Haut Rhin",680020096,"CENTRE HOSP MULHOUSE- SITE DE ST-LOUIS",68300,"ST LOUIS","ATALANTE",,"OUI",4170,"ATALANTE","7.1.1",,1440,"100,00","100,00","55,40","55,40","78,97","78,97",0,,"100,00","100,00","100,00","100,00","85,35","0,24","99,83","12,61","1,53","59,11","61,85","100,00","45,87",,"100,00","55,40","78,97"
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,"Nombre de RPU pour lesquels le critère CP est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère commune est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère sexe est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère date d'entrée est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode d'entrée est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère provenance est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode de transport est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode de PEC est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère motif est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère CCMU est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère DDS est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU avec mode de sortie =6 ou 7 pour lesquels la destination est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis","Nombre de RPU avec mode de sortie =6 ou 7 pour lesquels l'orientation est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis",,"Je ne sais pas quelle est la méthode utilisée en Alsace pour ces premiers calculs : juste de l'exhaustivité ou également de la conformité? Je n'ai donc pas réintégré les données dans les colonnes",,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"Nombre de RPU avec mode de sortie =6 ou 7 ou 8 pour lesquels la destination est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis",,,,,

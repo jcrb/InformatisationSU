@@ -1,0 +1,84 @@
+---
+title: "Enquête logicielle - Septembre 2015"
+author: "JcB"
+date: "07/09/2015"
+output: html_document
+---
+
+7/9/2015
+---------
+Reprise de l'exploitation des logiciels des SU
+
+- fichier source: DATA/FEDORU - ENQUETE LOGICIEL 2015 - V2 (12 06 15) (3)
+- création d'un dossier spécifique __Septembre2015__ contenent un sous dossier __data__ pour y stocker les résultats régionaux sous forme de fichier .csv. 
+
+Récupération des fichiers csv
+-----------------------------
+
+- les 5 premières lignes sont éliminées
+- élimination du héader => il faudre en créer un
+
+```{}
+path = "./data/" # ./Septembre2015/data/ si console
+out.file <- ""
+file.names <- dir(path, pattern =".csv") # seuls les fichiers se terminant par csv sont lus
+for(i in 1:length(file.names)){
+   file <- read.table(paste(path, file.names[i], sep=""), skip = 5, header = FALSE, sep=",", stringsAsFactors=FALSE)
+   # on ne garde que les 22 premières colonnes
+   file <- file[, 1:22]
+   # on ne garde que les lignes où les colonnes 1 à 5 ne sont pas vides (http://genometoolbox.blogspot.fr/2014/01/remove-rows-with-na-values-from-r-data.html)
+   file <- file[complete.cases(file[,1:5]),]
+   # remplacement de la virgule écimale par le point décimal (soirce: http://stackoverflow.com/questions/5487164/r-how-to-replace-parts-of-variable-strings-within-data-frame)
+   file <- as.data.frame(sapply(file, gsub, pattern = ",", replacement = "."))
+
+   out.file <- rbind(out.file, file)
+ }
+
+n <- c("Region", "Departement", "FINESS", "Hopital", "CP", "Routage","Logiciel_2014","Editeur", "RPU_transmis","Nb_RPU_T1_2015", "Logiciel_2015", "Version_2015", "Coment", "Freq_remontee", "DN_exhaus","DN_confor", "DP_exhaus", "DP_confor", "MS_exhaus", "MS_confor", "Jours_manquants", "coment2")
+names(out.file) <- n
+
+write.table(out.file, file = "archive.csv", sep=",", row.names = FALSE, qmethod = "double", fileEncoding="utf-8")
+```
+
+```{r}
+d <- read.csv("archive.csv")
+
+```
+
+Cartographie
+============
+
+```{r carto_region, echo=FALSE}
+
+library(sp)
+library("RColorBrewer")
+
+# récupérer le fond de carte
+file <- "~/Documents/CartographieR/RCarto/france_region.RData" # fichier source
+load(file) # le fond s'appelle region (SpatialPolygonDataFrame)
+
+par(mar=c(0,0,1,0))
+plot(region)
+title(main="Régions participantes (enquête 2015)")
+
+# ajout des centroïdes régionaux
+x <- 0
+y <- 0
+for(i in 1:22){ a = region@polygons[[i]]@labpt; x[i] = a[1]; y[i] = a[2]}
+region@data$x <- x
+region@data$y <- y
+
+# on ajoute une colonne participation. Les régions participantes = 1 sinon 0
+region@data$participation <- 0
+reg <- region@data
+reg$participation[reg$reg.id %in% c(42,72,53,21,26,74,93,82)] <- 1
+
+# carte des régions participantes
+plot(region, col = ifelse(reg$participation == 1, "cornflowerblue", "gray80"))
+title(main="Régions participantes (enquête 2015)")
+for(i in 1:length(reg$participation)){if(reg$participation[i] == 1) text(reg$x[i], reg$y[i], reg$reg.nom[i], cex = 0.6) }
+
+
+```
+
+
