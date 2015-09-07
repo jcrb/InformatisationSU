@@ -3,6 +3,16 @@ Enquête FEDORU
 
 La FEDORU a décidé de faire sa propre enquête concernant les logiciels utilisés dans les servives d'urgence. RESURAL a été chargé de cette enquête.
 
+Correspondants
+---------------
+
+Qui  |  Tel.  |  Organisme   
+-----|----------|----------   
+ [Caroline LEGLOAN](caroline.legloan@sante.gouv.fr)  |  01 40 56 55 45  |  DGOS   
+ [Mary LATOUILLE](Mary.LATOUILLE@sante.gouv.fr)  |  | DGOS   
+ [Gilles VIUDES]()  |  | FEDORU  
+ [Vaniba BOUSQUET](v.bousquet@invs.sante.fr)  |  | InVS
+
 Méthodologie
 ------------
 
@@ -57,6 +67,7 @@ Google ayant modifié les conditions d'accès au _drive_, il faut procéder en t
 - CENTRE HOSPITALIER DE GONESSE volontairement dupliqué car 2 SU avec 2 logiciels différents
 - CENTRE HOSPITALIER M JACQUET MELUN idem
 - ORSAY idem
+- Si pas de SU on met NA dans la colonne logiciel
 
 
 
@@ -115,13 +126,13 @@ Loading required package: nnet
                CORETEXTE                   CORWIN           CRISTALNET-DMU 
                        3                        1                       26 
                 CROSSWAY    DEVELOPPEMENT INTERNE                    DIAMM 
-                      15                        4                        1 
+                      16                        4                        1 
                      DMU                DOPASOINS        DOPASOIN URGENCES 
                        3                        1                        1 
                DOPATIENT            DOPA URGENCES                      DPU 
                        3                        2                        3 
                   DXCARE                  DX CARE                     EMED 
-                      20                        4                        4 
+                      21                        4                        4 
                 EQUAFILE                 EQUALIFE             EXPERT SANTE 
                        1                        1                        5 
                 FIRSTNET                     H ++                 H+ ACUTE 
@@ -153,7 +164,7 @@ Loading required package: nnet
               TU-ORUPACA                      UGO                    URQUA 
                       47                        1                        1 
                   URQUAL                W-DOSSIER                 XPERTHIS 
-                      82                        2                        1 
+                      83                        2                        1 
 ```
 
 ```
@@ -205,14 +216,14 @@ MEDICAL OBJECT                   2      0.4      0.4
 SANOCOM                          2      0.4      0.4
 SHAREGATE                        2      0.4      0.4
 W-DOSSIER                        2      0.4      0.4
-CORETEXTE                        3      0.5      0.7
-DMU                              3      0.5      0.7
-DOPATIENT                        3      0.5      0.7
-DPU                              3      0.5      0.7
-OSIRIS                           3      0.5      0.7
-SIGEMS                           3      0.5      0.7
-SILLAGE DMU                      3      0.5      0.7
-SOFTWAY MEDICAL                  3      0.5      0.7
+CORETEXTE                        3      0.5      0.6
+DMU                              3      0.5      0.6
+DOPATIENT                        3      0.5      0.6
+DPU                              3      0.5      0.6
+OSIRIS                           3      0.5      0.6
+SIGEMS                           3      0.5      0.6
+SILLAGE DMU                      3      0.5      0.6
+SOFTWAY MEDICAL                  3      0.5      0.6
 DEVELOPPEMENT INTERNE            4      0.7      0.9
 DX CARE                          4      0.7      0.9
 EMED                             4      0.7      0.9
@@ -227,32 +238,32 @@ AXIGATE                          7      1.3      1.5
 CORA                             8      1.5      1.7
 POLYMEDIS                        8      1.5      1.7
 SIGESOFT                         8      1.5      1.7
-ATALANTE                         9      1.6      2.0
-SIDSU                            9      1.6      2.0
+ATALANTE                         9      1.6      1.9
+SIDSU                            9      1.6      1.9
 CLINICOM                        10      1.8      2.2
 ORBIS                           10      1.8      2.2
 OSOFT                           12      2.2      2.6
-CROSSWAY                        15      2.7      3.3
-DXCARE                          20      3.6      4.3
+CROSSWAY                        16      2.9      3.4
+DXCARE                          21      3.8      4.5
 CRISTALNET-DMU                  26      4.7      5.6
-TU-ORUPACA                      47      8.6     10.2
-RESURGENCES                     74     13.5     16.1
-URQUAL                          82     15.0     17.8
-<NA>                            87     15.9      0.0
-  Total                        548    100.0    100.0
+TU-ORUPACA                      47      8.5     10.1
+RESURGENCES                     74     13.4     15.9
+URQUAL                          83     15.1     17.9
+<NA>                            87     15.8      0.0
+  Total                        551    100.0    100.0
 ```
 
-Nombre total de SU identifiés: 671
+Nombre total de SU identifiés: 584
 
-Nombre total de logiciels identifiés: 461
+Nombre total de logiciels identifiés: 464
 
-Taux d'exhaustivité: 68.7 %
+Taux d'exhaustivité: 79.45 %
 
 Nombre de fournisseurs identifiés: 72
 
 SU non informatisés: 4
 
-SU contactés en attente de réponse: 123
+SU contactés en attente de réponse: 120
 
 #### Table logiciels par région:
 
@@ -631,7 +642,7 @@ CORA                                    2        0                 0
 CORETEXTE                               0        0                 0
 CORWIN                                  0        0                 0
 CRISTALNET-DMU                          0        1                 0
-CROSSWAY                                0        0                 0
+CROSSWAY                                1        0                 0
 DEVELOPPEMENT INTERNE                   0        0                 0
 DIAMM                                   0        0                 0
 DMU                                     0        0                 0
@@ -640,7 +651,7 @@ DOPASOIN URGENCES                       0        0                 0
 DOPATIENT                               0        0                 0
 DOPA URGENCES                           0        0                 0
 DPU                                     0        0                 0
-DXCARE                                  0        0                 0
+DXCARE                                  1        0                 0
 DX CARE                                 0        0                 0
 EMED                                    0        0                 0
 EQUAFILE                                0        0                 0
@@ -687,7 +698,7 @@ TRACK CARE                              0        0                 0
 TU-ORUPACA                              0        0                 0
 UGO                                     0        0                 0
 URQUA                                   0        0                 0
-URQUAL                                  2        0                 0
+URQUAL                                  3        0                 0
 W-DOSSIER                               0        0                 0
 XPERTHIS                                0        0                 0
                          RHONE ALPES
@@ -777,59 +788,59 @@ XPERTHIS                           0
 
 ```
                      Logiciels SU rapport reg.id
-ALSACE                      18 19   94.74     42
+ALSACE                      18 18  100.00     42
 AQUITAINE                   35 35  100.00     72
-AUVERGNE                     4 15   26.67     83
-BASSE NORMANDIE             12 23   52.17     25
-BOURGOGNE                   21 23   91.30     26
+AUVERGNE                     4 12   33.33     83
+BASSE NORMANDIE             12 19   63.16     25
+BOURGOGNE                   21 21  100.00     26
 BRETAGNE                    31 32   96.88     53
-CENTRE                       7 28   25.00     24
+CENTRE                       7 22   31.82     24
 CHAMPAGNE ARDENNES          16 16  100.00     21
-CORSE                        4  8   50.00     94
-DOM                          2 14   14.29    100
+CORSE                        4  4  100.00     94
+DOM                          2 13   15.38    100
 FRANCHE CONTE               13 13  100.00     43
-HAUTE NORMANDIE              8 21   38.10     23
-ILE DE France               89 99   89.90     11
-LANGUEDOC ROUSSILLON        28 29   96.55     91
+HAUTE NORMANDIE              8 14   57.14     23
+ILE DE France               89 89  100.00     11
+LANGUEDOC ROUSSILLON        28 28  100.00     91
 LIMOUSIN                    10 10  100.00     74
 LORRAINE                    23 23  100.00     41
-MIDI PYRENEES               30 37   81.08     73
-NORD PAS DE CALAIS          27 37   72.97     31
-PACA                        48 52   92.31     93
-PAYS DE LA LOIRE             8 21   38.10     52
-PICARDIE                     1 21    4.76     22
-POITOU CHANRENTES            2 24    8.33     54
-RHONE ALPES                 20 71   28.17     82
+MIDI PYRENEES               30 30  100.00     73
+NORD PAS DE CALAIS          27 27  100.00     31
+PACA                        48 48  100.00     93
+PAYS DE LA LOIRE            11 16   68.75     52
+PICARDIE                     1 17    5.88     22
+POITOU CHANRENTES            2 19   10.53     54
+RHONE ALPES                 20 58   34.48     82
 ```
 
 ```
                      Logiciels SU rapport reg.id
-PICARDIE                     1 21    4.76     22
-POITOU CHANRENTES            2 24    8.33     54
-DOM                          2 14   14.29    100
-CENTRE                       7 28   25.00     24
-AUVERGNE                     4 15   26.67     83
-RHONE ALPES                 20 71   28.17     82
-HAUTE NORMANDIE              8 21   38.10     23
-PAYS DE LA LOIRE             8 21   38.10     52
-CORSE                        4  8   50.00     94
-BASSE NORMANDIE             12 23   52.17     25
-NORD PAS DE CALAIS          27 37   72.97     31
-MIDI PYRENEES               30 37   81.08     73
-ILE DE France               89 99   89.90     11
-BOURGOGNE                   21 23   91.30     26
-PACA                        48 52   92.31     93
-ALSACE                      18 19   94.74     42
-LANGUEDOC ROUSSILLON        28 29   96.55     91
+PICARDIE                     1 17    5.88     22
+POITOU CHANRENTES            2 19   10.53     54
+DOM                          2 13   15.38    100
+CENTRE                       7 22   31.82     24
+AUVERGNE                     4 12   33.33     83
+RHONE ALPES                 20 58   34.48     82
+HAUTE NORMANDIE              8 14   57.14     23
+BASSE NORMANDIE             12 19   63.16     25
+PAYS DE LA LOIRE            11 16   68.75     52
 BRETAGNE                    31 32   96.88     53
+ALSACE                      18 18  100.00     42
 AQUITAINE                   35 35  100.00     72
+BOURGOGNE                   21 21  100.00     26
 CHAMPAGNE ARDENNES          16 16  100.00     21
+CORSE                        4  4  100.00     94
 FRANCHE CONTE               13 13  100.00     43
+ILE DE France               89 89  100.00     11
+LANGUEDOC ROUSSILLON        28 28  100.00     91
 LIMOUSIN                    10 10  100.00     74
 LORRAINE                    23 23  100.00     41
+MIDI PYRENEES               30 30  100.00     73
+NORD PAS DE CALAIS          27 27  100.00     31
+PACA                        48 48  100.00     93
 ```
-- nombre de logiciels répertoriés: 457
-- nombre de services répertoriés: 671 . Le nombre de SU est surestimé par le répertoire FINESS (par ex. des établissements sans SU mais avec une antenne SMUR saisonnière y figurent).
+- nombre de logiciels répertoriés: 460
+- nombre de services répertoriés: 584 . Le nombre de SU est surestimé par le répertoire FINESS (par ex. des établissements sans SU mais avec une antenne SMUR saisonnière y figurent).
  
 Comparer public, privé et PSPH
 
@@ -850,12 +861,12 @@ Transmission des RPU
 
 ```
       NA      NON      OUI OUI\nNON 
-     195       51      424        1 
+     125       49      409        1 
 ```
 
 ```
                                                 OUI OUI.NON   V5
-URQUAL                                           71       1 7100
+URQUAL                                           72       1 7200
 AMI                                               1       0  Inf
 ATALANTE                                          8       0  Inf
 AXIGATE                                           5       0  Inf
@@ -873,7 +884,7 @@ DOPASOINS                                         1       0  Inf
 DOPATIENT                                         3       0  Inf
 DOPA URGENCES                                     2       0  Inf
 DPU                                               3       0  Inf
-DXCARE                                           18       0  Inf
+DXCARE                                           19       0  Inf
 DX CARE                                           3       0  Inf
 EMED                                              4       0  Inf
 EQUALIFE                                          1       0  Inf
@@ -959,16 +970,16 @@ x2[order(x2[,1], decreasing = TRUE),]
 
 ```
 ##                Frequency Percent Cum. percent
-## URQUAL                82    17.9        100.0
-## RESURGENCES           74    16.2         82.1
-## TU-ORUPACA            47    10.3         65.9
-## CRISTALNET-DMU        26     5.7         55.6
-## DXCARE                20     4.4         49.9
-## CROSSWAY              15     3.3         45.5
-## OSOFT                 12     2.6         42.2
-## CLINICOM              10     2.2         37.4
-## ORBIS                 10     2.2         39.6
-## SIDSU                  9     2.0         35.2
+## URQUAL                83    18.0        100.0
+## RESURGENCES           74    16.1         82.0
+## TU-ORUPACA            47    10.2         65.9
+## CRISTALNET-DMU        26     5.7         55.7
+## DXCARE                21     4.6         50.0
+## CROSSWAY              16     3.5         45.4
+## OSOFT                 12     2.6         42.0
+## CLINICOM              10     2.2         37.2
+## ORBIS                 10     2.2         39.3
+## SIDSU                  9     2.0         35.0
 ```
 
 ```r

@@ -4,12 +4,23 @@ output:
     fig_caption: yes
     fig_height: 7
     keep_md: yes
+    number_sections: yes
     toc: yes
 ---
 Enquête FEDORU
 ========================================================
 
 La FEDORU a décidé de faire sa propre enquête concernant les logiciels utilisés dans les servives d'urgence. RESURAL a été chargé de cette enquête.
+
+Correspondants
+---------------
+
+Qui  |  Tel.  |  Organisme   
+-----|----------|----------   
+ [Caroline LEGLOAN](caroline.legloan@sante.gouv.fr)  |  01 40 56 55 45  |  DGOS   
+ [Mary LATOUILLE](Mary.LATOUILLE@sante.gouv.fr)  |  | DGOS   
+ [Gilles VIUDES]()  |  | FEDORU  
+ [Vanina BOUSQUET](v.bousquet@invs.sante.fr)  |  | InVS
 
 Méthodologie
 ------------
@@ -28,7 +39,7 @@ Google ayant modifié les conditions d'accès au _drive_, il faut procéder en t
 
 source("../../functions.R")
 
-date <- "20141105"
+date <- "20141109"
 file <- paste0("~/Documents/Resural/FEDORU/InformatisationSU/su_France_", date, ".csv")
 d <- read.table(file, header=TRUE, sep=",")
 names(d)
@@ -42,6 +53,7 @@ str(d)
 - CENTRE HOSPITALIER DE GONESSE volontairement dupliqué car 2 SU avec 2 logiciels différents
 - CENTRE HOSPITALIER M JACQUET MELUN idem
 - ORSAY idem
+- Si pas de SU on met NA dans la colonne logiciel
 
 ```{r normaliser, echo=FALSE}
 library(stringr)
@@ -144,6 +156,8 @@ logi <- summary(as.factor(l))
 nr <- logi["NA's"] # non réponses
 log.identifies <- sum(n.logiciels) - nr # nombre de logiciels identifiés
 
+# finalement on ne retient que les lignes où "logiciel" est différent de NA
+d <- d[!is.na(d$logiciel),]
 ```
 
 Nombre total de SU identifiés: `r nrow(d)`
