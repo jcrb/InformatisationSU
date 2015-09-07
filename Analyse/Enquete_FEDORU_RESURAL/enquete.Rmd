@@ -39,8 +39,13 @@ Google ayant modifié les conditions d'accès au _drive_, il faut procéder en t
 
 source("../../functions.R")
 
+<<<<<<< HEAD
 date <- "20141109"
 file <- paste0("~/Documents/Resural/FEDORU/InformatisationSU/su_France_", date, ".csv")
+=======
+date <- "20141105"
+file <- paste0("../../su_France_", date, ".csv")
+>>>>>>> e45291ba4d3d62943e248a8723ad2ac5f59fbe47
 d <- read.table(file, header=TRUE, sep=",")
 names(d)
 str(d)
