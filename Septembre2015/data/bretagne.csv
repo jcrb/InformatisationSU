@@ -3,35 +3,20 @@
 "Région","Dpt","FINESS","Raison sociale","Code postal","Libelle routage","Logiciel 2013-2014","Editeur","RPU transmis
 (OUI/NON)","Nombre de RPU transmis 1er trimestre 2015","Logiciel 2015","Version (en fonctionnement durant la période retenue) si changement de version le noter","Commentaire","Fréquence de remontées des données (en minutes)","Date de naissance",,"Diagnostic",,"Mode de sortie",,"Nombre de jours manquants","Commentaire","RPU Code postal","RPU Commune","RPU Sexe","RPU Date entrée","RPU Mode entrée","RPU Provenance","RPU Mode de transport","RPU Mode de prise en charge","RPU Motif de recours","RPU CCMU","RPU Date de sortie","RPU Destination","RPU Orientation",,"RPU Date de naissance","RPU Diagnostic principal","RPU Mode de sortie"
 ,,"FINNES","Raison.sociale","Code.postal","Libelle.routage","Logiciel 2013-2014","editeur","RPU (OUI/NON/partellement)",,,,,,"Exhaustivité","Conformité","Exhaustivité","Conformité","Exhaustivité","Conformité",,,"RPU Code postal","RPU Commune","RPU Sexe","RPU Date entrée","RPU Mode entrée","RPU Provenance","RPU Mode de transport","RPU Mode de prise en charge","RPU Motif de recours","RPU CCMU","RPU Date de sortie","RPU Destination","RPU Orientation",,"RPU Date de naissance","RPU Diagnostic principal","RPU Mode de sortie"
-"BRETAGNE","Finistère","290004324
-290000058
-290000256","CENTRE HOSPITALIER UNIVERSITAIRE DE BREST 
-(Site Cavale Blanche - Site Morvan- Site Carhaix)","29609
+"BRETAGNE","Finistère",290004324,"CHU BREST -Site Cavale Blanche","29609
 29835","BREST CEDEX
-CARHAIX-PLOUGUER CEDEX","URQUAL","Maincare (ex-McKesson)","OUI",20238,"URQUAL"," version 7.0.3",,"1 fois/jour","Carhaix: 100%
-Cavale blanche : 100,0%
-Morvan : 100,0%","Carhaix: 99,97%
-Cavale Blanche : 99,98%
-Morvan : 100,0%","Carhaix : 72,0%
-Cavale Blanche : 64,2%
-Morvan : 98,4%","Carhaix : 72,0%
-Cavale Blanche : 64,2%
-Morvan : 98,4%","Carhaix : 73,9%
-Cavale Blanche : 98,1%
-Morvan : 99,7%","Carhaix : 73,9%
-Cavale Blanche : 98,1%
-Morvan : 99,7%",0,,"100,00","100,00","100,00","100,00","100,00","0,28","28,42","1,22","54,50","63,41","95,18","100,00","97,23",,"100,00","52,24","21,05"
-"BRETAGNE","Finistère","290000025
-290000066","CENTRE HOSPITALIER INTERCOMMUNAL DE QUIMPER
- (site Quimper et Concarneau)","29107
- 29900","QUIMPER CEDEX
-CONCARNEAU","URQUAL (Mediqual)","Maincare (ex-McKesson)","OUI",12276,"URQUAL (Mediqual)","version 7.1.6.0.2",,"1 fois/jour","Concarneau : 100,0%
-Quimper : 100,0%","Concarneau : 100,0%
-Quimper : 99,96%","Concarneau : 99,1%
-Quimper : 96,95%","Concarneau : 99,1%
-Quimper : 96,9%","Concarneau : 99,6%
-Quimper : 98,2%","Concarneau : 99,6%
-Quimper : 98,2%",0,,"100,00","99,81","100,00","100,00","75,50","54,04","68,19","86,72","25,57","73,81","88,04","98,07","88,34",,"100,00","76,00","90,22"
+CARHAIX-PLOUGUER CEDEX","URQUAL","Maincare (ex-McKesson)","OUI",20238,"URQUAL"," version 7.0.3",,"1 fois/jour","100,0%","99,98%","64,2%","64,2%","98,1%","98,1%",0,,"100,00","100,00","100,00","100,00","100,00","0,28","28,42","1,22","54,50","63,41","95,18","100,00","97,23",,"100,00","52,24","21,05"
+"BRETAGNE","Finistère","290000058
+","CHU BREST - Site Morvan","29609
+29835","BREST CEDEX
+CARHAIX-PLOUGUER CEDEX","URQUAL","Maincare (ex-McKesson)","OUI",20238,"URQUAL"," version 7.0.3",,"1 fois/jour","100,0%","100,00%","98,4%","98,4%","99,7%","99,7%",0,,"100,00","100,00","100,00","100,00","100,00","0,28","28,42","1,22","54,50","63,41","95,18","100,00","97,23",,"100,00","52,24","21,05"
+"BRETAGNE","Finistère",290000256,"CHU BREST- Site Carhaix","29609
+29835","BREST CEDEX
+CARHAIX-PLOUGUER CEDEX","URQUAL","Maincare (ex-McKesson)","OUI",20238,"URQUAL"," version 7.0.3",,"1 fois/jour","100,0%","99,97%","72,0%","72,0%","73,9%","73,9%",0,,"100,00","100,00","100,00","100,00","100,00","0,28","28,42","1,22","54,50","63,41","95,18","100,00","97,23",,"100,00","52,24","21,05"
+"BRETAGNE","Finistère",290 000 025,"CH DE QUIMPER-site Quimper",29107,"QUIMPER CEDEX
+CONCARNEAU","URQUAL (Mediqual)","Maincare (ex-McKesson)","OUI",12276,"URQUAL (Mediqual)","version 7.1.6.0.2",,"1 fois/jour","100,0%","100,0%","97,0%","96,9%","98,2%","98,2%",0,,"100,00","99,81","100,00","100,00","75,50","54,04","68,19","86,72","25,57","73,81","88,04","98,07","88,34",,"100,00","76,00","90,22"
+"BRETAGNE","Finistère",290 000 066,"CHL DE QUIMPER-Site de Concarneau",29900,"QUIMPER CEDEX
+CONCARNEAU","URQUAL (Mediqual)","Maincare (ex-McKesson)","OUI",12276,"URQUAL (Mediqual)","version 7.1.6.0.2",,"1 fois/jour","100,0%","100,0%","99,1%","99,1%","99,6%","99,6%",0,,"100,00","99,81","100,00","100,00","75,50","54,04","68,19","86,72","25,57","73,81","88,04","98,07","88,34",,"100,00","76,00","90,22"
 "BRETAGNE","Finistère",290000181,"CENTRE HOSPITALIER DE DOUARNENEZ",29100,"DOUARNENEZ","SILLAGE URGENCES","SIB (Santé Informatique de Bretagne)","OUI",2983,"SILLAGE URGENCES","version 6.1.4  le 17/03/2015
 version 6.1.5 le 06/05/2015
 version 6.1.5.2 le 02/06/2015",,"1 fois/jour","100,0%","100,0%","95,0%","95,0%","98,8%","98,8%",0,,"100,00","100,00","100,00","100,00","100,00","3,49","0,00","0,00","48,55","52,75","89,25","100,00","93,97",,"100,00","9,10","88,63"
@@ -43,15 +28,10 @@ Transmission des RPU sur la plateforme de test","100,00","100,00","100,00","100,
 "BRETAGNE","Finistère",290000785,"HOTEL-DIEU DE PONT-L'ABBE",29120,"PONT-L'ABBE","OSOFT","MEDIBASE","OUI",3404,"OSOFT","version 6.64.048 d'Osoft
 mise à jour de la version d'Osoft le 8 janvier 2015 et le 21 mai 2015",,"1 fois/jour","100,0%","100,0%","98,6%","98,6%","100,0%","100,0%",0,,"100,00","100,00","100,00","100,00","100,00","100,00","0,00","0,00","0,00","0,00","99,80","100,00","0,00",,"100,00","0,00","15,70"
 "BRETAGNE","Finistère",290000934,"CENTRE HOSPITALIER DE QUIMPERLE",29300,"QUIMPERLE CEDEX",,,"NON",3281,"SILLAGE URGENCES","V6.1.2","NE","1 fois/jour","100,0%","100,0%","88,2%","88,2%","68,5%","68,5%",0,"Transmission des RPU sur la plateforme de test","100,00","100,00","100,00","100,00","100,00","0,28","28,42","1,22","54,50","63,41","95,18","100,00","97,23",,"100,00","52,24","21,05"
-"BRETAGNE","Morbihan","560000135
-560009268","CENTRE HOSPITALIER DE BRETAGNE SUD 
-(SAU adultes et pédiatrie)",56322,"LORIENT CEDEX","URQUAL","Maincare (ex-McKesson)","OUI",13291,"URQUAL","V 5.41.15",,"1 fois/jour","Adultes : 100,0%
-Enfants : 100,0%","Adultes : 100,0%
-Enfants : 100,0%","Adultes : 86,0%
-Enfants : 100,0%","Adultes : 0,0%
-Enfants : 100,0%","Adultes : 98,9%
-Enfants : 100%","Adultes : 98,9%
-Enfants 100,0%",0,,"100,00","100,00","100,00","100,00","99,78","99,79","100,00","99,93","97,71","98,95","100,00","100,00","98,10",,"100,00","39,80","99,14"
+"BRETAGNE","Morbihan",560000135,"CENTRE HOSPITALIER DE BRETAGNE SUD 
+(SAU adultes)",56322,"LORIENT CEDEX","URQUAL","Maincare (ex-McKesson)","OUI",13291,"URQUAL","V 5.41.15",,"1 fois/jour","100,0%","100,0%","86,0%","0,0%","98,9%","98,9%",0,,"100,00","100,00","100,00","100,00","99,78","99,79","100,00","99,93","97,71","98,95","100,00","100,00","98,10",,"100,00","39,80","99,14"
+"BRETAGNE","Morbihan",560009268,"CENTRE HOSPITALIER DE BRETAGNE SUD 
+(SAU pédiatrie)",56322,"LORIENT CEDEX","URQUAL","Maincare (ex-McKesson)","OUI",13291,"URQUAL","V 5.41.15",,"1 fois/jour","100,0%","100,0%","100,0%","100,0%","100,0%","100,0%",0,,"100,00","100,00","100,00","100,00","99,78","99,79","100,00","99,93","97,71","98,95","100,00","100,00","98,10",,"100,00","39,80","99,14"
 "BRETAGNE","Morbihan",560000143,"CENTRE HOSPITALIER DU CENTRE BRETAGNE",56306,"PONTIVY CEDEX","URQUAL","Maincare (ex-McKesson)","OUI",6754,"URQUAL","V 7.0.5",,"1 fois/jour","100,0%","100,0%","15,7%","15,7%","97,3%","97,3%",0,,"100,00","100,00","100,00","100,00","98,11","99,24","99,30","99,30","88,55","99,35","100,00","100,00","34,78",,"100,00","7,34","80,94"
 "BRETAGNE","Morbihan","560000127
 560000200","CENTRE HOSPITALIER DE BRETAGNE ATLANTIQUE
@@ -72,15 +52,11 @@ Passage à la version 6.1.4.1 le 31/03/2015
 Passage à la version 6.1.4.3 le 13/04/2015
 Passage à la version 6.1.5 le 28/04/2015",,"1 fois/jour","100,0%","100,0%","0,9%","0,9%","100,0%","100,0%",0,,"100,00","100,00","100,00","100,00","100,00","100,00","99,23","99,23","0,00","99,35","99,18","98,80","97,06",,"100,00","86,08 ?","97,41"
 "BRETAGNE","Ille-et-Vilaine",350000162,"CENTRE HOSPITALIER DE REDON",35603,"REDON CEDEX","SILLAGE URGENCES","SIB (Santé Informatique de Bretagne)","NON",5123,"SILLAGE URGENCES",,,"1 fois/jour","100,0%","100,0%","91,3%","91,3%","99,6%","99,6%",0,"Transmission des RPU sur la plateforme de test","100,00","100,00","100,00","100,00","94,30","0,57","98,13","91,59","99,68","98,62","98,81","100,00","62,86",,"100,00","98,95","93,24"
-"BRETAGNE","Ille-et-Vilaine","350000741
-350007084","CENTRE HOSPITALIER UNIVERSITAIRE DE RENNES 
-(site de Ponchaillou-SAU adulte- et Hôpital Sud-SAU pédiatrique)",35033,"RENNES CEDEX 9","RESURGENCES","BERGER-LEVRAULT","OUI",21229,"RESURGENCES","version V44",,"1 fois/jour","Ponchaillou : 100,0%
-Hôpital sud : 100,0%","Ponchaillou : 100,0%
-Hôpital sud : 100,0%","Ponchaillou : 99,97%
-Hôpital sud : 99,99%","Ponchaillou : 99,97%
-Hôpital sud : 99,99%","Ponchaillou : 99,98%
-Hôpital sud : 100,0%","Ponchaillou : 99,98%
-Hôpital sud : 100,0%",0,,"100,00","100,00","100,00","100,00","100,00","100,00","99,23","99,23","0,00","99,35","99,18","98,80","97,06",,"100,00","86,08 ?","97,41"
+"BRETAGNE","Ille-et-Vilaine",350000741,"CHU DE RENNES -Hôpital Sud-SAU pédiatrique",35033,"RENNES CEDEX 9","RESURGENCES","BERGER-LEVRAULT","OUI",21229,"RESURGENCES","version V44",,"1 fois/jour","100,0%","100,0%","100,0%","100,0%","100,0%","100,0%",0,,"100,00","100,00","100,00","100,00","100,00","100,00","99,23","99,23","0,00","99,35","99,18","98,80","97,06",,"100,00","86,08 ?","97,41"
+"BRETAGNE","Ille-et-Vilaine",350007084,"CHU DE RENNES -site de Ponchaillou-SAU adulte",35033,"RENNES CEDEX 9","RESURGENCES","BERGER-LEVRAULT","OUI",21229,"RESURGENCES","version V44",,"1 fois/jour"," 100,0%
+","100,0%
+","100,0%","99,97%
+","100,0%","100,0%",0,,"100,00","100,00","100,00","100,00","100,00","100,00","99,23","99,23","0,00","99,35","99,18","98,80","97,06",,"100,00","86,08 ?","97,41"
 "BRETAGNE","Ille-et-Vilaine",350000147,"CENTRE HOSPITALIER DE SAINT-MALO",35400,"SAINT-MALO","URQUAL","Maincare (ex-McKesson)","OUI",8989,"URQUAL","V5.4009-2",,"1 fois/jour","100,0%","100,0%","91,2%","91,2%","95,6%","95,6%",2,,"100,00","100,00","100,00","100,00","82,53","0,32","98,38","7,72","18,81","70,72","28,11","100,00","94,89",,"100,00","18,04","30,03"
 "BRETAGNE","Ille-et-Vilaine",350000121,"CENTRE HOSPITALIER PRIVE SAINT-GREGOIRE",35768,"SAINT-GREGOIRE CEDEX","MEDIBOARD","OpenXtrem","NON",7080,"MEDIBOARD",,,"1 fois/jour","100,0%","100,0%","43,2%","43,2%","99,96%","99,96%",0,"Transmission des RPU sur la plateforme de test","100,00","100,00","100,00","100,00","85,35","0,24","99,83","12,61","1,53","59,11","61,85","100,00","45,87",,"100,00","55,40","78,97"
 "BRETAGNE","Ille-et-Vilaine",350000188,"CENTRE HOSPITALIER DE VITRE",35506,"VITRE","SILLAGE DMU","SIB (Santé Informatique de Bretagne)","OUI",2785,"SILLAGE URGENCES","6.1.5.2","NE","1 fois/jour","100,0%","100,0%","0,1%","0,1%","98,7%","98,7%",42,"Transmission des RPU sur la plateforme de production à partir du 25/06/2015","100,00","100,00","100,00","100,00","85,35","0,24","99,83","12,61","1,53","59,11","61,85","100,00","45,87",,"100,00","55,40","78,97"

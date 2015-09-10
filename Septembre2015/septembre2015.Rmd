@@ -8,7 +8,7 @@ output:
 ---
 
 7/9/2015
----------
+========
 Reprise de l'exploitation des logiciels des SU
 
 - fichier source: DATA/FEDORU - ENQUETE LOGICIEL 2015 - V2 (12 06 15) (3)
@@ -22,7 +22,7 @@ Récupération des fichiers csv
 
 ```{}
 path = "./data/" # ./Septembre2015/data/ si console
-out.file <- ""
+out.file <- NULL
 file.names <- dir(path, pattern =".csv") # seuls les fichiers se terminant par csv sont lus
 for(i in 1:length(file.names)){
    file <- read.table(paste(path, file.names[i], sep=""), skip = 5, header = FALSE, sep=",", stringsAsFactors=FALSE)
@@ -66,6 +66,10 @@ d$reg.id[d$Region == "PACA"] <- 93
 d$reg.id[d$Region == "RHONE ALPES"] <- 82
 ```
 
+- Nombre de régions participantes: `r nlevels(d$Region)`
+- Nombre de sites: `r nlevels(d$FINESS)`
+
+
 Cartographie
 ============
 
@@ -82,8 +86,8 @@ file <- "~/Documents/CartographieR/RCarto/france_region.RData" # fichier source
 load(file) # le fond s'appelle region (SpatialPolygonDataFrame)
 
 par(mar=c(0,0,1,0))
-plot(region)
-title(main="Régions participantes (enquête 2015)")
+# plot(region)
+# title(main="Régions participantes (enquête 2015)")
 
 # ajout des centroïdes régionaux
 x <- 0
@@ -127,9 +131,11 @@ d$Logiciel_2015[d$Logiciel_2015=="MEDICAL OBJECT DE MEDIWERE 21"] <- "MEDIWERE"
 d$Logiciel_2015[d$Logiciel_2015=="ANTARES V2 DE INOVACUM"] <- "ANTARES"
 ```
 
+- Nombre de logiciels utilisés: `r length(unique(d$Logiciel_2015))`
+
 Logiciels par ordre décroissant
 -------------------------------
-```{r, echo=FALSE}
+```{r, echo=FALSE, comment=""}
 t <- sort(table(d$Logiciel_2015), decreasing = TRUE)
 t
 par(mar=c(6,3,2,2))
@@ -224,6 +230,71 @@ t <- tapply(d$Jours_manquants, d$Logiciel_2015, sum, na.rm = TRUE)
 n <- cbind(sort(t ,decreasing = TRUE))
 colnames(n) <- "Nb de jours manquants"
 n
+```
+
+Indicateurs
+===========
+
+Date de naissance
+------------------
+
+- taux de conformité:
+```{r, echo=FALSE, comment="", warning=FALSE}
+d$DN_confor <- as.numeric(gsub("%", "", d$DN_confor))
+DN.conforme <- summary(d$DN_confor)
+DN.conforme
+
+```
+
+
+- taux d'exhaustivité:
+```{r, echo=FALSE, comment="", warning=FALSE}
+
+d$DN_exhaus <- as.numeric(gsub("%", "", d$DN_exhaus))
+DN.ex <- summary(d$DN_exhaus)
+DN.ex
+```
+
+Diagnostic (DP)
+---------- 
+
+- taux de conformité:
+```{r, echo=FALSE, comment="", warning=FALSE}
+d$DP_confor <- as.numeric(gsub("%", "", d$DP_confor))
+DP.conforme <- summary(d$DP_confor)
+DP.conforme
+
+```
+
+
+- taux de exhaustivité:
+```{r, echo=FALSE, comment="", warning=FALSE}
+
+d$DP_exhaus <- as.numeric(gsub("%", "", d$DP_exhaus))
+DP.ex <- summary(d$DP_exhaus)
+DP.ex
+
+```
+
+Mode de sortie (MS)
+-------------------
+
+- taux de conformité:
+```{r, echo=FALSE, comment=""}
+d$MS_confor <- as.numeric(gsub("%", "", d$MS_confor))
+ms.conforme <- summary(d$MS_confor)
+ms.conforme
+
+```
+
+
+- taux de exhaustivité:
+```{r, echo=FALSE, comment=""}
+
+d$MS_exhaus <- as.numeric(gsub("%", "", d$MS_exhaus))
+ms.ex <- summary(d$MS_exhaus)
+ms.ex
+
 ```
 
 

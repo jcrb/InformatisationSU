@@ -1,5 +1,4 @@
 "Region","Departement","FINESS","Hopital","CP","Routage","Logiciel_2014","Editeur","RPU_transmis","Nb_RPU_T1_2015","Logiciel_2015","Version_2015","Coment","Freq_remontee","DN_exhaus","DN_confor","DP_exhaus","DP_confor","MS_exhaus","MS_confor","Jours_manquants","coment2"
-NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"","",NA,NA,NA,NA,NA,NA,NA,NA,NA
 "ALSACE","Bas Rhin","670000025","HOPITAL CIVIL / NOUVEL HOPITAL CIVIL","67091","STRASBOURG CEDEX","DXCARE",NA,"OUI","7759","DX CARE URGENCES","7.5 R 12 + programpme des Hus qui extrait les données","","1440","100.00","100.00","52.24","52.24","21.05","21.05","0",NA
 "ALSACE","Bas Rhin","670000157","CENTRE HOSPITALIER DE HAGUENAU","67504","HAGUENAU CEDEX","RESURGENCE",NA,"OUI","11308","RESURGENCE","","","1440","100.00","100.00","76.00","76.00","90.22","90.22","0",NA
 "ALSACE","Bas Rhin","670000165","CH SAINTE-CATHERINE DE SAVERNE","67703","SAVERNE CEDEX","DXCARE",NA,"OUI","7460","DX CARE ","7.5.16","","1440","100.00","100.00","9.10","9.10","88.63","88.63","0",NA
@@ -74,41 +73,27 @@ depuis le 19/03/15 : 7.1.10R1.0",NA,"1440 (1x/24h)","100%","100%","0%","0%","0%"
 "BOURGOGNE","Saone et Loire","710978313","SIH CH MONTCEAU-LES-MINES","71230","ST VALLIER","CRISTALNET-DMU",NA,"OUI","5079","DMU","3.4.30",NA,"1440 (1x/24h)","100%","100%","96%","96%","100%","100%","0",""
 "BOURGOGNE","Saone et Loire","710978347","HOTEL DIEU DU CREUSOT","71206","LE CREUSOT CEDEX","CRISTALNET-DMU",NA,"OUI","8512","DMU","3.4.30",NA,"1440 (1x/24h)","100%","100%","71%","71%","100%","100%","0",""
 "BOURGOGNE","Yonne","890002389","POLYCLINIQUE  STE MARGUERITE AUXERRE","89003","AUXERRE CEDEX","DxCare",NA,"OUI depuis le 30/05/14","2941","DXCARE","7.5.16",NA,"1440 (1x/24h)","100%","100%","83%","83%","100%","100%","0",""
-"BOURGOGNE","Yonne","890975527","CH AUXERRE","89011","AUXERRE CEDEX","CRISTALNET-DMU",NA,"OUI","ad. 9436 / ped.4004","DMU","3.5.26",NA,"1440 (1x/24h)","100%","100%","95.5% (ad.)/ 100.0% (ped)","95.5% (ad.)/ 100.0% (ped)","99.1% (ad) / 100% (ped)","99.1% (ad) / 100% (ped)","0",""
+"BOURGOGNE","Yonne","890975527","CH AUXERRE Adulte","89011","AUXERRE CEDEX","CRISTALNET-DMU",NA,"OUI","9436","DMU","3.5.26",NA,"1440 (1x/24h)","100%","100%","96%","96%","99%","99%","0",""
+"BOURGOGNE","Yonne","890975527","CH AUXERRE Pediatrique","89011","AUXERRE CEDEX","CRISTALNET-DMU",NA,"OUI","4004","DMU","3.5.26",NA,"1440 (1x/24h)","100%","100%","100%","100%","100%","100%","0",""
 "BOURGOGNE","Yonne","890975535","CH AVALLON","89206","AVALLON CEDEX","AGFA EXAGON",NA,"OUI","2541","AGFA EXAGON","",NA,"1440 (1x/24h)","100%","100%","12%","12%","100%","100%","0",""
 "BOURGOGNE","Yonne","890975543","CH JOIGNY","89306","JOIGNY CEDEX","TU-ORUPACA",NA,"OUI","4482","TU","",NA,"1440 (1x/24h)","100%","100%","98%","98%","100%","100%","0",""
 "BOURGOGNE","Yonne","890975550","CH SENS","89108","SENS CEDEX","RESURGENCES",NA,"OUI","7997","RESURGENCES","avant le 16/02/15 : 4.6ZIP.16
 depuis le 16/02/15 : 4.6ZLT.17",NA,"1440 (1x/24h)","100%","100%","99%","99%","100%","100%","0",""
 "BOURGOGNE","Yonne","890975568","CH TONNERRE","89700","TONNERRE","CRISTALNET-DMU",NA,"OUI","2440","DMU","1.0.3.3.1",NA,"1440 (1x/24h)","100%","100%","95%","95%","98%","98%","0",""
-"BRETAGNE","Finistère","290004324
-290000058
-290000256","CENTRE HOSPITALIER UNIVERSITAIRE DE BREST 
-(Site Cavale Blanche - Site Morvan- Site Carhaix)","29609
+"BRETAGNE","Finistère","290004324","CHU BREST -Site Cavale Blanche","29609
 29835","BREST CEDEX
-CARHAIX-PLOUGUER CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","20238","URQUAL"," version 7.0.3","","1 fois/jour","Carhaix: 100%
-Cavale blanche : 100.0%
-Morvan : 100.0%","Carhaix: 99.97%
-Cavale Blanche : 99.98%
-Morvan : 100.0%","Carhaix : 72.0%
-Cavale Blanche : 64.2%
-Morvan : 98.4%","Carhaix : 72.0%
-Cavale Blanche : 64.2%
-Morvan : 98.4%","Carhaix : 73.9%
-Cavale Blanche : 98.1%
-Morvan : 99.7%","Carhaix : 73.9%
-Cavale Blanche : 98.1%
-Morvan : 99.7%","0",""
-"BRETAGNE","Finistère","290000025
-290000066","CENTRE HOSPITALIER INTERCOMMUNAL DE QUIMPER
- (site Quimper et Concarneau)","29107
- 29900","QUIMPER CEDEX
-CONCARNEAU","URQUAL (Mediqual)","Maincare (ex-McKesson)","OUI","12276","URQUAL (Mediqual)","version 7.1.6.0.2","","1 fois/jour","Concarneau : 100.0%
-Quimper : 100.0%","Concarneau : 100.0%
-Quimper : 99.96%","Concarneau : 99.1%
-Quimper : 96.95%","Concarneau : 99.1%
-Quimper : 96.9%","Concarneau : 99.6%
-Quimper : 98.2%","Concarneau : 99.6%
-Quimper : 98.2%","0",""
+CARHAIX-PLOUGUER CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","20238","URQUAL"," version 7.0.3","","1 fois/jour","100.0%","99.98%","64.2%","64.2%","98.1%","98.1%","0",""
+"BRETAGNE","Finistère","290000058
+","CHU BREST - Site Morvan","29609
+29835","BREST CEDEX
+CARHAIX-PLOUGUER CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","20238","URQUAL"," version 7.0.3","","1 fois/jour","100.0%","100.00%","98.4%","98.4%","99.7%","99.7%","0",""
+"BRETAGNE","Finistère","290000256","CHU BREST- Site Carhaix","29609
+29835","BREST CEDEX
+CARHAIX-PLOUGUER CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","20238","URQUAL"," version 7.0.3","","1 fois/jour","100.0%","99.97%","72.0%","72.0%","73.9%","73.9%","0",""
+"BRETAGNE","Finistère","290 000 025","CH DE QUIMPER-site Quimper","29107","QUIMPER CEDEX
+CONCARNEAU","URQUAL (Mediqual)","Maincare (ex-McKesson)","OUI","12276","URQUAL (Mediqual)","version 7.1.6.0.2","","1 fois/jour","100.0%","100.0%","97.0%","96.9%","98.2%","98.2%","0",""
+"BRETAGNE","Finistère","290 000 066","CHL DE QUIMPER-Site de Concarneau","29900","QUIMPER CEDEX
+CONCARNEAU","URQUAL (Mediqual)","Maincare (ex-McKesson)","OUI","12276","URQUAL (Mediqual)","version 7.1.6.0.2","","1 fois/jour","100.0%","100.0%","99.1%","99.1%","99.6%","99.6%","0",""
 "BRETAGNE","Finistère","290000181","CENTRE HOSPITALIER DE DOUARNENEZ","29100","DOUARNENEZ","SILLAGE URGENCES","SIB (Santé Informatique de Bretagne)","OUI","2983","SILLAGE URGENCES","version 6.1.4  le 17/03/2015
 version 6.1.5 le 06/05/2015
 version 6.1.5.2 le 02/06/2015","","1 fois/jour","100.0%","100.0%","95.0%","95.0%","98.8%","98.8%","0",""
@@ -120,15 +105,10 @@ Transmission des RPU sur la plateforme de test"
 "BRETAGNE","Finistère","290000785","HOTEL-DIEU DE PONT-L'ABBE","29120","PONT-L'ABBE","OSOFT","MEDIBASE","OUI","3404","OSOFT","version 6.64.048 d'Osoft
 mise à jour de la version d'Osoft le 8 janvier 2015 et le 21 mai 2015","","1 fois/jour","100.0%","100.0%","98.6%","98.6%","100.0%","100.0%","0",""
 "BRETAGNE","Finistère","290000934","CENTRE HOSPITALIER DE QUIMPERLE","29300","QUIMPERLE CEDEX","","","NON","3281","SILLAGE URGENCES","V6.1.2","NE","1 fois/jour","100.0%","100.0%","88.2%","88.2%","68.5%","68.5%","0","Transmission des RPU sur la plateforme de test"
-"BRETAGNE","Morbihan","560000135
-560009268","CENTRE HOSPITALIER DE BRETAGNE SUD 
-(SAU adultes et pédiatrie)","56322","LORIENT CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","13291","URQUAL","V 5.41.15","","1 fois/jour","Adultes : 100.0%
-Enfants : 100.0%","Adultes : 100.0%
-Enfants : 100.0%","Adultes : 86.0%
-Enfants : 100.0%","Adultes : 0.0%
-Enfants : 100.0%","Adultes : 98.9%
-Enfants : 100%","Adultes : 98.9%
-Enfants 100.0%","0",""
+"BRETAGNE","Morbihan","560000135","CENTRE HOSPITALIER DE BRETAGNE SUD 
+(SAU adultes)","56322","LORIENT CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","13291","URQUAL","V 5.41.15","","1 fois/jour","100.0%","100.0%","86.0%","0.0%","98.9%","98.9%","0",""
+"BRETAGNE","Morbihan","560009268","CENTRE HOSPITALIER DE BRETAGNE SUD 
+(SAU pédiatrie)","56322","LORIENT CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","13291","URQUAL","V 5.41.15","","1 fois/jour","100.0%","100.0%","100.0%","100.0%","100.0%","100.0%","0",""
 "BRETAGNE","Morbihan","560000143","CENTRE HOSPITALIER DU CENTRE BRETAGNE","56306","PONTIVY CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","6754","URQUAL","V 7.0.5","","1 fois/jour","100.0%","100.0%","15.7%","15.7%","97.3%","97.3%","0",""
 "BRETAGNE","Morbihan","560000127
 560000200","CENTRE HOSPITALIER DE BRETAGNE ATLANTIQUE
@@ -149,15 +129,11 @@ Passage à la version 6.1.4.1 le 31/03/2015
 Passage à la version 6.1.4.3 le 13/04/2015
 Passage à la version 6.1.5 le 28/04/2015","","1 fois/jour","100.0%","100.0%","0.9%","0.9%","100.0%","100.0%","0",""
 "BRETAGNE","Ille-et-Vilaine","350000162","CENTRE HOSPITALIER DE REDON","35603","REDON CEDEX","SILLAGE URGENCES","SIB (Santé Informatique de Bretagne)","NON","5123","SILLAGE URGENCES","","","1 fois/jour","100.0%","100.0%","91.3%","91.3%","99.6%","99.6%","0","Transmission des RPU sur la plateforme de test"
-"BRETAGNE","Ille-et-Vilaine","350000741
-350007084","CENTRE HOSPITALIER UNIVERSITAIRE DE RENNES 
-(site de Ponchaillou-SAU adulte- et Hôpital Sud-SAU pédiatrique)","35033","RENNES CEDEX 9","RESURGENCES","BERGER-LEVRAULT","OUI","21229","RESURGENCES","version V44","","1 fois/jour","Ponchaillou : 100.0%
-Hôpital sud : 100.0%","Ponchaillou : 100.0%
-Hôpital sud : 100.0%","Ponchaillou : 99.97%
-Hôpital sud : 99.99%","Ponchaillou : 99.97%
-Hôpital sud : 99.99%","Ponchaillou : 99.98%
-Hôpital sud : 100.0%","Ponchaillou : 99.98%
-Hôpital sud : 100.0%","0",""
+"BRETAGNE","Ille-et-Vilaine","350000741","CHU DE RENNES -Hôpital Sud-SAU pédiatrique","35033","RENNES CEDEX 9","RESURGENCES","BERGER-LEVRAULT","OUI","21229","RESURGENCES","version V44","","1 fois/jour","100.0%","100.0%","100.0%","100.0%","100.0%","100.0%","0",""
+"BRETAGNE","Ille-et-Vilaine","350007084","CHU DE RENNES -site de Ponchaillou-SAU adulte","35033","RENNES CEDEX 9","RESURGENCES","BERGER-LEVRAULT","OUI","21229","RESURGENCES","version V44","","1 fois/jour"," 100.0%
+","100.0%
+","100.0%","99.97%
+","100.0%","100.0%","0",""
 "BRETAGNE","Ille-et-Vilaine","350000147","CENTRE HOSPITALIER DE SAINT-MALO","35400","SAINT-MALO","URQUAL","Maincare (ex-McKesson)","OUI","8989","URQUAL","V5.4009-2","","1 fois/jour","100.0%","100.0%","91.2%","91.2%","95.6%","95.6%","2",""
 "BRETAGNE","Ille-et-Vilaine","350000121","CENTRE HOSPITALIER PRIVE SAINT-GREGOIRE","35768","SAINT-GREGOIRE CEDEX","MEDIBOARD","OpenXtrem","NON","7080","MEDIBOARD","","","1 fois/jour","100.0%","100.0%","43.2%","43.2%","99.96%","99.96%","0","Transmission des RPU sur la plateforme de test"
 "BRETAGNE","Ille-et-Vilaine","350000188","CENTRE HOSPITALIER DE VITRE","35506","VITRE","SILLAGE DMU","SIB (Santé Informatique de Bretagne)","OUI","2785","SILLAGE URGENCES","6.1.5.2","NE","1 fois/jour","100.0%","100.0%","0.1%","0.1%","98.7%","98.7%","42","Transmission des RPU sur la plateforme de production à partir du 25/06/2015"
@@ -185,8 +161,6 @@ V4.6ZLP.15 depuis le 06/02/2015","","1 fois/jour","100.0%","100.0%","99.6%","99.
 "CHAMPAGNE ARDENNES","Haute Marne","520000027","CENTRE HOSPITALIER DE CHAUMONT","52014","CHAUMONT CEDEX","CRISTALNET-DMU",NA,"OUI","5060","CRISTALNET-DMU",NA,"","1440 (1x/24h)","100.0%","100.0%","99.3%","99.3%","100.0%","100.0%","0",""
 "CHAMPAGNE ARDENNES","Haute Marne","520000043","CENTRE HOSPITALIER DE LANGRES","52200","LANGRES","CRISTALNET-DMU",NA,"OUI","3074","CRISTALNET-DMU",NA,"","1440 (1x/24h)","100.0%","100.0%","98.4%","98.4%","99.7%","99.7%","0",""
 "CHAMPAGNE ARDENNES","Haute Marne","520000068","CH GENEVIEVE DE GAULLE ANTHONIOZ","52115","ST DIZIER CEDEX","DXCARE",NA,"OUI","6667","DXCARE",NA,"","1440 (1x/24h)","100.0%","100.0%","65.8%","65.8%","99.9%","99.9%","0",""
-"","","FINNES","Raison.sociale","Code.postal","Libelle.routage","Logiciel 2013-2014","editeur","RPU (OUI/NON/partellement)",NA,"","",NA,NA,"Exhaustivité","Conformité","Exhaustivité","Conformité","Exhaustivité","Conformité",NA,NA
-"LIMOUSIN","Creuse","230004657","CENTRE HOSPITALIER AUBUSSON","23200","AUBUSSON","ResUrgences","Improove","OUI","1406","ResUrgences","v4.4.5FR.12",NA,"60","100.00%","100.00%","99.79%","99.79%","99.93%","99.93%","0",NA
 "LIMOUSIN","Corrèze","190000018","CENTRE HOSPITALIER DUBOIS BRIVE","19312","BRIVE LA GAILLARDE CEDEX","ResUrgences","Improove","OUI","8119","ResUrgences","v4.4.5GW.16B",NA,"60","99.99%","99.99%","97.57%","97.57%","99.98%","99.98%","0",NA
 "LIMOUSIN","Creuse","230000820","CENTRE HOSPITALIER GUERET","23011","GUERET CEDEX","ResUrgences","Improove","OUI","4974","ResUrgences","v4.5ZLB.12",NA,"60","100.00%","100.00%","97.25%","97.25%","100.00%","100.00%","0",NA
 "LIMOUSIN","Hte Vienne","870000098","CENTRE HOSPITALIER SAINT JUNIEN","87205","ST JUNIEN CEDEX","ResUrgences","Improove","OUI","3466","ResUrgences","v4.4.5GA.12",NA,"60","100.00%","100.00%","98.56%","98.56%","100.00%","100.00%","0",NA
@@ -196,8 +170,6 @@ V4.6ZLP.15 depuis le 06/02/2015","","1 fois/jour","100.0%","100.0%","99.6%","99.
 "LIMOUSIN","Corrèze","190000091","CENTRE HOSPITALIER D'USSEL","19208","USSEL CEDEX","ResUrgences","Improove","OUI","2748","ResUrgences","v4.4.5HH.14",NA,"60","100.00%","100.00%","98.11%","98.11%","100.00%","100.00%","0",NA
 "LIMOUSIN","Hte Vienne","870014859","HOPITAL DE LA MERE ET DE L'ENFANT","87000","LIMOGES","Urqual","maincare","OUI","6390","Urqual","version 7.1.7.2",NA,"60","100.00%","100.00%","98.51%","98.51%","99.39%","99.39%","0",NA
 "LIMOUSIN","Hte Vienne","870000288","CLINIQUE FRANCOIS CHENIEUX","87039","LIMOGES CEDEX 1","SPEC 4D","","OUI","7015","SPEC 4D","",NA,"60","100.00%","100.00%","85.57%","85.57%","99.97%","99.97%","0",NA
-"","","","","","","","","",NA,"","",NA,NA,"","","","","","",NA,NA
-"","","","","","","","","",NA,"","",NA,NA,"","","","","","",NA,NA
 "PACA","Alpes hte provence","40000093","CENTRE HOSPITALIER DE MANOSQUE","4101","MANOSQUE CEDEX","TU-ORUPACA","","OUI","7466","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.61%","98.60%","99.85%","99.85%","0",""
 "PACA","Alpes hte provence","40000135","CHI DES ALPES DU SUD SITE DE SISTERON","4203","SISTERON CEDEX","TU-ORUPACA","","OUI","3662","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","97.90%","97.90%","99.59%","99.59%","0",""
 "PACA","Alpes hte provence","40000911","CENTRE HOSPIT GENERAL DIGNE LES BAINS","4003","DIGNE LES BAINS CEDEX","TU-ORUPACA","","OUI","4439","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","97.56%","97.56%","99.44%","99.44%","0",""
@@ -248,81 +220,3 @@ V4.6ZLP.15 depuis le 06/02/2015","","1 fois/jour","100.0%","100.0%","99.6%","99.
 "PACA","Vaucluse","840000525","CH VAISON LA ROMAINE","84110","VAISON LA ROMAINE","TU-ORUPACA","","OUI","2045","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.57%","98.57%","99.90%","99.90%","0",""
 "PACA","Vaucluse","840000533","CH JULES NIEL DE VALREAS","84607","VALREAS CEDEX","TU-ORUPACA","","OUI","2212","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.44%","98.44%","99.82%","99.82%","0",""
 "PACA","Vaucluse","840001861","CH D'AVIGNON HENRI DUFFAUT","84902","AVIGNON CEDEX 9","TU-ORUPACA","","OUI","22930","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.02%","98.02%","99.05%","99.05%","0",""
-"BRETAGNE","Finistère","
-
-290000256","CHU Brest - Site Carhaix)","
-29835","
-CARHAIX-PLOUGUER CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","20238","URQUAL"," version 7.0.3","","1 fois/jour","100.0%","99.97%","72.0%","72.0%","73.9%","73.9%","0",""
-"BRETAGNE","Finistère","290004324","CHU Brest – Cavale Blanche","29609","BREST CEDEX","URQUAL","Maincare (ex-McKesson)","OUI",NA,"","","","","100.0%","99.98%","64.2%","64.2%","98.1%","98.1%","0",""
-"BRETAGNE","Finistère","290000058","CHU Brest – Morvan","","","URQUAL","Maincare (ex-McKesson)","OUI",NA,"","","","","100.0%","100.00%","98.4%","98.4%","99.7%","99.7%","0",""
-"BRETAGNE","Finistère","290000025
-290000066","CENTRE HOSPITALIER INTERCOMMUNAL DE QUIMPER
- (site Quimper et Concarneau)","29107
- 29900","QUIMPER CEDEX
-CONCARNEAU","URQUAL (Mediqual)","Maincare (ex-McKesson)","OUI","12276","URQUAL (Mediqual)","version 7.1.6.0.2","","1 fois/jour","Concarneau : 100.0%
-Quimper : 100.0%","Concarneau : 100.0%
-Quimper : 99.96%","Concarneau : 99.1%
-Quimper : 96.95%","Concarneau : 99.1%
-Quimper : 96.9%","Concarneau : 99.6%
-Quimper : 98.2%","Concarneau : 99.6%
-Quimper : 98.2%","0",""
-"BRETAGNE","Finistère","290000181","CENTRE HOSPITALIER DE DOUARNENEZ","29100","DOUARNENEZ","SILLAGE URGENCES","SIB (Santé Informatique de Bretagne)","OUI","2983","SILLAGE URGENCES","version 6.1.4  le 17/03/2015
-version 6.1.5 le 06/05/2015
-version 6.1.5.2 le 02/06/2015","","1 fois/jour","100.0%","100.0%","95.0%","95.0%","98.8%","98.8%","0",""
-"BRETAGNE","Finistère","290000728","HOPITAL D'INSTRUCTION DES ARMEES","29240","BREST CEDEX 09","URQUAL","Maincare (ex-McKesson)","OUI","4794","URQUAL","V7","","1 fois/jour","100.0%","99.8%","98.5%","98.5%","96.9%","96.9%","0",""
-"BRETAGNE","Finistère","290000173","CENTRE HOSPITALIER DE LANDERNEAU","29207","LANDERNEAU CEDEX","HEXAGONE","AGFA","NON","3922","SILLAGE URGENCES","Version 8.3.9","NE","1 fois/jour","100.0%","100.0%","0.0%","0.0%","99.9%","99.9%","0","Amélioration du remplissage au 2ème trimestre 2015 et se poursuivra lors de l'installation de Sillage Urgences
-Transmission des RPU sur la plateforme de test"
-"BRETAGNE","Finistère","290000033","CENTRE HOSPITALIER DE MORLAIX","29672","MORLAIX CEDEX","MEDIS Urgences","BERGER-LEVRAULT","OUI","7975","SILLAGE URGENCES (octobre 2015)","V5.2014.1012","","1 fois/jour","100.0%","100.0%","18.3%","18.3%","91.8%","91.8%","0",""
-"BRETAGNE","Finistère","290019777","POLYCLINIQUE DE KERAUDREN","29220","BREST","RESURGENCES","BERGER-LEVRAULT","OUI","8204","RESURGENCES"," v4.6QK.16","","1 fois/jour","100.0%","100.0%","93.1%","93.1%","99.0%","99.0%","0",""
-"BRETAGNE","Finistère","290000785","HOTEL-DIEU DE PONT-L'ABBE","29120","PONT-L'ABBE","OSOFT","MEDIBASE","OUI","3404","OSOFT","version 6.64.048 d'Osoft
-mise à jour de la version d'Osoft le 8 janvier 2015 et le 21 mai 2015","","1 fois/jour","100.0%","100.0%","98.6%","98.6%","100.0%","100.0%","0",""
-"BRETAGNE","Finistère","290000934","CENTRE HOSPITALIER DE QUIMPERLE","29300","QUIMPERLE CEDEX","","","NON","3281","SILLAGE URGENCES","V6.1.2","NE","1 fois/jour","100.0%","100.0%","88.2%","88.2%","68.5%","68.5%","0","Transmission des RPU sur la plateforme de test"
-"BRETAGNE","Morbihan","560000135
-560009268","CENTRE HOSPITALIER DE BRETAGNE SUD 
-(SAU adultes et pédiatrie)","56322","LORIENT CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","13291","URQUAL","V 5.41.15","","1 fois/jour","Adultes : 100.0%
-Enfants : 100.0%","Adultes : 100.0%
-Enfants : 100.0%","Adultes : 86.0%
-Enfants : 100.0%","Adultes : 0.0%
-Enfants : 100.0%","Adultes : 98.9%
-Enfants : 100%","Adultes : 98.9%
-Enfants 100.0%","0",""
-"BRETAGNE","Morbihan","560000143","CENTRE HOSPITALIER DU CENTRE BRETAGNE","56306","PONTIVY CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","6754","URQUAL","V 7.0.5","","1 fois/jour","100.0%","100.0%","15.7%","15.7%","97.3%","97.3%","0",""
-"BRETAGNE","Morbihan","560000127
-560000200","CENTRE HOSPITALIER DE BRETAGNE ATLANTIQUE
-(site Chubert et Auray)","56017
-56400","VANNES CEDEX
-AURAY","URQUAL","Maincare (ex-McKesson)","OUI","14547","URQUAL","version 7.1.2.(1er trimestre 2015)
-version 7.1.8 (il y a 15 jours)
-version 8.2.0 (fin juin)","","1 fois/jour","100.0%","100.0%","37.0%","37.0%","100.0%","100.0%","3","Absence de transmission de RPU le dernier jour de chaque mois (problème réglé en principe fin juin 2015)"
-"BRETAGNE","Morbihan","560000192","CENTRE HOSPITALIER DE PLOERMEL","56800","PLOERMEL","SILLAGE DMU","SIB (Santé Informatique de Bretagne)","OUI","4768","SILLAGE DMU","version 6.0.5 au 01/01/2015 
-version 6.1.4 le 17/03/2015
-version 6.1.5.2 le 20/05/2015","","1 fois/jour","100.0%","100.0%","10.5%","10.5%","98.8%","98.8%","0",""
-"BRETAGNE","Ille-et-Vilaine","350005146","HOPITAL PRIVE SEVIGNE","35576","CESSON-SEVIGNE CEDEX","RESURGENCES","BERGER-LEVRAULT","OUI","5128","RESURGENCES","version 4.5.zmn.9c","","1 fois/jour","100.0%","100.0%","93.8%","93.8%","99.8%","99.8%","0",""
-"BRETAGNE","Ille-et-Vilaine","350000154","CENTRE HOSPITALIER DE FOUGERES","35306","FOUGERES CEDEX","SILLAGE DMU","SIB (Santé Informatique de Bretagne)","OUI","7033","SILLAGE DMU","Version au 1er janvier 2015 = 6.1.2.2
-Passage à la version 6.1.2.11 le 23/01/2015
-Passage à la version 6.1.2.12 le 28/01/2015
-Passage à la version 6.1.4 le 11/03/2015
-Passage à la version 6.1.4.1 le 31/03/2015
-Passage à la version 6.1.4.3 le 13/04/2015
-Passage à la version 6.1.5 le 28/04/2015","","1 fois/jour","100.0%","100.0%","0.9%","0.9%","100.0%","100.0%","0",""
-"BRETAGNE","Ille-et-Vilaine","350000162","CENTRE HOSPITALIER DE REDON","35603","REDON CEDEX","SILLAGE URGENCES","SIB (Santé Informatique de Bretagne)","NON","5123","SILLAGE URGENCES","","","1 fois/jour","100.0%","100.0%","91.3%","91.3%","99.6%","99.6%","0","Transmission des RPU sur la plateforme de test"
-"BRETAGNE","Ille-et-Vilaine","350000741
-350007084","CENTRE HOSPITALIER UNIVERSITAIRE DE RENNES 
-(site de Ponchaillou-SAU adulte- et Hôpital Sud-SAU pédiatrique)","35033","RENNES CEDEX 9","RESURGENCES","BERGER-LEVRAULT","OUI","21229","RESURGENCES","version V44","","1 fois/jour","Ponchaillou : 100.0%
-Hôpital sud : 100.0%","Ponchaillou : 100.0%
-Hôpital sud : 100.0%","Ponchaillou : 99.97%
-Hôpital sud : 99.99%","Ponchaillou : 99.97%
-Hôpital sud : 99.99%","Ponchaillou : 99.98%
-Hôpital sud : 100.0%","Ponchaillou : 99.98%
-Hôpital sud : 100.0%","0",""
-"BRETAGNE","Ille-et-Vilaine","350000147","CENTRE HOSPITALIER DE SAINT-MALO","35400","SAINT-MALO","URQUAL","Maincare (ex-McKesson)","OUI","8989","URQUAL","V5.4009-2","","1 fois/jour","100.0%","100.0%","91.2%","91.2%","95.6%","95.6%","2",""
-"BRETAGNE","Ille-et-Vilaine","350000121","CENTRE HOSPITALIER PRIVE SAINT-GREGOIRE","35768","SAINT-GREGOIRE CEDEX","MEDIBOARD","OpenXtrem","NON","7080","MEDIBOARD","","","1 fois/jour","100.0%","100.0%","43.2%","43.2%","99.96%","99.96%","0","Transmission des RPU sur la plateforme de test"
-"BRETAGNE","Ille-et-Vilaine","350000188","CENTRE HOSPITALIER DE VITRE","35506","VITRE","SILLAGE DMU","SIB (Santé Informatique de Bretagne)","OUI","2785","SILLAGE URGENCES","6.1.5.2","NE","1 fois/jour","100.0%","100.0%","0.1%","0.1%","98.7%","98.7%","42","Transmission des RPU sur la plateforme de production à partir du 25/06/2015"
-"BRETAGNE","Côtes-d'Armor","220000095","CENTRE HOSPITALIER DE DINAN","22101","DINAN","MEDIS Urgences","BERGER-LEVRAULT","NON","6974","MEDIS","Début 1er trimestre 2015: 6.2014.1005
-Changement version courant mars : 6.2014.1011","","1 fois/jour","100.0%","100.0%","19.7%","19.7%","13.5%","13.5%","0","Amélioration du remplissage à partir de mi-avril
-Transmission des RPU sur la plateforme de test"
-"BRETAGNE","Côtes-d'Armor","220000343","CENTRE HOSPITALIER DE GUINGAMP","22205","PABU","RESURGENCES","BERGER-LEVRAULT","OUI","4988","RESURGENCES"," V4.6ZFW.14 du 16/10/2014 au 06/02/2015
-V4.6ZLP.15 depuis le 06/02/2015","","1 fois/jour","100.0%","100.0%","99.6%","99.6%","100.0%","100.0%","0",""
-"BRETAGNE","Côtes-d'Armor","220000368","CENTRE HOSPITALIER DE LANNION","22303","LANNION CEDEX","RESURGENCES","BERGER-LEVRAULT","OUI","5417","RESURGENCES","","","1 fois/jour","100.0%","100.0%","92.4%","92.4%","100.0%","100.0%","0",""
-"BRETAGNE","Côtes-d'Armor","220000541","CENTRE HOSPITALIER DE PAIMPOL","22501","PAIMPOL","ORBIS","AGFA","NON","3179","ORBIS","","NE (Nombreux doublons jusqu'à la mi-avril)","1 fois/jour","100.0%","100.0%","0.0%","0.0%","19.8%","19.8%","5","Transmission des RPU sur la plateforme de test"
-"BRETAGNE","Côtes-d'Armor","220000012","CENTRE HOSPITALIER DE SAINT-BRIEUC","22027","SAINT-BRIEUC CEDEX 1","RESURGENCES","BERGER-LEVRAULT","OUI","15440","RESURGENCES","","","1 fois/jour","100.0%","100.0%","99.5%","99.5%","100.0%","100.0%","0",""
