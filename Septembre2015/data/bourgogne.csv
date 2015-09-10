@@ -1,0 +1,61 @@
+"Période : 1er trimestre 2015 soit du 
+01/01/2015 00:00 au 31/03/2015 23:59.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Région","Dpt","FINNES","Raison sociale","Code postal","Libelle routage","Logiciel 2013-2014","Editeur","RPU transmis
+(OUI/NON)","Nombre de RPU transmis 1er trimestre 2015","Logiciel 2015","Version (en fonctionnement durant la période retenue) si changement de version le noter","Commentaire","Fréquence de remontées des données (en minutes)","Date de naissance",,"Diagnostic",,"Mode de sortie",,"Nombre de jours manquants","Commentaire","RPU Code postal","RPU Commune","RPU Sexe","RPU Date entrée","RPU Mode entrée","RPU Provenance","RPU Mode de transport","RPU Mode de prise en charge","RPU Motif de recours","RPU CCMU","RPU Date de sortie","RPU Destination","RPU Orientation"
+,,"FINNES","Raison.sociale","Code.postal","Libelle.routage","Logiciel 2013-2014","editeur","RPU (OUI/NON/partellement)",,,,,,"Exhaustivité","Conformité","Exhaustivité","Conformité","Exhaustivité","Conformité",,,"RPU Code postal","RPU Commune","RPU Sexe","RPU Date entrée","RPU Mode entrée","RPU Provenance","RPU Mode de transport","RPU Mode de prise en charge","RPU Motif de recours","RPU CCMU","RPU Date de sortie","RPU Destination","RPU Orientation"
+"BOURGOGNE","Côte d'Or",210780136,"CLINIQUE MEDICO CHIRURGICALE CHENOVE",21302,"CHENOVE CEDEX","RESURGENCES",,"OUI",2954,"RESURGENCES","v4.6UO.7",,"1440 (1x/24h)",100%,100%,99%,99%,99%,99%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Côte d'Or",210781621,"HOPITAL GENERAL CHU DIJON",21033,"DIJON CEDEX",,,"Site n'existe plus","Site n'accueil plus d'urgence",,,,,,,,,,,,,,,,,,,,,,,,,
+"BOURGOGNE","Côte d'Or",210987558,"HOPITAL LE BOCAGE CHU DIJON",21079,"DIJON CEDEX","RESURGENCES",,"OUI",11208,"RESURGENCES","4.5zmd39",,"1440 (1x/24h)",100%,100%,100%,100%,100%,100%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Côte d'Or",210987657,"CH BEAUNE",21203,"BEAUNE CEDEX","CROSSWAY",,"OUI",5951,"CROSSWAY","7.1.10.r2.0",,"1440 (1x/24h)",100%,100%,28%,28%,0%,0%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Côte d'Or",210987665,"CH INTERCOMMUNAL CHATILLON MONTBARD",21400,"CHATILLON SUR SEINE","CDP2",,"OUI",1411,"HOPITAL MANAGER","1.1410",,"1440 (1x/24h)",100%,100%,95%,95%,100%,100%,3,"lié au changement de logiciel en janvier 2015",,,,,,,,,,,,,
+"BOURGOGNE","Côte d'Or",210987673,"CH INTERCOMMUNAL CHATILLON MONTBARD",21500,"MONTBARD","CDP2",,"OUI",1233,"HOPITAL MANAGER","1.1410",,"1440 (1x/24h)",100%,100%,100%,100%,100%,100%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Côte d'Or",210987699,"CENTRE HOSPITALIER ROBERT MORLEVAT",21140,"SEMUR EN AUXOIS","ATALANTE",,"OUI",5263,"ATALANTE",,,"1440 (1x/24h)",100%,100%,0%,0%,0%,0%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Nièvre",580972669,"CH CLAMECY",58500,"CLAMECY","Manuel",,"OUI",2504,"Manuel",,,"1440 (1x/24h)",100%,100%,99%,98%,99%,99%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Nièvre",580972677,"CH COSNE-COURS-SUR-LOIRE",58200,"COSNE COURS SUR LOIRE","URQUAL",,"OUI depuis janvier 2014",3358,"URQUAL","7.1.5.0 RC4",,"1440 (1x/24h)",100%,100%,0%,0%,95%,95%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Nièvre",580972685,"CH DECIZE",58302,"DECIZE CEDEX","CROSSWAY",,"OUI",3062,"CROSSWAY","7.1.10.r2.0",,"1440 (1x/24h)",100%,100%,1%,1%,0%,0%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Nièvre",580972693,"C.H DE L'AGGLOMERATION DE NEVERS",58033,"NEVERS CEDEX","URQUAL",,"OUI depuis janvier 2014",5667,"URQUAL",,,"1440 (1x/24h)",100%,100%,0%,0%,100%,100%,18,"lié au redeployement du module d'envoi des données par Maincare. Une demande de récupération a été faite, le service informatique attend le retour de l'éditeur.",,,,,,,,,,,,,
+"BOURGOGNE","Saone et Loire",710010067,"CH PARAY-LE-MONIAL LES CHARMES",71600,"PARAY LE MONIAL","CROSSWAY",,"OUI",5389,"CROSSWAY","avant le 19/03/15 : 7.1.7R2.0.3
+depuis le 19/03/15 : 7.1.10R1.0",,"1440 (1x/24h)",100%,100%,0%,0%,0%,0%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Saone et Loire",710010786,"CH AUTUN (SITE PARPAS)",71400,"AUTUN","CRISTALNET-DMU",,"OUI",3671,"DMU","3.2.14",,"1440 (1x/24h)",100%,100%,99%,99%,100%,100%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Saone et Loire",710978263,"CH W MOREY  CHALON-SUR-SAONE",71321,"CHALON SUR SAONE CEDEX","CRISTALNET-DMU",,"OUI",9960,"DMU","3.6.36",,"1440 (1x/24h)",100%,100%,99%,99%,100%,100%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Saone et Loire",710978289,"CH LES CHANAUX MACON",71000,"MACON","URQUAL",,"OUI",9891,"URQUAL","7.1.4",,"1440 (1x/24h)",100%,100%,0%,0%,97%,97%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Saone et Loire",710978313,"SIH CH MONTCEAU-LES-MINES",71230,"ST VALLIER","CRISTALNET-DMU",,"OUI",5079,"DMU","3.4.30",,"1440 (1x/24h)",100%,100%,96%,96%,100%,100%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Saone et Loire",710978347,"HOTEL DIEU DU CREUSOT",71206,"LE CREUSOT CEDEX","CRISTALNET-DMU",,"OUI",8512,"DMU","3.4.30",,"1440 (1x/24h)",100%,100%,71%,71%,100%,100%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Yonne",890002389,"POLYCLINIQUE  STE MARGUERITE AUXERRE",89003,"AUXERRE CEDEX","DxCare",,"OUI depuis le 30/05/14",2941,"DXCARE","7.5.16",,"1440 (1x/24h)",100%,100%,83%,83%,100%,100%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Yonne",890975527,"CH AUXERRE Adulte",89011,"AUXERRE CEDEX","CRISTALNET-DMU",,"OUI",9436,"DMU","3.5.26",,"1440 (1x/24h)",100%,100%,96%,96%,99%,99%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Yonne",890975527,"CH AUXERRE Pediatrique",89011,"AUXERRE CEDEX","CRISTALNET-DMU",,"OUI",4004,"DMU","3.5.26",,"1440 (1x/24h)",100%,100%,100%,100%,100%,100%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Yonne",890975535,"CH AVALLON",89206,"AVALLON CEDEX","AGFA EXAGON",,"OUI",2541,"AGFA EXAGON",,,"1440 (1x/24h)",100%,100%,12%,12%,100%,100%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Yonne",890975543,"CH JOIGNY",89306,"JOIGNY CEDEX","TU-ORUPACA",,"OUI",4482,"TU",,,"1440 (1x/24h)",100%,100%,98%,98%,100%,100%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Yonne",890975550,"CH SENS",89108,"SENS CEDEX","RESURGENCES",,"OUI",7997,"RESURGENCES","avant le 16/02/15 : 4.6ZIP.16
+depuis le 16/02/15 : 4.6ZLT.17",,"1440 (1x/24h)",100%,100%,99%,99%,100%,100%,0,,,,,,,,,,,,,,
+"BOURGOGNE","Yonne",890975568,"CH TONNERRE",89700,"TONNERRE","CRISTALNET-DMU",,"OUI",2440,"DMU","1.0.3.3.1",,"1440 (1x/24h)",100%,100%,95%,95%,98%,98%,0,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,"Nombre de RPU pour lesquels le critère CP est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère commune est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère sexe est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère date d'entrée est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode d'entrée est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère provenance est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode de transport est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode de PEC est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère motif est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère CCMU est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère DDS est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU avec mode de sortie =6 ou 7 pour lesquels la destination est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis","Nombre de RPU avec mode de sortie =6 ou 7 pour lesquels l'orientation est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis"
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"Nombre de RPU avec mode de sortie =6 ou 7 ou 8 pour lesquels la destination est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis",

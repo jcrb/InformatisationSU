@@ -1,0 +1,85 @@
+"Période : 1er trimestre 2015 soit du 
+01/01/2015 00:00 au 31/03/2015 23:59.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Région","Dpt","FINNES","Raison sociale","Code postal","Libelle routage","Logiciel 2013-2014","Editeur","RPU transmis
+(OUI/NON)","Nombre de RPU transmis 1er trimestre 2015","Logiciel 2015","Version (en fonctionnement durant la période retenue) si changement de version le noter","Commentaire","Fréquence de remontées des données (en minutes)","Date de naissance",,"Diagnostic",,"Mode de sortie",,"Nombre de jours manquants","Commentaire","RPU Code postal","RPU Commune","RPU Sexe","RPU Date entrée","RPU Mode entrée","RPU Provenance","RPU Mode de transport","RPU Mode de prise en charge","RPU Motif de recours","RPU CCMU","RPU Date de sortie","RPU Destination","RPU Orientation"
+,,"FINNES","Raison.sociale","Code.postal","Libelle.routage","Logiciel 2013-2014","editeur","RPU (OUI/NON/partellement)",,,,,,"Exhaustivité","Conformité","Exhaustivité","Conformité","Exhaustivité","Conformité",,,"RPU Code postal","RPU Commune","RPU Sexe","RPU Date entrée","RPU Mode entrée","RPU Provenance","RPU Mode de transport","RPU Mode de prise en charge","RPU Motif de recours","RPU CCMU","RPU Date de sortie","RPU Destination","RPU Orientation"
+"PACA","Alpes hte provence",40000093,"CENTRE HOSPITALIER DE MANOSQUE",4101,"MANOSQUE CEDEX","TU-ORUPACA",,"OUI",7466,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","98,61%","98,60%","99,85%","99,85%",0,,,,,,,,,,,,,,
+"PACA","Alpes hte provence",40000135,"CHI DES ALPES DU SUD SITE DE SISTERON",4203,"SISTERON CEDEX","TU-ORUPACA",,"OUI",3662,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","97,90%","97,90%","99,59%","99,59%",0,,,,,,,,,,,,,,
+"PACA","Alpes hte provence",40000911,"CENTRE HOSPIT GENERAL DIGNE LES BAINS",4003,"DIGNE LES BAINS CEDEX","TU-ORUPACA",,"OUI",4439,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","97,56%","97,56%","99,44%","99,44%",0,,,,,,,,,,,,,,
+"PACA","Hte Alpes",50000231,"CH DES ESCARTONS DE BRIANCON",5105,"BRIANCON CEDEX","CRISTALNET-DMU",,"OUI",5633,"CRISTALNET-DMU",,,"1440 (1x/24h)","100,00%","100,00%","92,20%","92,18%","99,95%","99,95%",0,,,,,,,,,,,,,,
+"PACA","Hte Alpes",50000256,"CENTRE HOSPITALIER D'EMBRUN",5200,"EMBRUN","CRISTALNET-DMU",,"OUI",2317,"CRISTALNET-DMU",,,"1440 (1x/24h)","100,00%","100,00%","99,44%","99,39%","100,00%","100,00%",0,,,,,,,,,,,,,,
+"PACA","Hte Alpes",50000348,"CHI DES ALPES DU SUD SITE DE GAP",5007,"GAP CEDEX","TU-ORUPACA",,"OUI",8953,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","93,81%","93,81%","95,73%","95,73%",0,,,,,,,,,,,,,,
+"PACA","Alpes Maritimes",60000478,"CENTRE HOSPITALIER DE GRASSE",6135,"GRASSE CEDEX","TU-ORUPACA",,"OUI",11440,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","95,81%","95,79%","99,43%","99,43%",0,,,,,,,,,,,,,,
+"PACA","Alpes Maritimes",60000510,"CH D'ANTIBES JUAN LES PINS",6600,"ANTIBES","URQUAL",,"OUI",9872,"URQUAL",,,"1440 (1x/24h)","100,00%","100,00%","84,74%","82,58%","88,45%","88,45%",0,,,,,,,,,,,,,,
+"PACA","Alpes Maritimes",60000544,"CH PIERRE NOUVEAU CANNES",6414,"CANNES CEDEX","TU-ORUPACA",,"OUI",10455,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","85,98%","85,96%","99,98%","99,98%",0,,,,,,,,,,,,,,
+"PACA","Alpes Maritimes",60001450,"CHU DE NICE HOPITAL SAINT ROCH",6006,"NICE CEDEX 1","TU-ORUPACA",,"OUI",19770,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","78,41%","78,40%","79,84%","79,84%",0,,,,,,,,,,,,,,
+"PACA","Alpes Maritimes",60002102,"CH LA PALMOSA DE MENTON",6507,"MENTON CEDEX","TU-ORUPACA",,"OUI",4270,"TU-ORUPACA",,"Démarrage TU juin 2014","1440 (1x/24h)","100,00%","100,00%","98,22%","98,20%","100,00%","100,00%",0,,,,,,,,,,,,,,
+"PACA","Alpes Maritimes",60780491,"INSTITUT ARNAULT TZANCK ST LAURENT VAR",6721,"ST LAURENT DU VAR CEDEX","TU-ORUPACA",,"OUI",4575,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","97,74%","97,74%","99,71%","99,71%",0,,,,,,,,,,,,,,
+"PACA","Alpes Maritimes",60780517,"POLYCLINIQUE SAINT JEAN",6800,"CAGNES SUR MER","TU-ORUPACA",,"OUI",7906,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","98,37%","98,37%","99,91%","99,91%",0,,,,,,,,,,,,,,
+"PACA","Alpes Maritimes",60780715,"CLINIQUE SAINT GEORGE",6105,"NICE CEDEX 2","TU-ORUPACA",,"OUI",6907,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","94,25%","94,25%","93,83%","93,83%",0,,,,,,,,,,,,,,
+"PACA","Alpes Maritimes",60780723,"CLINIQUE DU PARC IMPERIAL",6045,"NICE CEDEX 1","CEGI - DPI",,"NON",,"TU-ORUPACA",,"Installation TU opérationnelle 18 mai 2015","1440 (1x/24h)","0,00%","0,00%","0,00%","0,00%","0,00%","0,00%",90,,,,,,,,,,,,,,
+"PACA","Alpes Maritimes",60780947,"HOPITAUX PEDIATRIQUES NICE CHU LENVAL",6200,"NICE","TU-ORUPACA",,"OUI",15178,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","99,28%","99,28%","99,97%","99,97%",0,,,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130000409,"CH DU PAYS D'AIX SITE D'AIX EN PROVENCE",13616,"AIX EN PROVENCE CEDEX 1","TU-ORUPACA",,"OUI",14262,"TU-ORUPACA",,"Démarrage TU septembre 2014","1440 (1x/24h)","100,00%","100,00%","97,07%","97,07%","99,90%","99,90%",0,,,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130000565,"CH EDMOND GARCIN D'AUBAGNE",13400,"AUBAGNE","URQUAL",,"NON",28,"URQUAL",,"RPU transmis depuis juin 2015","1440 (1x/24h)","100,00%","100,00%","0,00%","0,00%","14,29%","14,29%",85,"test en janvier avec 28 passages dans le mois. RPU transmis réellement depuis juin 2015",,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130001225,"CH SALON DE PROVENCE",13658,"SALON DE PROVENCE CEDEX","TU-ORUPACA",,"OUI",9424,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","76,15%","76,14%","81,71%","81,71%",0,,,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130002215,"CENTRE HOSPITALIER DE LA CIOTAT",13708,"LA CIOTAT CEDEX","TU-ORUPACA",,"OUI",5596,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","97,55%","97,55%","99,89%","99,89%",0,,,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130002827,"CH JOSEPH IMBERT D'ARLES",13637,"ARLES CEDEX","TU-ORUPACA",,"OUI",8350,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","98,74%","98,74%","100,00%","100,00%",0,,,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130002835,"CH DE MARTIGUES HOPITAL DES RAYETTES",13698,"MARTIGUES CEDEX","TU-ORUPACA",,"OUI",10863,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","97,98%","97,80%","99,92%","99,92%",0,,,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130043664,"HOPITAL EUROPEEN",13003,"MARSEILLE","QCARE","de la société C3","OUI",5131,"QCARE",,,"1440 (1x/24h)","99,98%","99,98%","0,00%","0,00%","0,00%","0,00%",0,,,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130780521,"APHM HOPITAL NORD",13915,"MARSEILLE CEDEX 15","TU-ORUPACA",,"OUI",21562,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","99,14%","99,14%","99,88%","99,88%",0,,,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130781479,"HOPITAL PRIVE LA CASAMANCE",13675,"AUBAGNE CEDEX","TU-ORUPACA",,"OUI",3594,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","99,29%","99,29%","99,86%","99,86%",0,,,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130782071,"CLINIQUE DE L'ETANG DE L'OLIVIER",13801,"ISTRES CEDEX","TU-ORUPACA",,"OUI",3992,"TU-ORUPACA",,"Démarrage TU juin 2014","1440 (1x/24h)","100,00%","100,00%","89,20%","89,20%","90,91%","90,91%",0,,,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130782147,"CLINIQUE GENERALE DE MARIGNANE",13721,"MARIGNANE CEDEX","MEDINTUX",,"OUI",6224,"MEDINTUX",,,"1440 (1x/24h)","99,92%","99,92%","100,00%","92,15%","100,00%","100,00%",0,"16 jours avec moins de 3 passages",,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130783293,"APHM HOPITAL LA TIMONE ADULTES",13005,"MARSEILLE","TU-ORUPACA",,"OUI",19537,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","98,09%","98,08%","96,01%","96,01%",0,,,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130784713,"HOPITAL PRIVE BEAUREGARD VERT COTEAU",13012,"MARSEILLE","RESURGENCES",,"OUI",3194,"RESURGENCES",,,"1440 (1x/24h)","100,00%","100,00%","95,41%","95,28%","0,00%","0,00%",5,,,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130785652,"HOPITAL ST JOSEPH",13008,"MARSEILLE","TU-ORUPACA",,"OUI",14156,"TU-ORUPACA",,"Démarrage TU novembre 2013","1440 (1x/24h)","100,00%","100,00%","75,01%","75,01%","80,78%","80,78%",0,,,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130786361,"POLYCLINIQUE DU PARC RAMBOT",13626,"AIX EN PROVENCE CEDEX 1","TU-ORUPACA",,"OUI",3803,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","97,07%","97,07%","97,74%","97,74%",0,,,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130786742,"HIA LAVERAN",13384,"MARSEILLE CEDEX 13","TU-ORUPACA",,"OUI",5523,"TU-ORUPACA",,"Démarrage TU septembre 2014","1440 (1x/24h)","100,00%","100,00%","77,39%","77,39%","79,17%","79,17%",0,,,,,,,,,,,,,,
+"PACA","Bouches du Rhône",130804297,"APHM HOPITAL LA TIMONE ENFANTS",13385,"MARSEILLE CEDEX 05","TU-ORUPACA",,"OUI",10101,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","98,89%","98,89%","99,87%","99,87%",0,,,,,,,,,,,,,,
+"PACA","Var",830000279,"CH JEAN MARCEL DE BRIGNOLES",83177,"BRIGNOLES CEDEX","TU-ORUPACA",,"OUI",7254,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","95,03%","94,86%","99,99%","99,99%",0,,,,,,,,,,,,,,
+"PACA","Var",830000287,"CH LA DRACENIE DE DRAGUIGNAN",83007,"DRAGUIGNAN CEDEX","TU-ORUPACA",,"OUI",8813,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","92,63%","92,63%","95,71%","95,71%",0,,,,,,,,,,,,,,
+"PACA","Var",830000295,"CH DE HYERES MARIE JOSEE TREFFOT",83407,"HYERES CEDEX","TU-ORUPACA",,"OUI",7336,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","98,95%","98,94%","99,97%","99,97%",0,,,,,,,,,,,,,,
+"PACA","Var",830000311,"CHI DE FREJUS SAINT RAPHAEL",83608,"FREJUS CEDEX","TU-ORUPACA",,"OUI",9107,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","97,62%","97,62%","82,11%","82,11%",0,,,,,,,,,,,,,,
+"PACA","Var",830000337,"CENTRE HOSPITALIER DE SAINT TROPEZ",83580,"GASSIN","TU-ORUPACA",,"OUI",4167,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","96,46%","96,46%","98,38%","98,38%",0,,,,,,,,,,,,,,
+"PACA","Var",830000345,"CHITS CH SAINTE MUSSE",83056,"TOULON CEDEX","TU-ORUPACA",,"OUI",16850,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","97,32%","97,31%","98,51%","98,51%",0,,,,,,,,,,,,,,
+"PACA","Var",830100574,"HIA SAINTE ANNE",83041,"TOULON CEDEX 9","RESURGENCES",,"OUI",6602,"RESURGENCES",,,"1440 (1x/24h)","100,00%","100,00%","93,79%","93,75%","0,00%","0,00%",0,,,,,,,,,,,,,,
+"PACA","Var",830100608,"CHITS CH GEORGE SAND LA SEYNE SUR MER",83507,"LA SEYNE SUR MER CEDEX","TU-ORUPACA",,"OUI",5821,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","98,24%","98,24%","99,53%","99,53%",0,,,,,,,,,,,,,,
+"PACA","Var",830200523,"POLYCLINIQUE MUTUALISTE MALARTIC",83192,"OLLIOULES CEDEX","TU-ORUPACA",,"OUI",3794,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","98,67%","98,67%","99,84%","99,84%",0,,,,,,,,,,,,,,
+"PACA","Vaucluse",840000343,"CENTRE HOSPITALIER DU PAYS D'APT",84405,"APT CEDEX","TU-ORUPACA",,"OUI",3210,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","83,03%","83,03%","99,87%","99,87%",0,,,,,,,,,,,,,,
+"PACA","Vaucluse",840000392,"CENTRE HOSPITALIER DE CARPENTRAS",84208,"CARPENTRAS CEDEX","TU-ORUPACA",,"OUI",6553,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","98,24%","98,24%","99,92%","99,92%",0,,,,,,,,,,,,,,
+"PACA","Vaucluse",840000418,"CHI DE CAVAILLON LAURIS",84304,"CAVAILLON CEDEX","TU-ORUPACA",,"OUI",6303,"TU-ORUPACA",,"Démarrage TU janvier 2014","1440 (1x/24h)","100,00%","100,00%","98,35%","98,35%","99,90%","99,90%",0,,,,,,,,,,,,,,
+"PACA","Vaucluse",840000483,"CH LOUIS GIORGI D'ORANGE",84106,"ORANGE CEDEX","TU-ORUPACA",,"OUI",6917,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","99,07%","99,01%","99,91%","99,91%",0,,,,,,,,,,,,,,
+"PACA","Vaucluse",840000491,"CH DU PAYS D'AIX - SITE DE PERTUIS",84123,"PERTUIS CEDEX","TU-ORUPACA",,"OUI",3436,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","98,44%","98,44%","94,29%","94,29%",0,,,,,,,,,,,,,,
+"PACA","Vaucluse",840000525,"CH VAISON LA ROMAINE",84110,"VAISON LA ROMAINE","TU-ORUPACA",,"OUI",2045,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","98,57%","98,57%","99,90%","99,90%",0,,,,,,,,,,,,,,
+"PACA","Vaucluse",840000533,"CH JULES NIEL DE VALREAS",84607,"VALREAS CEDEX","TU-ORUPACA",,"OUI",2212,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","98,44%","98,44%","99,82%","99,82%",0,,,,,,,,,,,,,,
+"PACA","Vaucluse",840001861,"CH D'AVIGNON HENRI DUFFAUT",84902,"AVIGNON CEDEX 9","TU-ORUPACA",,"OUI",22930,"TU-ORUPACA",,,"1440 (1x/24h)","100,00%","100,00%","98,02%","98,02%","99,05%","99,05%",0,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,"Nombre de RPU pour lesquels le critère CP est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère commune est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère sexe est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère date d'entrée est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode d'entrée est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère provenance est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode de transport est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode de PEC est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère motif est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère CCMU est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère DDS est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU avec mode de sortie =6 ou 7 pour lesquels la destination est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis","Nombre de RPU avec mode de sortie =6 ou 7 pour lesquels l'orientation est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis"
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"Nombre de RPU avec mode de sortie =6 ou 7 ou 8 pour lesquels la destination est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis",

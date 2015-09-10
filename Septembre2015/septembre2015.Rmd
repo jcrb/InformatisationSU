@@ -1,0 +1,301 @@
+---
+title: "Enquête logicielle - Septembre 2015"
+author: "JcB"
+date: "07/09/2015"
+output:
+  pdf_document:
+    number_sections: yes
+---
+
+7/9/2015
+========
+Reprise de l'exploitation des logiciels des SU
+
+- fichier source: DATA/FEDORU - ENQUETE LOGICIEL 2015 - V2 (12 06 15) (3)
+- création d'un dossier spécifique __Septembre2015__ contenent un sous dossier __data__ pour y stocker les résultats régionaux sous forme de fichier .csv. 
+
+Récupération des fichiers csv
+-----------------------------
+
+- les 5 premières lignes sont éliminées
+- élimination du héader => il faudre en créer un
+
+```{}
+path = "./data/" # ./Septembre2015/data/ si console
+out.file <- NULL
+file.names <- dir(path, pattern =".csv") # seuls les fichiers se terminant par csv sont lus
+for(i in 1:length(file.names)){
+   file <- read.table(paste(path, file.names[i], sep=""), skip = 5, header = FALSE, sep=",", stringsAsFactors=FALSE)
+   # on ne garde que les 22 premières colonnes
+   file <- file[, 1:22]
+   # on ne garde que les lignes où les colonnes 1 à 5 ne sont pas vides (http://genometoolbox.blogspot.fr/2014/01/remove-rows-with-na-values-from-r-data.html)
+   file <- file[complete.cases(file[,1:5]),]
+   # remplacement de la virgule écimale par le point décimal (soirce: http://stackoverflow.com/questions/5487164/r-how-to-replace-parts-of-variable-strings-within-data-frame)
+   file <- as.data.frame(sapply(file, gsub, pattern = ",", replacement = "."))
+
+   out.file <- rbind(out.file, file)
+ }
+
+n <- c("Region", "Departement", "FINESS", "Hopital", "CP", "Routage","Logiciel_2014","Editeur", "RPU_transmis","Nb_RPU_T1_2015", "Logiciel_2015", "Version_2015", "Coment", "Freq_remontee", "DN_exhaus","DN_confor", "DP_exhaus", "DP_confor", "MS_exhaus", "MS_confor", "Jours_manquants", "coment2")
+ names(out.file) <- n
+
+write.table(out.file, file = "archive.csv", sep=",", row.names = FALSE, qmethod = "double", fileEncoding="utf-8")
+```
+
+Récupération du fichier des données
+-----------------------------------
+```{r, echo=FALSE}
+d <- read.csv("archive.csv") # d <- read.csv("Septembre2015/archive.csv")
+
+# suppression de la première ligne qui est vide
+d <- d[-1,]
+d <- d[as.character(d$Region) != "",]
+d$Region <- factor(d$Region)
+d <- d[!is.na(d$Logiciel_2015) & as.character(d$Logiciel_2015) != "",]
+d$Logiciel_2015 <- factor(d$Logiciel_2015)
+
+# ajout d'une colonne n° de région
+d$reg.id <- NA
+d$reg.id[d$Region == "ALSACE"] <- 42
+d$reg.id[d$Region == "AQUITAINE"] <- 72
+d$reg.id[d$Region == "BOURGOGNE"] <- 26
+d$reg.id[d$Region == "BRETAGNE"] <- 53
+d$reg.id[d$Region == "CHAMPAGNE ARDENNES"] <- 21
+d$reg.id[d$Region == "LIMOUSIN"] <- 74
+d$reg.id[d$Region == "PACA"] <- 93
+d$reg.id[d$Region == "RHONE ALPES"] <- 82
+```
+
+- Nombre de régions participantes: `r nlevels(d$Region)`
+- Nombre de sites: `r nlevels(d$FINESS)`
+
+
+Cartographie
+============
+
+Cartographie des régions participantes et des logiciels.
+
+```{r carto_region, echo=FALSE}
+
+library(sp)
+library("RColorBrewer")
+options(scipen = 6)
+
+# récupérer le fond de carte
+file <- "~/Documents/CartographieR/RCarto/france_region.RData" # fichier source
+load(file) # le fond s'appelle region (SpatialPolygonDataFrame)
+
+par(mar=c(0,0,1,0))
+# plot(region)
+# title(main="Régions participantes (enquête 2015)")
+
+# ajout des centroïdes régionaux
+x <- 0
+y <- 0
+for(i in 1:22){ a = region@polygons[[i]]@labpt; x[i] = a[1]; y[i] = a[2]}
+region@data$x <- x
+region@data$y <- y
+
+# on ajoute une colonne participation. Les régions participantes = 1 sinon 0
+region@data$participation <- 0
+reg <- region@data
+reg$participation[reg$reg.id %in% c(42,72,53,21,26,74,93,82)] <- 1
+
+# carte des régions participantes
+plot(region, col = ifelse(reg$participation == 1, "cornflowerblue", "gray80"))
+title(main="Régions participantes (enquête 2015)")
+for(i in 1:length(reg$participation)){if(reg$participation[i] == 1) text(reg$x[i], reg$y[i], reg$reg.nom[i], cex = 0.6) }
+
+
+```
+
+Logiciels 2015
+==============
+
+```{r, echo=FALSE}
+
+d$Logiciel_2015 <- as.character(d$Logiciel_2015)
+d$Logiciel_2015 <- toupper(d$Logiciel_2015)
+
+d$Logiciel_2015[d$Logiciel_2015=="CRISTALNET-DMU"] <- "DMU"
+d$Logiciel_2015[d$Logiciel_2015=="DX CARE "] <- "DXCARE"
+d$Logiciel_2015[d$Logiciel_2015=="DX CARE URGENCES"] <- "DXCARE"
+d$Logiciel_2015[d$Logiciel_2015=="DXURGENCES"] <- "DXCARE"
+d$Logiciel_2015[d$Logiciel_2015=="ORBIS \n"] <- "ORBIS"
+d$Logiciel_2015[d$Logiciel_2015=="RESURGENCE"] <- "RESURGENCES"
+d$Logiciel_2015[d$Logiciel_2015=="SILLAGE URGENCES"] <- "SILLAGE DMU"
+d$Logiciel_2015[d$Logiciel_2015=="SILLAGE URGENCES (OCTOBRE 2015)"] <- "SILLAGE DMU"
+d$Logiciel_2015[d$Logiciel_2015=="TU"] <- "TU-ORUPACA"
+d$Logiciel_2015[d$Logiciel_2015=="URQUAL (MEDIQUAL)"] <- "URQUAL"
+d$Logiciel_2015[d$Logiciel_2015=="MEDICAL OBJECT DE MEDIWERE 21"] <- "MEDIWERE"
+d$Logiciel_2015[d$Logiciel_2015=="ANTARES V2 DE INOVACUM"] <- "ANTARES"
+```
+
+- Nombre de logiciels utilisés: `r length(unique(d$Logiciel_2015))`
+
+Logiciels par ordre décroissant
+-------------------------------
+```{r, echo=FALSE, comment=""}
+t <- sort(table(d$Logiciel_2015), decreasing = TRUE)
+t
+par(mar=c(6,3,2,2))
+barplot(t, las = 2, cex.names = 0.7, main = "Logiciels utilisés")
+
+```
+
+Logiciels par région
+--------------------
+
+```{r, comment="", echo=FALSE}
+table(d$Logiciel_2015, d$Region)
+
+```
+
+Nombre de logiciels différents par région
+```{r, echo=FALSE, comment=""}
+unlist(lapply(tapply(d$Logiciel_2015, d$Region, unique), length))
+
+```
+
+Cartographie des logiciels
+--------------------------
+```{r, echo=FALSE}
+# tableau des logiciels par n° de région
+t <- table(d$Logiciel_2015, d$reg.id)
+t <- t(t)
+# ajout du n° des régions en première colonne
+t <- cbind(rownames(t), t)
+# transformation en dataframe et renommage de la colonne 1 avec le même titre de colonne que reg
+t <- data.frame(t)
+a <- names(t)
+a[1] <- "reg.id"
+names(t) <- a
+# source de la fonction attrJoin
+source("~/Documents/Resural/FEDORU/Trame_Commune/Zone_chalandise/zone_chalandise.R")
+# merging avec reg
+reg <- attribJoin(df = t, spdf = region, df.field = "reg.id", spdf.field = "reg.id")
+
+plot(region, col = ifelse(!is.na(reg$ATALANTE) & as.numeric(as.character(reg$ATALANTE)) > 0, "cornflowerblue", "gray80"), main = "ATALANTE")
+
+plot(region, col = ifelse(!is.na(reg$DMU) & as.numeric(as.character(reg$DMU)) > 0, "cornflowerblue", "gray80"), main = "DMU")
+
+```
+
+Un logiciel est présent dans combien de régions ?
+-------------------------------------------------
+
+```{r, echo=FALSE}
+is.zero <- function(x){return(ifelse(x==0, TRUE, FALSE))}
+
+t <- table(d$Logiciel_2015, d$reg.id)
+u <- !is.zero(t)
+total <- apply(u, 1, sum)
+
+t2 <- cbind(t, total)
+t3 <- as.data.frame(t2)
+par(mar = c(7,4,3,2))
+
+a <- t3$total
+names(a) <- rownames(t3)
+a <- sort(a,decreasing = TRUE)
+
+barplot(a, names.arg = rownames(a), las = 2, cex.names = 0.7, ylab = "Nombre de régions où le logiciel est présent", main = "Diffusion régionale des logiciels")
+
+```
+
+Analyse des RPU
+===============
+
+```{r, echo=FALSE, warning=FALSE}
+d$Nb_RPU_T1_2015 <- as.numeric(as.character(d$Nb_RPU_T1_2015))
+n.rpu <- sum(d$Nb_RPU_T1_2015, na.rm = TRUE)
+```
+
+Nombre de RPU produits: `r n.rpu`
+
+Nombre de RPU par logiciel
+--------------------------
+```{r, comment="", echo=FALSE, comment=""}
+t <- tapply(d$Nb_RPU_T1_2015, d$Logiciel_2015, sum, na.rm = TRUE)
+n <- cbind(sort(t ,decreasing = TRUE))
+colnames(n) <- "Nb de RPU"
+n
+```
+
+Nombre de jours manquants
+-------------------------
+
+```{r, echo=FALSE, comment=""}
+t <- tapply(d$Jours_manquants, d$Logiciel_2015, sum, na.rm = TRUE)
+n <- cbind(sort(t ,decreasing = TRUE))
+colnames(n) <- "Nb de jours manquants"
+n
+```
+
+Indicateurs
+===========
+
+Date de naissance
+------------------
+
+- taux de conformité:
+```{r, echo=FALSE, comment="", warning=FALSE}
+d$DN_confor <- as.numeric(gsub("%", "", d$DN_confor))
+DN.conforme <- summary(d$DN_confor)
+DN.conforme
+
+```
+
+
+- taux d'exhaustivité:
+```{r, echo=FALSE, comment="", warning=FALSE}
+
+d$DN_exhaus <- as.numeric(gsub("%", "", d$DN_exhaus))
+DN.ex <- summary(d$DN_exhaus)
+DN.ex
+```
+
+Diagnostic (DP)
+---------- 
+
+- taux de conformité:
+```{r, echo=FALSE, comment="", warning=FALSE}
+d$DP_confor <- as.numeric(gsub("%", "", d$DP_confor))
+DP.conforme <- summary(d$DP_confor)
+DP.conforme
+
+```
+
+
+- taux de exhaustivité:
+```{r, echo=FALSE, comment="", warning=FALSE}
+
+d$DP_exhaus <- as.numeric(gsub("%", "", d$DP_exhaus))
+DP.ex <- summary(d$DP_exhaus)
+DP.ex
+
+```
+
+Mode de sortie (MS)
+-------------------
+
+- taux de conformité:
+```{r, echo=FALSE, comment=""}
+d$MS_confor <- as.numeric(gsub("%", "", d$MS_confor))
+ms.conforme <- summary(d$MS_confor)
+ms.conforme
+
+```
+
+
+- taux de exhaustivité:
+```{r, echo=FALSE, comment=""}
+
+d$MS_exhaus <- as.numeric(gsub("%", "", d$MS_exhaus))
+ms.ex <- summary(d$MS_exhaus)
+ms.ex
+
+```
+
+
+

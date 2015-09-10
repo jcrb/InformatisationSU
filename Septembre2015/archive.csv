@@ -1,0 +1,222 @@
+"Region","Departement","FINESS","Hopital","CP","Routage","Logiciel_2014","Editeur","RPU_transmis","Nb_RPU_T1_2015","Logiciel_2015","Version_2015","Coment","Freq_remontee","DN_exhaus","DN_confor","DP_exhaus","DP_confor","MS_exhaus","MS_confor","Jours_manquants","coment2"
+"ALSACE","Bas Rhin","670000025","HOPITAL CIVIL / NOUVEL HOPITAL CIVIL","67091","STRASBOURG CEDEX","DXCARE",NA,"OUI","7759","DX CARE URGENCES","7.5 R 12 + programpme des Hus qui extrait les données","","1440","100.00","100.00","52.24","52.24","21.05","21.05","0",NA
+"ALSACE","Bas Rhin","670000157","CENTRE HOSPITALIER DE HAGUENAU","67504","HAGUENAU CEDEX","RESURGENCE",NA,"OUI","11308","RESURGENCE","","","1440","100.00","100.00","76.00","76.00","90.22","90.22","0",NA
+"ALSACE","Bas Rhin","670000165","CH SAINTE-CATHERINE DE SAVERNE","67703","SAVERNE CEDEX","DXCARE",NA,"OUI","7460","DX CARE ","7.5.16","","1440","100.00","100.00","9.10","9.10","88.63","88.63","0",NA
+"ALSACE","Bas Rhin","670000272","CH INTERCOMMUNAL DE LA LAUTER","67166","WISSEMBOURG CEDEX","ATALANTE",NA,"OUI","3204","ATALANTE","7.2.1","","1440","100.00","100.00","88.48","88.48","95.63","95.63","0",NA
+"ALSACE","Bas Rhin","670000397","CENTRE HOSPITALIER DE SELESTAT","67606","SELESTAT CEDEX","CLINICOM",NA,"OUI","7023","CLINICOM","2014.01.0006","","1440","100.00","100.00","96.14","96.14","100.00","100.00","4",NA
+"ALSACE","Bas Rhin","670016237","CLINIQUE SAINTE ODILE","67100","STRASBOURG","DXCARE",NA,"OUI","6045","ANTARES V2 de INOVACUM","2.28.0.4","","1440","100.00","100.00","45.84","45.84","84.48","84.48","1",NA
+"ALSACE","Bas Rhin","670780162","CLINIQUE DES DIACONESSES","67085","STRASBOURG CEDEX","ATALANTE",NA,"OUI","2929","ANTARES V2 de INOVACUM","2.28.0.4","","1440","100.00","100.00","90.51","90.51","83.99","83.99","0",NA
+"ALSACE","Bas Rhin","670780212","CLINIQUE SAINTE-ANNE","67085","STRASBOURG CEDEX","ORBIS",NA,"OUI","3025","ORBIS","8.4.22","","1440","100.00","100.00","0.00","0.00","15.70","15.70","25",NA
+"ALSACE","Bas Rhin","670783273","HOPITAL DE HAUTEPIERRE","67098","STRASBOURG CEDEX 2","DXCARE",NA,"OUI","19679","DX CARE URGENCES","7.5 R 12 + programpme des Hus qui extrait les données","","1440","100.00","100.00","52.24","52.24","21.05","21.05","0",NA
+"ALSACE","Haut Rhin","680000320","CLINIQUE DIACONAT FONDERIE","68054","MULHOUSE CEDEX 1","ATALANTE",NA,"OUI","7128","ATALANTE","7.2.1.0","","1440","100.00","100.00","39.80","39.80","99.14","99.14","0",NA
+"ALSACE","Haut Rhin","680000494","CLINIQUE DIACONAT ROOSEVELT","68200","MULHOUSE","ATALANTE",NA,"OUI","1852","ATALANTE","7.2.1.0","","1440","100.00","100.00","7.34","7.34","80.94","80.94","0",NA
+"ALSACE","Haut Rhin","680000544","CENTRE HOSPITALIER D'ALTKIRCH","68134","ALTKIRCH CEDEX","ATALANTE",NA,"OUI","4013","ATALANTE","7.2.2","","1440","100.00","100.00","18.04","18.04","30.03","30.03","0",NA
+"ALSACE","Haut Rhin","680000601","CENTRE HOSPITALIER DE THANN","68802","THANN CEDEX",NA,NA,"NON",NA,NA,NA,"SU non informatisé","1440",NA,NA,NA,NA,NA,NA,NA,NA
+"ALSACE","Haut Rhin","680000627","HOPITAL DU HASENRAIN","68051","MULHOUSE CEDEX 1","CRISTALNET-DMU",NA,"OUI",NA,"ATALANTE","7.1.1","Même FINESS que CH E. Muller","1440","100.00","100.00","18.04","18.04","30.03","30.03","1",NA
+"ALSACE","Haut Rhin","680000684","HOPITAL LOUIS PASTEUR","68024","COLMAR CEDEX","CRISTALNET-DMU",NA,"OUI","16564","CRISTALNET-DMU","3.5.23","","1440","100.00","100.00","86.08","86.08","97.41","97.41","1",NA
+"ALSACE","Haut Rhin","680000700","CENTRE HOSPITALIER DE GUEBWILLER","68504","GUEBWILLER CEDEX","ATALANTE",NA,"OUI","3699","ATALANTE","7.2.1","","1440","100.00","100.00","98.95","98.95","93.24","93.24","0",NA
+"ALSACE","Haut Rhin","680001245","CENTRE MERE ENFANT 'LE PARC'","68020","COLMAR CEDEX","CRISTALNET-DMU",NA,"OUI",NA,"CRISTALNET-DMU","3.5.23","Même FINESS que Hôpital Pasteur","1440","100.00","100.00","86.08 ?","86.08 ?","97.41","97.41","1",NA
+"ALSACE","Haut Rhin","680004546","HOPITAL EMILE MULLER","68051","MULHOUSE CEDEX 1","URQUAL",NA,"OUI","15383","ATALANTE","7.1.1","","1440","100.00","100.00","18.04","18.04","30.03","30.03","1",NA
+"ALSACE","Haut Rhin","680020096","CENTRE HOSP MULHOUSE- SITE DE ST-LOUIS","68300","ST LOUIS","ATALANTE",NA,"OUI","4170","ATALANTE","7.1.1","","1440","100.00","100.00","55.40","55.40","78.97","78.97","0",NA
+"AQUITAINE","Dordogne","240000190","PCL FRANCHEVILLE","24004","PERIGUEUX CEDEX","DOPASOINS","module Urgences (WebSanté)","OUI","2811","DOPA URGENCES",NA,"","1440","100.0%","100.0%","62.9%","62.9%","82.6%","82.6%","0",NA
+"AQUITAINE","Dordogne","240000372","CH BERGERAC","24108","BERGERAC CEDEX","CROSSWAY","(McKesson)","OUI","2134","CROSSWAY",NA,"Teminal Urgences sera le futur outil","1440","100.0%","100.0%","0.0%","0.0%","1.5%","1.5%","63",NA
+"AQUITAINE","Dordogne","240000489","CH PERIGUEUX","24019","PERIGUEUX CEDEX","DXCARE","(Medasys)","OUI","6828","DXUrgences",NA,"","1440","100.0%","100.0%","52.6%","52.6%","99.8%","99.8%","0",NA
+"AQUITAINE","Dordogne","240000687","CH SARLAT","24206","SARLAT LA CANEDA CEDEX","SIDSU","RESURA","OUI","2931","SIDSU","2.62","DxUrgences sera le nouvel outil","1440","100.0%","100.0%","93.8%","93.8%","99.5%","99.5%","0",NA
+"AQUITAINE","Gironde","330000555","CH ARCACHON","33164","LA TESTE CEDEX","SIDSU","RESURA","OUI","6686","SIDSU","2.62","Teminal Urgences ou Urqual sera l'outil suivant","1440","100.0%","100.0%","86.5%","86.5%","99.9%","99.9%","0",NA
+"AQUITAINE","Gironde","330000571","CH HAUTE GIRONDE","33394","BLAYE CEDEX","CROSSWAY","(McKesson)","NON",NA,"CROSSWAY",NA,"Terminal Urgences sera le nouvel outil",NA,"","","","","","",NA,NA
+"AQUITAINE","Gironde","330000589","CH SUD GIRONDE LANGON","33212","LANGON CEDEX","SILLAGE","SIB","OUI","5330","SILLAGE URGENCES",NA,"","1440","100.0%","100.0%","76.5%","76.5%","98.3%","98.3%","0",NA
+"AQUITAINE","Gironde","330000597","CH SUD GIRONDE LA REOLE","33192","LA REOLE CEDEX","SILLAGE","SIB","OUI","1120","SILLAGE URGENCES",NA,"","1440","100.0%","100.0%","87.1%","87.1%","99.4%","99.4%","0",NA
+"AQUITAINE","Gironde","330000605","CH LIBOURNE","33505","LIBOURNE CEDEX","URQUAL","(McKesson)","OUI","11865","URQUAL",NA,"","1440","100.0%","100.0%","0.0%","0.0%","99.7%","99.7%","0",NA
+"AQUITAINE","Gironde","330000613","CH STE FOY LA GRANDE","33220","STE FOY LA GRANDE","URQUAL","(McKesson)","OUI","2547","URQUAL",NA,"","1440","100.0%","100.0%","0.0%","0.0%","100.0%","100.0%","0",NA
+"AQUITAINE","Gironde","330780263","PCL BORDEAUX RIVE DROITE","33310","LORMONT","SIDSU","RESURA","OUI","6584","SIDSU","2.62","Expertiz Santé sera probablement le futur outil","1440","100.0%","100.0%","27.3%","27.3%","99.2%","99.2%","0",NA
+"AQUITAINE","Gironde","330780479","PCL BORDEAUX-NORD","33377","BORDEAUX cedex","SIDSU","RESURA","OUI","7005","SIDSU","2.62","Expertiz Santé sera probablement le futur outil","1440","100.0%","100.0%","95.8%","95.8%","99.2%","99.2%","0",NA
+"AQUITAINE","Gironde","330780495","CL MUTUALISTE DU MEDOC","33340","LESPARRE MEDOC","SANOCOM","","OUI","3693","SANOCOM",NA,"changement d'outil prévu","1440","100.0%","100.0%","83.3%","83.3%","100.0%","100.0%","0",NA
+"AQUITAINE","Gironde","330780529","CL MUTUALISTE DE PESSAC","33608","PESSAC CEDEX","SANOCOM","","OUI","3457","SANOCOM",NA,"changement d'outil prévu","1440","100.0%","100.0%","76.7%","76.7%","100.0%","100.0%","0",NA
+"AQUITAINE","Gironde","330780537","CMC WALLERSTEIN","33740","ARES","SIGEMS","","OUI","3266","SIGEMS",NA,"changement d'outil prévu","1440","100.0%","100.0%","8.4%","8.4%","99.9%","99.9%","0",NA
+"AQUITAINE","Gironde","330781303","HIA ROBERT PICQUE","33882","VILLENAVE D ORNON CEDEX","CROSSWAY","McKesson","OUI","6840","CROSSWAY",NA,"changement d'outil prévu","1440","100.0%","100.0%","94.4%","94.3%","95.1%","95.0%","0",NA
+"AQUITAINE","Gironde","330781352","CHU - HOPITAL SAINT-ANDRE ","33075","BORDEAUX CEDEX","DXCARE","(Medasys)","OUI","5090","DXUrgences",NA,"","1440","100.0%","100.0%","97.4%","97.4%","100.0%","100.0%","0",NA
+"AQUITAINE","Gironde","330781360","CHU - PELLEGRIN ADULTES","33076","BORDEAUX CEDEX","DXCARE","Medasys","OUI","13290","DXUrgences",NA,"","1440","100.0%","100.0%","68.8%","68.8%","100.0%","100.0%","0",NA
+"AQUITAINE","Gironde","330781360","CHU - PELLEGRIN PEDIATRIE","33076","BORDEAUX CEDEX","DXCARE","Medasys","OUI","10137","DXUrgences",NA,"","1440","100.0%","100.0%","98.9%","98.9%","100.0%","100.0%","0",NA
+"AQUITAINE","Gironde","330783648","CHU - HOPITAL HAUT-LEVEQUE","33604","PESSAC CEDEX","DXCARE","Medasys","OUI","1258","DxCare",NA,"","1440","100.0%","100.0%","35.0%","35.0%","100.0%","100.0%","0",NA
+"AQUITAINE","Landes","400000105","CH DAX","40107","DAX CEDEX","M-PLUS","","OUI","9970","M-Plus",NA,"Terminal Urgences sera le nouvel outil","1440","100.0%","100.0%","83.5%","83.5%","16.8%","16.8%","0",NA
+"AQUITAINE","Landes","400000139","CH MONT DE MARSAN","40024","MONT DE MARSAN CEDEX","SIDSU","RESURA","OUI","7583","SIDSU","2.62","Terminal Urgences sera le nouvel outil","1440","100.0%","100.0%","96.7%","96.7%","100.0%","100.0%","0",NA
+"AQUITAINE","Landes","400782769","PCL LES CHENES","40801","AIRE SUR L ADOUR CEDEX","SIGEMS","","NON",NA,"SIGEMS",NA,"Terminal Urgences sera le nouvel outil",NA,"","","","","","",NA,NA
+"AQUITAINE","Lot et Garonne","470000027","CL ESQUIROL-SAINT-HILAIRE","47002","AGEN CEDEX","SHAREGATE","(WareSystem)","OUI","5790","SHAREGATE",NA,"","1440","100.0%","100.0%","0.0%","0.0%","100.0%","100.0%","0",NA
+"AQUITAINE","Lot et Garonne","470000423","CH AGEN","47923","AGEN CEDEX 9","URQUAL ","McKesson","OUI","8312","URQUAL",NA,"Terminal Urgences est installé depuis Juin","1440","100.0%","100.0%","93.1%","93.1%","93.1%","93.1%","0",NA
+"AQUITAINE","Lot et Garonne","470000431","CH VILLENEUVE/LOT","47307","VILLENEUVE SUR LOT CEDEX","AXIGATE","","OUI","4282","AXIGATE",NA,"Terminal Urgences sera le nouvel outil","1440","100.0%","100.0%","0.0%","0.0%","100.0%","99.9%","0",NA
+"AQUITAINE","Lot et Garonne","470000480","CH MARMANDE","47207","MARMANDE CEDEX","SIDSU","RESURA","OUI","5959","SIDSU","2.62","Terminal Urgences sera le nouvel outil","1440","100.0%","100.0%","96.3%","96.3%","98.2%","98.2%","0",NA
+"AQUITAINE","Pyrénées Atlantiques","640000162","CH COTE BASQUE - BAYONNE","64109","BAYONNE CEDEX","TRACK CARE","","OUI","11345","TRACK CARE",NA,"","1440","100.0%","100.0%","96.3%","96.3%","98.3%","98.3%","0",NA
+"AQUITAINE","Pyrénées Atlantiques","640000402","CH ORTHEZ","64300","ORTHEZ","SIDSU","RESURA","OUI","3083","SIDSU","2.62","","1440","100.0%","100.0%","99.8%","99.8%","100.0%","100.0%","0",NA
+"AQUITAINE","Pyrénées Atlantiques","640000410","CH OLORON","64404","OLORON STE MARIE CEDEX","DXCARE","Medasys","OUI","3475","DxCARE",NA,"","1440","100.0%","100.0%","0.0%","0.0%","99.9%","99.9%","0",NA
+"AQUITAINE","Pyrénées Atlantiques","640000600","CH PAU","64046","PAU CEDEX","CLINICOM","","NON",NA,"",NA,"Urqual sera le futur outil",NA,"","","","","","",NA,NA
+"AQUITAINE","Pyrénées Atlantiques","640017646","CH SAINT-PALAIS","64120","ST PALAIS","SIDSU","RESURA","OUI","2037","SIDSU","2.62","Track Care sera le nouvel outil","1440","100.0%","100.0%","98.5%","98.5%","99.7%","99.7%","0",NA
+"AQUITAINE","Pyrénées Atlantiques","640780433","CL ST-ETIENNE","64115","BAYONNE CEDEX","SIDSU","RESURA","OUI","2533","SIDSU","2.62","Mediboard sera le nouvel outil","1440","100.0%","100.0%","88.8%","88.8%","99.4%","99.4%","0",NA
+"AQUITAINE","Pyrénées Atlantiques","640780490","PCL AGUILERA","64201","BIARRITZ CEDEX","RESURGENCES","Berger Levrault","OUI","3032","RESURGENCES",NA,"Mediboard depuis Avril","1440","100.0%","100.0%","98.1%","98.1%","0.0%","0.0%","0",NA
+"AQUITAINE","Pyrénées Atlantiques","640780748","PCL COTE BASQUE SUD","64501","ST JEAN DE LUZ CEDEX","MEDIBASE","(OSOFT)","OUI","2913","MEDIBASE",NA,"","1440","100.0%","100.0%","96.4%","96.4%","65.7%","65.7%","0",NA
+"AQUITAINE","Pyrénées Atlantiques","640780938","PCL MARZET","64000","PAU","SHAREGATE","(WareSystem)","OUI","2849","SHAREGATE",NA,"","1440","100.0%","100.0%","0.1%","0.1%","100.0%","100.0%","0",NA
+"BOURGOGNE","Côte d'Or","210780136","CLINIQUE MEDICO CHIRURGICALE CHENOVE","21302","CHENOVE CEDEX","RESURGENCES",NA,"OUI","2954","RESURGENCES","v4.6UO.7",NA,"1440 (1x/24h)","100%","100%","99%","99%","99%","99%","0",""
+"BOURGOGNE","Côte d'Or","210781621","HOPITAL GENERAL CHU DIJON","21033","DIJON CEDEX","",NA,"Site n'existe plus","Site n'accueil plus d'urgence","","",NA,"","","","","","","",NA,""
+"BOURGOGNE","Côte d'Or","210987558","HOPITAL LE BOCAGE CHU DIJON","21079","DIJON CEDEX","RESURGENCES",NA,"OUI","11208","RESURGENCES","4.5zmd39",NA,"1440 (1x/24h)","100%","100%","100%","100%","100%","100%","0",""
+"BOURGOGNE","Côte d'Or","210987657","CH BEAUNE","21203","BEAUNE CEDEX","CROSSWAY",NA,"OUI","5951","CROSSWAY","7.1.10.r2.0",NA,"1440 (1x/24h)","100%","100%","28%","28%","0%","0%","0",""
+"BOURGOGNE","Côte d'Or","210987665","CH INTERCOMMUNAL CHATILLON MONTBARD","21400","CHATILLON SUR SEINE","CDP2",NA,"OUI","1411","HOPITAL MANAGER","1.1410",NA,"1440 (1x/24h)","100%","100%","95%","95%","100%","100%","3","lié au changement de logiciel en janvier 2015"
+"BOURGOGNE","Côte d'Or","210987673","CH INTERCOMMUNAL CHATILLON MONTBARD","21500","MONTBARD","CDP2",NA,"OUI","1233","HOPITAL MANAGER","1.1410",NA,"1440 (1x/24h)","100%","100%","100%","100%","100%","100%","0",""
+"BOURGOGNE","Côte d'Or","210987699","CENTRE HOSPITALIER ROBERT MORLEVAT","21140","SEMUR EN AUXOIS","ATALANTE",NA,"OUI","5263","ATALANTE","",NA,"1440 (1x/24h)","100%","100%","0%","0%","0%","0%","0",""
+"BOURGOGNE","Nièvre","580972669","CH CLAMECY","58500","CLAMECY","Manuel",NA,"OUI","2504","Manuel","",NA,"1440 (1x/24h)","100%","100%","99%","98%","99%","99%","0",""
+"BOURGOGNE","Nièvre","580972677","CH COSNE-COURS-SUR-LOIRE","58200","COSNE COURS SUR LOIRE","URQUAL",NA,"OUI depuis janvier 2014","3358","URQUAL","7.1.5.0 RC4",NA,"1440 (1x/24h)","100%","100%","0%","0%","95%","95%","0",""
+"BOURGOGNE","Nièvre","580972685","CH DECIZE","58302","DECIZE CEDEX","CROSSWAY",NA,"OUI","3062","CROSSWAY","7.1.10.r2.0",NA,"1440 (1x/24h)","100%","100%","1%","1%","0%","0%","0",""
+"BOURGOGNE","Nièvre","580972693","C.H DE L'AGGLOMERATION DE NEVERS","58033","NEVERS CEDEX","URQUAL",NA,"OUI depuis janvier 2014","5667","URQUAL","",NA,"1440 (1x/24h)","100%","100%","0%","0%","100%","100%","18","lié au redeployement du module d'envoi des données par Maincare. Une demande de récupération a été faite. le service informatique attend le retour de l'éditeur."
+"BOURGOGNE","Saone et Loire","710010067","CH PARAY-LE-MONIAL LES CHARMES","71600","PARAY LE MONIAL","CROSSWAY",NA,"OUI","5389","CROSSWAY","avant le 19/03/15 : 7.1.7R2.0.3
+depuis le 19/03/15 : 7.1.10R1.0",NA,"1440 (1x/24h)","100%","100%","0%","0%","0%","0%","0",""
+"BOURGOGNE","Saone et Loire","710010786","CH AUTUN (SITE PARPAS)","71400","AUTUN","CRISTALNET-DMU",NA,"OUI","3671","DMU","3.2.14",NA,"1440 (1x/24h)","100%","100%","99%","99%","100%","100%","0",""
+"BOURGOGNE","Saone et Loire","710978263","CH W MOREY  CHALON-SUR-SAONE","71321","CHALON SUR SAONE CEDEX","CRISTALNET-DMU",NA,"OUI","9960","DMU","3.6.36",NA,"1440 (1x/24h)","100%","100%","99%","99%","100%","100%","0",""
+"BOURGOGNE","Saone et Loire","710978289","CH LES CHANAUX MACON","71000","MACON","URQUAL",NA,"OUI","9891","URQUAL","7.1.4",NA,"1440 (1x/24h)","100%","100%","0%","0%","97%","97%","0",""
+"BOURGOGNE","Saone et Loire","710978313","SIH CH MONTCEAU-LES-MINES","71230","ST VALLIER","CRISTALNET-DMU",NA,"OUI","5079","DMU","3.4.30",NA,"1440 (1x/24h)","100%","100%","96%","96%","100%","100%","0",""
+"BOURGOGNE","Saone et Loire","710978347","HOTEL DIEU DU CREUSOT","71206","LE CREUSOT CEDEX","CRISTALNET-DMU",NA,"OUI","8512","DMU","3.4.30",NA,"1440 (1x/24h)","100%","100%","71%","71%","100%","100%","0",""
+"BOURGOGNE","Yonne","890002389","POLYCLINIQUE  STE MARGUERITE AUXERRE","89003","AUXERRE CEDEX","DxCare",NA,"OUI depuis le 30/05/14","2941","DXCARE","7.5.16",NA,"1440 (1x/24h)","100%","100%","83%","83%","100%","100%","0",""
+"BOURGOGNE","Yonne","890975527","CH AUXERRE Adulte","89011","AUXERRE CEDEX","CRISTALNET-DMU",NA,"OUI","9436","DMU","3.5.26",NA,"1440 (1x/24h)","100%","100%","96%","96%","99%","99%","0",""
+"BOURGOGNE","Yonne","890975527","CH AUXERRE Pediatrique","89011","AUXERRE CEDEX","CRISTALNET-DMU",NA,"OUI","4004","DMU","3.5.26",NA,"1440 (1x/24h)","100%","100%","100%","100%","100%","100%","0",""
+"BOURGOGNE","Yonne","890975535","CH AVALLON","89206","AVALLON CEDEX","AGFA EXAGON",NA,"OUI","2541","AGFA EXAGON","",NA,"1440 (1x/24h)","100%","100%","12%","12%","100%","100%","0",""
+"BOURGOGNE","Yonne","890975543","CH JOIGNY","89306","JOIGNY CEDEX","TU-ORUPACA",NA,"OUI","4482","TU","",NA,"1440 (1x/24h)","100%","100%","98%","98%","100%","100%","0",""
+"BOURGOGNE","Yonne","890975550","CH SENS","89108","SENS CEDEX","RESURGENCES",NA,"OUI","7997","RESURGENCES","avant le 16/02/15 : 4.6ZIP.16
+depuis le 16/02/15 : 4.6ZLT.17",NA,"1440 (1x/24h)","100%","100%","99%","99%","100%","100%","0",""
+"BOURGOGNE","Yonne","890975568","CH TONNERRE","89700","TONNERRE","CRISTALNET-DMU",NA,"OUI","2440","DMU","1.0.3.3.1",NA,"1440 (1x/24h)","100%","100%","95%","95%","98%","98%","0",""
+"BRETAGNE","Finistère","290004324","CHU BREST -Site Cavale Blanche","29609
+29835","BREST CEDEX
+CARHAIX-PLOUGUER CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","20238","URQUAL"," version 7.0.3","","1 fois/jour","100.0%","99.98%","64.2%","64.2%","98.1%","98.1%","0",""
+"BRETAGNE","Finistère","290000058
+","CHU BREST - Site Morvan","29609
+29835","BREST CEDEX
+CARHAIX-PLOUGUER CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","20238","URQUAL"," version 7.0.3","","1 fois/jour","100.0%","100.00%","98.4%","98.4%","99.7%","99.7%","0",""
+"BRETAGNE","Finistère","290000256","CHU BREST- Site Carhaix","29609
+29835","BREST CEDEX
+CARHAIX-PLOUGUER CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","20238","URQUAL"," version 7.0.3","","1 fois/jour","100.0%","99.97%","72.0%","72.0%","73.9%","73.9%","0",""
+"BRETAGNE","Finistère","290 000 025","CH DE QUIMPER-site Quimper","29107","QUIMPER CEDEX
+CONCARNEAU","URQUAL (Mediqual)","Maincare (ex-McKesson)","OUI","12276","URQUAL (Mediqual)","version 7.1.6.0.2","","1 fois/jour","100.0%","100.0%","97.0%","96.9%","98.2%","98.2%","0",""
+"BRETAGNE","Finistère","290 000 066","CHL DE QUIMPER-Site de Concarneau","29900","QUIMPER CEDEX
+CONCARNEAU","URQUAL (Mediqual)","Maincare (ex-McKesson)","OUI","12276","URQUAL (Mediqual)","version 7.1.6.0.2","","1 fois/jour","100.0%","100.0%","99.1%","99.1%","99.6%","99.6%","0",""
+"BRETAGNE","Finistère","290000181","CENTRE HOSPITALIER DE DOUARNENEZ","29100","DOUARNENEZ","SILLAGE URGENCES","SIB (Santé Informatique de Bretagne)","OUI","2983","SILLAGE URGENCES","version 6.1.4  le 17/03/2015
+version 6.1.5 le 06/05/2015
+version 6.1.5.2 le 02/06/2015","","1 fois/jour","100.0%","100.0%","95.0%","95.0%","98.8%","98.8%","0",""
+"BRETAGNE","Finistère","290000728","HOPITAL D'INSTRUCTION DES ARMEES","29240","BREST CEDEX 09","URQUAL","Maincare (ex-McKesson)","OUI","4794","URQUAL","V7","","1 fois/jour","100.0%","99.8%","98.5%","98.5%","96.9%","96.9%","0",""
+"BRETAGNE","Finistère","290000173","CENTRE HOSPITALIER DE LANDERNEAU","29207","LANDERNEAU CEDEX","HEXAGONE","AGFA","NON","3922","SILLAGE URGENCES","Version 8.3.9","NE","1 fois/jour","100.0%","100.0%","0.0%","0.0%","99.9%","99.9%","0","Amélioration du remplissage au 2ème trimestre 2015 et se poursuivra lors de l'installation de Sillage Urgences
+Transmission des RPU sur la plateforme de test"
+"BRETAGNE","Finistère","290000033","CENTRE HOSPITALIER DE MORLAIX","29672","MORLAIX CEDEX","MEDIS Urgences","BERGER-LEVRAULT","OUI","7975","SILLAGE URGENCES (octobre 2015)","V5.2014.1012","","1 fois/jour","100.0%","100.0%","18.3%","18.3%","91.8%","91.8%","0",""
+"BRETAGNE","Finistère","290019777","POLYCLINIQUE DE KERAUDREN","29220","BREST","RESURGENCES","BERGER-LEVRAULT","OUI","8204","RESURGENCES"," v4.6QK.16","","1 fois/jour","100.0%","100.0%","93.1%","93.1%","99.0%","99.0%","0",""
+"BRETAGNE","Finistère","290000785","HOTEL-DIEU DE PONT-L'ABBE","29120","PONT-L'ABBE","OSOFT","MEDIBASE","OUI","3404","OSOFT","version 6.64.048 d'Osoft
+mise à jour de la version d'Osoft le 8 janvier 2015 et le 21 mai 2015","","1 fois/jour","100.0%","100.0%","98.6%","98.6%","100.0%","100.0%","0",""
+"BRETAGNE","Finistère","290000934","CENTRE HOSPITALIER DE QUIMPERLE","29300","QUIMPERLE CEDEX","","","NON","3281","SILLAGE URGENCES","V6.1.2","NE","1 fois/jour","100.0%","100.0%","88.2%","88.2%","68.5%","68.5%","0","Transmission des RPU sur la plateforme de test"
+"BRETAGNE","Morbihan","560000135","CENTRE HOSPITALIER DE BRETAGNE SUD 
+(SAU adultes)","56322","LORIENT CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","13291","URQUAL","V 5.41.15","","1 fois/jour","100.0%","100.0%","86.0%","0.0%","98.9%","98.9%","0",""
+"BRETAGNE","Morbihan","560009268","CENTRE HOSPITALIER DE BRETAGNE SUD 
+(SAU pédiatrie)","56322","LORIENT CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","13291","URQUAL","V 5.41.15","","1 fois/jour","100.0%","100.0%","100.0%","100.0%","100.0%","100.0%","0",""
+"BRETAGNE","Morbihan","560000143","CENTRE HOSPITALIER DU CENTRE BRETAGNE","56306","PONTIVY CEDEX","URQUAL","Maincare (ex-McKesson)","OUI","6754","URQUAL","V 7.0.5","","1 fois/jour","100.0%","100.0%","15.7%","15.7%","97.3%","97.3%","0",""
+"BRETAGNE","Morbihan","560000127
+560000200","CENTRE HOSPITALIER DE BRETAGNE ATLANTIQUE
+(site Chubert et Auray)","56017
+56400","VANNES CEDEX
+AURAY","URQUAL","Maincare (ex-McKesson)","OUI","14547","URQUAL","version 7.1.2.(1er trimestre 2015)
+version 7.1.8 (il y a 15 jours)
+version 8.2.0 (fin juin)","","1 fois/jour","100.0%","100.0%","37.0%","37.0%","100.0%","100.0%","3","Absence de transmission de RPU le dernier jour de chaque mois (problème réglé en principe fin juin 2015)"
+"BRETAGNE","Morbihan","560000192","CENTRE HOSPITALIER DE PLOERMEL","56800","PLOERMEL","SILLAGE DMU","SIB (Santé Informatique de Bretagne)","OUI","4768","SILLAGE DMU","version 6.0.5 au 01/01/2015 
+version 6.1.4 le 17/03/2015
+version 6.1.5.2 le 20/05/2015","","1 fois/jour","100.0%","100.0%","10.5%","10.5%","98.8%","98.8%","0",""
+"BRETAGNE","Ille-et-Vilaine","350005146","HOPITAL PRIVE SEVIGNE","35576","CESSON-SEVIGNE CEDEX","RESURGENCES","BERGER-LEVRAULT","OUI","5128","RESURGENCES","version 4.5.zmn.9c","","1 fois/jour","100.0%","100.0%","93.8%","93.8%","99.8%","99.8%","0",""
+"BRETAGNE","Ille-et-Vilaine","350000154","CENTRE HOSPITALIER DE FOUGERES","35306","FOUGERES CEDEX","SILLAGE DMU","SIB (Santé Informatique de Bretagne)","OUI","7033","SILLAGE DMU","Version au 1er janvier 2015 = 6.1.2.2
+Passage à la version 6.1.2.11 le 23/01/2015
+Passage à la version 6.1.2.12 le 28/01/2015
+Passage à la version 6.1.4 le 11/03/2015
+Passage à la version 6.1.4.1 le 31/03/2015
+Passage à la version 6.1.4.3 le 13/04/2015
+Passage à la version 6.1.5 le 28/04/2015","","1 fois/jour","100.0%","100.0%","0.9%","0.9%","100.0%","100.0%","0",""
+"BRETAGNE","Ille-et-Vilaine","350000162","CENTRE HOSPITALIER DE REDON","35603","REDON CEDEX","SILLAGE URGENCES","SIB (Santé Informatique de Bretagne)","NON","5123","SILLAGE URGENCES","","","1 fois/jour","100.0%","100.0%","91.3%","91.3%","99.6%","99.6%","0","Transmission des RPU sur la plateforme de test"
+"BRETAGNE","Ille-et-Vilaine","350000741","CHU DE RENNES -Hôpital Sud-SAU pédiatrique","35033","RENNES CEDEX 9","RESURGENCES","BERGER-LEVRAULT","OUI","21229","RESURGENCES","version V44","","1 fois/jour","100.0%","100.0%","100.0%","100.0%","100.0%","100.0%","0",""
+"BRETAGNE","Ille-et-Vilaine","350007084","CHU DE RENNES -site de Ponchaillou-SAU adulte","35033","RENNES CEDEX 9","RESURGENCES","BERGER-LEVRAULT","OUI","21229","RESURGENCES","version V44","","1 fois/jour"," 100.0%
+","100.0%
+","100.0%","99.97%
+","100.0%","100.0%","0",""
+"BRETAGNE","Ille-et-Vilaine","350000147","CENTRE HOSPITALIER DE SAINT-MALO","35400","SAINT-MALO","URQUAL","Maincare (ex-McKesson)","OUI","8989","URQUAL","V5.4009-2","","1 fois/jour","100.0%","100.0%","91.2%","91.2%","95.6%","95.6%","2",""
+"BRETAGNE","Ille-et-Vilaine","350000121","CENTRE HOSPITALIER PRIVE SAINT-GREGOIRE","35768","SAINT-GREGOIRE CEDEX","MEDIBOARD","OpenXtrem","NON","7080","MEDIBOARD","","","1 fois/jour","100.0%","100.0%","43.2%","43.2%","99.96%","99.96%","0","Transmission des RPU sur la plateforme de test"
+"BRETAGNE","Ille-et-Vilaine","350000188","CENTRE HOSPITALIER DE VITRE","35506","VITRE","SILLAGE DMU","SIB (Santé Informatique de Bretagne)","OUI","2785","SILLAGE URGENCES","6.1.5.2","NE","1 fois/jour","100.0%","100.0%","0.1%","0.1%","98.7%","98.7%","42","Transmission des RPU sur la plateforme de production à partir du 25/06/2015"
+"BRETAGNE","Côtes-d'Armor","220000095","CENTRE HOSPITALIER DE DINAN","22101","DINAN","MEDIS Urgences","BERGER-LEVRAULT","NON","6974","MEDIS","Début 1er trimestre 2015: 6.2014.1005
+Changement version courant mars : 6.2014.1011","","1 fois/jour","100.0%","100.0%","19.7%","19.7%","13.5%","13.5%","0","Amélioration du remplissage à partir de mi-avril
+Transmission des RPU sur la plateforme de test"
+"BRETAGNE","Côtes-d'Armor","220000343","CENTRE HOSPITALIER DE GUINGAMP","22205","PABU","RESURGENCES","BERGER-LEVRAULT","OUI","4988","RESURGENCES"," V4.6ZFW.14 du 16/10/2014 au 06/02/2015
+V4.6ZLP.15 depuis le 06/02/2015","","1 fois/jour","100.0%","100.0%","99.6%","99.6%","100.0%","100.0%","0",""
+"BRETAGNE","Côtes-d'Armor","220000368","CENTRE HOSPITALIER DE LANNION","22303","LANNION CEDEX","RESURGENCES","BERGER-LEVRAULT","OUI","5417","RESURGENCES","","","1 fois/jour","100.0%","100.0%","92.4%","92.4%","100.0%","100.0%","0",""
+"BRETAGNE","Côtes-d'Armor","220000541","CENTRE HOSPITALIER DE PAIMPOL","22501","PAIMPOL","ORBIS","AGFA","NON","3179","ORBIS","","NE (Nombreux doublons jusqu'à la mi-avril)","1 fois/jour","100.0%","100.0%","0.0%","0.0%","19.8%","19.8%","5","Transmission des RPU sur la plateforme de test"
+"BRETAGNE","Côtes-d'Armor","220000012","CENTRE HOSPITALIER DE SAINT-BRIEUC","22027","SAINT-BRIEUC CEDEX 1","RESURGENCES","BERGER-LEVRAULT","OUI","15440","RESURGENCES","","","1 fois/jour","100.0%","100.0%","99.5%","99.5%","100.0%","100.0%","0",""
+"CHAMPAGNE ARDENNES","Ardennes","80000110","CENTRE HOSPITALIER DE SEDAN","8209","SEDAN CEDEX","CRISTALNET-DMU",NA,"OUI","5146","CRISTALNET-DMU",NA,"","1440 (1x/24h)","100.0%","100.0%","56.9%","56.8%","100.0%","100.0%","0",""
+"CHAMPAGNE ARDENNES","Ardennes","80000219","CENTRE HOSPITALIER DE RETHEL","8300","RETHEL","Polymedis",NA,"OUI","4680","Polymedis",NA,"L'activité des deux sites n'est pas distinguable dans le flux RPU.","1440 (1x/24h)","100.0%","100.0%","99.0%","99.0%","99.9%","99.9%","0",""
+"CHAMPAGNE ARDENNES","Ardennes","80000276","CENTRE HOSPITALIER DE VOUZIERS","8400","VOUZIERS","Polymedis",NA,"OUI",NA,"Polymedis",NA,"","1440 (1x/24h)","100.0%","100.0%","99.0%","99.0%","99.9%","99.9%","0",""
+"CHAMPAGNE ARDENNES","Ardennes","80000425","HOPITAL MANCHESTER - CH CHARLEVILLE","8011","CHARLEVILLE MEZIERES CEDEX","Urqual",NA,"OUI","9699","Urqual",NA,"A partir de septembre 2015. deux logiciels différents (un pour la partie adultes Urqualt. un pour la partie pédiatrique des urgences Azur-easily). Le secteur pédiatrique ne transmet pas encore de RPU.","1440 (1x/24h)","100.0%","100.0%","98.8%","0.0%","95.1%","95.1%","3","La perte de donnée est liée à un arrêt du système du logiciel?"
+"CHAMPAGNE ARDENNES","Aube","100000090","CENTRE HOSPITALIER DE TROYES","10003","TROYES CEDEX","RESURGENCE",NA,"OUI","13078","RESURGENCE",NA,"","1440 (1x/24h)","100.0%","100.0%","91.6%","86.0%","100.0%","100.0%","0",""
+"CHAMPAGNE ARDENNES","Aube","100000199","CENTRE HOSPITALIER DE ROMILLY/SEINE","10105","ROMILLY SUR SEINE CEDEX","Polymedis",NA,"OUI","5370","Polymedis",NA,"","1440 (1x/24h)","100.0%","100.0%","97.4%","97.4%","99.5%","99.5%","0",""
+"CHAMPAGNE ARDENNES","Marne","510000169","CENTRE HOSPITALIER DE CHALONS","51005","CHALONS EN CHAMPAGNE CEDEX","Polymedis",NA,"OUI","6727","Polymedis",NA,"","1440 (1x/24h)","100.0%","100.0%","98.6%","97.4%","99.3%","99.3%","0",""
+"CHAMPAGNE ARDENNES","Marne","510000185","POLYCLINIQUE DE COURLANCY","51057","REIMS CEDEX","Dopa urgences",NA,"OUI","3833","Dopa urgences",NA,"","1440 (1x/24h)","100.0%","100.0%","0.0%","0.0%","80.4%","80.4%","0",""
+"CHAMPAGNE ARDENNES","Marne","510000193","POLYCLINIQUE SAINT ANDRE","51052","REIMS CEDEX","Dopa urgences",NA,"OUI","3776","Dopa urgences",NA,"","1440 (1x/24h)","100.0%","100.0%","0.0%","0.0%","69.1%","69.1%","0",""
+"CHAMPAGNE ARDENNES","Marne","510000235","CENTRE HOSPITALIER D'EPERNAY","51205","EPERNAY CEDEX","NAFAMA",NA,"OUI","5156","NAFAMA",NA,"","1440 (1x/24h)","99.8%","99.8%","99.8%","98.5%","99.8%","99.8%","0",""
+"CHAMPAGNE ARDENNES","Marne","510000250","CENTRE HOSPITALIER VITRY LE FRANCOIS","51308","VITRY LE FRANCOIS CEDEX","Polymedis",NA,"OUI","3586","Polymedis",NA,"","1440 (1x/24h)","100.0%","100.0%","99.7%","99.7%","99.8%","99.8%","0",""
+"CHAMPAGNE ARDENNES","Marne","510002470","AMERICAN MEMORIAL HOSPITAL CHU REIMS","51092","REIMS CEDEX","Urqual",NA,"OUI","6759","Urqual",NA,"","1440 (1x/24h)","100.0%","100.0%","75.5%","75.5%","95.9%","95.9%","0",""
+"CHAMPAGNE ARDENNES","Marne","510004302","HOPITAL MAISON BLANCHE CHU REIMS","51092","REIMS CEDEX","Urqual",NA,"OUI","11824","Urqual",NA,"","1440 (1x/24h)","100.0%","100.0%","9.1%","9.1%","79.2%","79.2%","0",""
+"CHAMPAGNE ARDENNES","Haute Marne","520000027","CENTRE HOSPITALIER DE CHAUMONT","52014","CHAUMONT CEDEX","CRISTALNET-DMU",NA,"OUI","5060","CRISTALNET-DMU",NA,"","1440 (1x/24h)","100.0%","100.0%","99.3%","99.3%","100.0%","100.0%","0",""
+"CHAMPAGNE ARDENNES","Haute Marne","520000043","CENTRE HOSPITALIER DE LANGRES","52200","LANGRES","CRISTALNET-DMU",NA,"OUI","3074","CRISTALNET-DMU",NA,"","1440 (1x/24h)","100.0%","100.0%","98.4%","98.4%","99.7%","99.7%","0",""
+"CHAMPAGNE ARDENNES","Haute Marne","520000068","CH GENEVIEVE DE GAULLE ANTHONIOZ","52115","ST DIZIER CEDEX","DXCARE",NA,"OUI","6667","DXCARE",NA,"","1440 (1x/24h)","100.0%","100.0%","65.8%","65.8%","99.9%","99.9%","0",""
+"LIMOUSIN","Corrèze","190000018","CENTRE HOSPITALIER DUBOIS BRIVE","19312","BRIVE LA GAILLARDE CEDEX","ResUrgences","Improove","OUI","8119","ResUrgences","v4.4.5GW.16B",NA,"60","99.99%","99.99%","97.57%","97.57%","99.98%","99.98%","0",NA
+"LIMOUSIN","Creuse","230000820","CENTRE HOSPITALIER GUERET","23011","GUERET CEDEX","ResUrgences","Improove","OUI","4974","ResUrgences","v4.5ZLB.12",NA,"60","100.00%","100.00%","97.25%","97.25%","100.00%","100.00%","0",NA
+"LIMOUSIN","Hte Vienne","870000098","CENTRE HOSPITALIER SAINT JUNIEN","87205","ST JUNIEN CEDEX","ResUrgences","Improove","OUI","3466","ResUrgences","v4.4.5GA.12",NA,"60","100.00%","100.00%","98.56%","98.56%","100.00%","100.00%","0",NA
+"LIMOUSIN","Hte Vienne","870000270","CTRE HOSPITALIER  J BOUTARD  ST YRIEIX","87500","ST YRIEIX LA PERCHE","ResUrgences","Improove","OUI","2148","ResUrgences","v4.4.5FL.14",NA,"60","99.95%","99.95%","98.98%","98.98%","100.00%","100.00%","0",NA
+"LIMOUSIN","Corrèze","190000026","CENTRE HOSPITALIER TULLE","19012","TULLE CEDEX","ResUrgences","Improove","OUI","4697","ResUrgences","v4.4.5FG",NA,"60","100.00%","100.00%","97.93%","97.93%","100.00%","100.00%","0",NA
+"LIMOUSIN","Hte Vienne","870000064","C H U  DUPUYTREN  LIMOGES","87042","LIMOGES CEDEX 1","Urqual","maincare","OUI","10417","Urqual","version 7.1.7.2",NA,"60","100.00%","100.00%","98.87%","98.87%","99.64%","99.64%","0",NA
+"LIMOUSIN","Corrèze","190000091","CENTRE HOSPITALIER D'USSEL","19208","USSEL CEDEX","ResUrgences","Improove","OUI","2748","ResUrgences","v4.4.5HH.14",NA,"60","100.00%","100.00%","98.11%","98.11%","100.00%","100.00%","0",NA
+"LIMOUSIN","Hte Vienne","870014859","HOPITAL DE LA MERE ET DE L'ENFANT","87000","LIMOGES","Urqual","maincare","OUI","6390","Urqual","version 7.1.7.2",NA,"60","100.00%","100.00%","98.51%","98.51%","99.39%","99.39%","0",NA
+"LIMOUSIN","Hte Vienne","870000288","CLINIQUE FRANCOIS CHENIEUX","87039","LIMOGES CEDEX 1","SPEC 4D","","OUI","7015","SPEC 4D","",NA,"60","100.00%","100.00%","85.57%","85.57%","99.97%","99.97%","0",NA
+"PACA","Alpes hte provence","40000093","CENTRE HOSPITALIER DE MANOSQUE","4101","MANOSQUE CEDEX","TU-ORUPACA","","OUI","7466","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.61%","98.60%","99.85%","99.85%","0",""
+"PACA","Alpes hte provence","40000135","CHI DES ALPES DU SUD SITE DE SISTERON","4203","SISTERON CEDEX","TU-ORUPACA","","OUI","3662","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","97.90%","97.90%","99.59%","99.59%","0",""
+"PACA","Alpes hte provence","40000911","CENTRE HOSPIT GENERAL DIGNE LES BAINS","4003","DIGNE LES BAINS CEDEX","TU-ORUPACA","","OUI","4439","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","97.56%","97.56%","99.44%","99.44%","0",""
+"PACA","Hte Alpes","50000231","CH DES ESCARTONS DE BRIANCON","5105","BRIANCON CEDEX","CRISTALNET-DMU","","OUI","5633","CRISTALNET-DMU",NA,"","1440 (1x/24h)","100.00%","100.00%","92.20%","92.18%","99.95%","99.95%","0",""
+"PACA","Hte Alpes","50000256","CENTRE HOSPITALIER D'EMBRUN","5200","EMBRUN","CRISTALNET-DMU","","OUI","2317","CRISTALNET-DMU",NA,"","1440 (1x/24h)","100.00%","100.00%","99.44%","99.39%","100.00%","100.00%","0",""
+"PACA","Hte Alpes","50000348","CHI DES ALPES DU SUD SITE DE GAP","5007","GAP CEDEX","TU-ORUPACA","","OUI","8953","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","93.81%","93.81%","95.73%","95.73%","0",""
+"PACA","Alpes Maritimes","60000478","CENTRE HOSPITALIER DE GRASSE","6135","GRASSE CEDEX","TU-ORUPACA","","OUI","11440","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","95.81%","95.79%","99.43%","99.43%","0",""
+"PACA","Alpes Maritimes","60000510","CH D'ANTIBES JUAN LES PINS","6600","ANTIBES","URQUAL","","OUI","9872","URQUAL",NA,"","1440 (1x/24h)","100.00%","100.00%","84.74%","82.58%","88.45%","88.45%","0",""
+"PACA","Alpes Maritimes","60000544","CH PIERRE NOUVEAU CANNES","6414","CANNES CEDEX","TU-ORUPACA","","OUI","10455","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","85.98%","85.96%","99.98%","99.98%","0",""
+"PACA","Alpes Maritimes","60001450","CHU DE NICE HOPITAL SAINT ROCH","6006","NICE CEDEX 1","TU-ORUPACA","","OUI","19770","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","78.41%","78.40%","79.84%","79.84%","0",""
+"PACA","Alpes Maritimes","60002102","CH LA PALMOSA DE MENTON","6507","MENTON CEDEX","TU-ORUPACA","","OUI","4270","TU-ORUPACA",NA,"Démarrage TU juin 2014","1440 (1x/24h)","100.00%","100.00%","98.22%","98.20%","100.00%","100.00%","0",""
+"PACA","Alpes Maritimes","60780491","INSTITUT ARNAULT TZANCK ST LAURENT VAR","6721","ST LAURENT DU VAR CEDEX","TU-ORUPACA","","OUI","4575","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","97.74%","97.74%","99.71%","99.71%","0",""
+"PACA","Alpes Maritimes","60780517","POLYCLINIQUE SAINT JEAN","6800","CAGNES SUR MER","TU-ORUPACA","","OUI","7906","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.37%","98.37%","99.91%","99.91%","0",""
+"PACA","Alpes Maritimes","60780715","CLINIQUE SAINT GEORGE","6105","NICE CEDEX 2","TU-ORUPACA","","OUI","6907","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","94.25%","94.25%","93.83%","93.83%","0",""
+"PACA","Alpes Maritimes","60780723","CLINIQUE DU PARC IMPERIAL","6045","NICE CEDEX 1","CEGI - DPI","","NON",NA,"TU-ORUPACA",NA,"Installation TU opérationnelle 18 mai 2015","1440 (1x/24h)","0.00%","0.00%","0.00%","0.00%","0.00%","0.00%","90",""
+"PACA","Alpes Maritimes","60780947","HOPITAUX PEDIATRIQUES NICE CHU LENVAL","6200","NICE","TU-ORUPACA","","OUI","15178","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","99.28%","99.28%","99.97%","99.97%","0",""
+"PACA","Bouches du Rhône","130000409","CH DU PAYS D'AIX SITE D'AIX EN PROVENCE","13616","AIX EN PROVENCE CEDEX 1","TU-ORUPACA","","OUI","14262","TU-ORUPACA",NA,"Démarrage TU septembre 2014","1440 (1x/24h)","100.00%","100.00%","97.07%","97.07%","99.90%","99.90%","0",""
+"PACA","Bouches du Rhône","130000565","CH EDMOND GARCIN D'AUBAGNE","13400","AUBAGNE","URQUAL","","NON","28","URQUAL",NA,"RPU transmis depuis juin 2015","1440 (1x/24h)","100.00%","100.00%","0.00%","0.00%","14.29%","14.29%","85","test en janvier avec 28 passages dans le mois. RPU transmis réellement depuis juin 2015"
+"PACA","Bouches du Rhône","130001225","CH SALON DE PROVENCE","13658","SALON DE PROVENCE CEDEX","TU-ORUPACA","","OUI","9424","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","76.15%","76.14%","81.71%","81.71%","0",""
+"PACA","Bouches du Rhône","130002215","CENTRE HOSPITALIER DE LA CIOTAT","13708","LA CIOTAT CEDEX","TU-ORUPACA","","OUI","5596","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","97.55%","97.55%","99.89%","99.89%","0",""
+"PACA","Bouches du Rhône","130002827","CH JOSEPH IMBERT D'ARLES","13637","ARLES CEDEX","TU-ORUPACA","","OUI","8350","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.74%","98.74%","100.00%","100.00%","0",""
+"PACA","Bouches du Rhône","130002835","CH DE MARTIGUES HOPITAL DES RAYETTES","13698","MARTIGUES CEDEX","TU-ORUPACA","","OUI","10863","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","97.98%","97.80%","99.92%","99.92%","0",""
+"PACA","Bouches du Rhône","130043664","HOPITAL EUROPEEN","13003","MARSEILLE","QCARE","de la société C3","OUI","5131","QCARE",NA,"","1440 (1x/24h)","99.98%","99.98%","0.00%","0.00%","0.00%","0.00%","0",""
+"PACA","Bouches du Rhône","130780521","APHM HOPITAL NORD","13915","MARSEILLE CEDEX 15","TU-ORUPACA","","OUI","21562","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","99.14%","99.14%","99.88%","99.88%","0",""
+"PACA","Bouches du Rhône","130781479","HOPITAL PRIVE LA CASAMANCE","13675","AUBAGNE CEDEX","TU-ORUPACA","","OUI","3594","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","99.29%","99.29%","99.86%","99.86%","0",""
+"PACA","Bouches du Rhône","130782071","CLINIQUE DE L'ETANG DE L'OLIVIER","13801","ISTRES CEDEX","TU-ORUPACA","","OUI","3992","TU-ORUPACA",NA,"Démarrage TU juin 2014","1440 (1x/24h)","100.00%","100.00%","89.20%","89.20%","90.91%","90.91%","0",""
+"PACA","Bouches du Rhône","130782147","CLINIQUE GENERALE DE MARIGNANE","13721","MARIGNANE CEDEX","MEDINTUX","","OUI","6224","MEDINTUX",NA,"","1440 (1x/24h)","99.92%","99.92%","100.00%","92.15%","100.00%","100.00%","0","16 jours avec moins de 3 passages"
+"PACA","Bouches du Rhône","130783293","APHM HOPITAL LA TIMONE ADULTES","13005","MARSEILLE","TU-ORUPACA","","OUI","19537","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.09%","98.08%","96.01%","96.01%","0",""
+"PACA","Bouches du Rhône","130784713","HOPITAL PRIVE BEAUREGARD VERT COTEAU","13012","MARSEILLE","RESURGENCES","","OUI","3194","RESURGENCES",NA,"","1440 (1x/24h)","100.00%","100.00%","95.41%","95.28%","0.00%","0.00%","5",""
+"PACA","Bouches du Rhône","130785652","HOPITAL ST JOSEPH","13008","MARSEILLE","TU-ORUPACA","","OUI","14156","TU-ORUPACA",NA,"Démarrage TU novembre 2013","1440 (1x/24h)","100.00%","100.00%","75.01%","75.01%","80.78%","80.78%","0",""
+"PACA","Bouches du Rhône","130786361","POLYCLINIQUE DU PARC RAMBOT","13626","AIX EN PROVENCE CEDEX 1","TU-ORUPACA","","OUI","3803","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","97.07%","97.07%","97.74%","97.74%","0",""
+"PACA","Bouches du Rhône","130786742","HIA LAVERAN","13384","MARSEILLE CEDEX 13","TU-ORUPACA","","OUI","5523","TU-ORUPACA",NA,"Démarrage TU septembre 2014","1440 (1x/24h)","100.00%","100.00%","77.39%","77.39%","79.17%","79.17%","0",""
+"PACA","Bouches du Rhône","130804297","APHM HOPITAL LA TIMONE ENFANTS","13385","MARSEILLE CEDEX 05","TU-ORUPACA","","OUI","10101","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.89%","98.89%","99.87%","99.87%","0",""
+"PACA","Var","830000279","CH JEAN MARCEL DE BRIGNOLES","83177","BRIGNOLES CEDEX","TU-ORUPACA","","OUI","7254","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","95.03%","94.86%","99.99%","99.99%","0",""
+"PACA","Var","830000287","CH LA DRACENIE DE DRAGUIGNAN","83007","DRAGUIGNAN CEDEX","TU-ORUPACA","","OUI","8813","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","92.63%","92.63%","95.71%","95.71%","0",""
+"PACA","Var","830000295","CH DE HYERES MARIE JOSEE TREFFOT","83407","HYERES CEDEX","TU-ORUPACA","","OUI","7336","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.95%","98.94%","99.97%","99.97%","0",""
+"PACA","Var","830000311","CHI DE FREJUS SAINT RAPHAEL","83608","FREJUS CEDEX","TU-ORUPACA","","OUI","9107","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","97.62%","97.62%","82.11%","82.11%","0",""
+"PACA","Var","830000337","CENTRE HOSPITALIER DE SAINT TROPEZ","83580","GASSIN","TU-ORUPACA","","OUI","4167","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","96.46%","96.46%","98.38%","98.38%","0",""
+"PACA","Var","830000345","CHITS CH SAINTE MUSSE","83056","TOULON CEDEX","TU-ORUPACA","","OUI","16850","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","97.32%","97.31%","98.51%","98.51%","0",""
+"PACA","Var","830100574","HIA SAINTE ANNE","83041","TOULON CEDEX 9","RESURGENCES","","OUI","6602","RESURGENCES",NA,"","1440 (1x/24h)","100.00%","100.00%","93.79%","93.75%","0.00%","0.00%","0",""
+"PACA","Var","830100608","CHITS CH GEORGE SAND LA SEYNE SUR MER","83507","LA SEYNE SUR MER CEDEX","TU-ORUPACA","","OUI","5821","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.24%","98.24%","99.53%","99.53%","0",""
+"PACA","Var","830200523","POLYCLINIQUE MUTUALISTE MALARTIC","83192","OLLIOULES CEDEX","TU-ORUPACA","","OUI","3794","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.67%","98.67%","99.84%","99.84%","0",""
+"PACA","Vaucluse","840000343","CENTRE HOSPITALIER DU PAYS D'APT","84405","APT CEDEX","TU-ORUPACA","","OUI","3210","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","83.03%","83.03%","99.87%","99.87%","0",""
+"PACA","Vaucluse","840000392","CENTRE HOSPITALIER DE CARPENTRAS","84208","CARPENTRAS CEDEX","TU-ORUPACA","","OUI","6553","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.24%","98.24%","99.92%","99.92%","0",""
+"PACA","Vaucluse","840000418","CHI DE CAVAILLON LAURIS","84304","CAVAILLON CEDEX","TU-ORUPACA","","OUI","6303","TU-ORUPACA",NA,"Démarrage TU janvier 2014","1440 (1x/24h)","100.00%","100.00%","98.35%","98.35%","99.90%","99.90%","0",""
+"PACA","Vaucluse","840000483","CH LOUIS GIORGI D'ORANGE","84106","ORANGE CEDEX","TU-ORUPACA","","OUI","6917","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","99.07%","99.01%","99.91%","99.91%","0",""
+"PACA","Vaucluse","840000491","CH DU PAYS D'AIX - SITE DE PERTUIS","84123","PERTUIS CEDEX","TU-ORUPACA","","OUI","3436","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.44%","98.44%","94.29%","94.29%","0",""
+"PACA","Vaucluse","840000525","CH VAISON LA ROMAINE","84110","VAISON LA ROMAINE","TU-ORUPACA","","OUI","2045","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.57%","98.57%","99.90%","99.90%","0",""
+"PACA","Vaucluse","840000533","CH JULES NIEL DE VALREAS","84607","VALREAS CEDEX","TU-ORUPACA","","OUI","2212","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.44%","98.44%","99.82%","99.82%","0",""
+"PACA","Vaucluse","840001861","CH D'AVIGNON HENRI DUFFAUT","84902","AVIGNON CEDEX 9","TU-ORUPACA","","OUI","22930","TU-ORUPACA",NA,"","1440 (1x/24h)","100.00%","100.00%","98.02%","98.02%","99.05%","99.05%","0",""
