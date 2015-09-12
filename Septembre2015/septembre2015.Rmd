@@ -48,7 +48,7 @@ Récupération du fichier des données
 d <- read.csv("archive.csv") # d <- read.csv("Septembre2015/archive.csv")
 
 # suppression de la première ligne qui est vide
-d <- d[-1,]
+# d <- d[-1,]
 d <- d[as.character(d$Region) != "",]
 d$Region <- factor(d$Region)
 d <- d[!is.na(d$Logiciel_2015) & as.character(d$Logiciel_2015) != "",]
@@ -243,9 +243,16 @@ Date de naissance
 d$DN_confor <- as.numeric(gsub("%", "", d$DN_confor))
 DN.conforme <- summary(d$DN_confor)
 DN.conforme
-
 ```
 
+- conformité par outil
+```{r}
+a <- summary.par.logiciel(d$DN_confor, d$Logiciel_2015)
+a
+
+boxplot(d$DN_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% exhaustivité", main = "Date de naissance")
+
+```
 
 - taux d'exhaustivité:
 ```{r, echo=FALSE, comment="", warning=FALSE}
@@ -253,6 +260,15 @@ DN.conforme
 d$DN_exhaus <- as.numeric(gsub("%", "", d$DN_exhaus))
 DN.ex <- summary(d$DN_exhaus)
 DN.ex
+```
+
+- exhaustivité par outil
+```{r, echo=FALSE, message=FALSE}
+
+a <- summary.par.logiciel(d$DN_exhaus, d$Logiciel_2015)
+a
+
+boxplot(d$DN_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% exhaustivité", main = "Mode de sortie")
 ```
 
 Diagnostic (DP)
@@ -266,6 +282,14 @@ DP.conforme
 
 ```
 
+- conformité par outil
+```{r}
+a <- summary.par.logiciel(d$DP_confor, d$Logiciel_2015)
+a
+
+boxplot(d$DP_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% exhaustivité", main = "Diagnostic principal")
+
+```
 
 - taux de exhaustivité:
 ```{r, echo=FALSE, comment="", warning=FALSE}
@@ -273,7 +297,15 @@ DP.conforme
 d$DP_exhaus <- as.numeric(gsub("%", "", d$DP_exhaus))
 DP.ex <- summary(d$DP_exhaus)
 DP.ex
+```
 
+- exhaustivité par outil
+```{r, echo=FALSE, message=FALSE}
+
+a <- summary.par.logiciel(d$DP_exhaus, d$Logiciel_2015)
+a
+
+boxplot(d$DP_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% exhaustivité", main = "Mode de sortie")
 ```
 
 Mode de sortie (MS)
@@ -284,9 +316,16 @@ Mode de sortie (MS)
 d$MS_confor <- as.numeric(gsub("%", "", d$MS_confor))
 ms.conforme <- summary(d$MS_confor)
 ms.conforme
-
 ```
 
+- conformité par outil
+```{r}
+a <- summary.par.logiciel(d$MS_confor, d$Logiciel_2015)
+a
+
+boxplot(d$MS_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% exhaustivité", main = "Mode de sortie")
+
+```
 
 - taux de exhaustivité:
 ```{r, echo=FALSE, comment=""}
@@ -294,7 +333,15 @@ ms.conforme
 d$MS_exhaus <- as.numeric(gsub("%", "", d$MS_exhaus))
 ms.ex <- summary(d$MS_exhaus)
 ms.ex
+```
 
+- exhaustivité par outil
+```{r, echo=FALSE, message=FALSE}
+
+a <- summary.par.logiciel(d$MS_exhaus, d$Logiciel_2015)
+a
+
+boxplot(d$MS_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% exhaustivité", main = "Mode de sortie")
 ```
 
 
