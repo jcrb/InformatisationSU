@@ -226,12 +226,24 @@ n
 Nombre de jours manquants
 -------------------------
 
+### Par logiciel
+
 ```{r, echo=FALSE, comment=""}
 t <- tapply(d$Jours_manquants, d$Logiciel_2015, sum, na.rm = TRUE)
 n <- cbind(sort(t ,decreasing = TRUE))
 colnames(n) <- "Nb de jours manquants"
 n
 ```
+
+### Par région
+
+```{r, echo=FALSE, comment=""}
+t <- tapply(d$Jours_manquants, d$Region, sum, na.rm = TRUE)
+n <- cbind(sort(t ,decreasing = TRUE))
+colnames(n) <- "Nb de jours manquants"
+n
+```
+
 
 Indicateurs
 ===========
@@ -375,4 +387,18 @@ a
 boxplot(d$MS_confor ~ d$Region, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% conformité", main = "Mode de sortie")
 ```
 
+Résultats secondaires
+=====================
+
+% de RPU ne faisant pas de remontée de RPU
+------------------------------------------
+```{r, echo=FALSE, comment=""}
+# nettoyage
+d$RPU_transmis <- as.character(d$RPU_transmis)
+d$RPU_transmis[d$RPU_transmis == "OUI depuis le 30/05/14"] <- "OUI"
+d$RPU_transmis[d$RPU_transmis == "OUI depuis janvier 2014"] <- "OUI"
+table(d$RPU_transmis)
+paste(round(prop.table(table(d$RPU_transmis))*100, 2), "%")
+
+```
 
