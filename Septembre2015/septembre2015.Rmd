@@ -46,6 +46,7 @@ Récupération du fichier des données
 -----------------------------------
 ```{r, echo=FALSE}
 d <- read.csv("archive.csv") # d <- read.csv("Septembre2015/archive.csv")
+source("routines.R")
 
 # suppression de la première ligne qui est vide
 # d <- d[-1,]
@@ -246,11 +247,11 @@ DN.conforme
 ```
 
 - conformité par outil
-```{r}
+```{r, echo=FALSE, comment=""}
 a <- summary.par.logiciel(d$DN_confor, d$Logiciel_2015)
 a
 
-boxplot(d$DN_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% exhaustivité", main = "Date de naissance")
+boxplot(d$DN_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% conformité", main = "Date de naissance")
 
 ```
 
@@ -263,7 +264,7 @@ DN.ex
 ```
 
 - exhaustivité par outil
-```{r, echo=FALSE, message=FALSE}
+```{r, echo=FALSE, message=FALSE, comment=""}
 
 a <- summary.par.logiciel(d$DN_exhaus, d$Logiciel_2015)
 a
@@ -283,11 +284,11 @@ DP.conforme
 ```
 
 - conformité par outil
-```{r}
+```{r, echo=FALSE, comment=""}
 a <- summary.par.logiciel(d$DP_confor, d$Logiciel_2015)
 a
 
-boxplot(d$DP_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% exhaustivité", main = "Diagnostic principal")
+boxplot(d$DP_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% conformité", main = "Diagnostic principal")
 
 ```
 
@@ -300,12 +301,12 @@ DP.ex
 ```
 
 - exhaustivité par outil
-```{r, echo=FALSE, message=FALSE}
+```{r, echo=FALSE, message=FALSE, comment=""}
 
 a <- summary.par.logiciel(d$DP_exhaus, d$Logiciel_2015)
 a
 
-boxplot(d$DP_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% exhaustivité", main = "Mode de sortie")
+boxplot(d$DP_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% exhaustivité", main = "Diagnostic principal")
 ```
 
 Mode de sortie (MS)
@@ -319,11 +320,11 @@ ms.conforme
 ```
 
 - conformité par outil
-```{r}
+```{r, echo=FALSE, comment=""}
 a <- summary.par.logiciel(d$MS_confor, d$Logiciel_2015)
 a
 
-boxplot(d$MS_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% exhaustivité", main = "Mode de sortie")
+boxplot(d$MS_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% conformité", main = "Mode de sortie")
 
 ```
 
@@ -336,7 +337,7 @@ ms.ex
 ```
 
 - exhaustivité par outil
-```{r, echo=FALSE, message=FALSE}
+```{r, echo=FALSE, message=FALSE, comment=""}
 
 a <- summary.par.logiciel(d$MS_exhaus, d$Logiciel_2015)
 a
@@ -344,5 +345,34 @@ a
 boxplot(d$MS_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% exhaustivité", main = "Mode de sortie")
 ```
 
+Conformité par région
+=====================
+
+Date de naissance
+------------------
+```{r, echo=FALSE, comment=""}
+a <- summary.par.logiciel(d$DN_confor, d$Region)
+a
+
+boxplot(d$DN_confor ~ d$Region, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% conformité", main = "Date de naissance")
+```
+
+Diagnostic (DP)
+---------------
+```{r, echo=FALSE, comment=""}
+a <- summary.par.logiciel(d$DP_confor, d$Region)
+a
+
+boxplot(d$DP_confor ~ d$Region, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% conformité", main = "Diagnostic principal")
+```
+
+Mode de sortie (MS)
+-------------------
+```{r, echo=FALSE, comment=""}
+a <- summary.par.logiciel(d$MS_confor, d$Region)
+a
+
+boxplot(d$MS_confor ~ d$Region, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% conformité", main = "Mode de sortie")
+```
 
 
