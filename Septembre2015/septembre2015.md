@@ -74,9 +74,9 @@ HOPITAL MANAGER           ORBIS         SANOCOM       SHAREGATE
               2               2               2               2 
          SIGEMS     AGFA EXAGON         AXIGATE        CLINICOM 
               2               1               1               1 
-         MANUEL        MEDIBASE       MEDIBOARD        MEDINTUX 
+         M-PLUS          MANUEL        MEDIBASE       MEDIBOARD 
               1               1               1               1 
-          MEDIS          M-PLUS          NAFAMA           OSOFT 
+       MEDINTUX           MEDIS          NAFAMA           OSOFT 
               1               1               1               1 
           QCARE         SPEC 4D      TRACK CARE 
               1               1               1 
@@ -101,12 +101,12 @@ Logiciels par région
   DOPA URGENCES        0         1         0        0                  2
   DXCARE               3         6         1        0                  1
   HOPITAL MANAGER      0         0         2        0                  0
+  M-PLUS               0         1         0        0                  0
   MANUEL               0         0         1        0                  0
   MEDIBASE             0         1         0        0                  0
   MEDIBOARD            0         0         0        1                  0
   MEDINTUX             0         0         0        0                  0
   MEDIS                0         0         0        1                  0
-  M-PLUS               0         1         0        0                  0
   NAFAMA               0         0         0        0                  1
   ORBIS                1         0         0        1                  0
   OSOFT                0         0         0        1                  0
@@ -134,12 +134,12 @@ Logiciels par région
   DOPA URGENCES          0    0
   DXCARE                 0    0
   HOPITAL MANAGER        0    0
+  M-PLUS                 0    0
   MANUEL                 0    0
   MEDIBASE               0    0
   MEDIBOARD              0    0
   MEDINTUX               0    1
   MEDIS                  0    0
-  M-PLUS                 0    0
   NAFAMA                 0    0
   ORBIS                  0    0
   OSOFT                  0    0
@@ -245,12 +245,12 @@ AGFA EXAGON                         0
 AXIGATE                             0
 DOPA URGENCES                       0
 DXCARE                              0
+M-PLUS                              0
 MANUEL                              0
 MEDIBASE                            0
 MEDIBOARD                           0
 MEDINTUX                            0
 MEDIS                               0
-M-PLUS                              0
 NAFAMA                              0
 OSOFT                               0
 POLYMEDIS                           0
@@ -314,12 +314,12 @@ DMU             100.00 100.00 100.00000  0.00000000 14
 DOPA URGENCES   100.00 100.00 100.00000  0.00000000  3
 DXCARE          100.00 100.00 100.00000  0.00000000 11
 HOPITAL MANAGER 100.00 100.00 100.00000  0.00000000  2
+M-PLUS          100.00 100.00 100.00000          NA  1
 MANUEL          100.00 100.00 100.00000          NA  1
 MEDIBASE        100.00 100.00 100.00000          NA  1
 MEDIBOARD       100.00 100.00 100.00000          NA  1
 MEDINTUX         99.92  99.92  99.92000          NA  1
 MEDIS           100.00 100.00 100.00000          NA  1
-M-PLUS          100.00 100.00 100.00000          NA  1
 NAFAMA           99.80  99.80  99.80000          NA  1
 ORBIS           100.00 100.00 100.00000  0.00000000  2
 OSOFT           100.00 100.00 100.00000          NA  1
@@ -361,12 +361,12 @@ DMU             100.00 100.00 100.00000  0.00000000 14
 DOPA URGENCES   100.00 100.00 100.00000  0.00000000  3
 DXCARE          100.00 100.00 100.00000  0.00000000 11
 HOPITAL MANAGER 100.00 100.00 100.00000  0.00000000  2
+M-PLUS          100.00 100.00 100.00000          NA  1
 MANUEL          100.00 100.00 100.00000          NA  1
 MEDIBASE        100.00 100.00 100.00000          NA  1
 MEDIBOARD       100.00 100.00 100.00000          NA  1
 MEDINTUX         99.92  99.92  99.92000          NA  1
 MEDIS           100.00 100.00 100.00000          NA  1
-M-PLUS          100.00 100.00 100.00000          NA  1
 NAFAMA           99.80  99.80  99.80000          NA  1
 ORBIS           100.00 100.00 100.00000  0.00000000  2
 OSOFT           100.00 100.00 100.00000          NA  1
@@ -410,12 +410,12 @@ DMU             56.80 100.00 91.39615 13.10928649 14
 DOPA URGENCES    0.00  62.90 20.96667 36.31533193  3
 DXCARE           0.00  98.90 55.91636 32.18636086 11
 HOPITAL MANAGER 95.00 100.00 97.50000  3.53553391  2
+M-PLUS          83.50  83.50 83.50000          NA  1
 MANUEL          98.00  98.00 98.00000          NA  1
 MEDIBASE        96.40  96.40 96.40000          NA  1
 MEDIBOARD       43.20  43.20 43.20000          NA  1
 MEDINTUX        92.15  92.15 92.15000          NA  1
 MEDIS           19.70  19.70 19.70000          NA  1
-M-PLUS          83.50  83.50 83.50000          NA  1
 NAFAMA          98.50  98.50 98.50000          NA  1
 ORBIS            0.00   0.00  0.00000  0.00000000  2
 OSOFT           98.60  98.60 98.60000          NA  1
@@ -456,12 +456,12 @@ DMU              56.90 100.00  91.40923 13.08995446 14
 DOPA URGENCES     0.00  62.90  20.96667 36.31533193  3
 DXCARE            0.00  98.90  55.91636 32.18636086 11
 HOPITAL MANAGER  95.00 100.00  97.50000  3.53553391  2
+M-PLUS           83.50  83.50  83.50000          NA  1
 MANUEL           99.00  99.00  99.00000          NA  1
 MEDIBASE         96.40  96.40  96.40000          NA  1
 MEDIBOARD        43.20  43.20  43.20000          NA  1
 MEDINTUX        100.00 100.00 100.00000          NA  1
 MEDIS            19.70  19.70  19.70000          NA  1
-M-PLUS           83.50  83.50  83.50000          NA  1
 NAFAMA           99.80  99.80  99.80000          NA  1
 ORBIS             0.00   0.00   0.00000  0.00000000  2
 OSOFT            98.60  98.60  98.60000          NA  1
@@ -505,12 +505,12 @@ DMU              97.41 100.00  99.39071  1.0119096 14
 DOPA URGENCES    69.10  82.60  77.36667  7.2431577  3
 DXCARE           21.05 100.00  84.57545 31.5886994 11
 HOPITAL MANAGER 100.00 100.00 100.00000  0.0000000  2
+M-PLUS           16.80  16.80  16.80000         NA  1
 MANUEL           99.00  99.00  99.00000         NA  1
 MEDIBASE         65.70  65.70  65.70000         NA  1
 MEDIBOARD        99.96  99.96  99.96000         NA  1
 MEDINTUX        100.00 100.00 100.00000         NA  1
 MEDIS            13.50  13.50  13.50000         NA  1
-M-PLUS           16.80  16.80  16.80000         NA  1
 NAFAMA           99.80  99.80  99.80000         NA  1
 ORBIS            15.70  19.80  17.75000  2.8991378  2
 OSOFT           100.00 100.00 100.00000         NA  1
@@ -551,12 +551,12 @@ DMU              97.41 100.00  99.39071  1.0119096 14
 DOPA URGENCES    69.10  82.60  77.36667  7.2431577  3
 DXCARE           21.05 100.00  84.57545 31.5886994 11
 HOPITAL MANAGER 100.00 100.00 100.00000  0.0000000  2
+M-PLUS           16.80  16.80  16.80000         NA  1
 MANUEL           99.00  99.00  99.00000         NA  1
 MEDIBASE         65.70  65.70  65.70000         NA  1
 MEDIBOARD        99.96  99.96  99.96000         NA  1
 MEDINTUX        100.00 100.00 100.00000         NA  1
 MEDIS            13.50  13.50  13.50000         NA  1
-M-PLUS           16.80  16.80  16.80000         NA  1
 NAFAMA           99.80  99.80  99.80000         NA  1
 ORBIS            15.70  19.80  17.75000  2.8991378  2
 OSOFT           100.00 100.00 100.00000         NA  1

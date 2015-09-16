@@ -90,7 +90,8 @@ library("RColorBrewer")
 options(scipen = 6)
 
 # récupérer le fond de carte
-file <- "~/Documents/CartographieR/RCarto/france_region.RData" # fichier source
+# file <- "~/Documents/CartographieR/RCarto/france_region.RData" # fichier source
+file <- "../france_region.RData" # fichier source pour Mac
 load(file) # le fond s'appelle region (SpatialPolygonDataFrame)
 
 par(mar=c(0,0,1,0))
@@ -179,7 +180,8 @@ a <- names(t)
 a[1] <- "reg.id"
 names(t) <- a
 # source de la fonction attrJoin
-source("~/Documents/Resural/FEDORU/Trame_Commune/Zone_chalandise/zone_chalandise.R")
+# source("~/Documents/Resural/FEDORU/Trame_Commune/Zone_chalandise/zone_chalandise.R") # xps
+source("../../../RESURAL/Trame_Commune/Zone_chalandise/zone_chalandise.R") # mac
 # merging avec reg
 reg <- attribJoin(df = t, spdf = region, df.field = "reg.id", spdf.field = "reg.id")
 
