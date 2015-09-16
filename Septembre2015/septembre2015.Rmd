@@ -1,10 +1,17 @@
 ---
-title: "Enquête logicielle - Septembre 2015"
-author: "JcB"
+title: "Enquête logiciels SU - Septembre 2015"
+author: "FEDORU"
 date: "07/09/2015"
 output:
+  word_document: default
   pdf_document:
+    keep_tex: yes
     number_sections: yes
+    toc: yes
+  html_document:
+    keep_md: yes
+    number_sections: yes
+    toc: yes
 ---
 
 7/9/2015
@@ -46,7 +53,7 @@ Récupération du fichier des données
 -----------------------------------
 ```{r, echo=FALSE}
 d <- read.csv("archive.csv") # d <- read.csv("Septembre2015/archive.csv")
-source("routines.R")
+source("routines.R") # source("Septembre2015/routines.R")
 
 # suppression de la première ligne qui est vide
 # d <- d[-1,]
@@ -176,9 +183,24 @@ source("~/Documents/Resural/FEDORU/Trame_Commune/Zone_chalandise/zone_chalandise
 # merging avec reg
 reg <- attribJoin(df = t, spdf = region, df.field = "reg.id", spdf.field = "reg.id")
 
-plot(region, col = ifelse(!is.na(reg$ATALANTE) & as.numeric(as.character(reg$ATALANTE)) > 0, "cornflowerblue", "gray80"), main = "ATALANTE")
+par(mfcol = c(1,2), mar = c(2,0,1,0))
+
+plot(region, col = ifelse(!is.na(reg$"TU.ORUPACA") & as.numeric(as.character(reg$"TU.ORUPACA")) > 0, "cornflowerblue", "gray80"), main = "TU-ORUPACA")
+
+plot(region, col = ifelse(!is.na(reg$RESURGENCES) & as.numeric(as.character(reg$RESURGENCES)) > 0, "cornflowerblue", "gray80"), main = "RESURGENCES")
+
+plot(region, col = ifelse(!is.na(reg$URQUAL) & as.numeric(as.character(reg$URQUAL)) > 0, "cornflowerblue", "gray80"), main = "URQUAL")
 
 plot(region, col = ifelse(!is.na(reg$DMU) & as.numeric(as.character(reg$DMU)) > 0, "cornflowerblue", "gray80"), main = "DMU")
+
+plot(region, col = ifelse(!is.na(reg$"SILLAGE.DMU") & as.numeric(as.character(reg$"SILLAGE.DMU")) > 0, "cornflowerblue", "gray80"), main = "SILLAGE DMU")
+
+plot(region, col = ifelse(!is.na(reg$DXCARE) & as.numeric(as.character(reg$DXCARE)) > 0, "cornflowerblue", "gray80"), main = "DXCARE")
+
+plot(region, col = ifelse(!is.na(reg$ATALANTE) & as.numeric(as.character(reg$ATALANTE)) > 0, "cornflowerblue", "gray80"), main = "ATALANTE")
+
+plot(region, col = ifelse(!is.na(reg$SIDSU) & as.numeric(as.character(reg$SIDSU)) > 0, "cornflowerblue", "gray80"), main = "SIDSU")
+
 
 ```
 
@@ -248,6 +270,14 @@ n
 Indicateurs
 ===========
 
+Trois indicateurs ont été retenus:
+
+- Date de naissance
+- Diagnostic principal (DP)
+- Mode de sortie
+
+Chaque indicateur a été évalué sur deux critères: __conformité__ et __exhaustivité__.
+
 Date de naissance
 ------------------
 
@@ -258,16 +288,18 @@ DN.conforme <- summary(d$DN_confor)
 DN.conforme
 ```
 
-- conformité par outil
+- conformité par outil:
+
 ```{r, echo=FALSE, comment=""}
 a <- summary.par.logiciel(d$DN_confor, d$Logiciel_2015)
 a
 
-boxplot(d$DN_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% conformité", main = "Date de naissance")
+boxplot(d$DN_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% conformité", main = "Date de naissance - conformité")
 
 ```
 
 - taux d'exhaustivité:
+
 ```{r, echo=FALSE, comment="", warning=FALSE}
 
 d$DN_exhaus <- as.numeric(gsub("%", "", d$DN_exhaus))
@@ -281,7 +313,7 @@ DN.ex
 a <- summary.par.logiciel(d$DN_exhaus, d$Logiciel_2015)
 a
 
-boxplot(d$DN_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% exhaustivité", main = "Mode de sortie")
+boxplot(d$DN_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Date de naissance - exhaustivité")
 ```
 
 Diagnostic (DP)
@@ -300,7 +332,7 @@ DP.conforme
 a <- summary.par.logiciel(d$DP_confor, d$Logiciel_2015)
 a
 
-boxplot(d$DP_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% conformité", main = "Diagnostic principal")
+boxplot(d$DP_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% conformité", main = "Diagnostic principal - conformité")
 
 ```
 
@@ -318,7 +350,7 @@ DP.ex
 a <- summary.par.logiciel(d$DP_exhaus, d$Logiciel_2015)
 a
 
-boxplot(d$DP_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% exhaustivité", main = "Diagnostic principal")
+boxplot(d$DP_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Diagnostic principal - exhaustivité")
 ```
 
 Mode de sortie (MS)
@@ -336,7 +368,7 @@ ms.conforme
 a <- summary.par.logiciel(d$MS_confor, d$Logiciel_2015)
 a
 
-boxplot(d$MS_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% conformité", main = "Mode de sortie")
+boxplot(d$MS_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% conformité", main = "Mode de sortie - conformité")
 
 ```
 
@@ -354,7 +386,7 @@ ms.ex
 a <- summary.par.logiciel(d$MS_exhaus, d$Logiciel_2015)
 a
 
-boxplot(d$MS_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% exhaustivité", main = "Mode de sortie")
+boxplot(d$MS_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Mode de sortie - exhaustivité")
 ```
 
 Conformité par région
@@ -366,7 +398,7 @@ Date de naissance
 a <- summary.par.logiciel(d$DN_confor, d$Region)
 a
 
-boxplot(d$DN_confor ~ d$Region, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% conformité", main = "Date de naissance")
+boxplot(d$DN_confor ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% conformité", main = "Date de naissance - conformité")
 ```
 
 Diagnostic (DP)
@@ -375,7 +407,7 @@ Diagnostic (DP)
 a <- summary.par.logiciel(d$DP_confor, d$Region)
 a
 
-boxplot(d$DP_confor ~ d$Region, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% conformité", main = "Diagnostic principal")
+boxplot(d$DP_confor ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% conformité", main = "Diagnostic principal - conformité")
 ```
 
 Mode de sortie (MS)
@@ -384,13 +416,43 @@ Mode de sortie (MS)
 a <- summary.par.logiciel(d$MS_confor, d$Region)
 a
 
-boxplot(d$MS_confor ~ d$Region, las = 2, par(cex.axis=0.6), col = "blue", ylab = "% conformité", main = "Mode de sortie")
+boxplot(d$MS_confor ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% conformité", main = "Mode de sortie - conformité")
+```
+
+Exhaustivié par région
+======================
+
+Date de naissance
+------------------
+```{r, echo=FALSE, comment=""}
+a <- summary.par.logiciel(d$DN_exhaus, d$Region)
+a
+
+boxplot(d$DN_exhaus ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Date de naissance - exhaustivité")
+```
+
+Diagnostic (DP)
+---------------
+```{r, echo=FALSE, comment=""}
+a <- summary.par.logiciel(d$DP_exhaus, d$Region)
+a
+
+boxplot(d$DP_exhaus ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Diagnostic principal - exhaustivité")
+```
+
+Mode de sortie (MS)
+-------------------
+```{r, echo=FALSE, comment=""}
+a <- summary.par.logiciel(d$MS_exhaus, d$Region)
+a
+
+boxplot(d$MS_exhaus ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Mode de sortie - exhaustivité")
 ```
 
 Résultats secondaires
 =====================
 
-% de RPU ne faisant pas de remontée de RPU
+% de SU ne faisant pas de remontée de RPU
 ------------------------------------------
 ```{r, echo=FALSE, comment=""}
 # nettoyage
