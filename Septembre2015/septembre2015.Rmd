@@ -3,7 +3,6 @@ title: "Enquête logiciels SU - Septembre 2015"
 author: "FEDORU"
 date: "07/09/2015"
 output:
-  word_document: default
   pdf_document:
     keep_tex: yes
     number_sections: yes
@@ -12,6 +11,7 @@ output:
     keep_md: yes
     number_sections: yes
     toc: yes
+  word_document: default
 ---
 
 7/9/2015
@@ -20,6 +20,11 @@ Reprise de l'exploitation des logiciels des SU
 
 - fichier source: DATA/FEDORU - ENQUETE LOGICIEL 2015 - V2 (12 06 15) (3)
 - création d'un dossier spécifique __Septembre2015__ contenent un sous dossier __data__ pour y stocker les résultats régionaux sous forme de fichier .csv. 
+
+17/9/2015
+---------
+- récup données ORUMIP (Olivier Azema)
+
 
 Récupération des fichiers csv
 -----------------------------
@@ -108,7 +113,7 @@ region@data$y <- y
 # on ajoute une colonne participation. Les régions participantes = 1 sinon 0
 region@data$participation <- 0
 reg <- region@data
-reg$participation[reg$reg.id %in% c(42,72,53,21,26,74,93,82)] <- 1
+reg$participation[reg$reg.id %in% c(42,72,53,21,26,74,93,82,73)] <- 1
 
 # carte des régions participantes
 plot(region, col = ifelse(reg$participation == 1, "cornflowerblue", "gray80"))
@@ -117,6 +122,22 @@ for(i in 1:length(reg$participation)){if(reg$participation[i] == 1) text(reg$x[i
 
 
 ```
+
+Editeurs
+========
+```{r, echo=FALSE, comment=""}
+d$Editeur <- as.character(d$Editeur)
+d$Editeur[d$Editeur == ""] <- NA
+d$Editeur[d$Editeur == "(McKesson)"] <- "McKesson"
+d$Editeur[d$Editeur == "Berger Levrault"] <- "BERGER-LEVRAULT"
+d$Editeur[d$Editeur == "Maincare (ex-McKesson)"] <- "McKesson"
+d$Editeur[d$Editeur == "SIB (Santé Informatique de Bretagne)"] <- "SIB"
+d$Editeur[d$Editeur == "module Urgences (WebSanté)"] <- "WEBSANTE"
+d$Editeur[d$Editeur == "DE LA SOCIÉTÉ C3"] <- "C3"
+
+d$Editeur <- toupper(d$Editeur)
+```
+
 
 Logiciels 2015
 ==============
@@ -132,12 +153,13 @@ d$Logiciel_2015[d$Logiciel_2015=="DX CARE URGENCES"] <- "DXCARE"
 d$Logiciel_2015[d$Logiciel_2015=="DXURGENCES"] <- "DXCARE"
 d$Logiciel_2015[d$Logiciel_2015=="ORBIS \n"] <- "ORBIS"
 d$Logiciel_2015[d$Logiciel_2015=="RESURGENCE"] <- "RESURGENCES"
-d$Logiciel_2015[d$Logiciel_2015=="SILLAGE URGENCES"] <- "SILLAGE DMU"
-d$Logiciel_2015[d$Logiciel_2015=="SILLAGE URGENCES (OCTOBRE 2015)"] <- "SILLAGE DMU"
+d$Logiciel_2015[d$Logiciel_2015=="SILLAGE URGENCES"] <- "SILLAGE URGENCES"
+d$Logiciel_2015[d$Logiciel_2015=="SILLAGE URGENCES (OCTOBRE 2015)"] <- "SILLAGE URGENCES"
 d$Logiciel_2015[d$Logiciel_2015=="TU"] <- "TU-ORUPACA"
 d$Logiciel_2015[d$Logiciel_2015=="URQUAL (MEDIQUAL)"] <- "URQUAL"
 d$Logiciel_2015[d$Logiciel_2015=="MEDICAL OBJECT DE MEDIWERE 21"] <- "MEDIWERE"
-d$Logiciel_2015[d$Logiciel_2015=="ANTARES V2 DE INOVACUM"] <- "ANTARES"
+d$Logiciel_2015[d$Logiciel_2015=="ANTARES V2 de INOVACUM"] <- "ANTARES"
+d$Logiciel_2015 <- as.factor(d$Logiciel_2015)
 ```
 
 - Nombre de logiciels utilisés: `r length(unique(d$Logiciel_2015))`
@@ -466,3 +488,6 @@ paste(round(prop.table(table(d$RPU_transmis))*100, 2), "%")
 
 ```
 
+Messges pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? intégratin systématique  des thésaurus, démarche d'amélioration.
+Information proactive des sociétés savantes pour la publicationn des Référentiels: info systématique de la Fedoru.
+Focaliser sur les rectangles bleus. Voir si le n° de version permet de discriminer les urqual qui remntent de ceux qui remontent mal.
