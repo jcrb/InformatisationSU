@@ -1,0 +1,72 @@
+"Période : 1er trimestre 2015 soit du 
+01/01/2015 00:00 au 31/03/2015 23:59.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Région","Dpt","FINNES","Raison sociale","Code postal","Libelle routage","Logiciel 2013-2014","Editeur","RPU transmis
+(OUI/NON)","Nombre de RPU transmis 1er trimestre 2015","Logiciel 2015","Version (en fonctionnement durant la période retenue) si changement de version le noter","Commentaire","Fréquence de remontées des données (en minutes)","Date de naissance",,"Diagnostic",,"Mode de sortie",,"Nombre de jours manquants","Commentaire","RPU Code postal","RPU Commune","RPU Sexe","RPU Date entrée","RPU Mode entrée","RPU Provenance","RPU Mode de transport","RPU Mode de prise en charge","RPU Motif de recours","RPU CCMU","RPU Date de sortie","RPU Destination","RPU Orientation"
+,,"FINNES","Raison.sociale","Code.postal","Libelle.routage","Logiciel 2013-2014","editeur","RPU (OUI/NON/partellement)",,,,,,"Exhaustivité","Conformité","Exhaustivité","Conformité","Exhaustivité","Conformité",,,"RPU Code postal","RPU Commune","RPU Sexe","RPU Date entrée","RPU Mode entrée","RPU Provenance","RPU Mode de transport","RPU Mode de prise en charge","RPU Motif de recours","RPU CCMU","RPU Date de sortie","RPU Destination","RPU Orientation"
+"MIDI PYRENEES","Ariège",90000175,"CH INTERCOMMUNAL DU VAL D'ARIEGE",9017,"FOIX CEDEX","CROSSWAY",,"OUI",7626,"Crossway",,,"1440 (1x/24h)","100,00","99,99","96,28","96,28","96,92","96,92",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Ariège",90001629,"CH DU PAYS D'OLMES",9301,"LAVELANET CEDEX",,,"OUI",1454,"ORUv2",,"Développement ORU","1440 (1x/24h)","100,00","100,00","0,00","0,00","99,04","98,69",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Ariège",90782244,"CH J IBANES DE SAINT LIZIER",9190,"ST LIZIER",,,"OUI",2542,"Clinicom",,,"1440 (1x/24h)","100,00","100,00","98,03","98,03","99,92","98,66",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Aveyron",120000039,"C.H. DE RODEZ 'HOPITAL JACQUES PUEL'",12027,"RODEZ CEDEX 9","DxCare",,"OUI",7327,"DxCare",,,"1440 (1x/24h)","100,00","100,00","0,00","0,00","98,84","98,40",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Aveyron",120000054,"CH VILLEFRANCHE DE ROUERGUE",12200,"VILLEFRANCHE DE ROUERGUE",,,"OUI",3354,"ORUv2",,"Développement ORU","1440 (1x/24h)","100,00","99,97","35,39","35,39","100,00","39,45",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Aveyron",120000070,"CH PIERRE DELPECH DECAZEVILLE",12300,"DECAZEVILLE","CORETEXTE",,"NON",2654,"Cortexte",,,"1440 (1x/24h)","100,00","100,00","87,57","87,11","99,43","99,43",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Aveyron",120004569,"CENTRE HOSPITALIER DE MILLAU",12101,"MILLAU CEDEX","Urqual",,"OUI",3754,"Urqual",,,"1440 (1x/24h)","100,00","100,00","99,65","99,63","100,00","100,00",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Aveyron",120004668,"CENTRE HOSPITALIER DE SAINT AFFRIQUE",12402,"ST AFFRIQUE CEDEX","Diamm",,"OUI",1833,"Diamms",,,"1440 (1x/24h)","100,00","100,00","78,72","78,56","80,47","80,47",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Hte Garonne",310000310,"CENTRE HOSPITALIER COMMINGES PYRENEES",31806,"ST GAUDENS CEDEX","DPU",,"OUI",5373,"DPU",,,"1440 (1x/24h)","100,00","100,00","92,18","92,18","99,76","99,76",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Hte Garonne",310016977,"HOPITAUX MERE & ENFANTS  CHU TLSE",31059,"TOULOUSE CEDEX 9","Urqual",,"OUI",12004,"Urqual",,,15,"100,00","100,00","99,97","99,94","100,00","100,00",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Hte Garonne",310780101,"CLINIQUE SAINT JEAN LANGUEDOC",31077,"TOULOUSE CEDEX 4","MEDIBOARD",,"OUI",4179,"Mediboard",,,"1440 (1x/24h)","100,00","100,00","24,48","24,48","99,95","99,95",1,,,,,,,,,,,,,,
+"MIDI PYRENEES","Hte Garonne",310780283,"CLINIQUE DE L'UNION",31243,"L UNION CEDEX","Dopatient",,"OUI",2274,"Dopasoin",,,"1440 (1x/24h)","99,96","99,96","97,71","97,49","86,54","86,54",59,"erreur sur l'envoi d'un fichier (a effacé des données)",,,,,,,,,,,,,
+"MIDI PYRENEES","Hte Garonne",310780382,"CLINIQUE AMBROISE PARE",31082,"TOULOUSE CEDEX 1","Dopatient",,"OUI",2605,"Dopasoin",,,"1440 (1x/24h)","99,96","99,96","0,00","0,00","72,48","72,48",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Hte Garonne",310781000,"CLINIQUE DES CEDRES",31700,"CORNEBARRIEU","MEDIBOARD",,"OUI",4241,"Mediboard",,,"1440 (1x/24h)","100,00","99,98","0,73","0,73","99,53","99,53",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Hte Garonne",310781067,"HOPITAL JOSEPH DUCUING",31076,"TOULOUSE CEDEX 3","TU-ORUPACA",,"OUI",3724,"TU",,,"1440 (1x/24h)","100,00","100,00","97,56","97,48","99,97","99,97",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Hte Garonne",310781505,"CLINIQUE D'OCCITANIE",31605,"MURET CEDEX","EXPERT SANTE",,"OUI",7058,"Expert Santé",,,"1440 (1x/24h)","100,00","100,00","29,22","29,20","100,00","99,93",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Hte Garonne",310783048,"HOPITAL DE PURPAN CHU TOULOUSE",31059,"TOULOUSE CEDEX 9","Urqual",,"OUI",15898,"Urqual",,,15,"99,99","99,99","88,85","72,85","99,74","99,74",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Hte Garonne",310783055,"HOPITAL DE RANGUEIL CHU TOULOUSE",31059,"TOULOUSE CEDEX 9","Urqual",,"OUI",8998,"Urqual",,,15,"100,00","99,99","99,01","98,98","99,87","99,87",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Gers",320000086,"CENTRE HOSPITALIER D'AUCH",32008,"AUCH CEDEX","Urqual",,"OUI",5080,"Urqual",,,"1440 (1x/24h)","100,00","100,00","2,58","2,58","100,00","100,00",1,,,,,,,,,,,,,,
+"MIDI PYRENEES","Gers",320000102,"CENTRE HOSPITALIER DE CONDOM",32100,"CONDOM","TU-ORUPACA",,"OUI",1626,"TU",,,"1440 (1x/24h)","100,00","100,00","97,48","97,48","100,00","100,00",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Lot",460000045,"CENTRE HOSPITALIER FIGEAC MAQUISARDS",46106,"FIGEAC CEDEX",,,"OUI",3303,"rpuExpress",,"Développement ORU",10,"100,00","100,00","91,95","91,95","99,94","93,58",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Lot",460000052,"CENTRE  HOSPITALIER SAINT CERE",46400,"ST CERE","Corwin",,"OUI ",2019,"Osiris",,,360,"100,00","99,90","100,00","100,00","100,00","100,00",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Lot",460000102,"CENTRE HOSPITALIER JEAN COULON GOURDON",46300,"GOURDON","DÉVELOPPEMENT INTERNE",,"OUI",1767,"Developpement interne",,,60,"100,00","99,94","100,00","100,00","100,00","99,89",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Lot",460000110,"CTRE HOSPITALIER JEAN ROUGIER CAHORS",46005,"CAHORS CEDEX 9","DxCare",,"OUI",5296,"DxCare",,,300,"100,00","100,00","96,66","96,66","100,00","100,00",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Hautes Pyrénées",650000045,"CENTRE HOSPITALIER DE LOURDES",65107,"LOURDES CEDEX","CROSSWAY",,"OUI",4193,"Crossway",,,"1440 (1x/24h)","100,00","100,00","100,00","100,00","98,86","98,86",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Hautes Pyrénées",650000052,"CENTRE HOSPITALIER BAGNERES DE BIGORRE",65201,"BAGNERES DE BIGORRE CEDEX",,,"OUI",1902,"rpuExpress",,"Développement ORU",5,"100,00","99,89","87,22","87,22","98,37","94,01",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Hautes Pyrénées",650000417,"CENTRE HOSPITALIER DE BIGORRE",65013,"TARBES CEDEX 9","CROSSWAY",,"OUI",9430,"Crossway",,,"1440 (1x/24h)","100,00","100,00","31,95","31,91","0,00","0,00",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Hautes Pyrénées",650780679,"POLYCLINIQUE DE L'ORMEAU",65000,"TARBES",,,"OUI",2451,"ORUv2",,"Développement ORU","1440 (1x/24h)","100,00","98,74","98,45","98,12","99,92","99,92",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Hautes Pyrénées",650784218,"CMC HOPITAUX DE LANNEMEZAN",65300,"LANNEMEZAN","CROSSWAY",,"OUI",3193,"Crossway",,,"1440 (1x/24h)","100,00","100,00","100,00","100,00","99,44","99,44",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Tarn",810000224,"CENTRE MEDICO CHIR OBST CLAUDE BERNARD",81030,"ALBI CEDEX 9","Emed",,"OUI",1623,"Emed",,,"1440 (1x/24h)","100,00","100,00","97,60","97,54","100,00","100,00",50,"erreur sur l'envoi d'un fichier (a effacé des données)",,,,,,,,,,,,,
+"MIDI PYRENEES","Tarn",810000505,"CENTRE HOSPITALIER D'ALBI",81013,"ALBI CEDEX 9","Médical Object",,"OUI",7906,"Médical Object",,,"1440 (1x/24h)","100,00","100,00","49,76","49,76","49,76","49,52",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Tarn",810000521,"HOP DU PAYS D'AUTAN SITE DU CAUSSE",81108,"CASTRES CEDEX","CORETEXTE",,"OUI",9715,"Cortexte",,,"1440 (1x/24h)","100,00","100,00","99,52","99,49","99,70","99,70",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Tarn",810000562,"CENTRE HOSPITALIER DE LAVAUR",81500,"LAVAUR","Médical Object",,"OUI",4671,"Médical Object",,,"1440 (1x/24h)","100,00","100,00","90,77","90,77","90,69","90,67",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Tarn",810101444,"POLYCLINIQUE DU SIDOBRE",81100,"CASTRES",,,"OUI",3456,"ORUv2",,"Développement ORU","1440 (1x/24h)","99,97","99,88","98,90","98,90","99,88","99,02",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Tarn et Garonne",820000032,"CENTRE HOSPITALIER MONTAUBAN",82013,"MONTAUBAN CEDEX","CROSSWAY",,"OUI",8669,"Crossway",,,"1440 (1x/24h)","100,00","99,98","72,11","72,11","68,27","68,27",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Tarn et Garonne",820000057,"CLINIQUE DU PONT DE CHAUME",82017,"MONTAUBAN CEDEX","Dopatient",,"OUI",4450,"Dopasoin",,,"1440 (1x/24h)","100,00","100,00","0,00","0,00","100,00","76,76",0,,,,,,,,,,,,,,
+"MIDI PYRENEES","Tarn et Garonne",820000883,"CENTRE HOSPITALIER MOISSAC",82201,"MOISSAC CEDEX","CROSSWAY",,"OUI",3720,"Crossway",,,"1440 (1x/24h)","100,00","100,00","79,27","79,27","85,54","85,54",0,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,"Nombre de RPU pour lesquels le critère CP est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère commune est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère sexe est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère date d'entrée est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode d'entrée est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère provenance est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode de transport est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère mode de PEC est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère motif est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère CCMU est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU pour lesquels le critère DDS est rempli
+/
+Nombre total de RPU transmis","Nombre de RPU avec mode de sortie =6 ou 7 pour lesquels la destination est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis","Nombre de RPU avec mode de sortie =6 ou 7 pour lesquels l'orientation est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis"
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"Nombre de RPU avec mode de sortie =6 ou 7 ou 8 pour lesquels la destination est remplie
+/
+Nombre total de RPU avec mode de sortie = 6 ou 7 transmis",

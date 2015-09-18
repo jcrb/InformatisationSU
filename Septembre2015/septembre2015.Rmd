@@ -32,7 +32,7 @@ Récupération des fichiers csv
 - les 5 premières lignes sont éliminées
 - élimination du héader => il faudre en créer un
 
-```{}
+```{r}
 path = "./data/" # ./Septembre2015/data/ si console
 out.file <- NULL
 file.names <- dir(path, pattern =".csv") # seuls les fichiers se terminant par csv sont lus
@@ -202,8 +202,9 @@ a <- names(t)
 a[1] <- "reg.id"
 names(t) <- a
 # source de la fonction attrJoin
-# source("~/Documents/Resural/FEDORU/Trame_Commune/Zone_chalandise/zone_chalandise.R") # xps
-source("../../../RESURAL/Trame_Commune/Zone_chalandise/zone_chalandise.R") # mac
+source("~/Documents/Resural/FEDORU/Trame_Commune/Zone_chalandise/zone_chalandise.R") # xps
+# source("../../../RESURAL/Trame_Commune/Zone_chalandise/zone_chalandise.R") # mac
+
 # merging avec reg
 reg <- attribJoin(df = t, spdf = region, df.field = "reg.id", spdf.field = "reg.id")
 
