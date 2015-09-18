@@ -492,3 +492,12 @@ paste(round(prop.table(table(d$RPU_transmis))*100, 2), "%")
 Messges pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? intégratin systématique  des thésaurus, démarche d'amélioration.
 Information proactive des sociétés savantes pour la publicationn des Référentiels: info systématique de la Fedoru.
 Focaliser sur les rectangles bleus. Voir si le n° de version permet de discriminer les urqual qui remntent de ceux qui remontent mal.
+
+Analyse de Urqual
+=================
+
+```{r, echo=FALSE, comment=""}
+uq <- d[d$Logiciel_2015 == "URQUAL",]
+
+```
+
