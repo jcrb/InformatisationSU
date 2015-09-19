@@ -25,6 +25,10 @@ Reprise de l'exploitation des logiciels des SU
 ---------
 - récup données ORUMIP (Olivier Azema)
 
+18/9/2015
+---------
+- données Bourgogne mises à jour
+
 
 Récupération des fichiers csv
 -----------------------------
