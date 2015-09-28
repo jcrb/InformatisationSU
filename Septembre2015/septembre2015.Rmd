@@ -26,6 +26,10 @@ Reprise de l'exploitation des logiciels des SU
 ---------
 - récup données ORUMIP (Olivier Azema)
 
+18/9/2015
+---------
+- données Bourgogne mises à jour
+
 
 Récupération des fichiers csv
 -----------------------------
@@ -34,11 +38,13 @@ Récupération des fichiers csv
 - élimination du héader => il faudre en créer un
 
 ```{}
-path = "./data/" # ./Septembre2015/data/ si console
+path = "./data/" # path = "./Septembre2015/data/" si console
 out.file <- NULL
 file.names <- dir(path, pattern =".csv") # seuls les fichiers se terminant par csv sont lus
+
 for(i in 1:length(file.names)){
    file <- read.table(paste(path, file.names[i], sep=""), skip = 5, header = FALSE, sep=",", stringsAsFactors=FALSE)
+   print(file.names[i])
    # on ne garde que les 22 premières colonnes
    file <- file[, 1:22]
    # on ne garde que les lignes où les colonnes 1 à 5 ne sont pas vides (http://genometoolbox.blogspot.fr/2014/01/remove-rows-with-na-values-from-r-data.html)
@@ -67,6 +73,20 @@ d <- d[as.character(d$Region) != "",]
 d$Region <- factor(d$Region)
 d <- d[!is.na(d$Logiciel_2015) & as.character(d$Logiciel_2015) != "",]
 d$Logiciel_2015 <- factor(d$Logiciel_2015)
+
+# d$DP_confor
+# d$DP_exhaus
+
+
+# suppression des %
+d$DN_exhaus <- gsub("%", "", d$DN_exhaus)
+d$DN_confor <- gsub("%", "", d$DN_confor)
+d$DP_exhaus <- gsub("%", "", d$DP_exhaus)
+d$DP_confor <- gsub("%", "", d$DP_confor)
+d$DP_confor <- gsub(">", "", d$DP_confor)
+d$MS_exhaus <- gsub("%", "", d$MS_exhaus)
+d$MS_confor <- gsub("%", "", d$MS_confor)
+
 
 # ajout d'une colonne n° de région
 d$reg.id <- NA
@@ -203,8 +223,9 @@ a <- names(t)
 a[1] <- "reg.id"
 names(t) <- a
 # source de la fonction attrJoin
-# source("~/Documents/Resural/FEDORU/Trame_Commune/Zone_chalandise/zone_chalandise.R") # xps
-source("../../../RESURAL/Trame_Commune/Zone_chalandise/zone_chalandise.R") # mac
+source("~/Documents/Resural/FEDORU/Trame_Commune/Zone_chalandise/zone_chalandise.R") # xps
+# source("../../../RESURAL/Trame_Commune/Zone_chalandise/zone_chalandise.R") # mac
+
 # merging avec reg
 reg <- attribJoin(df = t, spdf = region, df.field = "reg.id", spdf.field = "reg.id")
 
@@ -382,8 +403,8 @@ Mode de sortie (MS)
 -------------------
 
 - taux de conformité:
-```{r, echo=FALSE, comment=""}
-d$MS_confor <- as.numeric(gsub("%", "", d$MS_confor))
+```{r, echo=FALSE, comment="", warning=FALSE}
+d$MS_confor <- as.numeric(d$MS_confor)
 ms.conforme <- summary(d$MS_confor)
 ms.conforme
 ```
@@ -398,7 +419,7 @@ boxplot(d$MS_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "cornfl
 ```
 
 - taux de exhaustivité:
-```{r, echo=FALSE, comment=""}
+```{r, echo=FALSE, comment="", warning=FALSE}
 
 d$MS_exhaus <- as.numeric(gsub("%", "", d$MS_exhaus))
 ms.ex <- summary(d$MS_exhaus)
@@ -406,7 +427,7 @@ ms.ex
 ```
 
 - exhaustivité par outil
-```{r, echo=FALSE, message=FALSE, comment=""}
+```{r, echo=FALSE, message=FALSE, comment="", warning=FALSE}
 
 a <- summary.par.logiciel(d$MS_exhaus, d$Logiciel_2015)
 a
@@ -437,7 +458,7 @@ boxplot(d$DP_confor ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblu
 
 Mode de sortie (MS)
 -------------------
-```{r, echo=FALSE, comment=""}
+```{r, echo=FALSE, comment="", warning=FALSE}
 a <- summary.par.logiciel(d$MS_confor, d$Region)
 a
 
@@ -467,7 +488,7 @@ boxplot(d$DP_exhaus ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblu
 
 Mode de sortie (MS)
 -------------------
-```{r, echo=FALSE, comment=""}
+```{r, echo=FALSE, comment="", warning=FALSE}
 a <- summary.par.logiciel(d$MS_exhaus, d$Region)
 a
 
