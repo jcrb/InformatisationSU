@@ -13,7 +13,8 @@ output:
     toc: yes
   word_document: default
 ---
-
+Objectif: lesRPU sont produits par des ES disposant d'une autorisation de SU. Les informations sont issues des données d'un patient, recueillis par du personnel administratif, soignant et médical sur un logiciel mis à disposition par le service informatique de l'établissement. Le logiciel est fourni par un éditeur ou plus rarement développé localement et administré par le service informatique de l'établissement hospitalier (SIH). La qualité et l'exhaustivité des RPU dépend d'une chaine d'intervenant. Un RPU est considéré comme crée s'il comporte la date et heure d'entrée, le code postal, la commune et la date de naissance d'un consultant (?).L'exhaustivité est la diffférence entre le nombre de RPU produits pendant une période et le nombre de primo passage aux urgences sur la même période. Il n'y a pas de référentiel absolu pour mesurer le nombre de primo passages. Selon le cas il peut s'agir du nombre de RPU eux-mêmes, du chiffre de la SAE, d'une mesure à partir du PMSI.
+La qualité des RPU se mesure par l'écart entre la valeur attendue d'un item et la réponse fournie. La réponse fournie peut être manquante ou non conforme à un référentiel de valeur. Le référentiel s'appuie sur la cahier des charges de l'INVS, sur des référentiels issus de sociétés savantes (SFMU) ou sur des consenssus d'expert (FEDORU).
 7/9/2015
 ========
 Reprise de l'exploitation des logiciels des SU
@@ -488,7 +489,7 @@ paste(round(prop.table(table(d$RPU_transmis))*100, 2), "%")
 
 ```
 
-Messges pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? intégratin systématique  des thésaurus, démarche d'amélioration.
+Messges pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? intégration systématique  des thésaurus, démarche d'amélioration.
 Information proactive des sociétés savantes pour la publicationn des Référentiels: info systématique de la Fedoru.
 Focaliser sur les rectangles bleus. Voir si le n° de version permet de discriminer les urqual qui remntent de ceux qui remontent mal.
 
