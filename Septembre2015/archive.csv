@@ -55,16 +55,15 @@
 "AQUITAINE","Pyrénées Atlantiques","640780748","PCL COTE BASQUE SUD","64501","ST JEAN DE LUZ CEDEX","MEDIBASE","(OSOFT)","OUI","2913","MEDIBASE",NA,"","1440","100.0%","100.0%","96.4%","96.4%","65.7%","65.7%","0",NA
 "AQUITAINE","Pyrénées Atlantiques","640780938","PCL MARZET","64000","PAU","SHAREGATE","(WareSystem)","OUI","2849","SHAREGATE",NA,"","1440","100.0%","100.0%","0.1%","0.1%","100.0%","100.0%","0",NA
 "BOURGOGNE","Côte d'Or","210780136","CLINIQUE MEDICO CHIRURGICALE CHENOVE","21302","CHENOVE CEDEX","RESURGENCES",NA,"OUI","2954","RESURGENCES","v4.6UO.7",NA,"1440 (1x/24h)","100%","100%","99%","99%","99%","99%","0",""
-"BOURGOGNE","Côte d'Or","210781621","HOPITAL GENERAL CHU DIJON","21033","DIJON CEDEX","",NA,"Site n'existe plus","Site n'accueil plus d'urgence","","",NA,"","","","","","","",NA,""
 "BOURGOGNE","Côte d'Or","210987558","HOPITAL LE BOCAGE CHU DIJON","21079","DIJON CEDEX","RESURGENCES",NA,"OUI","11208","RESURGENCES","4.5zmd39",NA,"1440 (1x/24h)","100%","100%","100%","100%","100%","100%","0",""
 "BOURGOGNE","Côte d'Or","210987657","CH BEAUNE","21203","BEAUNE CEDEX","CROSSWAY",NA,"OUI","5951","CROSSWAY","7.1.10.r2.0",NA,"1440 (1x/24h)","100%","100%","28%","28%","0%","0%","0",""
 "BOURGOGNE","Côte d'Or","210987665","CH INTERCOMMUNAL CHATILLON MONTBARD","21400","CHATILLON SUR SEINE","CDP2",NA,"OUI","1411","HOPITAL MANAGER","1.1410",NA,"1440 (1x/24h)","100%","100%","95%","95%","100%","100%","3","lié au changement de logiciel en janvier 2015"
 "BOURGOGNE","Côte d'Or","210987673","CH INTERCOMMUNAL CHATILLON MONTBARD","21500","MONTBARD","CDP2",NA,"OUI","1233","HOPITAL MANAGER","1.1410",NA,"1440 (1x/24h)","100%","100%","100%","100%","100%","100%","0",""
 "BOURGOGNE","Côte d'Or","210987699","CENTRE HOSPITALIER ROBERT MORLEVAT","21140","SEMUR EN AUXOIS","ATALANTE",NA,"OUI","5263","ATALANTE","",NA,"1440 (1x/24h)","100%","100%","0%","0%","0%","0%","0",""
-"BOURGOGNE","Nièvre","580972669","CH CLAMECY","58500","CLAMECY","Manuel",NA,"OUI","2504","Manuel","",NA,"1440 (1x/24h)","100%","100%","99%","98%","99%","99%","0",""
-"BOURGOGNE","Nièvre","580972677","CH COSNE-COURS-SUR-LOIRE","58200","COSNE COURS SUR LOIRE","URQUAL",NA,"OUI depuis janvier 2014","3358","URQUAL","7.1.5.0 RC4",NA,"1440 (1x/24h)","100%","100%","0%","0%","95%","95%","0",""
+"BOURGOGNE","Nièvre","580972669","CH CLAMECY","58500","CLAMECY","Manuel",NA,"OUI","2504","ATALANTE","",NA,"1440 (1x/24h)","100%","100%","99%","98%","99%","99%","0",""
+"BOURGOGNE","Nièvre","580972677","CH COSNE-COURS-SUR-LOIRE","58200","COSNE COURS SUR LOIRE","URQUAL",NA,"OUI","3358","URQUAL","7.1.5.0 RC4",NA,"1440 (1x/24h)","100%","100%","0%","0%","95%","95%","0",""
 "BOURGOGNE","Nièvre","580972685","CH DECIZE","58302","DECIZE CEDEX","CROSSWAY",NA,"OUI","3062","CROSSWAY","7.1.10.r2.0",NA,"1440 (1x/24h)","100%","100%","1%","1%","0%","0%","0",""
-"BOURGOGNE","Nièvre","580972693","C.H DE L'AGGLOMERATION DE NEVERS","58033","NEVERS CEDEX","URQUAL",NA,"OUI depuis janvier 2014","5667","URQUAL","",NA,"1440 (1x/24h)","100%","100%","0%","0%","100%","100%","18","lié au redeployement du module d'envoi des données par Maincare. Une demande de récupération a été faite. le service informatique attend le retour de l'éditeur."
+"BOURGOGNE","Nièvre","580972693","C.H DE L'AGGLOMERATION DE NEVERS","58033","NEVERS CEDEX","URQUAL",NA,"OUI","5667","URQUAL","",NA,"1440 (1x/24h)","100%","100%","0%","0%","100%","100%","18","lié au redeployement du module d'envoi des données par Maincare. Une demande de récupération a été faite. le service informatique attend le retour de l'éditeur."
 "BOURGOGNE","Saone et Loire","710010067","CH PARAY-LE-MONIAL LES CHARMES","71600","PARAY LE MONIAL","CROSSWAY",NA,"OUI","5389","CROSSWAY","avant le 19/03/15 : 7.1.7R2.0.3
 depuis le 19/03/15 : 7.1.10R1.0",NA,"1440 (1x/24h)","100%","100%","0%","0%","0%","0%","0",""
 "BOURGOGNE","Saone et Loire","710010786","CH AUTUN (SITE PARPAS)","71400","AUTUN","CRISTALNET-DMU",NA,"OUI","3671","DMU","3.2.14",NA,"1440 (1x/24h)","100%","100%","99%","99%","100%","100%","0",""
@@ -72,13 +71,13 @@ depuis le 19/03/15 : 7.1.10R1.0",NA,"1440 (1x/24h)","100%","100%","0%","0%","0%"
 "BOURGOGNE","Saone et Loire","710978289","CH LES CHANAUX MACON","71000","MACON","URQUAL",NA,"OUI","9891","URQUAL","7.1.4",NA,"1440 (1x/24h)","100%","100%","0%","0%","97%","97%","0",""
 "BOURGOGNE","Saone et Loire","710978313","SIH CH MONTCEAU-LES-MINES","71230","ST VALLIER","CRISTALNET-DMU",NA,"OUI","5079","DMU","3.4.30",NA,"1440 (1x/24h)","100%","100%","96%","96%","100%","100%","0",""
 "BOURGOGNE","Saone et Loire","710978347","HOTEL DIEU DU CREUSOT","71206","LE CREUSOT CEDEX","CRISTALNET-DMU",NA,"OUI","8512","DMU","3.4.30",NA,"1440 (1x/24h)","100%","100%","71%","71%","100%","100%","0",""
-"BOURGOGNE","Yonne","890002389","POLYCLINIQUE  STE MARGUERITE AUXERRE","89003","AUXERRE CEDEX","DxCare",NA,"OUI depuis le 30/05/14","2941","DXCARE","7.5.16",NA,"1440 (1x/24h)","100%","100%","83%","83%","100%","100%","0",""
-"BOURGOGNE","Yonne","890975527","CH AUXERRE Adulte","89011","AUXERRE CEDEX","CRISTALNET-DMU",NA,"OUI","9436","DMU","3.5.26",NA,"1440 (1x/24h)","100%","100%","96%","96%","99%","99%","0",""
-"BOURGOGNE","Yonne","890975527","CH AUXERRE Pediatrique","89011","AUXERRE CEDEX","CRISTALNET-DMU",NA,"OUI","4004","DMU","3.5.26",NA,"1440 (1x/24h)","100%","100%","100%","100%","100%","100%","0",""
-"BOURGOGNE","Yonne","890975535","CH AVALLON","89206","AVALLON CEDEX","AGFA EXAGON",NA,"OUI","2541","AGFA EXAGON","",NA,"1440 (1x/24h)","100%","100%","12%","12%","100%","100%","0",""
-"BOURGOGNE","Yonne","890975543","CH JOIGNY","89306","JOIGNY CEDEX","TU-ORUPACA",NA,"OUI","4482","TU","",NA,"1440 (1x/24h)","100%","100%","98%","98%","100%","100%","0",""
-"BOURGOGNE","Yonne","890975550","CH SENS","89108","SENS CEDEX","RESURGENCES",NA,"OUI","7997","RESURGENCES","avant le 16/02/15 : 4.6ZIP.16
+"BOURGOGNE","Yonne","890002389","POLYCLINIQUE  STE MARGUERITE AUXERRE","89003","AUXERRE CEDEX","DxCare",NA,"OUI","2941","DXCARE","7.5.16",NA,"1440 (1x/24h)","100%","100%","83%","83%","100%","100%","0",""
+"BOURGOGNE","Yonne","890975527","CH AUXERRE Adulte","89011","AUXERRE CEDEX","CRISTALNET-DMU",NA,"OUI","ad. 9436 / ped.4004","DMU","3.5.26",NA,"1440 (1x/24h)","100%","100%","95.5% (ad.)/ 100.0% (ped)","95.5% (ad.)/ 100.0% (ped)","99.1% (ad) / 100% (ped)","99.1% (ad) / 100% (ped)","0",""
+"BOURGOGNE","Yonne","890975527","CH AUXERRE Pediatrique","89011","AUXERRE CEDEX","CRISTALNET-DMU",NA,"OUI","2541","AGFA EXAGON","",NA,"1440 (1x/24h)","100%","100%","12%","12%","100%","100%","0",""
+"BOURGOGNE","Yonne","890975535","CH AVALLON","89206","AVALLON CEDEX","AGFA EXAGON",NA,"OUI","4482","TU","",NA,"1440 (1x/24h)","100%","100%","98%","98%","100%","100%","0",""
+"BOURGOGNE","Yonne","890975543","CH JOIGNY","89306","JOIGNY CEDEX","TU-ORUPACA",NA,"OUI","7997","RESURGENCES","avant le 16/02/15 : 4.6ZIP.16
 depuis le 16/02/15 : 4.6ZLT.17",NA,"1440 (1x/24h)","100%","100%","99%","99%","100%","100%","0",""
+"BOURGOGNE","Yonne","890975550","CH SENS","89108","SENS CEDEX","RESURGENCES",NA,"OUI","2440","DMU","1.0.3.3.1",NA,"1440 (1x/24h)","100%","100%","95%","95%","98%","98%","0",""
 "BOURGOGNE","Yonne","890975568","CH TONNERRE","89700","TONNERRE","CRISTALNET-DMU",NA,"OUI","2440","DMU","1.0.3.3.1",NA,"1440 (1x/24h)","100%","100%","95%","95%","98%","98%","0",""
 "BRETAGNE","Finistère","290004324","CHU BREST -Site Cavale Blanche","29609
 29835","BREST CEDEX
@@ -161,6 +160,20 @@ V4.6ZLP.15 depuis le 06/02/2015","","1 fois/jour","100.0%","100.0%","99.6%","99.
 "CHAMPAGNE ARDENNES","Haute Marne","520000027","CENTRE HOSPITALIER DE CHAUMONT","52014","CHAUMONT CEDEX","CRISTALNET-DMU",NA,"OUI","5060","CRISTALNET-DMU",NA,"","1440 (1x/24h)","100.0%","100.0%","99.3%","99.3%","100.0%","100.0%","0",""
 "CHAMPAGNE ARDENNES","Haute Marne","520000043","CENTRE HOSPITALIER DE LANGRES","52200","LANGRES","CRISTALNET-DMU",NA,"OUI","3074","CRISTALNET-DMU",NA,"","1440 (1x/24h)","100.0%","100.0%","98.4%","98.4%","99.7%","99.7%","0",""
 "CHAMPAGNE ARDENNES","Haute Marne","520000068","CH GENEVIEVE DE GAULLE ANTHONIOZ","52115","ST DIZIER CEDEX","DXCARE",NA,"OUI","6667","DXCARE",NA,"","1440 (1x/24h)","100.0%","100.0%","65.8%","65.8%","99.9%","99.9%","0",""
+"FRANCHE COMTE","Doubs","250000114","CH BOULLOCHE MONTBELIARD","25209","MONTBELIARD CEDEX","MILLENIUM","","OUI","7418","Firstnet","?","Rattaché à Belfort (fusion des deux CH en 2016)","240 min","en continue","100.0","100.0","45.0","44.7","0.00","0.00","0"
+"FRANCHE COMTE","Doubs","250000700","CHI HC SITE RIVES DU DOUBS PONTARLIER","25304","PONTARLIER CEDEX","CROSSWAY","","OUI","5799","Crossway","?","","13 min","en continue","100.0","99.9","5.0","4.9","0.03","0.03","0"
+"FRANCHE COMTE","Doubs","250006954","CHRU JEAN MINJOZ*","25030","BESANCON CEDEX","ResUrgences","","OUI","12205","ResUrgences","?","","3 min","en continue","100.0","100.0","96.3","96.3","0.15","0.15","0"
+"FRANCHE COMTE","Jura","390000040","CH LONS","39016","LONS LE SAUNIER CEDEX","FIRSTNET","","OUI","7485","Firstnet","?","","240 min","en continue","100.0","100.0","85.7","85.3","0.00","0.00","0"
+"FRANCHE COMTE","Jura","390000065","CH LOUIS JAILLON SAINT CLAUDE","39206","ST CLAUDE CEDEX","EQUALIFE 
+","FIRSNET MILLENIUM fin d'année","OUI","2389","Firstnet","?","","240 min","en continue","100.0","100.0","31.4","31.2","0.00","0.00","0"
+"FRANCHE COMTE","Jura","390000214","CH CHAMPAGNOLE","39302","CHAMPAGNOLE CEDEX","RESURGENCE","","NON ","1815","ResUrgences","?","","35 min","en journée**","100.0","100.0","92.3","91.8","0.06","0.06","0"
+"FRANCHE COMTE","Jura","390000222","CH L PASTEUR DOLE","39108","DOLE CEDEX","MILLENIUM","","OUI","6652","Firstnet","?","","240 min","en continue","100.0","100.0","56.9","56.6","0.00","0.00","0"
+"FRANCHE COMTE","Jura","390005742","ANTENNE SMUR DU CH DE LONS : CH L BERARD MOREZ","39403","MOREZ CEDEX","POLYMEDIS","","OUI","1605","Equafile","?","","47 min","en journée**","100.0","100.0","100.0","99.1","0.31","0.31","0"
+"FRANCHE COMTE","Haute Saone","700000011","CH DU VAL DE SAONE  P VITTER GRAY","70104","GRAY CEDEX","MILLENIUM","","OUI","2479","Firstnet","?","","240 min","en continue","100.0","100.0","87.7","87.3","0.04","0.04","0"
+"FRANCHE COMTE","Haute Saone","700000029","CHI HAUTE SAONE SITE VESOUL","70014","VESOUL CEDEX","RESURGENCES","","OUI","7977","ResUrgences","?","","8 min","en journée**","100.0","100.0","96.8","96.8","0.30","0.30","0"
+"FRANCHE COMTE","Haute Saone","700780059","CHI HAUTE SAONE SITE LUXEUIL","70306","LUXEUIL LES BAINS CEDEX","RESURGENCE","","OUI","1992","ResUrgences","?","Rattaché à Vesoul ","21 min","en journée**","100.0","100.0","96.9","96.9","0.00","0.00","0"
+"FRANCHE COMTE","Haute Saone","700780208","CHI HAUTE SAONE SITE LURE","70204","LURE CEDEX","RESURGENCE","","OUI","2203","ResUrgences","?","Rattaché à Vesoul","24 min","en journée**","100.0","100.0","97.0","97.0","0.05","0.05","0"
+"FRANCHE COMTE","Terr.Belfort","900000167","CH BELFORT","90016","BELFORT CEDEX","MILLENIUM","","OUI","7350","Firstnet","?","","240 min","en continue","100.0","100.0","63.9","63.5","0.00","0.00","0"
 "LIMOUSIN","Corrèze","190000018","CENTRE HOSPITALIER DUBOIS BRIVE","19312","BRIVE LA GAILLARDE CEDEX","ResUrgences","Improove","OUI","8119","ResUrgences","v4.4.5GW.16B",NA,"60","99.99%","99.99%","97.57%","97.57%","99.98%","99.98%","0",NA
 "LIMOUSIN","Creuse","230000820","CENTRE HOSPITALIER GUERET","23011","GUERET CEDEX","ResUrgences","Improove","OUI","4974","ResUrgences","v4.5ZLB.12",NA,"60","100.00%","100.00%","97.25%","97.25%","100.00%","100.00%","0",NA
 "LIMOUSIN","Hte Vienne","870000098","CENTRE HOSPITALIER SAINT JUNIEN","87205","ST JUNIEN CEDEX","ResUrgences","Improove","OUI","3466","ResUrgences","v4.4.5GA.12",NA,"60","100.00%","100.00%","98.56%","98.56%","100.00%","100.00%","0",NA

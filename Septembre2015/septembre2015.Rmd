@@ -29,6 +29,10 @@ Reprise de l'exploitation des logiciels des SU
 ---------
 - données Bourgogne mises à jour
 
+30/9/2015
+---------
+- intégration des données de la Franche-comté
+
 
 Récupération des fichiers csv
 -----------------------------
@@ -97,6 +101,8 @@ d$reg.id[d$Region == "CHAMPAGNE ARDENNES"] <- 21
 d$reg.id[d$Region == "LIMOUSIN"] <- 74
 d$reg.id[d$Region == "PACA"] <- 93
 d$reg.id[d$Region == "RHONE ALPES"] <- 82
+d$reg.id[d$Region == "FRANCHE COMTE"] <- 43
+d$reg.id[d$Region == "MIDI PYRENEES"] <- 73
 ```
 
 - Nombre de régions participantes: `r nlevels(d$Region)`
@@ -108,14 +114,14 @@ Cartographie
 
 Cartographie des régions participantes et des logiciels.
 
-```{r carto_region, echo=FALSE}
+```{r carto_region, echo=FALSE, fig.width=16}
 
 library(sp)
 library("RColorBrewer")
 options(scipen = 6)
 
 # récupérer le fond de carte
-# file <- "~/Documents/CartographieR/RCarto/france_region.RData" # fichier source
+# file <- "~/Documents/CartographieR/RCarto/france_region.RData" # fichier source XPS
 file <- "../france_region.RData" # fichier source pour Mac
 load(file) # le fond s'appelle region (SpatialPolygonDataFrame)
 
@@ -132,8 +138,13 @@ region@data$y <- y
 
 # on ajoute une colonne participation. Les régions participantes = 1 sinon 0
 region@data$participation <- 0
+region@data$participation[region@data$reg.id %in% c(42,72,53,21,26,74,93,82,73,43)] <- 1
+region$reg.nom <- as.character(region$reg.nom)
+region$reg.nom[region$reg.nom == "FRANCHE-COMTE"] <- "FRANCHE\nCOMTE"
+region$reg.nom[region$reg.nom == "CHAMPAGNE-ARDENNE"] <- "CHAMPAGNE\nARDENNE"
+region$reg.nom[region$reg.nom == "PROVENCE-ALPES-COTE D'AZUR"] <- "PACA"
+
 reg <- region@data
-reg$participation[reg$reg.id %in% c(42,72,53,21,26,74,93,82,73)] <- 1
 
 # carte des régions participantes
 plot(region, col = ifelse(reg$participation == 1, "cornflowerblue", "gray80"))
@@ -178,7 +189,9 @@ d$Logiciel_2015[d$Logiciel_2015=="SILLAGE URGENCES (OCTOBRE 2015)"] <- "SILLAGE 
 d$Logiciel_2015[d$Logiciel_2015=="TU"] <- "TU-ORUPACA"
 d$Logiciel_2015[d$Logiciel_2015=="URQUAL (MEDIQUAL)"] <- "URQUAL"
 d$Logiciel_2015[d$Logiciel_2015=="MEDICAL OBJECT DE MEDIWERE 21"] <- "MEDIWERE"
-d$Logiciel_2015[d$Logiciel_2015=="ANTARES V2 de INOVACUM"] <- "ANTARES"
+d$Logiciel_2015[d$Logiciel_2015=="ANTARES V2 DE INOVACUM"] <- "ANTARES"
+d$Logiciel_2015[d$Logiciel_2015=="AGFA EXAGON"] <- "EXAGONE"
+d$Logiciel_2015[d$Logiciel_2015=="LOGICIEL MAISON"] <- "DEVELOPPEMENT INTERNE"
 d$Logiciel_2015 <- as.factor(d$Logiciel_2015)
 ```
 
