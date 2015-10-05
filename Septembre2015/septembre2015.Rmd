@@ -3,12 +3,12 @@ title: "Enquête logiciels SU - Septembre 2015"
 author: "FEDORU"
 date: "07/09/2015"
 output:
-  pdf_document:
-    keep_tex: yes
-    number_sections: yes
-    toc: yes
   html_document:
     keep_md: yes
+    number_sections: yes
+    toc: yes
+  pdf_document:
+    keep_tex: yes
     number_sections: yes
     toc: yes
   word_document: default
@@ -126,6 +126,7 @@ file <- "../france_region.RData" # fichier source pour Mac
 load(file) # le fond s'appelle region (SpatialPolygonDataFrame)
 
 par(mar=c(0,0,1,0))
+par(mfcol = c(1,1))
 # plot(region)
 # title(main="Régions participantes (enquête 2015)")
 
@@ -135,6 +136,15 @@ y <- 0
 for(i in 1:22){ a = region@polygons[[i]]@labpt; x[i] = a[1]; y[i] = a[2]}
 region@data$x <- x
 region@data$y <- y
+
+# Régions membre de la FEDORU (Octobre 2015)
+region@data$fedoru <- 0
+# 1 = membre, 2 = adhésion en cours
+m <- c(1,1,0,0,1,1,0,1,0,1,0,0,1,1,1,1,2,2,0,0,1,1)
+region@data$fedoru <- m
+
+plot(region, col = ifelse(region@data$fedoru > 0, "cornflowerblue", "gray80"), main = "Régions membres de la FEDORU (Octobre 2015)")
+
 
 # on ajoute une colonne participation. Les régions participantes = 1 sinon 0
 region@data$participation <- 0
