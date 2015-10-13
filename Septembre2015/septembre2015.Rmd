@@ -33,14 +33,17 @@ Reprise de l'exploitation des logiciels des SU
 ---------
 - intégration des données de la Franche-comté
 
+13/10/2015
+----------
+- intégration de la Lorraine
 
 Récupération des fichiers csv
 -----------------------------
 
+```{r, echo = FALSE, eval=FALSE}
 - les 5 premières lignes sont éliminées
 - élimination du héader => il faudre en créer un
 
-```{}
 path = "./data/" # path = "./Septembre2015/data/" si console
 out.file <- NULL
 file.names <- dir(path, pattern =".csv") # seuls les fichiers se terminant par csv sont lus
@@ -103,10 +106,15 @@ d$reg.id[d$Region == "PACA"] <- 93
 d$reg.id[d$Region == "RHONE ALPES"] <- 82
 d$reg.id[d$Region == "FRANCHE COMTE"] <- 43
 d$reg.id[d$Region == "MIDI PYRENEES"] <- 73
+d$reg.id[d$Region == "LORRAINE"] <- 41
 ```
 
-- Nombre de régions participantes: `r nlevels(d$Region)`
-- Nombre de sites: `r nlevels(d$FINESS)`
+- Nombre de régions participantes: `r nlevels(d$Region)`: 
+```{r, echo=FALSE, comment=""}
+levels(d$Region)
+```
+
+- Nombre de sites concernés: `r nlevels(d$FINESS)`
 
 
 Cartographie
@@ -148,7 +156,7 @@ plot(region, col = ifelse(region@data$fedoru > 0, "cornflowerblue", "gray80"), m
 
 # on ajoute une colonne participation. Les régions participantes = 1 sinon 0
 region@data$participation <- 0
-region@data$participation[region@data$reg.id %in% c(42,72,53,21,26,74,93,82,73,43)] <- 1
+region@data$participation[region@data$reg.id %in% c(42,72,53,21,26,74,93,82,73,43,41)] <- 1
 region$reg.nom <- as.character(region$reg.nom)
 region$reg.nom[region$reg.nom == "FRANCHE-COMTE"] <- "FRANCHE\nCOMTE"
 region$reg.nom[region$reg.nom == "CHAMPAGNE-ARDENNE"] <- "CHAMPAGNE\nARDENNE"
@@ -213,7 +221,7 @@ Logiciels par ordre décroissant
 t <- sort(table(d$Logiciel_2015), decreasing = TRUE)
 t
 par(mar=c(6,3,2,2))
-barplot(t, las = 2, cex.names = 0.7, main = "Logiciels utilisés")
+barplot(t, las = 2, cex.names = 0.7, main = "Logiciels utilisés", col = ifelse(t >= 10, "cornflowerblue", "gray80"))
 
 ```
 
@@ -228,6 +236,20 @@ table(d$Logiciel_2015, d$Region)
 Nombre de logiciels différents par région
 ```{r, echo=FALSE, comment=""}
 unlist(lapply(tapply(d$Logiciel_2015, d$Region, unique), length))
+```
+
+Nombre de logiciels différents par rapport au nombre de SU de la région
+```{r, echo=FALSE}
+t <- unlist(lapply(tapply(d$Logiciel_2015, d$Region, unique), length)) / table(d$Region)
+t2 <- sort(t)
+t2
+barplot(t2, las = 2, cex.names = 0.7, ylab = "Nb logiciels / nb de SU")
+abline(v = 3.7, lty = 2, col = "red")
+abline(v = 7.3, lty = 2, col = "red")
+abline(v = 12.1, lty = 2, col = "red")
+text(3.7, 0.45,"0.25")
+text(7.3, 0.45,"0.35")
+text(12.1, 0.45,"0.45")
 
 ```
 

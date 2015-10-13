@@ -21,43 +21,29 @@ Reprise de l'exploitation des logiciels des SU
 ---------
 - intégration des données de la Franche-comté
 
+13/10/2015
+----------
+- intégration de la Lorraine
 
 Récupération des fichiers csv
 -----------------------------
 
-- les 5 premières lignes sont éliminées
-- élimination du héader => il faudre en créer un
 
-```{}
-path = "./data/" # path = "./Septembre2015/data/" si console
-out.file <- NULL
-file.names <- dir(path, pattern =".csv") # seuls les fichiers se terminant par csv sont lus
-
-for(i in 1:length(file.names)){
-   file <- read.table(paste(path, file.names[i], sep=""), skip = 5, header = FALSE, sep=",", stringsAsFactors=FALSE)
-   print(file.names[i])
-   # on ne garde que les 22 premières colonnes
-   file <- file[, 1:22]
-   # on ne garde que les lignes où les colonnes 1 à 5 ne sont pas vides (http://genometoolbox.blogspot.fr/2014/01/remove-rows-with-na-values-from-r-data.html)
-   file <- file[complete.cases(file[,1:5]),]
-   # remplacement de la virgule écimale par le point décimal (soirce: http://stackoverflow.com/questions/5487164/r-how-to-replace-parts-of-variable-strings-within-data-frame)
-   file <- as.data.frame(sapply(file, gsub, pattern = ",", replacement = "."))
-
-   out.file <- rbind(out.file, file)
- }
-
-n <- c("Region", "Departement", "FINESS", "Hopital", "CP", "Routage","Logiciel_2014","Editeur", "RPU_transmis","Nb_RPU_T1_2015", "Logiciel_2015", "Version_2015", "Coment", "Freq_remontee", "DN_exhaus","DN_confor", "DP_exhaus", "DP_confor", "MS_exhaus", "MS_confor", "Jours_manquants", "coment2")
- names(out.file) <- n
-
-write.table(out.file, file = "archive.csv", sep=",", row.names = FALSE, qmethod = "double", fileEncoding="utf-8")
-```
 
 Récupération du fichier des données
 -----------------------------------
 
 
-- Nombre de régions participantes: 10
-- Nombre de sites: 297
+- Nombre de régions participantes: 11: 
+
+```
+ [1] "ALSACE"             "AQUITAINE"          "BOURGOGNE"         
+ [4] "BRETAGNE"           "CHAMPAGNE ARDENNES" "FRANCHE COMTE"     
+ [7] "LIMOUSIN"           "LORRAINE"           "MIDI PYRENEES"     
+[10] "PACA"               "RHONE ALPES"       
+```
+
+- Nombre de sites concernés: 320
 
 
 Cartographie
@@ -77,7 +63,7 @@ Logiciels 2015
 
 
 
-- Nombre de logiciels utilisés: 51
+- Nombre de logiciels utilisés: 54
 
 Logiciels par ordre décroissant
 -------------------------------
@@ -86,27 +72,29 @@ Logiciels par ordre décroissant
 
                   DMU            TU-ORUPACA                URQUAL 
                    50                    45                    35 
-          RESURGENCES              CROSSWAY                DXCARE 
-                   29                    13                    13 
-             ATALANTE                 SIDSU      SILLAGE URGENCES 
-                   10                     9                     8 
-            MEDIBOARD              FIRSTNET                 ORBIS 
-                    7                     6                     5 
-            POLYMEDIS                 ORUV2              CLINICOM 
-                    5                     4                     3 
-DEVELOPPEMENT INTERNE              DOPASOIN         DOPA URGENCES 
+          RESURGENCES          RESURGENCES                 DXCARE 
+                   29                    17                    15 
+             CROSSWAY              ATALANTE                 SIDSU 
+                   14                    10                     9 
+     SILLAGE URGENCES             MEDIBOARD              FIRSTNET 
+                    8                     7                     6 
+                ORBIS             POLYMEDIS                 ORUV2 
+                    5                     5                     4 
+             CLINICOM DEVELOPPEMENT INTERNE              DOPASOIN 
                     3                     3                     3 
-                  DPU               EXAGONE              EXPERTIZ 
+        DOPA URGENCES                   DPU               EXAGONE 
                     3                     3                     3 
-               SIGEMS               ANTARES              CORTEXTE 
-                    3                     2                     2 
-      HOPITAL MANAGER        MÉDICAL OBJECT                 OSOFT 
+             EXPERTIZ                SIGEMS               ANTARES 
+                    3                     3                     2 
+             CORTEXTE               H+ACUTE       HOPITAL MANAGER 
                     2                     2                     2 
-           RPUEXPRESS               SANOCOM             SHAREGATE 
+       MÉDICAL OBJECT                 OSOFT            RPUEXPRESS 
                     2                     2                     2 
-          SILLAGE DMU               AXIGATE                CLIMCO 
-                    2                     1                     1 
-         CORA URGENCE                DIAMMS                  EMED 
+              SANOCOM             SHAREGATE           SILLAGE DMU 
+                    2                     2                     2 
+              AXIGATE                CLIMCO          CORA URGENCE 
+                    1                     1                     1 
+               CORPUS                DIAMMS                  EMED 
                     1                     1                     1 
              EQUAFILE              E SHERPA          EXPERT SANTE 
                     1                     1                     1 
@@ -120,7 +108,7 @@ DEVELOPPEMENT INTERNE              DOPASOIN         DOPA URGENCES
                     1                     1                     1 
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-4-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-6-1.png) 
 
 Logiciels par région
 --------------------
@@ -135,6 +123,7 @@ Logiciels par région
   CLIMCO                     0         0         0        0
   CLINICOM                   1         0         0        0
   CORA URGENCE               0         0         0        0
+  CORPUS                     0         0         0        0
   CORTEXTE                   0         0         0        0
   CROSSWAY                   0         3         3        0
   DEVELOPPEMENT INTERNE      0         0         0        0
@@ -152,6 +141,7 @@ Logiciels par région
   EXPERT SANTE               0         0         0        0
   EXPERT SANTÉ               0         0         0        0
   FIRSTNET                   0         0         0        0
+  H+ACUTE                    0         0         0        0
   HOPITAL MANAGER            0         0         2        0
   MEDIBASE                   0         1         0        0
   MEDIBOARD                  0         0         0        1
@@ -168,6 +158,7 @@ Logiciels par région
   POLYMEDIS                  0         0         0        0
   QCARE                      0         0         0        0
   RESURGENCES                1         1         3        7
+  RESURGENCES                0         0         0        0
   RPUEXPRESS                 0         0         0        0
   SANOCOM                    0         2         0        0
   SHAREGATE                  0         2         0        0
@@ -181,58 +172,61 @@ Logiciels par région
   URGEST                     0         0         0        0
   URQUAL                     0         3         3       11
                        
-                        CHAMPAGNE ARDENNES FRANCHE COMTE LIMOUSIN
-  ANTARES                                0             0        0
-  ATALANTE                               0             0        0
-  AXIGATE                                0             0        0
-  CLIMCO                                 0             0        0
-  CLINICOM                               0             0        0
-  CORA URGENCE                           0             0        0
-  CORTEXTE                               0             0        0
-  CROSSWAY                               0             1        0
-  DEVELOPPEMENT INTERNE                  0             0        0
-  DIAMMS                                 0             0        0
-  DMU                                    3             0        0
-  DOPASOIN                               0             0        0
-  DOPA URGENCES                          2             0        0
-  DPU                                    0             0        0
-  DXCARE                                 1             0        0
-  EMED                                   0             0        0
-  EQUAFILE                               0             1        0
-  E SHERPA                               0             0        0
-  EXAGONE                                0             0        0
-  EXPERTIZ                               0             0        0
-  EXPERT SANTE                           0             0        0
-  EXPERT SANTÉ                           0             0        0
-  FIRSTNET                               0             6        0
-  HOPITAL MANAGER                        0             0        0
-  MEDIBASE                               0             0        0
-  MEDIBOARD                              0             0        0
-  MÉDICAL OBJECT                         0             0        0
-  MEDINTUX                               0             0        0
-  MEDIS                                  0             0        0
-  MEDIWERE                               0             0        0
-  M-PLUS                                 0             0        0
-  NAFAMA                                 1             0        0
-  ORBIS                                  0             0        0
-  ORUV2                                  0             0        0
-  OSIRIS                                 0             0        0
-  OSOFT                                  0             0        0
-  POLYMEDIS                              5             0        0
-  QCARE                                  0             0        0
-  RESURGENCES                            1             5        6
-  RPUEXPRESS                             0             0        0
-  SANOCOM                                0             0        0
-  SHAREGATE                              0             0        0
-  SIDSU                                  0             0        0
-  SIGEMS                                 0             0        0
-  SILLAGE DMU                            0             0        0
-  SILLAGE URGENCES                       0             0        0
-  SPEC 4D                                0             0        1
-  TRACK CARE                             0             0        0
-  TU-ORUPACA                             0             0        0
-  URGEST                                 0             0        0
-  URQUAL                                 3             0        2
+                        CHAMPAGNE ARDENNES FRANCHE COMTE LIMOUSIN LORRAINE
+  ANTARES                                0             0        0        0
+  ATALANTE                               0             0        0        0
+  AXIGATE                                0             0        0        0
+  CLIMCO                                 0             0        0        0
+  CLINICOM                               0             0        0        0
+  CORA URGENCE                           0             0        0        0
+  CORPUS                                 0             0        0        1
+  CORTEXTE                               0             0        0        0
+  CROSSWAY                               0             1        0        1
+  DEVELOPPEMENT INTERNE                  0             0        0        0
+  DIAMMS                                 0             0        0        0
+  DMU                                    3             0        0        0
+  DOPASOIN                               0             0        0        0
+  DOPA URGENCES                          2             0        0        0
+  DPU                                    0             0        0        0
+  DXCARE                                 1             0        0        2
+  EMED                                   0             0        0        0
+  EQUAFILE                               0             1        0        0
+  E SHERPA                               0             0        0        0
+  EXAGONE                                0             0        0        0
+  EXPERTIZ                               0             0        0        0
+  EXPERT SANTE                           0             0        0        0
+  EXPERT SANTÉ                           0             0        0        0
+  FIRSTNET                               0             6        0        0
+  H+ACUTE                                0             0        0        2
+  HOPITAL MANAGER                        0             0        0        0
+  MEDIBASE                               0             0        0        0
+  MEDIBOARD                              0             0        0        0
+  MÉDICAL OBJECT                         0             0        0        0
+  MEDINTUX                               0             0        0        0
+  MEDIS                                  0             0        0        0
+  MEDIWERE                               0             0        0        0
+  M-PLUS                                 0             0        0        0
+  NAFAMA                                 1             0        0        0
+  ORBIS                                  0             0        0        0
+  ORUV2                                  0             0        0        0
+  OSIRIS                                 0             0        0        0
+  OSOFT                                  0             0        0        0
+  POLYMEDIS                              5             0        0        0
+  QCARE                                  0             0        0        0
+  RESURGENCES                            1             5        6        0
+  RESURGENCES                            0             0        0       17
+  RPUEXPRESS                             0             0        0        0
+  SANOCOM                                0             0        0        0
+  SHAREGATE                              0             0        0        0
+  SIDSU                                  0             0        0        0
+  SIGEMS                                 0             0        0        0
+  SILLAGE DMU                            0             0        0        0
+  SILLAGE URGENCES                       0             0        0        0
+  SPEC 4D                                0             0        1        0
+  TRACK CARE                             0             0        0        0
+  TU-ORUPACA                             0             0        0        0
+  URGEST                                 0             0        0        0
+  URQUAL                                 3             0        2        0
                        
                         MIDI PYRENEES PACA RHONE ALPES
   ANTARES                           0    0           0
@@ -241,6 +235,7 @@ Logiciels par région
   CLIMCO                            0    0           1
   CLINICOM                          1    0           1
   CORA URGENCE                      0    0           1
+  CORPUS                            0    0           0
   CORTEXTE                          2    0           0
   CROSSWAY                          6    0           0
   DEVELOPPEMENT INTERNE             1    0           2
@@ -258,6 +253,7 @@ Logiciels par région
   EXPERT SANTE                      0    0           1
   EXPERT SANTÉ                      1    0           0
   FIRSTNET                          0    0           0
+  H+ACUTE                           0    0           0
   HOPITAL MANAGER                   0    0           0
   MEDIBASE                          0    0           0
   MEDIBOARD                         2    0           4
@@ -274,6 +270,7 @@ Logiciels par région
   POLYMEDIS                         0    0           0
   QCARE                             0    1           0
   RESURGENCES                       0    2           3
+  RESURGENCES                       0    0           0
   RPUEXPRESS                        2    0           0
   SANOCOM                           0    0           0
   SHAREGATE                         0    0           0
@@ -295,27 +292,43 @@ Nombre de logiciels différents par région
                  7                 14                  9 
           BRETAGNE CHAMPAGNE ARDENNES      FRANCHE COMTE 
                  8                  7                  4 
-          LIMOUSIN      MIDI PYRENEES               PACA 
-                 3                 17                  6 
-       RHONE ALPES 
-                18 
+          LIMOUSIN           LORRAINE      MIDI PYRENEES 
+                 3                  5                 17 
+              PACA        RHONE ALPES 
+                 6                 18 
 ```
+
+Nombre de logiciels différents par rapport au nombre de SU de la région
+
+```
+## 
+##               PACA           LORRAINE        RHONE ALPES 
+##          0.1200000          0.2173913          0.2571429 
+##           BRETAGNE      FRANCHE COMTE           LIMOUSIN 
+##          0.2666667          0.3076923          0.3333333 
+##             ALSACE          BOURGOGNE          AQUITAINE 
+##          0.3888889          0.3913043          0.4000000 
+## CHAMPAGNE ARDENNES      MIDI PYRENEES 
+##          0.4375000          0.4594595
+```
+
+![](septembre2015_files/figure-html/unnamed-chunk-9-1.png) 
 
 Cartographie des logiciels
 --------------------------
-![](septembre2015_files/figure-html/unnamed-chunk-7-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-7-2.png) ![](septembre2015_files/figure-html/unnamed-chunk-7-3.png) ![](septembre2015_files/figure-html/unnamed-chunk-7-4.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-10-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-10-2.png) ![](septembre2015_files/figure-html/unnamed-chunk-10-3.png) ![](septembre2015_files/figure-html/unnamed-chunk-10-4.png) 
 
 Un logiciel est présent dans combien de régions ?
 -------------------------------------------------
 
-![](septembre2015_files/figure-html/unnamed-chunk-8-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-11-1.png) 
 
 Analyse des RPU
 ===============
 
 
 
-Nombre de RPU produits: 1913842
+Nombre de RPU produits: 2065115
 
 Nombre de RPU par logiciel
 --------------------------
@@ -326,8 +339,9 @@ TU-ORUPACA               362364
 URQUAL                   331497
 DMU                      299522
 RESURGENCES              207212
-DXCARE                    97207
-CROSSWAY                  66006
+RESURGENCES              128584
+DXCARE                   103059
+CROSSWAY                  69480
 ATALANTE                  47216
 SIDSU                     44401
 DPU                       39714
@@ -347,6 +361,7 @@ ORUV2                     10715
 ORBIS                     10669
 DOPA URGENCES             10420
 M-PLUS                     9970
+H+ACUTE                    9762
 DOPASOIN                   9329
 ANTARES                    8974
 SHAREGATE                  8639
@@ -367,6 +382,7 @@ NAFAMA                     5156
 QCARE                      5131
 AXIGATE                    4282
 E SHERPA                   4090
+CORPUS                     3601
 MEDIBASE                   2913
 HOPITAL MANAGER            2644
 OSIRIS                     2019
@@ -406,6 +422,7 @@ FIRSTNET                               0.04
 AXIGATE                                0.00
 CLIMCO                                 0.00
 CORA URGENCE                           0.00
+CORPUS                                 0.00
 CORTEXTE                               0.00
 DIAMMS                                 0.00
 DOPA URGENCES                          0.00
@@ -414,6 +431,7 @@ EXAGONE                                0.00
 EXPERTIZ                               0.00
 EXPERT SANTE                           0.00
 EXPERT SANTÉ                           0.00
+H+ACUTE                                0.00
 MEDIBASE                               0.00
 MÉDICAL OBJECT                         0.00
 MEDINTUX                               0.00
@@ -425,6 +443,7 @@ ORUV2                                  0.00
 OSIRIS                                 0.00
 POLYMEDIS                              0.00
 QCARE                                  0.00
+RESURGENCES                            0.00
 RPUEXPRESS                             0.00
 SANOCOM                                0.00
 SHAREGATE                              0.00
@@ -451,6 +470,7 @@ BOURGOGNE                          21.00
 CHAMPAGNE ARDENNES                  3.00
 FRANCHE COMTE                       0.94
 LIMOUSIN                            0.00
+LORRAINE                            0.00
 ```
 
 
@@ -472,7 +492,7 @@ Date de naissance
 
 ```
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-   0.00  100.00  100.00   99.65  100.00  100.00       7 
+   0.00  100.00  100.00   99.68  100.00  100.00       7 
 ```
 
 - conformité par outil:
@@ -486,15 +506,16 @@ AXIGATE               100.00 100.00 100.00000           NA  1
 CLIMCO                100.00 100.00 100.00000           NA  1
 CLINICOM              100.00 100.00 100.00000  0.000000000  3
 CORA URGENCE          100.00 100.00 100.00000           NA  1
+CORPUS                100.00 100.00 100.00000           NA  1
 CORTEXTE              100.00 100.00 100.00000  0.000000000  2
-CROSSWAY               99.98 100.00  99.99750  0.006215816 13
+CROSSWAY               99.98 100.00  99.99769  0.005991447 14
 DEVELOPPEMENT INTERNE  99.94 100.00  99.98000  0.034641016  3
 DIAMMS                100.00 100.00 100.00000           NA  1
 DMU                   100.00 100.00 100.00000  0.000000000 50
 DOPASOIN               99.96 100.00  99.97333  0.023094011  3
 DOPA URGENCES         100.00 100.00 100.00000  0.000000000  3
 DPU                   100.00 100.00 100.00000  0.000000000  3
-DXCARE                100.00 100.00 100.00000  0.000000000 13
+DXCARE                100.00 100.00 100.00000  0.000000000 15
 EMED                  100.00 100.00 100.00000           NA  1
 EQUAFILE              100.00 100.00 100.00000           NA  1
 E SHERPA              100.00 100.00 100.00000           NA  1
@@ -503,6 +524,7 @@ EXPERTIZ              100.00 100.00 100.00000  0.000000000  3
 EXPERT SANTE          100.00 100.00 100.00000           NA  1
 EXPERT SANTÉ          100.00 100.00 100.00000           NA  1
 FIRSTNET              100.00 100.00 100.00000  0.000000000  6
+H+ACUTE               100.00 100.00 100.00000  0.000000000  2
 HOPITAL MANAGER       100.00 100.00 100.00000  0.000000000  2
 MEDIBASE              100.00 100.00 100.00000           NA  1
 MEDIBOARD              99.98 100.00  99.99714  0.007559289  7
@@ -519,6 +541,7 @@ OSOFT                 100.00 100.00 100.00000  0.000000000  2
 POLYMEDIS             100.00 100.00 100.00000  0.000000000  5
 QCARE                  99.98  99.98  99.98000           NA  1
 RESURGENCES            99.95 100.00  99.99793  0.009403385 29
+RESURGENCES           100.00 100.00 100.00000  0.000000000 17
 RPUEXPRESS             99.89 100.00  99.94500  0.077781746  2
 SANOCOM               100.00 100.00 100.00000  0.000000000  2
 SHAREGATE             100.00 100.00 100.00000  0.000000000  2
@@ -533,14 +556,14 @@ URGEST                100.00 100.00 100.00000           NA  1
 URQUAL                 99.80 100.00  99.99206  0.034534077 35
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-14-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-17-1.png) 
 
 - taux d'exhaustivité:
 
 
 ```
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-   0.00  100.00  100.00   99.64  100.00  100.00      20 
+   0.00  100.00  100.00   99.67  100.00  100.00      20 
 ```
 
 - exhaustivité par outil
@@ -571,15 +594,16 @@ AXIGATE               100.00 100.00 100.00000           NA  1
 CLIMCO                100.00 100.00 100.00000           NA  1
 CLINICOM              100.00 100.00 100.00000  0.000000000  3
 CORA URGENCE          100.00 100.00 100.00000           NA  1
+CORPUS                100.00 100.00 100.00000           NA  1
 CORTEXTE              100.00 100.00 100.00000  0.000000000  2
-CROSSWAY              100.00 100.00 100.00000  0.000000000 13
+CROSSWAY              100.00 100.00 100.00000  0.000000000 14
 DEVELOPPEMENT INTERNE 100.00 100.00 100.00000  0.000000000  3
 DIAMMS                100.00 100.00 100.00000           NA  1
 DMU                   100.00 100.00 100.00000  0.000000000 50
 DOPASOIN               99.96 100.00  99.97333  0.023094011  3
 DOPA URGENCES         100.00 100.00 100.00000  0.000000000  3
 DPU                   100.00 100.00 100.00000  0.000000000  3
-DXCARE                100.00 100.00 100.00000  0.000000000 13
+DXCARE                100.00 100.00 100.00000  0.000000000 15
 EMED                  100.00 100.00 100.00000           NA  1
 EQUAFILE                 Inf   -Inf       NaN           NA  1
 E SHERPA              100.00 100.00 100.00000           NA  1
@@ -588,6 +612,7 @@ EXPERTIZ              100.00 100.00 100.00000  0.000000000  3
 EXPERT SANTE          100.00 100.00 100.00000           NA  1
 EXPERT SANTÉ          100.00 100.00 100.00000           NA  1
 FIRSTNET                 Inf   -Inf       NaN           NA  6
+H+ACUTE               100.00 100.00 100.00000  0.000000000  2
 HOPITAL MANAGER       100.00 100.00 100.00000  0.000000000  2
 MEDIBASE              100.00 100.00 100.00000           NA  1
 MEDIBOARD             100.00 100.00 100.00000  0.000000000  7
@@ -604,6 +629,7 @@ OSOFT                 100.00 100.00 100.00000  0.000000000  2
 POLYMEDIS             100.00 100.00 100.00000  0.000000000  5
 QCARE                  99.98  99.98  99.98000           NA  1
 RESURGENCES            99.95 100.00  99.99750  0.010320937 29
+RESURGENCES           100.00 100.00 100.00000  0.000000000 17
 RPUEXPRESS            100.00 100.00 100.00000  0.000000000  2
 SANOCOM               100.00 100.00 100.00000  0.000000000  2
 SHAREGATE             100.00 100.00 100.00000  0.000000000  2
@@ -618,7 +644,7 @@ URGEST                100.00 100.00 100.00000           NA  1
 URQUAL                 99.99 100.00  99.99971  0.001714986 35
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-16-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-19-1.png) 
 
 Diagnostic (DP)
 ---------- 
@@ -627,7 +653,7 @@ Diagnostic (DP)
 
 ```
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-   0.00   75.01   95.00   76.59   97.54  100.00       8 
+   0.00   77.22   95.00   78.29   98.21  100.00       8 
 ```
 
 - conformité par outil
@@ -640,15 +666,16 @@ AXIGATE                 0.00   0.00   0.00000          NA  1
 CLIMCO                 95.00  95.00  95.00000          NA  1
 CLINICOM               95.00  98.03  96.39000  1.53039211  3
 CORA URGENCE           95.00  95.00  95.00000          NA  1
+CORPUS                100.00 100.00 100.00000          NA  1
 CORTEXTE               87.11  99.49  93.30000  8.75398195  2
-CROSSWAY                0.00 100.00  50.65583 43.36106348 13
+CROSSWAY                0.00 100.00  54.45154 43.71265165 14
 DEVELOPPEMENT INTERNE  95.00 100.00  96.66667  2.88675135  3
 DIAMMS                 78.56  78.56  78.56000          NA  1
 DMU                    56.80  99.39  93.68574  6.92108585 50
 DOPASOIN                0.00  97.49  32.49667 56.28587774  3
 DOPA URGENCES           0.00  62.90  20.96667 36.31533193  3
 DPU                    92.18  95.00  94.06000  1.62812776  3
-DXCARE                  0.00  98.90  54.74923 35.50656429 13
+DXCARE                  0.00 100.00  60.78267 36.52574659 15
 EMED                   97.54  97.54  97.54000          NA  1
 EQUAFILE              100.00 100.00 100.00000          NA  1
 E SHERPA               95.00  95.00  95.00000          NA  1
@@ -657,6 +684,7 @@ EXPERTIZ               95.00  95.00  95.00000  0.00000000  3
 EXPERT SANTE           95.00  95.00  95.00000          NA  1
 EXPERT SANTÉ           29.20  29.20  29.20000          NA  1
 FIRSTNET               31.40  87.70  61.76667 22.25683416  6
+H+ACUTE               100.00 100.00 100.00000  0.00000000  2
 HOPITAL MANAGER        95.00 100.00  97.50000  3.53553391  2
 MEDIBASE               96.40  96.40  96.40000          NA  1
 MEDIBOARD               0.73  95.00  64.05857 40.50008083  7
@@ -673,6 +701,7 @@ OSOFT                  95.00  98.60  96.80000  2.54558441  2
 POLYMEDIS              97.40  99.70  98.50000  1.04403065  5
 QCARE                   0.00   0.00   0.00000          NA  1
 RESURGENCES            76.00 100.00  95.80000  4.90218683 29
+RESURGENCES           100.00 100.00 100.00000  0.00000000 17
 RPUEXPRESS             87.22  91.95  89.58500  3.34461508  2
 SANOCOM                76.70  83.30  80.00000  4.66690476  2
 SHAREGATE               0.00   0.10   0.05000  0.07071068  2
@@ -687,13 +716,13 @@ URGEST                 95.00  95.00  95.00000          NA  1
 URQUAL                  0.00 100.00  61.16588 43.18051175 35
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-18-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-21-1.png) 
 
 - taux de exhaustivité:
 
 ```
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-   0.00   61.00   94.00   73.48   98.44  100.00       8 
+   0.00   68.10   95.00   75.13   98.82  100.00       8 
 ```
 
 - exhaustivité par outil
@@ -706,15 +735,16 @@ AXIGATE                 0.00   0.00   0.000000          NA  1
 CLIMCO                 38.00  38.00  38.000000          NA  1
 CLINICOM               72.00  98.03  88.723333 14.51362923  3
 CORA URGENCE           95.00  95.00  95.000000          NA  1
+CORPUS                100.00 100.00 100.000000          NA  1
 CORTEXTE               87.57  99.52  93.545000  8.44992604  2
-CROSSWAY                0.00 100.00  58.575833 42.93447110 13
+CROSSWAY                0.00 100.00  56.608462 41.71416922 14
 DEVELOPPEMENT INTERNE  83.00 100.00  92.666667  8.73689495  3
 DIAMMS                 78.72  78.72  78.720000          NA  1
 DMU                     2.00 100.00  89.008511 16.79941963 50
 DOPASOIN                0.00  97.71  32.570000 56.41289480  3
 DOPA URGENCES           0.00  62.90  20.966667 36.31533193  3
 DPU                    87.00  97.00  92.060000  5.00107988  3
-DXCARE                  0.00  98.90  54.749231 35.50656429 13
+DXCARE                  0.00  98.90  60.116000 35.79386316 15
 EMED                   97.60  97.60  97.600000          NA  1
 EQUAFILE              100.00 100.00 100.000000          NA  1
 E SHERPA                0.00   0.00   0.000000          NA  1
@@ -723,6 +753,7 @@ EXPERTIZ               82.00  94.00  88.666667  6.11010093  3
 EXPERT SANTE           95.00  95.00  95.000000          NA  1
 EXPERT SANTÉ           29.22  29.22  29.220000          NA  1
 FIRSTNET              100.00 100.00 100.000000  0.00000000  6
+H+ACUTE                99.00 100.00  99.500000  0.70710678  2
 HOPITAL MANAGER        95.00 100.00  97.500000  3.53553391  2
 MEDIBASE               96.40  96.40  96.400000          NA  1
 MEDIBOARD               0.00  43.20  10.344286 16.96571824  7
@@ -739,6 +770,7 @@ OSOFT                   0.00  98.60  49.300000 69.72072862  2
 POLYMEDIS              97.40  99.70  98.740000  0.84734881  5
 QCARE                   0.00   0.00   0.000000          NA  1
 RESURGENCES            76.00 100.00  96.644828  5.05329569 29
+RESURGENCES            93.00 100.00  99.352941  1.72992689 17
 RPUEXPRESS             87.22  91.95  89.585000  3.34461508  2
 SANOCOM                76.70  83.30  80.000000  4.66690476  2
 SHAREGATE               0.00   0.10   0.050000  0.07071068  2
@@ -753,7 +785,7 @@ URGEST                 98.00  98.00  98.000000          NA  1
 URQUAL                  0.00 100.00  58.699412 42.77801580 35
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-20-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-23-1.png) 
 
 Mode de sortie (MS)
 -------------------
@@ -762,7 +794,7 @@ Mode de sortie (MS)
 
 ```
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-   0.00   86.29   99.40   82.54   99.97  100.00      73 
+   0.00   91.35   99.00   84.05   99.93  100.00      73 
 ```
 
 - conformité par outil
@@ -838,15 +870,16 @@ AXIGATE                99.90  99.90  99.900000000          NA  1
 CLIMCO                   Inf   -Inf           NaN          NA  1
 CLINICOM               98.66 100.00  99.330000000  0.94752309  3
 CORA URGENCE             Inf   -Inf           NaN          NA  1
+CORPUS                 99.00  99.00  99.000000000          NA  1
 CORTEXTE               99.43  99.70  99.565000000  0.19091883  2
-CROSSWAY                0.00  99.44  45.463333333 47.91778837 13
+CROSSWAY                0.00  99.44  49.581538462 48.22081032 14
 DEVELOPPEMENT INTERNE  99.89  99.89  99.890000000          NA  3
 DIAMMS                 80.47  80.47  80.470000000          NA  1
 DMU                    97.41 100.00  99.266923077  1.10009382 50
 DOPASOIN               72.48  86.54  78.593333333  7.20706135  3
 DOPA URGENCES          69.10  82.60  77.366666667  7.24315769  3
 DPU                    99.76  99.76  99.760000000          NA  3
-DXCARE                 21.05 100.00  86.825384615 29.35655169 13
+DXCARE                 21.05 100.00  88.382000000 27.48822221 15
 EMED                  100.00 100.00 100.000000000          NA  1
 EQUAFILE                0.31   0.31   0.310000000          NA  1
 E SHERPA                 Inf   -Inf           NaN          NA  1
@@ -855,6 +888,7 @@ EXPERTIZ                 Inf   -Inf           NaN          NA  3
 EXPERT SANTE             Inf   -Inf           NaN          NA  1
 EXPERT SANTÉ           99.93  99.93  99.930000000          NA  1
 FIRSTNET                0.00   0.04   0.006666667  0.01632993  6
+H+ACUTE                99.00  99.00  99.000000000  0.00000000  2
 HOPITAL MANAGER       100.00 100.00 100.000000000  0.00000000  2
 MEDIBASE               65.70  65.70  65.700000000          NA  1
 MEDIBOARD              99.53  99.96  99.813333333  0.24542480  7
@@ -871,6 +905,7 @@ OSOFT                 100.00 100.00 100.000000000          NA  2
 POLYMEDIS              99.30  99.90  99.680000000  0.26832816  5
 QCARE                   0.00   0.00   0.000000000          NA  1
 RESURGENCES             0.00 100.00  68.790769231 46.75955055 29
+RESURGENCES            99.00  99.00  99.000000000  0.00000000 17
 RPUEXPRESS             93.58  94.01  93.795000000  0.30405592  2
 SANOCOM               100.00 100.00 100.000000000  0.00000000  2
 SHAREGATE             100.00 100.00 100.000000000  0.00000000  2
@@ -885,13 +920,13 @@ URGEST                   Inf   -Inf           NaN          NA  1
 URQUAL                 14.29 100.00  93.606206897 16.44861662 35
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-22-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-25-1.png) 
 
 - taux de exhaustivité:
 
 ```
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-   0.00   94.29   99.70   87.03  100.00  100.00       8 
+   0.00   95.48   99.47   87.90  100.00  100.00       8 
 ```
 
 - exhaustivité par outil
@@ -904,15 +939,16 @@ AXIGATE               100.00 100.00 100.00000          NA  1
 CLIMCO                  0.00   0.00   0.00000          NA  1
 CLINICOM               99.92 100.00  99.97333  0.04618802  3
 CORA URGENCE           31.00  31.00  31.00000          NA  1
+CORPUS                 99.00  99.00  99.00000          NA  1
 CORTEXTE               99.43  99.70  99.56500  0.19091883  2
-CROSSWAY                0.00  99.44  45.87750 47.52636974 13
+CROSSWAY                0.00  99.44  49.96385 47.82889391 14
 DEVELOPPEMENT INTERNE  95.00 100.00  98.33333  2.88675135  3
 DIAMMS                 80.47  80.47  80.47000          NA  1
 DMU                    97.41 100.00  99.77596  0.66184084 50
 DOPASOIN               72.48 100.00  86.34000 13.76109007  3
 DOPA URGENCES          69.10  82.60  77.36667  7.24315769  3
 DPU                    99.76 100.00  99.92000  0.13856406  3
-DXCARE                 21.05 100.00  86.85923 29.37125847 13
+DXCARE                 21.05 100.00  88.41133 27.49990854 15
 EMED                  100.00 100.00 100.00000          NA  1
 EQUAFILE               99.10  99.10  99.10000          NA  1
 E SHERPA              100.00 100.00 100.00000          NA  1
@@ -921,6 +957,7 @@ EXPERTIZ               99.00 100.00  99.66667  0.57735027  3
 EXPERT SANTE           81.00  81.00  81.00000          NA  1
 EXPERT SANTÉ          100.00 100.00 100.00000          NA  1
 FIRSTNET               31.20  87.30  61.43333 22.18284623  6
+H+ACUTE                99.00  99.00  99.00000  0.00000000  2
 HOPITAL MANAGER       100.00 100.00 100.00000  0.00000000  2
 MEDIBASE               65.70  65.70  65.70000          NA  1
 MEDIBOARD               2.00 100.00  84.92000 36.60915232  7
@@ -937,6 +974,7 @@ OSOFT                 100.00 100.00 100.00000  0.00000000  2
 POLYMEDIS              99.30  99.90  99.68000  0.26832816  5
 QCARE                   0.00   0.00   0.00000          NA  1
 RESURGENCES             0.00 100.00  81.57931 37.96997704 29
+RESURGENCES            99.00  99.00  99.00000  0.00000000 17
 RPUEXPRESS             98.37  99.94  99.15500  1.11015765  2
 SANOCOM               100.00 100.00 100.00000  0.00000000  2
 SHAREGATE             100.00 100.00 100.00000  0.00000000  2
@@ -951,7 +989,7 @@ URGEST                  0.00   0.00   0.00000          NA  1
 URQUAL                  0.00 100.00  90.87000 22.09346414 35
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-24-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-27-1.png) 
 
 Conformité par région
 =====================
@@ -968,31 +1006,33 @@ BRETAGNE            99.80 100  99.99167  0.03677362 30
 CHAMPAGNE ARDENNES  99.80 100  99.98750  0.05000000 16
 FRANCHE COMTE      100.00 100 100.00000  0.00000000 13
 LIMOUSIN            99.95 100  99.99333  0.01658312  9
+LORRAINE           100.00 100 100.00000  0.00000000 23
 MIDI PYRENEES       98.74 100  99.95054  0.20698827 37
 PACA                 0.00 100  97.99800 14.14185177 50
 RHONE ALPES        100.00 100 100.00000  0.00000000 70
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-25-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-28-1.png) 
 
 Diagnostic (DP)
 ---------------
 
 ```
-                     Min    Max  moyenne ecart-type Nb
-ALSACE              0.00  98.95 52.12889  34.353078 18
-AQUITAINE           0.00  99.80 63.42121  39.782563 35
-BOURGOGNE           0.00 100.00 62.18182  44.985327 23
-BRETAGNE            0.00 100.00 63.90567  40.977779 30
-CHAMPAGNE ARDENNES  0.00  99.70 67.61875  41.100790 16
-FRANCHE COMTE       5.00 100.00 73.45385  30.568655 13
-LIMOUSIN           85.57  98.98 96.81667   4.256727  9
-MIDI PYRENEES       0.00 100.00 70.32676  37.940900 37
-PACA                0.00  99.39 88.78780  23.584018 50
-RHONE ALPES        95.00  95.00 95.00000   0.000000 70
+                      Min    Max   moyenne ecart-type Nb
+ALSACE               0.00  98.95  52.12889  34.353078 18
+AQUITAINE            0.00  99.80  63.42121  39.782563 35
+BOURGOGNE            0.00 100.00  62.18182  44.985327 23
+BRETAGNE             0.00 100.00  63.90567  40.977779 30
+CHAMPAGNE ARDENNES   0.00  99.70  67.61875  41.100790 16
+FRANCHE COMTE        5.00 100.00  73.45385  30.568655 13
+LIMOUSIN            85.57  98.98  96.81667   4.256727  9
+LORRAINE           100.00 100.00 100.00000   0.000000 23
+MIDI PYRENEES        0.00 100.00  70.32676  37.940900 37
+PACA                 0.00  99.39  88.78780  23.584018 50
+RHONE ALPES         95.00  95.00  95.00000   0.000000 70
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-26-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-29-1.png) 
 
 Mode de sortie (MS)
 -------------------
@@ -1006,12 +1046,13 @@ BRETAGNE           13.50 100.00 91.54533333 21.6244593 30
 CHAMPAGNE ARDENNES 69.10 100.00 94.84375000  9.6193533 16
 FRANCHE COMTE       0.00   0.31  0.07230769  0.1115164 13
 LIMOUSIN           99.39 100.00 99.88666667  0.2200568  9
+LORRAINE           98.00  99.00 98.95652174  0.2085144 23
 MIDI PYRENEES       0.00 100.00 89.86405405 20.8648135 37
 PACA                0.00 100.00 87.24620000 29.0773015 50
 RHONE ALPES          Inf   -Inf         NaN         NA 70
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-27-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-30-1.png) 
 
 Exhaustivié par région
 ======================
@@ -1037,12 +1078,13 @@ BRETAGNE           100.00  100 100.00000  0.00000000 30
 CHAMPAGNE ARDENNES  99.80  100  99.98750  0.05000000 16
 FRANCHE COMTE         Inf -Inf       NaN          NA 13
 LIMOUSIN            99.95  100  99.99333  0.01658312  9
+LORRAINE           100.00  100 100.00000  0.00000000 23
 MIDI PYRENEES       99.96  100  99.99676  0.01028863 37
 PACA                 0.00  100  97.99800 14.14185177 50
 RHONE ALPES        100.00  100 100.00000  0.00000000 70
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-28-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-31-1.png) 
 
 Diagnostic (DP)
 ---------------
@@ -1056,12 +1098,13 @@ BRETAGNE            0.00 100.00 66.77667 39.33143591 30
 CHAMPAGNE ARDENNES  0.00  99.80 74.30625 37.78316148 16
 FRANCHE COMTE      99.90 100.00 99.99231  0.02773501 13
 LIMOUSIN           85.57  98.98 96.81667  4.25672703  9
+LORRAINE           33.00 100.00 96.13043 13.89998152 23
 MIDI PYRENEES       0.00 100.00 70.79919 38.08214975 37
 PACA                0.00 100.00 89.00340 23.62753734 50
 RHONE ALPES         0.00 100.00 72.23077 36.68479301 70
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-29-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-32-1.png) 
 
 Mode de sortie (MS)
 -------------------
@@ -1075,12 +1118,13 @@ BRETAGNE           13.50 100.0 91.54533 21.6244593 30
 CHAMPAGNE ARDENNES 69.10 100.0 94.84375  9.6193533 16
 FRANCHE COMTE       4.90  99.1 73.18462 30.5388781 13
 LIMOUSIN           99.39 100.0 99.88667  0.2200568  9
+LORRAINE           98.00  99.0 98.95652  0.2085144 23
 MIDI PYRENEES       0.00 100.0 92.50892 19.0664729 37
 PACA                0.00 100.0 87.24620 29.0773015 50
 RHONE ALPES         0.00 100.0 86.63077 31.7227093 70
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-30-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-33-1.png) 
 
 Résultats secondaires
 =====================
@@ -1091,11 +1135,11 @@ Résultats secondaires
 ```
 
  NON NON   OUI OUI  
-  15    1  284    1 
+  15    1  307    1 
 ```
 
 ```
-[1] "4.98 %"  "0.33 %"  "94.35 %" "0.33 %" 
+[1] "4.63 %"  "0.31 %"  "94.75 %" "0.31 %" 
 ```
 
 Messges pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? intégratin systématique  des thésaurus, démarche d'amélioration.
