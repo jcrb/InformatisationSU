@@ -151,7 +151,7 @@ region@data$fedoru <- 0
 m <- c(1,1,0,0,1,1,0,1,0,1,0,0,1,1,1,1,2,2,0,0,1,1)
 region@data$fedoru <- m
 
-plot(region, col = ifelse(region@data$fedoru > 0, "cornflowerblue", "gray80"), main = "Régions membres de la FEDORU (Octobre 2015)")
+plot(region, col = ifelse(region@data$fedoru > 0, "palegreen", "gray80"), main = "Régions membres de la FEDORU (Octobre 2015)")
 
 
 # on ajoute une colonne participation. Les régions participantes = 1 sinon 0
@@ -217,11 +217,15 @@ d$Logiciel_2015 <- as.factor(d$Logiciel_2015)
 
 Logiciels par ordre décroissant
 -------------------------------
-```{r, echo=FALSE, comment=""}
+```{r, echo=FALSE, comment="", fig.height=10}
 t <- sort(table(d$Logiciel_2015), decreasing = TRUE)
 t
-par(mar=c(6,3,2,2))
-barplot(t, las = 2, cex.names = 0.7, main = "Logiciels utilisés", col = ifelse(t >= 10, "cornflowerblue", "gray80"))
+# par(mar=c(6,3,2,2))
+# barplot(t, las = 2, cex.names = 0.7, main = "Logiciels utilisés", col = ifelse(t >= 10, "cornflowerblue", "gray80"))
+
+t <- sort(table(d$Logiciel_2015), decreasing = FALSE)
+par(mar=c(4,6,2,2))
+barplot(t, las = 2, cex.names = 0.7, main = "Logiciels utilisés", col = ifelse(t >= 10, "cornflowerblue", "gray80"), horiz = TRUE)
 
 ```
 
