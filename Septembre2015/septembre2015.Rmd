@@ -164,6 +164,7 @@ region$reg.nom[region$reg.nom == "PROVENCE-ALPES-COTE D'AZUR"] <- "PACA"
 
 reg <- region@data
 
+
 # carte des régions participantes
 plot(region, col = ifelse(reg$participation == 1, "cornflowerblue", "gray80"))
 title(main="Régions participantes (enquête 2015)")
