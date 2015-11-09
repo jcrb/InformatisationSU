@@ -14,35 +14,37 @@ output:
   word_document: default
 ---
 
-7/9/2015
-========
-Reprise de l'exploitation des logiciels des SU
+```{r set-options, echo=FALSE, cache=FALSE}
+library(knitr)
+options(width=90, digits = 2)
+opts_chunk$set(comment = "", warning = FALSE, message = FALSE, echo = TRUE, tidy = FALSE, size="small")
+# read_chunk("some/script/I/want/to/load.R")
+```
 
-- fichier source: DATA/FEDORU - ENQUETE LOGICIEL 2015 - V2 (12 06 15) (3)
-- création d'un dossier spécifique __Septembre2015__ contenent un sous dossier __data__ pour y stocker les résultats régionaux sous forme de fichier .csv. 
+Historique
+==========
 
-17/9/2015
----------
-- récup données ORUMIP (Olivier Azema)
+- 7/9/2015 Reprise de l'exploitation des logiciels des SU
 
-18/9/2015
----------
-- données Bourgogne mises à jour
+    - fichier source: DATA/FEDORU - ENQUETE LOGICIEL 2015 - V2 (12 06 15) (3)
+    - création d'un dossier spécifique __Septembre2015__ contenent un sous dossier __data__ pour y stocker les résultats régionaux sous forme de fichier .csv. 
 
-30/9/2015
----------
-- intégration des données de la Franche-comté
-
-13/10/2015
-----------
-- intégration de la Lorraine
+- 17/9/2015 récup données ORUMIP (Olivier Azema)
+- 18/9/2015 données Bourgogne mises à jour
+- 30/9/2015 intégration des données de la Franche-comté
+- 13/10/2015 intégration de la Lorraine
 
 Récupération des fichiers csv
 -----------------------------
 
-```{r, echo = FALSE, eval=FALSE}
-- les 5 premières lignes sont éliminées
-- élimination du héader => il faudre en créer un
+```{r, echo = FALSE, eval= FALSE}
+
+#----------------------------------------------
+# POUR ACTIVER CETTE PARTIE METTRE EVAL = TRUE
+#----------------------------------------------
+
+# - les 5 premières lignes sont éliminées
+# - élimination du héader => il faudre en créer un
 
 path = "./data/" # path = "./Septembre2015/data/" si console
 out.file <- NULL
@@ -65,14 +67,11 @@ n <- c("Region", "Departement", "FINESS", "Hopital", "CP", "Routage","Logiciel_2
  names(out.file) <- n
 
 write.table(out.file, file = "archive.csv", sep=",", row.names = FALSE, qmethod = "double", fileEncoding="utf-8")
-```
 
-Récupération du fichier des données
------------------------------------
-```{r, echo=FALSE}
-d <- read.csv("archive.csv") # d <- read.csv("Septembre2015/archive.csv")
+# nettoyage final des données
+#============================
 source("routines.R") # source("Septembre2015/routines.R")
-
+d <- out.file
 # suppression de la première ligne qui est vide
 # d <- d[-1,]
 d <- d[as.character(d$Region) != "",]
@@ -93,7 +92,6 @@ d$DP_confor <- gsub(">", "", d$DP_confor)
 d$MS_exhaus <- gsub("%", "", d$MS_exhaus)
 d$MS_confor <- gsub("%", "", d$MS_confor)
 
-
 # ajout d'une colonne n° de région
 d$reg.id <- NA
 d$reg.id[d$Region == "ALSACE"] <- 42
@@ -107,9 +105,24 @@ d$reg.id[d$Region == "RHONE ALPES"] <- 82
 d$reg.id[d$Region == "FRANCHE COMTE"] <- 43
 d$reg.id[d$Region == "MIDI PYRENEES"] <- 73
 d$reg.id[d$Region == "LORRAINE"] <- 41
+
+write.table(d, file = "archive2.csv", sep=",", row.names = FALSE, qmethod = "double", fileEncoding="utf-8")
+
+getwd()
+```
+
+Données générales
+-----------------------------------
+
+```{r, echo=FALSE}
+d <- read.csv("archive2.csv") # d <- read.csv("Septembre2015/archive.csv")
+source("routines.R") # source("Septembre2015/routines.R")
+
+
 ```
 
 - Nombre de régions participantes: `r nlevels(d$Region)`: 
+
 ```{r, echo=FALSE, comment=""}
 levels(d$Region)
 ```
@@ -119,10 +132,10 @@ levels(d$Region)
 
 Cartographie
 ============
-
+  
 Cartographie des régions participantes et des logiciels.
 
-```{r carto_region, echo=FALSE, fig.width=16}
+```{r carto_region, echo=FALSE, fig.width=8}
 
 library(sp)
 library("RColorBrewer")
@@ -133,8 +146,8 @@ options(scipen = 6)
 file <- "../france_region.RData" # fichier source pour Mac
 load(file) # le fond s'appelle region (SpatialPolygonDataFrame)
 
-par(mar=c(0,0,1,0))
-par(mfcol = c(1,1))
+par(mar=c(0,0,1,0), mfrow = c(1,1))
+# par(mfrow = c(1,1))
 # plot(region)
 # title(main="Régions participantes (enquête 2015)")
 
@@ -164,17 +177,22 @@ region$reg.nom[region$reg.nom == "PROVENCE-ALPES-COTE D'AZUR"] <- "PACA"
 
 reg <- region@data
 
+```
 
+Régions participantes à l'étude
+```{r, echo=FALSE, fig.height=10}
 # carte des régions participantes
+par(mar=c(0,0,1,0))
 plot(region, col = ifelse(reg$participation == 1, "cornflowerblue", "gray80"))
 title(main="Régions participantes (enquête 2015)")
 for(i in 1:length(reg$participation)){if(reg$participation[i] == 1) text(reg$x[i], reg$y[i], reg$reg.nom[i], cex = 0.6) }
 
-
 ```
+
 
 Editeurs
 ========
+
 ```{r, echo=FALSE, comment=""}
 d$Editeur <- as.character(d$Editeur)
 d$Editeur[d$Editeur == ""] <- NA
@@ -186,13 +204,15 @@ d$Editeur[d$Editeur == "module Urgences (WebSanté)"] <- "WEBSANTE"
 d$Editeur[d$Editeur == "DE LA SOCIÉTÉ C3"] <- "C3"
 
 d$Editeur <- toupper(d$Editeur)
-```
 
+summary(as.factor(d$Editeur))
+```
+Dna la majorité des cas, les répondants ne connaissent pas leur éditeur.
 
 Logiciels 2015
 ==============
-
-```{r, echo=FALSE}
+  
+  ```{r, echo=FALSE}
 
 d$Logiciel_2015 <- as.character(d$Logiciel_2015)
 d$Logiciel_2015 <- toupper(d$Logiciel_2015)
@@ -211,13 +231,17 @@ d$Logiciel_2015[d$Logiciel_2015=="MEDICAL OBJECT DE MEDIWERE 21"] <- "MEDIWERE"
 d$Logiciel_2015[d$Logiciel_2015=="ANTARES V2 DE INOVACUM"] <- "ANTARES"
 d$Logiciel_2015[d$Logiciel_2015=="AGFA EXAGON"] <- "EXAGONE"
 d$Logiciel_2015[d$Logiciel_2015=="LOGICIEL MAISON"] <- "DEVELOPPEMENT INTERNE"
+d$Logiciel_2015[d$Logiciel_2015=="EXPERT SANTÉ"] <- "EXPERT SANTE"
+
 d$Logiciel_2015 <- as.factor(d$Logiciel_2015)
 ```
 
 - Nombre de logiciels utilisés: `r length(unique(d$Logiciel_2015))`
+- Huit produits sont cités 10 fois ou plus.
 
 Logiciels par ordre décroissant
 -------------------------------
+
 ```{r, echo=FALSE, comment="", fig.height=10}
 t <- sort(table(d$Logiciel_2015), decreasing = TRUE)
 t
@@ -232,7 +256,7 @@ barplot(t, las = 2, cex.names = 0.7, main = "Logiciels utilisés", col = ifelse(
 
 Logiciels par région
 --------------------
-
+  
 ```{r, comment="", echo=FALSE}
 table(d$Logiciel_2015, d$Region)
 
@@ -260,6 +284,7 @@ text(12.1, 0.45,"0.45")
 
 Cartographie des logiciels
 --------------------------
+
 ```{r, echo=FALSE}
 # tableau des logiciels par n° de région
 t <- table(d$Logiciel_2015, d$reg.id)
@@ -301,7 +326,7 @@ plot(region, col = ifelse(!is.na(reg$SIDSU) & as.numeric(as.character(reg$SIDSU)
 
 Un logiciel est présent dans combien de régions ?
 -------------------------------------------------
-
+  
 ```{r, echo=FALSE}
 is.zero <- function(x){return(ifelse(x==0, TRUE, FALSE))}
 
@@ -323,7 +348,7 @@ barplot(a, names.arg = rownames(a), las = 2, cex.names = 0.7, ylab = "Nombre de 
 
 Analyse des RPU
 ===============
-
+  
 ```{r, echo=FALSE, warning=FALSE}
 d$Nb_RPU_T1_2015 <- as.numeric(as.character(d$Nb_RPU_T1_2015))
 n.rpu <- sum(d$Nb_RPU_T1_2015, na.rm = TRUE)
@@ -333,6 +358,7 @@ Nombre de RPU produits: `r n.rpu`
 
 Nombre de RPU par logiciel
 --------------------------
+
 ```{r, comment="", echo=FALSE, comment=""}
 t <- tapply(d$Nb_RPU_T1_2015, d$Logiciel_2015, sum, na.rm = TRUE)
 n <- cbind(sort(t ,decreasing = TRUE))
@@ -342,9 +368,9 @@ n
 
 Nombre de jours manquants
 -------------------------
-
-### Par logiciel
-
+  
+  ### Par logiciel
+  
 ```{r, echo=FALSE, comment=""}
 t <- tapply(d$Jours_manquants, d$Logiciel_2015, sum, na.rm = TRUE)
 n <- cbind(sort(t ,decreasing = TRUE))
@@ -364,9 +390,9 @@ n
 
 Indicateurs
 ===========
-
+  
 Trois indicateurs ont été retenus:
-
+  
 - Date de naissance
 - Diagnostic principal (DP)
 - Mode de sortie
@@ -375,7 +401,7 @@ Chaque indicateur a été évalué sur deux critères: __conformité__ et __exha
 
 Date de naissance
 ------------------
-
+  
 - taux de conformité:
 ```{r, echo=FALSE, comment="", warning=FALSE}
 d$DN_confor <- as.numeric(gsub("%", "", d$DN_confor))
@@ -384,7 +410,7 @@ DN.conforme
 ```
 
 - conformité par outil:
-
+  
 ```{r, echo=FALSE, comment=""}
 a <- summary.par.logiciel(d$DN_confor, d$Logiciel_2015)
 a
@@ -565,9 +591,8 @@ Focaliser sur les rectangles bleus. Voir si le n° de version permet de discrimi
 
 Analyse de Urqual
 =================
-
+  
 ```{r, echo=FALSE, comment=""}
 uq <- d[d$Logiciel_2015 == "URQUAL",]
 
 ```
-
