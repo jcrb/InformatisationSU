@@ -212,7 +212,7 @@ Dna la majorité des cas, les répondants ne connaissent pas leur éditeur.
 Logiciels 2015
 ==============
   
-  ```{r, echo=FALSE}
+```{r, echo=FALSE}
 
 d$Logiciel_2015 <- as.character(d$Logiciel_2015)
 d$Logiciel_2015 <- toupper(d$Logiciel_2015)
@@ -432,7 +432,6 @@ DN.ex
 ```{r, echo=FALSE, message=FALSE, comment=""}
 
 a <- summary.par.logiciel(d$DN_exhaus, d$Logiciel_2015)
-a
 
 boxplot(d$DN_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Date de naissance - exhaustivité")
 ```
@@ -505,8 +504,17 @@ ms.ex
 ```{r, echo=FALSE, message=FALSE, comment="", warning=FALSE}
 
 a <- summary.par.logiciel(d$MS_exhaus, d$Logiciel_2015)
-a
+iqr <- a$Q75 - a$Q25
+a <- cbind(a, iqr)
+# affiche les logiciels dont l' iqr > 1
+b <- a[which(a$iqr > 10), ]
+# affiche trié
+b[order(b$iqr, decreasing = TRUE),]
+# on ne conserve que ceux dont l'IQR est élevé
+c <- d[d$Logiciel_2015 %in% rownames(b),]
+boxplot(c$MS_exhaus ~ factor(c$Logiciel_2015), las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Mode de sortie - variabilité de l'exhaustivité > 10%")
 
+# tous les logiciels
 boxplot(d$MS_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Mode de sortie - exhaustivité")
 ```
 
