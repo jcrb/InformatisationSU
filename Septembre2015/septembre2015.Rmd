@@ -112,7 +112,7 @@ getwd()
 ```
 
 Données générales
------------------------------------
+=================
 
 Périmètre du questionnaire:
 
@@ -126,6 +126,9 @@ source("routines.R") # source("Septembre2015/routines.R")
 
 
 ```
+
+Résultats
+---------
 
 - Nombre de régions participantes: `r nlevels(d$Region)`: 
 
@@ -186,6 +189,7 @@ reg <- region@data
 ```
 
 Régions participantes à l'étude
+
 ```{r, echo=FALSE, fig.height=10}
 # carte des régions participantes
 par(mar=c(0,0,1,0))
@@ -205,15 +209,20 @@ d$Editeur[d$Editeur == ""] <- NA
 d$Editeur[d$Editeur == "(McKesson)"] <- "McKesson"
 d$Editeur[d$Editeur == "Berger Levrault"] <- "BERGER-LEVRAULT"
 d$Editeur[d$Editeur == "Maincare (ex-McKesson)"] <- "McKesson"
+d$Editeur[d$Editeur == "MC KESSON"] <- "McKesson"
+d$Editeur[d$Editeur == "MCKESSON - HÔPITAL ADAPTÉ"] <- "McKesson"
 d$Editeur[d$Editeur == "SIB (Santé Informatique de Bretagne)"] <- "SIB"
 d$Editeur[d$Editeur == "module Urgences (WebSanté)"] <- "WEBSANTE"
 d$Editeur[d$Editeur == "DE LA SOCIÉTÉ C3"] <- "C3"
+d$Editeur[d$Editeur == "(MEDASYS)"] <- "MEDASYS"
 
 d$Editeur <- toupper(d$Editeur)
 
-summary(as.factor(d$Editeur))
+s <- summary(as.factor(d$Editeur))
+n.na <- sum(is.na(d$Editeur))
+p.na <- mean(is.na(d$Editeur))
 ```
-Dna la majorité des cas, les répondants ne connaissent pas leur éditeur.
+Dans la majorité des cas (`r round(p.na * 100, 2)`), les répondants ne connaissent pas leur éditeur.
 
 Logiciels 2015
 ==============
@@ -601,7 +610,7 @@ paste(round(prop.table(table(d$RPU_transmis))*100, 2), "%")
 
 Messages:
 
-- pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? 
+- pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? DSI: de la saisie de l'info dans le SU à l'envoi des données à l'ORU: quelles sont les étapes de la chaîne de production
 - intégration systématique  des thésaurus
 - quelle démarche d'amélioration.
 - Information proactive des sociétés savantes pour la publicationn des Référentiels: info systématique de la Fedoru.
