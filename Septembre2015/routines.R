@@ -7,6 +7,7 @@
 #' @return une matrice de 5 colonnes. Le nombre de lignes est égal au nombre de groupes (facteurs)
 #' @param vx un vecteur de nombre
 #' @param fx un vecteur équivalent de facteurs
+#' @return dataframe
 #' @usage a <- summary.par.logiciel(d$MS_exhaus, d$Logiciel_2015)
 
 summary.par.logiciel <- function(vx, fx){
@@ -25,5 +26,5 @@ summary.par.logiciel <- function(vx, fx){
   a <- cbind(min, max, mean, mediane, sd, n, Q25, Q75)
   colnames(a) <- c("Min", "Max", "moyenne", "médiane", "ecart-type", "Nb", "Q25", "Q75")
   
-  return(a)
+  return(data.frame(a))
 }

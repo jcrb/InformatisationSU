@@ -447,7 +447,7 @@ Date de naissance
   
 
 ```
-                      Min Max moyenne médiane ecart-type Nb Q25 Q75
+                      Min Max moyenne médiane ecart.type Nb Q25 Q75
 ANTARES               100 100     100     100     0.0000  2 100 100
 ATALANTE              100 100     100     100     0.0000 10 100 100
 AXIGATE               100 100     100     100         NA  1 100 100
@@ -514,64 +514,6 @@ URQUAL                100 100     100     100     0.0345 35 100 100
 ```
 
 - exhaustivité par outil
-
-```
-                      Min  Max moyenne médiane ecart-type Nb Q25 Q75
-ANTARES               100  100     100     100     0.0000  2 100 100
-ATALANTE              100  100     100     100     0.0000 10 100 100
-AXIGATE               100  100     100     100         NA  1 100 100
-CLIMCO                100  100     100     100         NA  1 100 100
-CLINICOM              100  100     100     100     0.0000  3 100 100
-CORA URGENCE          100  100     100     100         NA  1 100 100
-CORPUS                100  100     100     100         NA  1 100 100
-CORTEXTE              100  100     100     100     0.0000  2 100 100
-CROSSWAY              100  100     100     100     0.0000 14 100 100
-DEVELOPPEMENT INTERNE 100  100     100     100     0.0000  3 100 100
-DIAMMS                100  100     100     100         NA  1 100 100
-DMU                   100  100     100     100     0.0000 50 100 100
-DOPASOIN              100  100     100     100     0.0231  3 100 100
-DOPA URGENCES         100  100     100     100     0.0000  3 100 100
-DPU                   100  100     100     100     0.0000  3 100 100
-DXCARE                100  100     100     100     0.0000 15 100 100
-EMED                  100  100     100     100         NA  1 100 100
-EQUAFILE              Inf -Inf     NaN      NA         NA  1  NA  NA
-E SHERPA              100  100     100     100         NA  1 100 100
-EXAGONE               100  100     100     100     0.0000  3 100 100
-EXPERTIZ              100  100     100     100     0.0000  3 100 100
-EXPERT SANTE          100  100     100     100     0.0000  2 100 100
-FIRSTNET              Inf -Inf     NaN      NA         NA  6  NA  NA
-H+ACUTE               100  100     100     100     0.0000  2 100 100
-HOPITAL MANAGER       100  100     100     100     0.0000  2 100 100
-MEDIBASE              100  100     100     100         NA  1 100 100
-MEDIBOARD             100  100     100     100     0.0000  7 100 100
-MÉDICAL OBJECT        100  100     100     100     0.0000  2 100 100
-MEDINTUX              100  100     100     100         NA  1 100 100
-MEDIS                 100  100     100     100         NA  1 100 100
-MEDIWERE              100  100     100     100         NA  1 100 100
-M-PLUS                100  100     100     100         NA  1 100 100
-NAFAMA                100  100     100     100         NA  1 100 100
-ORBIS                 100  100     100     100     0.0000  5 100 100
-ORUV2                 100  100     100     100     0.0150  4 100 100
-OSIRIS                100  100     100     100         NA  1 100 100
-OSOFT                 100  100     100     100     0.0000  2 100 100
-POLYMEDIS             100  100     100     100     0.0000  5 100 100
-QCARE                 100  100     100     100         NA  1 100 100
-RESURGENCES           100  100     100     100     0.0103 29 100 100
-RESURGENCES           100  100     100     100     0.0000 17 100 100
-RPUEXPRESS            100  100     100     100     0.0000  2 100 100
-SANOCOM               100  100     100     100     0.0000  2 100 100
-SHAREGATE             100  100     100     100     0.0000  2 100 100
-SIDSU                 100  100     100     100     0.0000  9 100 100
-SIGEMS                100  100     100     100     0.0000  3 100 100
-SILLAGE DMU           100  100     100     100     0.0000  2 100 100
-SILLAGE URGENCES      100  100     100     100     0.0000  8 100 100
-SPEC 4D               100  100     100     100         NA  1 100 100
-TRACK CARE            100  100     100     100         NA  1 100 100
-TU-ORUPACA              0  100      98     100    14.9071 45 100 100
-URGEST                100  100     100     100         NA  1 100 100
-URQUAL                100  100     100     100     0.0017 35 100 100
-```
-
 ![](septembre2015_files/figure-html/unnamed-chunk-20-1.png) 
 
 Diagnostic (DP)
@@ -587,7 +529,7 @@ Diagnostic (DP)
 - conformité par outil
 
 ```
-                         Min   Max moyenne médiane ecart-type Nb     Q25     Q75
+                         Min   Max moyenne médiane ecart.type Nb     Q25     Q75
 ANTARES                45.84  90.5   68.18   68.18     31.586  2  57.008  79.343
 ATALANTE                0.00  99.0   44.21   28.92     38.533 10  18.040  80.210
 AXIGATE                 0.00   0.0    0.00    0.00         NA  1   0.000   0.000
@@ -655,7 +597,7 @@ URQUAL                  0.00 100.0   61.17   86.89     43.181 35   4.210  98.025
 - exhaustivité par outil
 
 ```
-                        Min   Max moyenne médiane ecart-type Nb     Q25     Q75
+                        Min   Max moyenne médiane ecart.type Nb     Q25     Q75
 ANTARES                45.8  90.5   68.18   68.18     31.586  2  57.008  79.343
 ATALANTE                0.0  99.0   44.31   28.92     38.689 10  18.040  80.210
 AXIGATE                 0.0   0.0    0.00    0.00         NA  1   0.000   0.000
@@ -726,7 +668,7 @@ Mode de sortie (MS)
 - conformité par outil
 
 ```
-                      Min  Max moyenne médiane ecart-type Nb   Q25 Q75
+                      Min  Max moyenne médiane ecart.type Nb   Q25 Q75
 ANTARES                43   44    43.5      44       0.71  2  43.2  44
 ATALANTE                2   91    43.4      36      29.63 10  22.0  61
 AXIGATE               117  117   117.0     117         NA  1 117.0 117
@@ -794,63 +736,18 @@ URQUAL                 12  114    58.5      62      34.98 35  16.0  86
 - exhaustivité par outil
 
 ```
-                      Min Max moyenne médiane ecart-type Nb Q25 Q75
-ANTARES                84  84      84      84      0.346  2  84  84
-ATALANTE                0  99      64      80     37.093 10  30  95
-AXIGATE               100 100     100     100         NA  1 100 100
-CLIMCO                  0   0       0       0         NA  1   0   0
-CLINICOM              100 100     100     100      0.046  3 100 100
-CORA URGENCE           31  31      31      31         NA  1  31  31
-CORPUS                 99  99      99      99         NA  1  99  99
-CORTEXTE               99 100     100     100      0.191  2  99 100
-CROSSWAY                0  99      50      68     47.829 14   0  97
-DEVELOPPEMENT INTERNE  95 100      98     100      2.887  3  98 100
-DIAMMS                 80  80      80      80         NA  1  80  80
-DMU                    97 100     100     100      0.662 50 100 100
-DOPASOIN               72 100      86      87     13.761  3  80  93
-DOPA URGENCES          69  83      77      80      7.243  3  75  82
-DPU                   100 100     100     100      0.139  3 100 100
-DXCARE                 21 100      88     100     27.500 15  98 100
-EMED                  100 100     100     100         NA  1 100 100
-EQUAFILE               99  99      99      99         NA  1  99  99
-E SHERPA              100 100     100     100         NA  1 100 100
-EXAGONE                 5 100      68     100     54.848  3  52 100
-EXPERTIZ               99 100     100     100      0.577  3 100 100
-EXPERT SANTE           81 100      90      90     13.435  2  86  95
-FIRSTNET               31  87      61      60     22.183  6  48  80
-H+ACUTE                99  99      99      99      0.000  2  99  99
-HOPITAL MANAGER       100 100     100     100      0.000  2 100 100
-MEDIBASE               66  66      66      66         NA  1  66  66
-MEDIBOARD               2 100      85     100     36.609  7  96 100
-MÉDICAL OBJECT         50  91      70      70     28.942  2  60  80
-MEDINTUX              100 100     100     100         NA  1 100 100
-MEDIS                  14  14      14      14         NA  1  14  14
-MEDIWERE              100 100     100     100         NA  1 100 100
-M-PLUS                 17  17      17      17         NA  1  17  17
-NAFAMA                100 100     100     100         NA  1 100 100
-ORBIS                  16  97      44      20     45.801  5  18  58
-ORUV2                  99 100     100     100      0.449  4 100 100
-OSIRIS                100 100     100     100         NA  1 100 100
-OSOFT                 100 100     100     100      0.000  2 100 100
-POLYMEDIS              99 100     100     100      0.268  5 100 100
-QCARE                   0   0       0       0         NA  1   0   0
-RESURGENCES             0 100      82     100     37.970 29  96 100
-RESURGENCES            99  99      99      99      0.000 17  99  99
-RPUEXPRESS             98 100      99      99      1.110  2  99 100
-SANOCOM               100 100     100     100      0.000  2 100 100
-SHAREGATE             100 100     100     100      0.000  2 100 100
-SIDSU                  98 100      99     100      0.566  9  99 100
-SIGEMS                 55 100      77      77     31.749  3  66  89
-SILLAGE DMU            99 100      99      99      0.849  2  99 100
-SILLAGE URGENCES       68 100      94      99     10.776  8  97  99
-SPEC 4D               100 100     100     100         NA  1 100 100
-TRACK CARE             98  98      98      98         NA  1  98  98
-TU-ORUPACA              0 100      95     100     15.666 45  96 100
-URGEST                  0   0       0       0         NA  1   0   0
-URQUAL                  0 100      91      98     22.093 35  94 100
+               Min Max moyenne médiane ecart.type Nb Q25 Q75 iqr
+CROSSWAY         0  99      50      68         48 14   0  97  97
+ATALANTE         0  99      64      80         37 10  30  95  65
+EXAGONE          5 100      68     100         55  3  52 100  48
+ORBIS           16  97      44      20         46  5  18  58  41
+FIRSTNET        31  87      61      60         22  6  48  80  32
+SIGEMS          55 100      77      77         32  3  66  89  22
+MÉDICAL OBJECT  50  91      70      70         29  2  60  80  20
+DOPASOIN        72 100      86      87         14  3  80  93  14
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-28-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-28-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-28-2.png) 
 
 Conformité par région
 =====================
@@ -859,7 +756,7 @@ Date de naissance
 ------------------
 
 ```
-                   Min Max moyenne médiane ecart-type Nb Q25 Q75
+                   Min Max moyenne médiane ecart.type Nb Q25 Q75
 ALSACE             100 100     100     100      0.000 18 100 100
 AQUITAINE          100 100     100     100      0.000 35 100 100
 BOURGOGNE          100 100     100     100      0.000 23 100 100
@@ -879,7 +776,7 @@ Diagnostic (DP)
 ---------------
 
 ```
-                   Min Max moyenne médiane ecart-type Nb   Q25 Q75
+                   Min Max moyenne médiane ecart.type Nb   Q25 Q75
 ALSACE               0  99      52      52       34.4 18  18.0  86
 AQUITAINE            0 100      63      84       39.8 35  27.3  96
 BOURGOGNE            0 100      62      95       45.0 23   3.8  99
@@ -899,7 +796,7 @@ Mode de sortie (MS)
 -------------------
 
 ```
-                   Min  Max moyenne médiane ecart-type Nb Q25 Q75
+                   Min  Max moyenne médiane ecart.type Nb Q25 Q75
 ALSACE              14   91    41.5      41       22.3 18  22  53
 AQUITAINE            1  117    53.0      42       43.5 35  13  96
 BOURGOGNE            2   92    30.2      12       32.8 23  12  64
@@ -922,7 +819,7 @@ Date de naissance
 ------------------
 
 ```
-                   Min  Max moyenne médiane ecart-type Nb Q25 Q75
+                   Min  Max moyenne médiane ecart.type Nb Q25 Q75
 ALSACE             100  100     100     100      0.000 18 100 100
 AQUITAINE          100  100     100     100      0.000 35 100 100
 BOURGOGNE          100  100     100     100      0.000 23 100 100
@@ -942,7 +839,7 @@ Diagnostic (DP)
 ---------------
 
 ```
-                   Min Max moyenne médiane ecart-type Nb   Q25 Q75
+                   Min Max moyenne médiane ecart.type Nb   Q25 Q75
 ALSACE               0  99      52      52     34.353 18  18.0  86
 AQUITAINE            0 100      63      84     39.785 35  27.3  96
 BOURGOGNE            0 100      62      95     45.024 23   3.8  99
@@ -962,7 +859,7 @@ Mode de sortie (MS)
 -------------------
 
 ```
-                    Min Max moyenne médiane ecart-type Nb Q25 Q75
+                    Min Max moyenne médiane ecart.type Nb Q25 Q75
 ALSACE             15.7 100      69      84      32.82 18  30  95
 AQUITAINE           0.0 100      89     100      27.60 35  98 100
 BOURGOGNE           0.0 100      81     100      39.19 23  97 100

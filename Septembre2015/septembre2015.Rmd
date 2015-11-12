@@ -120,7 +120,13 @@ getwd()
 ```
 
 Données générales
------------------------------------
+=================
+
+Périmètre du questionnaire:
+
+- période: 1er janvier 2015 au 31 mars 2015 (1er trimestre)
+- concerne toutes les structures volontaires membres de la FEDORU. Coordination régionale assurée par les ORU
+- questions
 
 ```{r, echo=FALSE}
 d <- read.csv("archive2.csv") # d <- read.csv("Septembre2015/archive.csv")
@@ -128,6 +134,9 @@ source("routines.R") # source("Septembre2015/routines.R")
 
 
 ```
+
+Résultats
+---------
 
 - Nombre de régions participantes: `r nlevels(d$Region)`: 
 
@@ -188,6 +197,7 @@ reg <- region@data
 ```
 
 Régions participantes à l'étude
+
 ```{r, echo=FALSE, fig.height=10}
 # carte des régions participantes
 par(mar=c(0,0,1,0))
@@ -207,20 +217,25 @@ d$Editeur[d$Editeur == ""] <- NA
 d$Editeur[d$Editeur == "(McKesson)"] <- "McKesson"
 d$Editeur[d$Editeur == "Berger Levrault"] <- "BERGER-LEVRAULT"
 d$Editeur[d$Editeur == "Maincare (ex-McKesson)"] <- "McKesson"
+d$Editeur[d$Editeur == "MC KESSON"] <- "McKesson"
+d$Editeur[d$Editeur == "MCKESSON - HÔPITAL ADAPTÉ"] <- "McKesson"
 d$Editeur[d$Editeur == "SIB (Santé Informatique de Bretagne)"] <- "SIB"
 d$Editeur[d$Editeur == "module Urgences (WebSanté)"] <- "WEBSANTE"
 d$Editeur[d$Editeur == "DE LA SOCIÉTÉ C3"] <- "C3"
+d$Editeur[d$Editeur == "(MEDASYS)"] <- "MEDASYS"
 
 d$Editeur <- toupper(d$Editeur)
 
-summary(as.factor(d$Editeur))
+s <- summary(as.factor(d$Editeur))
+n.na <- sum(is.na(d$Editeur))
+p.na <- mean(is.na(d$Editeur))
 ```
-Dna la majorité des cas, les répondants ne connaissent pas leur éditeur.
+Dans la majorité des cas (`r round(p.na * 100, 2)`), les répondants ne connaissent pas leur éditeur.
 
 Logiciels 2015
 ==============
   
-  ```{r, echo=FALSE}
+```{r, echo=FALSE}
 
 d$Logiciel_2015 <- as.character(d$Logiciel_2015)
 d$Logiciel_2015 <- toupper(d$Logiciel_2015)
@@ -440,7 +455,6 @@ DN.ex
 ```{r, echo=FALSE, message=FALSE, comment=""}
 
 a <- summary.par.logiciel(d$DN_exhaus, d$Logiciel_2015)
-a
 
 boxplot(d$DN_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Date de naissance - exhaustivité")
 ```
@@ -513,8 +527,17 @@ ms.ex
 ```{r, echo=FALSE, message=FALSE, comment="", warning=FALSE}
 
 a <- summary.par.logiciel(d$MS_exhaus, d$Logiciel_2015)
-a
+iqr <- a$Q75 - a$Q25
+a <- cbind(a, iqr)
+# affiche les logiciels dont l' iqr > 1
+b <- a[which(a$iqr > 10), ]
+# affiche trié
+b[order(b$iqr, decreasing = TRUE),]
+# on ne conserve que ceux dont l'IQR est élevé
+c <- d[d$Logiciel_2015 %in% rownames(b),]
+boxplot(c$MS_exhaus ~ factor(c$Logiciel_2015), las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Mode de sortie - variabilité de l'exhaustivité > 10%")
 
+# tous les logiciels
 boxplot(d$MS_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Mode de sortie - exhaustivité")
 ```
 
@@ -593,9 +616,19 @@ paste(round(prop.table(table(d$RPU_transmis))*100, 2), "%")
 
 ```
 
+<<<<<<< HEAD
 Messges pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? intégration systématique  des thésaurus, démarche d'amélioration.
 Information proactive des sociétés savantes pour la publicationn des Référentiels: info systématique de la Fedoru.
 Focaliser sur les rectangles bleus. Voir si le n° de version permet de discriminer les urqual qui remntent de ceux qui remontent mal.
+=======
+Messages:
+
+- pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? DSI: de la saisie de l'info dans le SU à l'envoi des données à l'ORU: quelles sont les étapes de la chaîne de production
+- intégration systématique  des thésaurus
+- quelle démarche d'amélioration.
+- Information proactive des sociétés savantes pour la publicationn des Référentiels: info systématique de la Fedoru.
+- Focaliser sur les rectangles bleus. Voir si le n° de version permet de discriminer les urqual qui remontent de ceux qui remontent mal.
+>>>>>>> b9052a7dd80e283494acc24d5348d639f959dc95
 
 Analyse de Urqual
 =================
