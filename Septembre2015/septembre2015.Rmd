@@ -114,6 +114,12 @@ getwd()
 Données générales
 -----------------------------------
 
+Périmètre du questionnaire:
+
+- période: 1er janvier 2015 au 31 mars 2015 (1er trimestre)
+- concerne toutes les structures volontaires membres de la FEDORU. Coordination régionale assurée par les ORU
+- questions
+
 ```{r, echo=FALSE}
 d <- read.csv("archive2.csv") # d <- read.csv("Septembre2015/archive.csv")
 source("routines.R") # source("Septembre2015/routines.R")
@@ -593,9 +599,13 @@ paste(round(prop.table(table(d$RPU_transmis))*100, 2), "%")
 
 ```
 
-Messges pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? intégratin systématique  des thésaurus, démarche d'amélioration.
-Information proactive des sociétés savantes pour la publicationn des Référentiels: info systématique de la Fedoru.
-Focaliser sur les rectangles bleus. Voir si le n° de version permet de discriminer les urqual qui remntent de ceux qui remontent mal.
+Messages:
+
+- pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? 
+- intégration systématique  des thésaurus
+- quelle démarche d'amélioration.
+- Information proactive des sociétés savantes pour la publicationn des Référentiels: info systématique de la Fedoru.
+- Focaliser sur les rectangles bleus. Voir si le n° de version permet de discriminer les urqual qui remontent de ceux qui remontent mal.
 
 Analyse de Urqual
 =================
