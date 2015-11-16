@@ -23,9 +23,18 @@ Récupération des fichiers csv
 
 
 Données générales
------------------------------------
+=================
+
+Périmètre du questionnaire:
+
+- période: 1er janvier 2015 au 31 mars 2015 (1er trimestre)
+- concerne toutes les structures volontaires membres de la FEDORU. Coordination régionale assurée par les ORU
+- questions
 
 
+
+Résultats
+---------
 
 - Nombre de régions participantes: 11: 
 
@@ -47,32 +56,18 @@ Cartographie des régions participantes et des logiciels.
 ![](septembre2015_files/figure-html/carto_region-1.png) 
 
 Régions participantes à l'étude
+
 ![](septembre2015_files/figure-html/unnamed-chunk-4-1.png) 
+
+![](septembre2015_files/figure-html/unnamed-chunk-5-1.png) 
 
 
 Editeurs
 ========
 
 
-```
-                         AGFA               BERGER-LEVRAULT              DE LA SOCIÉTÉ C3 
-                            2                            10                             1 
-                  DE MÉDIBASE FIRSNET MILLENIUM FIN D'ANNÉE                       H+ACUTE 
-                            1                             1                             2 
-                     IMPROOVE            INTÉGRÉ À CROSSWAY               LOGICIEL MAISON 
-                            6                             1                             1 
-                     MAINCARE                      MCKESSON                     MC KESSON 
-                            2                            17                             3 
-    MCKESSON - HÔPITAL ADAPTÉ                       MEDASYS                     (MEDASYS) 
-                            1                             4                             2 
-                     MEDIBASE                     OPENXTREM                       (OSOFT) 
-                            1                             1                             1 
-                       RESURA                           SIB              SOCIÉTÉ ENOVACOM 
-                            9                             7                             2 
-                 (WARESYSTEM)                      WEBSANTE                          NA's 
-                            2                             1                           246 
-```
-Dna la majorité des cas, les répondants ne connaissent pas leur éditeur.
+- Dans la majorité des cas (75.93), les répondants ne connaissent pas leur éditeur.
+- Il en est de même pour la version: 61.42 % des cas, la version n'est pas précisée.
 
 Logiciels 2015
 ==============
@@ -88,25 +83,25 @@ Logiciels par ordre décroissant
 
 ```
 
-                  DMU            TU-ORUPACA                URQUAL           RESURGENCES 
-                   50                    45                    35                    29 
-         RESURGENCES                 DXCARE              CROSSWAY              ATALANTE 
-                   17                    15                    14                    10 
-                SIDSU      SILLAGE URGENCES             MEDIBOARD              FIRSTNET 
-                    9                     8                     7                     6 
-                ORBIS             POLYMEDIS                 ORUV2              CLINICOM 
-                    5                     5                     4                     3 
-DEVELOPPEMENT INTERNE              DOPASOIN         DOPA URGENCES                   DPU 
+                  DMU           RESURGENCES            TU-ORUPACA                URQUAL 
+                   50                    46                    45                    35 
+             CROSSWAY                DXCARE              ATALANTE                 SIDSU 
+                   14                    14                    10                     9 
+     SILLAGE URGENCES             MEDIBOARD              FIRSTNET                 ORBIS 
+                    8                     7                     6                     5 
+            POLYMEDIS                 ORUV2              CLINICOM DEVELOPPEMENT INTERNE 
+                    5                     4                     3                     3 
+             DOPASOIN         DOPA URGENCES                   DPU               EXAGONE 
                     3                     3                     3                     3 
-              EXAGONE              EXPERTIZ                SIGEMS               ANTARES 
-                    3                     3                     3                     2 
-             CORTEXTE          EXPERT SANTE               H+ACUTE       HOPITAL MANAGER 
+             EXPERTIZ                SIGEMS               ANTARES              CORTEXTE 
+                    3                     3                     2                     2 
+         EXPERT SANTE               H+ACUTE       HOPITAL MANAGER        MÉDICAL OBJECT 
                     2                     2                     2                     2 
-       MÉDICAL OBJECT                 OSOFT            RPUEXPRESS               SANOCOM 
+                OSOFT            RPUEXPRESS               SANOCOM             SHAREGATE 
                     2                     2                     2                     2 
-            SHAREGATE           SILLAGE DMU               AXIGATE                CLIMCO 
-                    2                     2                     1                     1 
-         CORA URGENCE                CORPUS                DIAMMS                  EMED 
+          SILLAGE DMU               AXIGATE                CLIMCO          CORA URGENCE 
+                    2                     1                     1                     1 
+               CORPUS                DIAMMS               DX CARE                  EMED 
                     1                     1                     1                     1 
              EQUAFILE              E SHERPA              MEDIBASE              MEDINTUX 
                     1                     1                     1                     1 
@@ -118,7 +113,19 @@ DEVELOPPEMENT INTERNE              DOPASOIN         DOPA URGENCES               
                     1 
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-7-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-8-1.png) 
+
+Top Ten
+
+```r
+par(mar=c(4,7,2,2))
+t <- sort(table(d$Logiciel_2015), decreasing = TRUE)
+t10 <- t[10:1]
+barplot(t10, horiz = TRUE, las = 1, cex.names = 0.7, main = "Logiciels utilisés - Top 10", col = ifelse(t10 > 9, "cornflowerblue", "gray80"), xlab = "Fréquence d'utilisation")
+```
+
+![](septembre2015_files/figure-html/unnamed-chunk-9-1.png) 
+
 
 Logiciels par région
 --------------------
@@ -142,7 +149,8 @@ Logiciels par région
   DOPASOIN                   0         0         0        0                  0
   DOPA URGENCES              0         1         0        0                  2
   DPU                        0         0         0        0                  0
-  DXCARE                     3         6         1        0                  1
+  DXCARE                     2         6         1        0                  1
+  DX CARE                    1         0         0        0                  0
   EMED                       0         0         0        0                  0
   EQUAFILE                   0         0         0        0                  0
   E SHERPA                   0         0         0        0                  0
@@ -167,7 +175,6 @@ Logiciels par région
   POLYMEDIS                  0         0         0        0                  5
   QCARE                      0         0         0        0                  0
   RESURGENCES                1         1         3        7                  1
-  RESURGENCES                0         0         0        0                  0
   RPUEXPRESS                 0         0         0        0                  0
   SANOCOM                    0         2         0        0                  0
   SHAREGATE                  0         2         0        0                  0
@@ -198,6 +205,7 @@ Logiciels par région
   DOPA URGENCES                     0        0        0             0    0           0
   DPU                               0        0        0             1    0           2
   DXCARE                            0        0        2             2    0           0
+  DX CARE                           0        0        0             0    0           0
   EMED                              0        0        0             1    0           0
   EQUAFILE                          1        0        0             0    0           0
   E SHERPA                          0        0        0             0    0           1
@@ -221,8 +229,7 @@ Logiciels par région
   OSOFT                             0        0        0             0    0           1
   POLYMEDIS                         0        0        0             0    0           0
   QCARE                             0        0        0             0    1           0
-  RESURGENCES                       5        6        0             0    2           3
-  RESURGENCES                       0        0       17             0    0           0
+  RESURGENCES                       5        6       17             0    2           3
   RPUEXPRESS                        0        0        0             2    0           0
   SANOCOM                           0        0        0             0    0           0
   SHAREGATE                         0        0        0             0    0           0
@@ -241,7 +248,7 @@ Nombre de logiciels différents par région
 
 ```
             ALSACE          AQUITAINE          BOURGOGNE           BRETAGNE 
-                 7                 14                  9                  8 
+                 8                 14                  9                  8 
 CHAMPAGNE ARDENNES      FRANCHE COMTE           LIMOUSIN           LORRAINE 
                  7                  4                  3                  5 
      MIDI PYRENEES               PACA        RHONE ALPES 
@@ -254,23 +261,23 @@ Nombre de logiciels différents par rapport au nombre de SU de la région
 
               PACA           LORRAINE        RHONE ALPES           BRETAGNE 
               0.12               0.22               0.26               0.27 
-     FRANCHE COMTE           LIMOUSIN             ALSACE          BOURGOGNE 
-              0.31               0.33               0.39               0.39 
-         AQUITAINE CHAMPAGNE ARDENNES      MIDI PYRENEES 
-              0.40               0.44               0.46 
+     FRANCHE COMTE           LIMOUSIN          BOURGOGNE          AQUITAINE 
+              0.31               0.33               0.39               0.40 
+CHAMPAGNE ARDENNES             ALSACE      MIDI PYRENEES 
+              0.44               0.44               0.46 
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-10-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-12-1.png) 
 
 Cartographie des logiciels
 --------------------------
 
-![](septembre2015_files/figure-html/unnamed-chunk-11-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-11-2.png) ![](septembre2015_files/figure-html/unnamed-chunk-11-3.png) ![](septembre2015_files/figure-html/unnamed-chunk-11-4.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-13-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-13-2.png) ![](septembre2015_files/figure-html/unnamed-chunk-13-3.png) ![](septembre2015_files/figure-html/unnamed-chunk-13-4.png) 
 
 Un logiciel est présent dans combien de régions ?
 -------------------------------------------------
   
-![](septembre2015_files/figure-html/unnamed-chunk-12-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-14-1.png) 
 
 Analyse des RPU
 ===============
@@ -286,11 +293,10 @@ Nombre de RPU par logiciel
 ```
                       Nb de RPU
 TU-ORUPACA               362364
+RESURGENCES              335796
 URQUAL                   331497
 DMU                      299522
-RESURGENCES              207212
-RESURGENCES              128584
-DXCARE                   103059
+DXCARE                    95599
 CROSSWAY                  69480
 ATALANTE                  47216
 SIDSU                     44401
@@ -317,6 +323,7 @@ DOPASOIN                   9329
 ANTARES                    8974
 SHAREGATE                  8639
 CLIMCO                     8565
+DX CARE                    7460
 SIGEMS                     7231
 SANOCOM                    7150
 OSOFT                      7050
@@ -376,6 +383,7 @@ CORTEXTE                               0.00
 DIAMMS                                 0.00
 DOPA URGENCES                          0.00
 DXCARE                                 0.00
+DX CARE                                0.00
 EXAGONE                                0.00
 EXPERTIZ                               0.00
 EXPERT SANTE                           0.00
@@ -391,7 +399,6 @@ ORUV2                                  0.00
 OSIRIS                                 0.00
 POLYMEDIS                              0.00
 QCARE                                  0.00
-RESURGENCES                            0.00
 RPUEXPRESS                             0.00
 SANOCOM                                0.00
 SHAREGATE                              0.00
@@ -463,7 +470,8 @@ DMU                   100 100     100     100     0.0000 50 100 100
 DOPASOIN              100 100     100     100     0.0231  3 100 100
 DOPA URGENCES         100 100     100     100     0.0000  3 100 100
 DPU                   100 100     100     100     0.0000  3 100 100
-DXCARE                100 100     100     100     0.0000 15 100 100
+DXCARE                100 100     100     100     0.0000 14 100 100
+DX CARE               100 100     100     100         NA  1 100 100
 EMED                  100 100     100     100         NA  1 100 100
 EQUAFILE              100 100     100     100         NA  1 100 100
 E SHERPA              100 100     100     100         NA  1 100 100
@@ -487,8 +495,7 @@ OSIRIS                100 100     100     100         NA  1 100 100
 OSOFT                 100 100     100     100     0.0000  2 100 100
 POLYMEDIS             100 100     100     100     0.0000  5 100 100
 QCARE                 100 100     100     100         NA  1 100 100
-RESURGENCES           100 100     100     100     0.0094 29 100 100
-RESURGENCES           100 100     100     100     0.0000 17 100 100
+RESURGENCES           100 100     100     100     0.0075 46 100 100
 RPUEXPRESS            100 100     100     100     0.0778  2 100 100
 SANOCOM               100 100     100     100     0.0000  2 100 100
 SHAREGATE             100 100     100     100     0.0000  2 100 100
@@ -503,7 +510,7 @@ URGEST                100 100     100     100         NA  1 100 100
 URQUAL                100 100     100     100     0.0345 35 100 100
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-18-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-20-1.png) 
 
 - taux d'exhaustivité:
 
@@ -514,19 +521,20 @@ URQUAL                100 100     100     100     0.0345 35 100 100
 ```
 
 - exhaustivité par outil
-![](septembre2015_files/figure-html/unnamed-chunk-20-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-22-1.png) 
 
 Diagnostic (DP)
 ---------- 
 
-- taux de conformité:
+### taux de conformité:
 
 ```
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
       0      77      95      78      98     100       8 
 ```
+- % de DP conformes: 97.53
 
-- conformité par outil
+### conformité par outil
 
 ```
                          Min   Max moyenne médiane ecart.type Nb     Q25     Q75
@@ -545,7 +553,8 @@ DMU                    56.80  99.4   93.69   95.00      6.921 50  95.000  95.000
 DOPASOIN                0.00  97.5   32.50    0.00     56.286  3   0.000  48.745
 DOPA URGENCES           0.00  62.9   20.97    0.00     36.315  3   0.000  31.450
 DPU                    92.18  95.0   94.06   95.00      1.628  3  93.590  95.000
-DXCARE                  0.00 100.0   60.78   65.80     36.526 15  43.620  97.030
+DXCARE                  0.00 100.0   64.47   67.30     34.880 14  52.240  97.215
+DX CARE                 9.10   9.1    9.10    9.10         NA  1   9.100   9.100
 EMED                   97.54  97.5   97.54   97.54         NA  1  97.540  97.540
 EQUAFILE              100.00 100.0  100.00  100.00         NA  1 100.000 100.000
 E SHERPA               95.00  95.0   95.00   95.00         NA  1  95.000  95.000
@@ -569,8 +578,7 @@ OSIRIS                100.00 100.0  100.00  100.00         NA  1 100.000 100.000
 OSOFT                  95.00  98.6   96.80   96.80      2.546  2  95.900  97.700
 POLYMEDIS              97.40  99.7   98.50   99.00      1.044  5  97.400  99.000
 QCARE                   0.00   0.0    0.00    0.00         NA  1   0.000   0.000
-RESURGENCES            76.00 100.0   95.80   97.00      4.902 29  95.000  98.980
-RESURGENCES           100.00 100.0  100.00  100.00      0.000 17 100.000 100.000
+RESURGENCES            76.00 100.0   97.35   99.00      4.377 46  96.425 100.000
 RPUEXPRESS             87.22  92.0   89.59   89.59      3.345  2  88.402  90.768
 SANOCOM                76.70  83.3   80.00   80.00      4.667  2  78.350  81.650
 SHAREGATE               0.00   0.1    0.05    0.05      0.071  2   0.025   0.075
@@ -585,7 +593,7 @@ URGEST                 95.00  95.0   95.00   95.00         NA  1  95.000  95.000
 URQUAL                  0.00 100.0   61.17   86.89     43.181 35   4.210  98.025
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-22-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-24-1.png) 
 
 - taux de exhaustivité:
 
@@ -613,7 +621,8 @@ DMU                     2.0 100.0   89.01   95.00     16.799 50  86.080  97.500
 DOPASOIN                0.0  97.7   32.57    0.00     56.413  3   0.000  48.855
 DOPA URGENCES           0.0  62.9   20.97    0.00     36.315  3   0.000  31.450
 DPU                    87.0  97.0   92.06   92.18      5.001  3  89.590  94.590
-DXCARE                  0.0  98.9   60.12   65.80     35.794 15  43.620  95.000
+DXCARE                  0.0  98.9   63.76   67.30     34.136 14  52.240  95.000
+DX CARE                 9.1   9.1    9.10    9.10         NA  1   9.100   9.100
 EMED                   97.6  97.6   97.60   97.60         NA  1  97.600  97.600
 EQUAFILE              100.0 100.0  100.00  100.00         NA  1 100.000 100.000
 E SHERPA                0.0   0.0    0.00    0.00         NA  1   0.000   0.000
@@ -637,8 +646,7 @@ OSIRIS                100.0 100.0  100.00  100.00         NA  1 100.000 100.000
 OSOFT                   0.0  98.6   49.30   49.30     69.721  2  24.650  73.950
 POLYMEDIS              97.4  99.7   98.74   99.00      0.847  5  98.600  99.000
 QCARE                   0.0   0.0    0.00    0.00         NA  1   0.000   0.000
-RESURGENCES            76.0 100.0   96.64   98.56      5.053 29  95.410 100.000
-RESURGENCES            93.0 100.0   99.35  100.00      1.730 17 100.000 100.000
+RESURGENCES            76.0 100.0   97.65   99.25      4.324 46  97.660 100.000
 RPUEXPRESS             87.2  92.0   89.59   89.59      3.345  2  88.402  90.768
 SANOCOM                76.7  83.3   80.00   80.00      4.667  2  78.350  81.650
 SHAREGATE               0.0   0.1    0.05    0.05      0.071  2   0.025   0.075
@@ -653,7 +661,27 @@ URGEST                 98.0  98.0   98.00   98.00         NA  1  98.000  98.000
 URQUAL                  0.0 100.0   58.70   80.12     42.778 35   4.210  98.475
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-24-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-26-1.png) 
+
+### correlation exhaustivité-conformité
+
+
+```r
+# on ne garde que les couples complets
+ok <- d[which(complete.cases(d$DP_exhaus, d$DP_confor)),]
+cor(ok$DP_exhaus, ok$DP_confor)
+```
+
+```
+[1] 0.79
+```
+
+```r
+plot(ok$DP_exhaus, ok$DP_confor)
+```
+
+![](septembre2015_files/figure-html/unnamed-chunk-27-1.png) 
+
 
 Mode de sortie (MS)
 -------------------
@@ -684,7 +712,8 @@ DMU                    12  122    49.9      43      40.94 50  12.2  74
 DOPASOIN               29   46    35.3      31       9.29  3  30.0  38
 DOPA URGENCES          28   42    35.3      36       7.02  3  32.0  39
 DPU                   108  108   108.0     108         NA  3 108.0 108
-DXCARE                 12  117    50.1      21      42.38 15  13.0  83
+DXCARE                 12  117    50.2      21      43.98 14  13.0  85
+DX CARE                48   48    48.0      48         NA  1  48.0  48
 EMED                   14   14    14.0      14         NA  1  14.0  14
 EQUAFILE               11   11    11.0      11         NA  1  11.0  11
 E SHERPA              Inf -Inf     NaN      NA         NA  1    NA  NA
@@ -708,8 +737,7 @@ OSIRIS                 14   14    14.0      14         NA  1  14.0  14
 OSOFT                  13   13    13.0      13         NA  2  13.0  13
 POLYMEDIS              94  117   107.2     109      10.45  5  99.0 117
 QCARE                   4    4     4.0       4         NA  1   4.0   4
-RESURGENCES             3  125    26.1      13      34.71 29   9.2  14
-RESURGENCES            87   87    87.0      87       0.00 17  87.0  87
+RESURGENCES             3  125    50.2      49      40.30 46  13.0  87
 RPUEXPRESS             55   57    56.0      56       1.41  2  55.5  56
 SANOCOM                13   13    13.0      13       0.00  2  13.0  13
 SHAREGATE              13   13    13.0      13       0.00  2  13.0  13
@@ -724,7 +752,7 @@ URGEST                Inf -Inf     NaN      NA         NA  1    NA  NA
 URQUAL                 12  114    58.5      62      34.98 35  16.0  86
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-26-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-29-1.png) 
 
 - taux de exhaustivité:
 
@@ -747,7 +775,7 @@ MÉDICAL OBJECT  50  91      70      70         29  2  60  80  20
 DOPASOIN        72 100      86      87         14  3  80  93  14
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-28-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-28-2.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-31-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-31-2.png) 
 
 Conformité par région
 =====================
@@ -770,7 +798,7 @@ PACA                 0 100      98     100     14.142 50 100 100
 RHONE ALPES        100 100     100     100      0.000 70 100 100
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-29-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-32-1.png) 
 
 Diagnostic (DP)
 ---------------
@@ -790,7 +818,7 @@ PACA                 0  99      89      98       23.6 50  92.3  98
 RHONE ALPES         95  95      95      95        0.0 70  95.0  95
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-30-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-33-1.png) 
 
 Mode de sortie (MS)
 -------------------
@@ -810,9 +838,9 @@ PACA                 4  126    77.3      94       42.5 50  40 116
 RHONE ALPES        Inf -Inf     NaN      NA         NA 70  NA  NA
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-31-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-34-1.png) 
 
-Exhaustivié par région
+Exhaustivié et conformité par région
 ======================
 
 Date de naissance
@@ -833,7 +861,7 @@ PACA                 0  100      98     100     14.142 50 100 100
 RHONE ALPES        100  100     100     100      0.000 70 100 100
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-32-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-35-1.png) 
 
 Diagnostic (DP)
 ---------------
@@ -853,7 +881,7 @@ PACA                 0 100      89      98     23.628 50  92.9  98
 RHONE ALPES          0 100      72      92     36.685 70  66.0  96
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-33-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-36-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-36-2.png) 
 
 Mode de sortie (MS)
 -------------------
@@ -873,7 +901,7 @@ PACA                0.0 100      87     100      29.08 50  94 100
 RHONE ALPES         0.0 100      87     100      31.72 70  97 100
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-34-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-37-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-37-2.png) 
 
 Résultats secondaires
 =====================
@@ -883,17 +911,19 @@ Résultats secondaires
 
 ```
 
- NON NON   OUI OUI  
-  15    1  307    1 
+NON OUI 
+ 16 308 
 ```
 
-```
-[1] "4.63 %"  "0.31 %"  "94.75 %" "0.31 %" 
-```
+- nombre de SU ne transmettant pas de RPU: 4.94 %
 
-Messges pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? intégratin systématique  des thésaurus, démarche d'amélioration.
-Information proactive des sociétés savantes pour la publicationn des Référentiels: info systématique de la Fedoru.
-Focaliser sur les rectangles bleus. Voir si le n° de version permet de discriminer les urqual qui remntent de ceux qui remontent mal.
+Messages:
+
+- pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? DSI: de la saisie de l'info dans le SU à l'envoi des données à l'ORU: quelles sont les étapes de la chaîne de production
+- intégration systématique  des thésaurus
+- quelle démarche d'amélioration.
+- Information proactive des sociétés savantes pour la publicationn des Référentiels: info systématique de la Fedoru.
+- Focaliser sur les rectangles bleus. Voir si le n° de version permet de discriminer les urqual qui remontent de ceux qui remontent mal.
 
 Analyse de Urqual
 =================
