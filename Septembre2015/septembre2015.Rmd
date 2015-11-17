@@ -128,6 +128,8 @@ Périmètre du questionnaire:
 d <- read.csv("archive2.csv") # d <- read.csv("Septembre2015/archive.csv")
 source("routines.R") # source("Septembre2015/routines.R")
 
+library(stringr)
+
 
 ```
 
@@ -194,12 +196,21 @@ reg <- region@data
 
 Régions participantes à l'étude
 
-```{r, echo=FALSE, fig.height=10}
+```{r, echo=FALSE}
 # carte des régions participantes
 par(mar=c(0,0,1,0))
-plot(region, col = ifelse(reg$participation == 1, "cornflowerblue", "gray80"))
+plot(region, col = ifelse(reg$participation == 1, "cornflowerblue", "gray90"))
 title(main="Régions participantes (enquête 2015)")
-for(i in 1:length(reg$participation)){if(reg$participation[i] == 1) text(reg$x[i], reg$y[i], reg$reg.nom[i], cex = 0.6) }
+for(i in 1:length(reg$participation)){if(reg$participation[i] == 1) text(reg$x[i], reg$y[i], reg$reg.nom[i], cex = 0.6, col = "white") }
+
+```
+
+```{r, echo=FALSE}
+# carte des régions participantes
+par(mar=c(0,0,1,0))
+plot(region, col = ifelse(reg$participation == 1, "palegreen", "gray80"))
+title(main="Régions participantes (enquête 2015)")
+for(i in 1:length(reg$participation)){if(reg$participation[i] == 1) text(reg$x[i], reg$y[i], reg$reg.nom[i], cex = 0.6, col = "black") }
 
 ```
 
@@ -226,7 +237,8 @@ s <- summary(as.factor(d$Editeur))
 n.na <- sum(is.na(d$Editeur))
 p.na <- mean(is.na(d$Editeur))
 ```
-Dans la majorité des cas (`r round(p.na * 100, 2)`), les répondants ne connaissent pas leur éditeur.
+- Dans la majorité des cas (`r round(p.na * 100, 2)`), les répondants ne connaissent pas leur éditeur.
+- Il en est de même pour la version: `r round(mean(is.na(d$Version_2015)) * 100, 2)` % des cas, la version n'est pas précisée.
 
 Logiciels 2015
 ==============
@@ -234,6 +246,7 @@ Logiciels 2015
 ```{r, echo=FALSE}
 
 d$Logiciel_2015 <- as.character(d$Logiciel_2015)
+d$Logiciel_2015 <- str_trim(d$Logiciel_2015)
 d$Logiciel_2015 <- toupper(d$Logiciel_2015)
 
 d$Logiciel_2015[d$Logiciel_2015=="CRISTALNET-DMU"] <- "DMU"
@@ -270,8 +283,18 @@ t
 t <- sort(table(d$Logiciel_2015), decreasing = FALSE)
 par(mar=c(4,6,2,2))
 barplot(t, las = 2, cex.names = 0.7, main = "Logiciels utilisés", col = ifelse(t >= 10, "cornflowerblue", "gray80"), horiz = TRUE)
+```
+
+Top Ten
+```{r}
+par(mar=c(4,7,2,2))
+t <- sort(table(d$Logiciel_2015), decreasing = TRUE)
+t10 <- t[10:1]
+barplot(t10, horiz = TRUE, las = 1, cex.names = 0.7, main = "Logiciels utilisés - Top 10", col = ifelse(t10 > 9, "cornflowerblue", "gray80"), xlab = "Fréquence d'utilisation")
+
 
 ```
+
 
 Logiciels par région
 --------------------
@@ -458,15 +481,17 @@ boxplot(d$DN_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "cornfl
 Diagnostic (DP)
 ---------- 
 
-- taux de conformité:
+### taux de conformité:
 ```{r, echo=FALSE, comment="", warning=FALSE}
 d$DP_confor <- as.numeric(gsub("%", "", d$DP_confor))
 DP.conforme <- summary(d$DP_confor)
 DP.conforme
+n.dp.conf <- mean(!is.na(d$DP_confor))
 
 ```
+- % de DP conformes: `r round(n.dp.conf*100, 2)`
 
-- conformité par outil
+### conformité par outil
 ```{r, echo=FALSE, comment=""}
 a <- summary.par.logiciel(d$DP_confor, d$Logiciel_2015)
 a
@@ -491,6 +516,17 @@ a
 
 boxplot(d$DP_exhaus ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Diagnostic principal - exhaustivité")
 ```
+
+### correlation exhaustivité-conformité
+
+```{r}
+# on ne garde que les couples complets
+ok <- d[which(complete.cases(d$DP_exhaus, d$DP_confor)),]
+cor(ok$DP_exhaus, ok$DP_confor)
+plot(ok$DP_exhaus, ok$DP_confor)
+
+```
+
 
 Mode de sortie (MS)
 -------------------
@@ -567,7 +603,7 @@ a
 boxplot(d$MS_confor ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% conformité", main = "Mode de sortie - conformité")
 ```
 
-Exhaustivié par région
+Exhaustivié et conformité par région
 ======================
 
 Date de naissance
@@ -576,7 +612,7 @@ Date de naissance
 a <- summary.par.logiciel(d$DN_exhaus, d$Region)
 a
 
-boxplot(d$DN_exhaus ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Date de naissance - exhaustivité")
+boxplot(d$DN_exhaus ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Date de naissance - exhaustivité par région")
 ```
 
 Diagnostic (DP)
@@ -585,7 +621,9 @@ Diagnostic (DP)
 a <- summary.par.logiciel(d$DP_exhaus, d$Region)
 a
 
-boxplot(d$DP_exhaus ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Diagnostic principal - exhaustivité")
+boxplot(d$DP_exhaus ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Diagnostic principal - exhaustivité par région")
+
+boxplot(d$DP_confor ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% conformité", main = "Diagnostic principal - conformité par région")
 ```
 
 Mode de sortie (MS)
@@ -594,7 +632,9 @@ Mode de sortie (MS)
 a <- summary.par.logiciel(d$MS_exhaus, d$Region)
 a
 
-boxplot(d$MS_exhaus ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Mode de sortie - exhaustivité")
+boxplot(d$MS_exhaus ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Mode de sortie - exhaustivité par région")
+
+boxplot(d$MS_confor ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% conformité", main = "Mode de sortie - conformité par région")
 ```
 
 Résultats secondaires
@@ -604,19 +644,24 @@ Résultats secondaires
 ------------------------------------------
 ```{r, echo=FALSE, comment=""}
 # nettoyage
-d$RPU_transmis <- as.character(d$RPU_transmis)
+d$RPU_transmis <- str_trim(as.character(d$RPU_transmis))
 d$RPU_transmis[d$RPU_transmis == "OUI depuis le 30/05/14"] <- "OUI"
 d$RPU_transmis[d$RPU_transmis == "OUI depuis janvier 2014"] <- "OUI"
 table(d$RPU_transmis)
-paste(round(prop.table(table(d$RPU_transmis))*100, 2), "%")
+rpu.trans <- paste(round(prop.table(table(d$RPU_transmis))*100, 2), "%")
 
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Messges pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? intégration systématique  des thésaurus, démarche d'amélioration.
 Information proactive des sociétés savantes pour la publicationn des Référentiels: info systématique de la Fedoru.
 Focaliser sur les rectangles bleus. Voir si le n° de version permet de discriminer les urqual qui remntent de ceux qui remontent mal.
 =======
+=======
+- nombre de SU ne transmettant pas de RPU: `r rpu.trans[1]`
+
+>>>>>>> d3a4aec0bdf9b8c3fdf91ab1588ec7345659735c
 Messages:
 
 - pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? DSI: de la saisie de l'info dans le SU à l'envoi des données à l'ORU: quelles sont les étapes de la chaîne de production
