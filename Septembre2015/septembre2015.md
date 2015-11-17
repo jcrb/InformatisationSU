@@ -2,6 +2,10 @@
 FEDORU  
 07/09/2015  
 
+Objectif: lesRPU sont produits par des ES disposant d'une autorisation de SU. Les informations sont issues des données d'un patient, recueillis par du personnel administratif, soignant et médical sur un logiciel mis à disposition par le service informatique de l'établissement. Le logiciel est fourni par un éditeur ou plus rarement développé localement et administré par le service informatique de l'établissement hospitalier (SIH). La qualité et l'exhaustivité des RPU dépend d'une chaine d'intervenant. Un RPU est considéré comme crée s'il comporte la date et heure d'entrée, le code postal, la commune et la date de naissance d'un consultant (?).L'exhaustivité est la diffférence entre le nombre de RPU produits pendant une période et le nombre de primo passage aux urgences sur la même période. Il n'y a pas de référentiel absolu pour mesurer le nombre de primo passages. Selon le cas il peut s'agir du nombre de RPU eux-mêmes, du chiffre de la SAE, d'une mesure à partir du PMSI.
+La qualité des RPU se mesure par l'écart entre la valeur attendue d'un item et la réponse fournie. La réponse fournie peut être manquante ou non conforme à un référentiel de valeur. Le référentiel s'appuie sur la cahier des charges de l'INVS, sur des référentiels issus de sociétés savantes (SFMU) ou sur des consenssus d'expert (FEDORU).
+
+
 
 
 Historique
@@ -23,9 +27,18 @@ Récupération des fichiers csv
 
 
 Données générales
------------------------------------
+=================
+
+Périmètre du questionnaire:
+
+- période: 1er janvier 2015 au 31 mars 2015 (1er trimestre)
+- concerne toutes les structures volontaires membres de la FEDORU. Coordination régionale assurée par les ORU
+- questions
 
 
+
+Résultats
+---------
 
 - Nombre de régions participantes: 11: 
 
@@ -47,6 +60,7 @@ Cartographie des régions participantes et des logiciels.
 ![](septembre2015_files/figure-html/carto_region-1.png) 
 
 Régions participantes à l'étude
+
 ![](septembre2015_files/figure-html/unnamed-chunk-4-1.png) 
 
 
@@ -54,25 +68,7 @@ Editeurs
 ========
 
 
-```
-                         AGFA               BERGER-LEVRAULT              DE LA SOCIÉTÉ C3 
-                            2                            10                             1 
-                  DE MÉDIBASE FIRSNET MILLENIUM FIN D'ANNÉE                       H+ACUTE 
-                            1                             1                             2 
-                     IMPROOVE            INTÉGRÉ À CROSSWAY               LOGICIEL MAISON 
-                            6                             1                             1 
-                     MAINCARE                      MCKESSON                     MC KESSON 
-                            2                            17                             3 
-    MCKESSON - HÔPITAL ADAPTÉ                       MEDASYS                     (MEDASYS) 
-                            1                             4                             2 
-                     MEDIBASE                     OPENXTREM                       (OSOFT) 
-                            1                             1                             1 
-                       RESURA                           SIB              SOCIÉTÉ ENOVACOM 
-                            9                             7                             2 
-                 (WARESYSTEM)                      WEBSANTE                          NA's 
-                            2                             1                           246 
-```
-Dna la majorité des cas, les répondants ne connaissent pas leur éditeur.
+Dans la majorité des cas (75.93), les répondants ne connaissent pas leur éditeur.
 
 Logiciels 2015
 ==============
@@ -96,7 +92,7 @@ Logiciels par ordre décroissant
                     9                     8                     7                     6 
                 ORBIS             POLYMEDIS                 ORUV2              CLINICOM 
                     5                     5                     4                     3 
-DEVELOPPEMENT INTERNE              DOPASOIN         DOPA URGENCES                   DPU 
+DEVELOPPEMENT INTERNE         DOPA URGENCES              DOPASOIN                   DPU 
                     3                     3                     3                     3 
               EXAGONE              EXPERTIZ                SIGEMS               ANTARES 
                     3                     3                     3                     2 
@@ -106,11 +102,11 @@ DEVELOPPEMENT INTERNE              DOPASOIN         DOPA URGENCES               
                     2                     2                     2                     2 
             SHAREGATE           SILLAGE DMU               AXIGATE                CLIMCO 
                     2                     2                     1                     1 
-         CORA URGENCE                CORPUS                DIAMMS                  EMED 
+         CORA URGENCE                CORPUS                DIAMMS              E SHERPA 
                     1                     1                     1                     1 
-             EQUAFILE              E SHERPA              MEDIBASE              MEDINTUX 
+                 EMED              EQUAFILE                M-PLUS              MEDIBASE 
                     1                     1                     1                     1 
-                MEDIS              MEDIWERE                M-PLUS                NAFAMA 
+             MEDINTUX                 MEDIS              MEDIWERE                NAFAMA 
                     1                     1                     1                     1 
                OSIRIS                 QCARE               SPEC 4D            TRACK CARE 
                     1                     1                     1                     1 
@@ -139,26 +135,26 @@ Logiciels par région
   DEVELOPPEMENT INTERNE      0         0         0        0                  0
   DIAMMS                     0         0         0        0                  0
   DMU                        2         0         7        0                  3
-  DOPASOIN                   0         0         0        0                  0
   DOPA URGENCES              0         1         0        0                  2
+  DOPASOIN                   0         0         0        0                  0
   DPU                        0         0         0        0                  0
   DXCARE                     3         6         1        0                  1
+  E SHERPA                   0         0         0        0                  0
   EMED                       0         0         0        0                  0
   EQUAFILE                   0         0         0        0                  0
-  E SHERPA                   0         0         0        0                  0
   EXAGONE                    0         0         1        0                  0
-  EXPERTIZ                   0         0         0        0                  0
   EXPERT SANTE               0         0         0        0                  0
+  EXPERTIZ                   0         0         0        0                  0
   FIRSTNET                   0         0         0        0                  0
   H+ACUTE                    0         0         0        0                  0
   HOPITAL MANAGER            0         0         2        0                  0
+  M-PLUS                     0         1         0        0                  0
   MEDIBASE                   0         1         0        0                  0
   MEDIBOARD                  0         0         0        1                  0
   MÉDICAL OBJECT             0         0         0        0                  0
   MEDINTUX                   0         0         0        0                  0
   MEDIS                      0         0         0        1                  0
   MEDIWERE                   0         0         0        0                  0
-  M-PLUS                     0         1         0        0                  0
   NAFAMA                     0         0         0        0                  1
   ORBIS                      1         0         0        1                  0
   ORUV2                      0         0         0        0                  0
@@ -194,26 +190,26 @@ Logiciels par région
   DEVELOPPEMENT INTERNE             0        0        0             1    0           2
   DIAMMS                            0        0        0             1    0           0
   DMU                               0        0        0             0    2          36
-  DOPASOIN                          0        0        0             3    0           0
   DOPA URGENCES                     0        0        0             0    0           0
+  DOPASOIN                          0        0        0             3    0           0
   DPU                               0        0        0             1    0           2
   DXCARE                            0        0        2             2    0           0
+  E SHERPA                          0        0        0             0    0           1
   EMED                              0        0        0             1    0           0
   EQUAFILE                          1        0        0             0    0           0
-  E SHERPA                          0        0        0             0    0           1
   EXAGONE                           0        0        0             0    0           2
-  EXPERTIZ                          0        0        0             0    0           3
   EXPERT SANTE                      0        0        0             1    0           1
+  EXPERTIZ                          0        0        0             0    0           3
   FIRSTNET                          6        0        0             0    0           0
   H+ACUTE                           0        0        2             0    0           0
   HOPITAL MANAGER                   0        0        0             0    0           0
+  M-PLUS                            0        0        0             0    0           0
   MEDIBASE                          0        0        0             0    0           0
   MEDIBOARD                         0        0        0             2    0           4
   MÉDICAL OBJECT                    0        0        0             2    0           0
   MEDINTUX                          0        0        0             0    1           0
   MEDIS                             0        0        0             0    0           0
   MEDIWERE                          0        0        0             0    0           1
-  M-PLUS                            0        0        0             0    0           0
   NAFAMA                            0        0        0             0    0           0
   ORBIS                             0        0        0             0    0           3
   ORUV2                             0        0        0             4    0           0
@@ -377,15 +373,15 @@ DIAMMS                                 0.00
 DOPA URGENCES                          0.00
 DXCARE                                 0.00
 EXAGONE                                0.00
-EXPERTIZ                               0.00
 EXPERT SANTE                           0.00
+EXPERTIZ                               0.00
 H+ACUTE                                0.00
+M-PLUS                                 0.00
 MEDIBASE                               0.00
 MÉDICAL OBJECT                         0.00
 MEDINTUX                               0.00
 MEDIS                                  0.00
 MEDIWERE                               0.00
-M-PLUS                                 0.00
 NAFAMA                                 0.00
 ORUV2                                  0.00
 OSIRIS                                 0.00
@@ -460,26 +456,26 @@ CROSSWAY              100 100     100     100     0.0060 14 100 100
 DEVELOPPEMENT INTERNE 100 100     100     100     0.0346  3 100 100
 DIAMMS                100 100     100     100         NA  1 100 100
 DMU                   100 100     100     100     0.0000 50 100 100
-DOPASOIN              100 100     100     100     0.0231  3 100 100
 DOPA URGENCES         100 100     100     100     0.0000  3 100 100
+DOPASOIN              100 100     100     100     0.0231  3 100 100
 DPU                   100 100     100     100     0.0000  3 100 100
 DXCARE                100 100     100     100     0.0000 15 100 100
+E SHERPA              100 100     100     100         NA  1 100 100
 EMED                  100 100     100     100         NA  1 100 100
 EQUAFILE              100 100     100     100         NA  1 100 100
-E SHERPA              100 100     100     100         NA  1 100 100
 EXAGONE               100 100     100     100     0.0000  3 100 100
-EXPERTIZ              100 100     100     100     0.0000  3 100 100
 EXPERT SANTE          100 100     100     100     0.0000  2 100 100
+EXPERTIZ              100 100     100     100     0.0000  3 100 100
 FIRSTNET              100 100     100     100     0.0000  6 100 100
 H+ACUTE               100 100     100     100     0.0000  2 100 100
 HOPITAL MANAGER       100 100     100     100     0.0000  2 100 100
+M-PLUS                100 100     100     100         NA  1 100 100
 MEDIBASE              100 100     100     100         NA  1 100 100
 MEDIBOARD             100 100     100     100     0.0076  7 100 100
 MÉDICAL OBJECT        100 100     100     100     0.0000  2 100 100
 MEDINTUX              100 100     100     100         NA  1 100 100
 MEDIS                 100 100     100     100         NA  1 100 100
 MEDIWERE              100 100     100     100         NA  1 100 100
-M-PLUS                100 100     100     100         NA  1 100 100
 NAFAMA                100 100     100     100         NA  1 100 100
 ORBIS                 100 100     100     100     0.0000  5 100 100
 ORUV2                  99 100     100     100     0.6071  4 100 100
@@ -542,26 +538,26 @@ CROSSWAY                0.00 100.0   54.45   72.11     43.713 14   5.000  96.280
 DEVELOPPEMENT INTERNE  95.00 100.0   96.67   95.00      2.887  3  95.000  97.500
 DIAMMS                 78.56  78.6   78.56   78.56         NA  1  78.560  78.560
 DMU                    56.80  99.4   93.69   95.00      6.921 50  95.000  95.000
-DOPASOIN                0.00  97.5   32.50    0.00     56.286  3   0.000  48.745
 DOPA URGENCES           0.00  62.9   20.97    0.00     36.315  3   0.000  31.450
+DOPASOIN                0.00  97.5   32.50    0.00     56.286  3   0.000  48.745
 DPU                    92.18  95.0   94.06   95.00      1.628  3  93.590  95.000
 DXCARE                  0.00 100.0   60.78   65.80     36.526 15  43.620  97.030
+E SHERPA               95.00  95.0   95.00   95.00         NA  1  95.000  95.000
 EMED                   97.54  97.5   97.54   97.54         NA  1  97.540  97.540
 EQUAFILE              100.00 100.0  100.00  100.00         NA  1 100.000 100.000
-E SHERPA               95.00  95.0   95.00   95.00         NA  1  95.000  95.000
 EXAGONE                12.00  95.0   67.33   95.00     47.920  3  53.500  95.000
-EXPERTIZ               95.00  95.0   95.00   95.00      0.000  3  95.000  95.000
 EXPERT SANTE           29.20  95.0   62.10   62.10     46.528  2  45.650  78.550
+EXPERTIZ               95.00  95.0   95.00   95.00      0.000  3  95.000  95.000
 FIRSTNET               31.40  87.7   61.77   60.40     22.257  6  47.975  80.250
 H+ACUTE               100.00 100.0  100.00  100.00      0.000  2 100.000 100.000
 HOPITAL MANAGER        95.00 100.0   97.50   97.50      3.536  2  96.250  98.750
+M-PLUS                 83.50  83.5   83.50   83.50         NA  1  83.500  83.500
 MEDIBASE               96.40  96.4   96.40   96.40         NA  1  96.400  96.400
 MEDIBOARD               0.73  95.0   64.06   95.00     40.500  7  33.840  95.000
 MÉDICAL OBJECT         49.76  90.8   70.27   70.27     28.998  2  60.013  80.517
 MEDINTUX               92.15  92.2   92.15   92.15         NA  1  92.150  92.150
 MEDIS                  19.70  19.7   19.70   19.70         NA  1  19.700  19.700
 MEDIWERE               95.00  95.0   95.00   95.00         NA  1  95.000  95.000
-M-PLUS                 83.50  83.5   83.50   83.50         NA  1  83.500  83.500
 NAFAMA                 98.50  98.5   98.50   98.50         NA  1  98.500  98.500
 ORBIS                   0.00  95.0   31.67    0.00     54.848  5   0.000  47.500
 ORUV2                   0.00  98.9   58.10   66.75     48.845  4  26.543  98.315
@@ -610,26 +606,26 @@ CROSSWAY                0.0 100.0   56.61   72.11     41.714 14  28.000  96.280
 DEVELOPPEMENT INTERNE  83.0 100.0   92.67   95.00      8.737  3  89.000  97.500
 DIAMMS                 78.7  78.7   78.72   78.72         NA  1  78.720  78.720
 DMU                     2.0 100.0   89.01   95.00     16.799 50  86.080  97.500
-DOPASOIN                0.0  97.7   32.57    0.00     56.413  3   0.000  48.855
 DOPA URGENCES           0.0  62.9   20.97    0.00     36.315  3   0.000  31.450
+DOPASOIN                0.0  97.7   32.57    0.00     56.413  3   0.000  48.855
 DPU                    87.0  97.0   92.06   92.18      5.001  3  89.590  94.590
 DXCARE                  0.0  98.9   60.12   65.80     35.794 15  43.620  95.000
+E SHERPA                0.0   0.0    0.00    0.00         NA  1   0.000   0.000
 EMED                   97.6  97.6   97.60   97.60         NA  1  97.600  97.600
 EQUAFILE              100.0 100.0  100.00  100.00         NA  1 100.000 100.000
-E SHERPA                0.0   0.0    0.00    0.00         NA  1   0.000   0.000
 EXAGONE                 0.0  12.0    5.33    4.00      6.110  3   2.000   8.000
-EXPERTIZ               82.0  94.0   88.67   90.00      6.110  3  86.000  92.000
 EXPERT SANTE           29.2  95.0   62.11   62.11     46.513  2  45.665  78.555
+EXPERTIZ               82.0  94.0   88.67   90.00      6.110  3  86.000  92.000
 FIRSTNET              100.0 100.0  100.00  100.00      0.000  6 100.000 100.000
 H+ACUTE                99.0 100.0   99.50   99.50      0.707  2  99.250  99.750
 HOPITAL MANAGER        95.0 100.0   97.50   97.50      3.536  2  96.250  98.750
+M-PLUS                 83.5  83.5   83.50   83.50         NA  1  83.500  83.500
 MEDIBASE               96.4  96.4   96.40   96.40         NA  1  96.400  96.400
 MEDIBOARD               0.0  43.2   10.34    1.00     16.966  7   0.365  13.740
 MÉDICAL OBJECT         49.8  90.8   70.27   70.27     28.998  2  60.013  80.517
 MEDINTUX              100.0 100.0  100.00  100.00         NA  1 100.000 100.000
 MEDIS                  19.7  19.7   19.70   19.70         NA  1  19.700  19.700
 MEDIWERE              100.0 100.0  100.00  100.00         NA  1 100.000 100.000
-M-PLUS                 83.5  83.5   83.50   83.50         NA  1  83.500  83.500
 NAFAMA                 99.8  99.8   99.80   99.80         NA  1  99.800  99.800
 ORBIS                   0.0   0.0    0.00    0.00      0.000  5   0.000   0.000
 ORUV2                   0.0  98.9   58.19   66.92     48.936  4  26.543  98.562
@@ -662,7 +658,7 @@ Mode de sortie (MS)
 
 ```
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-      1      14      62      59      95     126      70 
+      1      15      62      59      95     126      70 
 ```
 
 - conformité par outil
@@ -670,58 +666,58 @@ Mode de sortie (MS)
 ```
                       Min  Max moyenne médiane ecart.type Nb   Q25 Q75
 ANTARES                43   44    43.5      44       0.71  2  43.2  44
-ATALANTE                2   91    43.4      36      29.63 10  22.0  61
+ATALANTE                2   92    43.5      36      29.81 10  22.0  61
 AXIGATE               117  117   117.0     117         NA  1 117.0 117
 CLIMCO                Inf -Inf     NaN      NA         NA  1    NA  NA
-CLINICOM               14   81    47.5      48      47.38  3  30.8  64
+CLINICOM               15   81    48.0      48      46.67  3  31.5  64
 CORA URGENCE          Inf -Inf     NaN      NA         NA  1    NA  NA
 CORPUS                 87   87    87.0      87         NA  1  87.0  87
 CORTEXTE               97  105   101.0     101       5.66  2  99.0 103
-CROSSWAY                1   98    35.9      22      36.93 14   2.5  67
+CROSSWAY                1   98    35.6      19      37.15 14   2.5  67
 DEVELOPPEMENT INTERNE 116  116   116.0     116         NA  3 116.0 116
 DIAMMS                 37   37    37.0      37         NA  1  37.0  37
-DMU                    12  122    49.9      43      40.94 50  12.2  74
-DOPASOIN               29   46    35.3      31       9.29  3  30.0  38
+DMU                    13  122    50.3      44      40.38 50  13.2  74
 DOPA URGENCES          28   42    35.3      36       7.02  3  32.0  39
+DOPASOIN               29   46    35.3      31       9.29  3  30.0  38
 DPU                   108  108   108.0     108         NA  3 108.0 108
-DXCARE                 12  117    50.1      21      42.38 15  13.0  83
-EMED                   14   14    14.0      14         NA  1  14.0  14
-EQUAFILE               11   11    11.0      11         NA  1  11.0  11
+DXCARE                 13  117    50.5      21      42.01 15  14.0  83
 E SHERPA              Inf -Inf     NaN      NA         NA  1    NA  NA
-EXAGONE                12   12    12.0      12         NA  3  12.0  12
-EXPERTIZ              Inf -Inf     NaN      NA         NA  3    NA  NA
+EMED                   15   15    15.0      15         NA  1  15.0  15
+EQUAFILE               11   11    11.0      11         NA  1  11.0  11
+EXAGONE                13   13    13.0      13         NA  3  13.0  13
 EXPERT SANTE          121  121   121.0     121         NA  2 121.0 121
+EXPERTIZ              Inf -Inf     NaN      NA         NA  3    NA  NA
 FIRSTNET                4    6     4.3       4       0.82  6   4.0   4
 H+ACUTE                87   87    87.0      87       0.00  2  87.0  87
-HOPITAL MANAGER        12   12    12.0      12       0.00  2  12.0  12
+HOPITAL MANAGER        13   13    13.0      13       0.00  2  13.0  13
+M-PLUS                 19   19    19.0      19         NA  1  19.0  19
 MEDIBASE               25   25    25.0      25         NA  1  25.0  25
 MEDIBOARD             100  123   115.0     122      13.00  7 111.0 122
 MÉDICAL OBJECT         24   50    37.0      37      18.38  2  30.5  44
-MEDINTUX               14   14    14.0      14         NA  1  14.0  14
-MEDIS                  15   15    15.0      15         NA  1  15.0  15
+MEDINTUX               15   15    15.0      15         NA  1  15.0  15
+MEDIS                  16   16    16.0      16         NA  1  16.0  16
 MEDIWERE              Inf -Inf     NaN      NA         NA  1    NA  NA
-M-PLUS                 19   19    19.0      19         NA  1  19.0  19
 NAFAMA                109  109   109.0     109         NA  1 109.0 109
 ORBIS                  18   20    19.0      19       1.41  5  18.5  20
 ORUV2                  23  120    78.5      86      40.52  4  67.2  97
-OSIRIS                 14   14    14.0      14         NA  1  14.0  14
-OSOFT                  13   13    13.0      13         NA  2  13.0  13
+OSIRIS                 15   15    15.0      15         NA  1  15.0  15
+OSOFT                  14   14    14.0      14         NA  2  14.0  14
 POLYMEDIS              94  117   107.2     109      10.45  5  99.0 117
 QCARE                   4    4     4.0       4         NA  1   4.0   4
-RESURGENCES             3  125    26.1      13      34.71 29   9.2  14
+RESURGENCES             3  125    26.6      14      34.52 29   9.2  15
 RESURGENCES            87   87    87.0      87       0.00 17  87.0  87
 RPUEXPRESS             55   57    56.0      56       1.41  2  55.5  56
-SANOCOM                13   13    13.0      13       0.00  2  13.0  13
-SHAREGATE              13   13    13.0      13       0.00  2  13.0  13
-SIDSU                  13  117    78.2      93      38.51  9  76.0  99
+SANOCOM                14   14    14.0      14       0.00  2  14.0  14
+SHAREGATE              14   14    14.0      14       0.00  2  14.0  14
+SIDSU                  14  117    78.4      93      38.09  9  76.0  99
 SIGEMS                  1  117    59.0      59      82.02  3  30.0  88
-SILLAGE DMU            13   84    48.5      48      50.20  2  30.8  66
+SILLAGE DMU            14   84    49.0      49      49.50  2  31.5  66
 SILLAGE URGENCES       27  117    79.8      84      28.62  8  70.8  98
 SPEC 4D               124  124   124.0     124         NA  1 124.0 124
 TRACK CARE             77   77    77.0      77         NA  1  77.0  77
-TU-ORUPACA              4  126    84.2     100      38.72 45  56.0 118
+TU-ORUPACA              4  126    84.3     100      38.55 45  56.0 118
 URGEST                Inf -Inf     NaN      NA         NA  1    NA  NA
-URQUAL                 12  114    58.5      62      34.98 35  16.0  86
+URQUAL                 13  114    58.8      62      34.61 35  17.0  86
 ```
 
 ![](septembre2015_files/figure-html/unnamed-chunk-26-1.png) 
@@ -797,16 +793,16 @@ Mode de sortie (MS)
 
 ```
                    Min  Max moyenne médiane ecart.type Nb Q25 Q75
-ALSACE              14   91    41.5      41       22.3 18  22  53
-AQUITAINE            1  117    53.0      42       43.5 35  13  96
-BOURGOGNE            2   92    30.2      12       32.8 23  12  64
-BRETAGNE            13  123    56.5      65       39.0 30  13  86
-CHAMPAGNE ARDENNES  13  117    70.6      80       41.9 16  32 109
+ALSACE              15   92    41.6      41       22.3 18  22  53
+AQUITAINE            1  117    53.2      42       43.3 35  14  96
+BOURGOGNE            2   91    30.7      13       32.4 23  13  64
+BRETAGNE            14  123    56.8      65       38.6 30  14  86
+CHAMPAGNE ARDENNES  14  117    70.8      80       41.6 16  32 109
 FRANCHE COMTE        4   11     6.2       5        2.6 13   4   8
-LIMOUSIN            14  125    57.4      14       52.3  9  14 103
+LIMOUSIN            15  125    58.0      15       51.8  9  15 103
 LORRAINE            74   87    86.4      87        2.7 23  87  87
-MIDI PYRENEES        4  124    63.3      57       40.6 37  24 100
-PACA                 4  126    77.3      94       42.5 50  40 116
+MIDI PYRENEES        4  124    63.5      57       40.4 37  24 100
+PACA                 4  126    77.4      94       42.3 50  40 116
 RHONE ALPES        Inf -Inf     NaN      NA         NA 70  NA  NA
 ```
 
@@ -891,9 +887,19 @@ Résultats secondaires
 [1] "4.63 %"  "0.31 %"  "94.75 %" "0.31 %" 
 ```
 
-Messges pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? intégratin systématique  des thésaurus, démarche d'amélioration.
+<<<<<<< HEAD
+Messges pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? intégration systématique  des thésaurus, démarche d'amélioration.
 Information proactive des sociétés savantes pour la publicationn des Référentiels: info systématique de la Fedoru.
 Focaliser sur les rectangles bleus. Voir si le n° de version permet de discriminer les urqual qui remntent de ceux qui remontent mal.
+=======
+Messages:
+
+- pour les éditeurs, la DGOS, les DSI qui est responsable de quoi ? DSI: de la saisie de l'info dans le SU à l'envoi des données à l'ORU: quelles sont les étapes de la chaîne de production
+- intégration systématique  des thésaurus
+- quelle démarche d'amélioration.
+- Information proactive des sociétés savantes pour la publicationn des Référentiels: info systématique de la Fedoru.
+- Focaliser sur les rectangles bleus. Voir si le n° de version permet de discriminer les urqual qui remontent de ceux qui remontent mal.
+>>>>>>> b9052a7dd80e283494acc24d5348d639f959dc95
 
 Analyse de Urqual
 =================

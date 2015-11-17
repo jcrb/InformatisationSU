@@ -13,13 +13,10 @@ output:
     toc: yes
   word_document: default
 ---
-<<<<<<< HEAD
+
 Objectif: lesRPU sont produits par des ES disposant d'une autorisation de SU. Les informations sont issues des données d'un patient, recueillis par du personnel administratif, soignant et médical sur un logiciel mis à disposition par le service informatique de l'établissement. Le logiciel est fourni par un éditeur ou plus rarement développé localement et administré par le service informatique de l'établissement hospitalier (SIH). La qualité et l'exhaustivité des RPU dépend d'une chaine d'intervenant. Un RPU est considéré comme crée s'il comporte la date et heure d'entrée, le code postal, la commune et la date de naissance d'un consultant (?).L'exhaustivité est la diffférence entre le nombre de RPU produits pendant une période et le nombre de primo passage aux urgences sur la même période. Il n'y a pas de référentiel absolu pour mesurer le nombre de primo passages. Selon le cas il peut s'agir du nombre de RPU eux-mêmes, du chiffre de la SAE, d'une mesure à partir du PMSI.
 La qualité des RPU se mesure par l'écart entre la valeur attendue d'un item et la réponse fournie. La réponse fournie peut être manquante ou non conforme à un référentiel de valeur. Le référentiel s'appuie sur la cahier des charges de l'INVS, sur des référentiels issus de sociétés savantes (SFMU) ou sur des consenssus d'expert (FEDORU).
-7/9/2015
-========
-Reprise de l'exploitation des logiciels des SU
-=======
+
 
 ```{r set-options, echo=FALSE, cache=FALSE}
 library(knitr)
@@ -27,7 +24,6 @@ options(width=90, digits = 2)
 opts_chunk$set(comment = "", warning = FALSE, message = FALSE, echo = TRUE, tidy = FALSE, size="small")
 # read_chunk("some/script/I/want/to/load.R")
 ```
->>>>>>> ea65adf2aff411036dcf02b3e2e3cf06b78a5794
 
 Historique
 ==========
@@ -320,8 +316,8 @@ a <- names(t)
 a[1] <- "reg.id"
 names(t) <- a
 # source de la fonction attrJoin
-source("~/Documents/Resural/FEDORU/Trame_Commune/Zone_chalandise/zone_chalandise.R") # xps
-# source("../../../RESURAL/Trame_Commune/Zone_chalandise/zone_chalandise.R") # mac
+# source("~/Documents/Resural/FEDORU/Trame_Commune/Zone_chalandise/zone_chalandise.R") # xps
+source("../../../RESURAL/Trame_Commune/Zone_chalandise/zone_chalandise.R") # mac
 
 # merging avec reg
 reg <- attribJoin(df = t, spdf = region, df.field = "reg.id", spdf.field = "reg.id")
