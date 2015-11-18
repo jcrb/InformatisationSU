@@ -3,12 +3,12 @@ title: "Enquête logiciels SU - Septembre 2015"
 author: "FEDORU"
 date: "07/09/2015"
 output:
-  html_document:
-    keep_md: yes
-    number_sections: yes
-    toc: yes
   pdf_document:
     keep_tex: yes
+    number_sections: yes
+    toc: yes
+  html_document:
+    keep_md: yes
     number_sections: yes
     toc: yes
   word_document: default
