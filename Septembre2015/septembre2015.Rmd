@@ -41,7 +41,7 @@ Historique
 Récupération des fichiers csv
 -----------------------------
 
-```{r, echo = FALSE, eval= FALSE}
+```{r, echo = FALSE, eval= TRUE}
 
 #----------------------------------------------
 # POUR ACTIVER CETTE PARTIE METTRE EVAL = TRUE
@@ -212,6 +212,11 @@ plot(region, col = ifelse(reg$participation == 1, "palegreen", "gray80"))
 title(main="Régions participantes (enquête 2015)")
 for(i in 1:length(reg$participation)){if(reg$participation[i] == 1) text(reg$x[i], reg$y[i], reg$reg.nom[i], cex = 0.6, col = "black") }
 
+par(mar=c(0,0,1,0))
+plot(region, col = ifelse(reg$participation == 1, "cornflowerblue", "gray80"))
+title(main="Régions participantes (enquête 2015)")
+for(i in 1:length(reg$participation)){if(reg$participation[i] == 1) text(reg$x[i], reg$y[i], reg$reg.nom[i], cex = 0.6, col = "black") }
+
 ```
 
 
@@ -248,6 +253,7 @@ Logiciels 2015
 d$Logiciel_2015 <- as.character(d$Logiciel_2015)
 d$Logiciel_2015 <- str_trim(d$Logiciel_2015)
 d$Logiciel_2015 <- toupper(d$Logiciel_2015)
+d$Logiciel_2015[d$Logiciel_2015==""] <- "NA"
 
 d$Logiciel_2015[d$Logiciel_2015=="CRISTALNET-DMU"] <- "DMU"
 d$Logiciel_2015[d$Logiciel_2015=="DX CARE "] <- "DXCARE"
@@ -314,14 +320,16 @@ Nombre de logiciels différents par rapport au nombre de SU de la région
 t <- unlist(lapply(tapply(d$Logiciel_2015, d$Region, unique), length)) / table(d$Region)
 t2 <- sort(t)
 t2
+par(mar = c(8,4,2,2))
 barplot(t2, las = 2, cex.names = 0.7, ylab = "Nb logiciels / nb de SU")
 abline(v = 3.7, lty = 2, col = "red")
 abline(v = 7.3, lty = 2, col = "red")
 abline(v = 12.1, lty = 2, col = "red")
-text(3.7, 0.45,"0.25")
-text(7.3, 0.45,"0.35")
-text(12.1, 0.45,"0.45")
-
+par(xpd = TRUE) # écrire hors limite
+text(3.7, 0.47,"0.25")
+text(7.3, 0.47,"0.35")
+text(12.1, 0.47,"0.45")
+par(xpd = FALSE)
 ```
 
 Cartographie des logiciels
@@ -345,7 +353,7 @@ source("../../../RESURAL/Trame_Commune/Zone_chalandise/zone_chalandise.R") # mac
 # merging avec reg
 reg <- attribJoin(df = t, spdf = region, df.field = "reg.id", spdf.field = "reg.id")
 
-par(mfcol = c(1,2), mar = c(2,0,1,0))
+par(mfcol = c(3,3), mar = c(0,0,1,0))
 
 plot(region, col = ifelse(!is.na(reg$"TU.ORUPACA") & as.numeric(as.character(reg$"TU.ORUPACA")) > 0, "cornflowerblue", "gray80"), main = "TU-ORUPACA")
 
@@ -363,6 +371,7 @@ plot(region, col = ifelse(!is.na(reg$ATALANTE) & as.numeric(as.character(reg$ATA
 
 plot(region, col = ifelse(!is.na(reg$SIDSU) & as.numeric(as.character(reg$SIDSU)) > 0, "cornflowerblue", "gray80"), main = "SIDSU")
 
+par(mfcol = c(1,1))
 
 ```
 
@@ -371,6 +380,8 @@ Un logiciel est présent dans combien de régions ?
   
 ```{r, echo=FALSE}
 is.zero <- function(x){return(ifelse(x==0, TRUE, FALSE))}
+
+n.regions <- length(unique(d$reg.id)) # nombre de régions
 
 t <- table(d$Logiciel_2015, d$reg.id)
 u <- !is.zero(t)
@@ -385,6 +396,8 @@ names(a) <- rownames(t3)
 a <- sort(a,decreasing = TRUE)
 
 barplot(a, names.arg = rownames(a), las = 2, cex.names = 0.7, ylab = "Nombre de régions où le logiciel est présent", main = "Diffusion régionale des logiciels")
+
+barplot(a[1:10], names.arg = rownames(a), las = 2, cex.names = 0.8, ylab = "Nombre de régions où le logiciel est présent", main = "Diffusion régionale des logiciels (top 10)", col = "cornflowerblue")
 
 ```
 
@@ -411,13 +424,16 @@ n
 Nombre de jours manquants
 -------------------------
   
-  ### Par logiciel
+### Par logiciel
   
 ```{r, echo=FALSE, comment=""}
 t <- tapply(d$Jours_manquants, d$Logiciel_2015, sum, na.rm = TRUE)
 n <- cbind(sort(t ,decreasing = TRUE))
 colnames(n) <- "Nb de jours manquants"
 n
+
+summary.par.logiciel(d$Jours_manquants, d$Logiciel_2015)
+
 ```
 
 ### Par région
@@ -545,6 +561,14 @@ a
 
 boxplot(d$MS_confor ~ d$Logiciel_2015, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% conformité", main = "Mode de sortie - conformité")
 
+# affiche les logiciels dont l' iqr > 1
+iqr <- a$Q75 - a$Q25
+a <- cbind(a, iqr)
+b <- a[which(a$iqr > 8), ]
+# on ne conserve que ceux dont l'IQR est élevé
+c <- d[d$Logiciel_2015 %in% rownames(b),]
+
+boxplot(c$MS_confor ~ factor(c$Logiciel_2015), las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% conformité", main = "Mode de sortie - conformité (IQR > 1)")
 ```
 
 - taux de exhaustivité:
