@@ -372,7 +372,25 @@ EQUAFILE                   1605
 
 Nombre de jours manquants
 -------------------------
-  
+### nombre de jours
+
+
+```r
+n.jours <- as.numeric(difftime(as.Date("2015-03-31"), as.Date("2015-01-01")))
+
+# nombre de jours logiciels
+t2 <- summary(d$Logiciel_2015) * n.jours
+
+# nombre total de jours-logiciels attendus
+n.jour.logiciel = sum(t2)
+n.jour.logiciel
+```
+
+```
+[1] 33108
+```
+
+
 ### Par logiciel
   
 
@@ -490,6 +508,52 @@ URGEST                 0.00  0.00  0.0000    0.00         NA  1  0.00  0.00
 URQUAL                 0.00 85.00  3.0000    0.00     13.792 40  0.00  0.50
 ```
 
+```
+[1] 679
+```
+
+### par jour-logiciel
+
+Le nombre de jours logiciels est le produit de la durée de l'étude en jours par le nombre de SU utilisant un logiciel donné.
+
+```r
+par(mar = c(8,4,2,2))
+t3 <- cbind(t, t2, round(t * 100/t2, 2))
+colnames(t3) <- c("nb jours manquants", "nb jour-logiciel", "% jours manquants")
+barplot(t3[,3], las = 2, cex.axis=0.6, col = "cornflowerblue", ylab = "% de jours manquants")
+```
+
+![](septembre2015_files/figure-html/unnamed-chunk-19-1.png) 
+
+```r
+# on ne garde que les jours manquants
+t4 <- t3[, 3]
+t5 <- t4[t4 > 0]
+barplot(t5, las = 2, cex.axis=0.6, col = "cornflowerblue", ylab = "% de jours manquants", main = "Jours manquants selon le logiciel")
+```
+
+![](septembre2015_files/figure-html/unnamed-chunk-19-2.png) 
+
+```r
+# nombre de logiciels où le nombre de jours manquants est sup à 10%
+which(t5 > 10)
+```
+
+```
+DOPASOIN     EMED    ORBIS    OSOFT 
+       7       10       15       16 
+```
+
+```r
+# donne le nom et le rang du logiciel: 3 logiciels
+```
+
+- nombre de jours de l'étude: 89
+- nombre de jours logiciel: 33108
+- nombre de jours manquants: 678.94
+- % de jours manquants: 2.05
+- Logicielsoùle nombre de jours manquants est supérieur à 10%: 7, 10, 15, 16
+
 ### Par région
 
 
@@ -590,7 +654,7 @@ URGEST                100 100     100     100         NA  1 100 100
 URQUAL                100 100     100     100     0.0323 40 100 100
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-20-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-22-1.png) 
 
 - taux d'exhaustivité:
 
@@ -601,7 +665,7 @@ URQUAL                100 100     100     100     0.0323 40 100 100
 ```
 
 - exhaustivité par outil
-![](septembre2015_files/figure-html/unnamed-chunk-22-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-24-1.png) 
 
 Diagnostic (DP)
 ---------- 
@@ -673,7 +737,7 @@ URGEST                 95.00  95.0   95.00   95.00         NA  1  95.000  95.000
 URQUAL                  0.00 100.0   62.91   91.20     42.733 40   5.840  98.505
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-24-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-26-1.png) 
 
 - taux de exhaustivité:
 
@@ -741,7 +805,7 @@ URGEST                 98.0  98.0   98.00   98.00         NA  1  98.000  98.000
 URQUAL                  0.0 100.0   61.18   86.00     42.678 40   5.840  98.655
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-26-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-28-1.png) 
 
 ### correlation exhaustivité-conformité
 
@@ -760,7 +824,7 @@ cor(ok$DP_exhaus, ok$DP_confor)
 plot(ok$DP_exhaus, ok$DP_confor)
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-27-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-29-1.png) 
 
 
 Mode de sortie (MS)
@@ -770,69 +834,69 @@ Mode de sortie (MS)
 
 ```
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-      1      15      44      50      82     113      70 
+      0      96     100      87     100     100      73 
 ```
 
 - conformité par outil
 
 ```
-                      Min  Max moyenne médiane ecart.type Nb Q25 Q75
-ANTARES                15   15    15.0      15       0.00  4  15  15
-ATALANTE                2   75    18.6      15      17.32 13  15  15
-AXIGATE               104  104   104.0     104         NA  1 104 104
-CLIMCO                Inf -Inf     NaN      NA         NA  1  NA  NA
-CLINICOM               15   69    42.0      42      31.18  5  15  69
-CORA URGENCE          Inf -Inf     NaN      NA         NA  1  NA  NA
-CORPUS                 75   75    75.0      75         NA  1  75  75
-CORTEXTE               84   92    88.0      88       4.62  4  84  92
-CROSSWAY                1   85    35.5      30      31.49 20   4  62
-DEVELOPPEMENT INTERNE 103  103   103.0     103       0.00  4 103 103
-DIAMMS                 33   33    33.0      33       0.00  2  33  33
-DMU                    13  109    37.7      15      35.00 50  13  62
-DOPA URGENCES          25   37    31.3      32       6.03  3  28  34
-DOPASOIN               26   39    31.0      28       6.26  6  26  36
-DPU                    95   95    95.0      95       0.00  4  95  95
-DX CARE                15   15    15.0      15       0.00  2  15  15
-DXCARE                 13  104    40.8      15      35.70 18  14  67
-E SHERPA              Inf -Inf     NaN      NA         NA  1  NA  NA
-EMED                   15   15    15.0      15       0.00  2  15  15
-EQUAFILE               11   11    11.0      11         NA  1  11  11
-EXAGONE                13   13    13.0      13         NA  3  13  13
-EXPERT SANTE          108  108   108.0     108       0.00  3 108 108
-EXPERTIZ              Inf -Inf     NaN      NA         NA  3  NA  NA
-FIRSTNET                4    6     4.3       4       0.82  6   4   4
-H+ACUTE                75   75    75.0      75       0.00  2  75  75
-HOPITAL MANAGER        13   13    13.0      13       0.00  2  13  13
-M-PLUS                 18   18    18.0      18         NA  1  18  18
-MEDIBASE               22   22    22.0      22         NA  1  22  22
-MEDIBOARD              87  110   100.4     109      12.24  9  87 109
-MÉDICAL OBJECT         21   41    31.0      31      11.55  4  21  41
-MEDINTUX               15   15    15.0      15         NA  1  15  15
-MEDIS                  16   16    16.0      16         NA  1  16  16
-MEDIWERE              Inf -Inf     NaN      NA         NA  1  NA  NA
-NAFAMA                 96   96    96.0      96         NA  1  96  96
-ORBIS                  15   19    16.3      15       2.31  6  15  17
-ORUV2                  20  107    68.5      74      33.42  8  58  84
-OSIRIS                 15   15    15.0      15       0.00  2  15  15
-OSOFT                  14   14    14.0      14         NA  2  14  14
-POLYMEDIS              81  104    94.2      96      10.45  5  86 104
-QCARE                   4    4     4.0       4         NA  1   4   4
-RESURGENCES             3  112    43.1      15      34.22 47  14  75
-RPUEXPRESS             45   47    46.0      46       1.15  4  45  47
-SANOCOM                14   14    14.0      14       0.00  2  14  14
-SHAREGATE              14   14    14.0      14       0.00  2  14  14
-SIDSU                  14  104    68.4      80      32.61  9  64  86
-SIGEMS                  1  104    52.5      52      72.83  3  27  78
-SILLAGE DMU            14   72    43.0      43      41.01  2  28  58
-SILLAGE URGENCES       24  104    68.9      72      25.50  8  60  84
-SPEC 4D               111  111   111.0     111         NA  1 111 111
-TRACK CARE             65   65    65.0      65         NA  1  65  65
-TU-ORUPACA              4  113    73.7      87      35.17 47  44 105
-URGEST                Inf -Inf     NaN      NA         NA  1  NA  NA
-URQUAL                 13  101    50.6      52      31.40 40  15  80
+                         Min    Max  moyenne médiane ecart.type Nb     Q25    Q75
+ANTARES               100.00 100.00 100.0000  100.00      0.000  4 100.000 100.00
+ATALANTE                0.00 100.00  92.2308  100.00     27.713 13 100.000 100.00
+AXIGATE                99.90  99.90  99.9000   99.90         NA  1  99.900  99.90
+CLIMCO                   Inf   -Inf      NaN      NA         NA  1      NA     NA
+CLINICOM               98.66 100.00  99.3300   99.33      0.774  5  98.660 100.00
+CORA URGENCE             Inf   -Inf      NaN      NA         NA  1      NA     NA
+CORPUS                 99.00  99.00  99.0000   99.00         NA  1  99.000  99.00
+CORTEXTE               99.43  99.70  99.5650   99.56      0.156  4  99.430  99.70
+CROSSWAY                0.00  99.44  57.5574   85.54     45.917 20   0.015  97.89
+DEVELOPPEMENT INTERNE  99.89  99.89  99.8900   99.89      0.000  4  99.890  99.89
+DIAMMS                 80.47  80.47  80.4700   80.47      0.000  2  80.470  80.47
+DMU                    98.00 100.00  99.6654  100.00      0.744 50  99.950 100.00
+DOPA URGENCES          69.10  82.60  77.3667   80.40      7.243  3  74.750  81.50
+DOPASOIN               72.48  86.54  78.5933   76.76      6.446  6  73.550  84.09
+DPU                    99.76  99.76  99.7600   99.76      0.000  4  99.760  99.76
+DX CARE               100.00 100.00 100.0000  100.00      0.000  2 100.000 100.00
+DXCARE                 98.00 100.00  99.6333  100.00      0.676 18  99.825 100.00
+E SHERPA                 Inf   -Inf      NaN      NA         NA  1      NA     NA
+EMED                  100.00 100.00 100.0000  100.00      0.000  2 100.000 100.00
+EQUAFILE                0.31   0.31   0.3100    0.31         NA  1   0.310   0.31
+EXAGONE               100.00 100.00 100.0000  100.00         NA  3 100.000 100.00
+EXPERT SANTE           99.93  99.93  99.9300   99.93      0.000  3  99.930  99.93
+EXPERTIZ                 Inf   -Inf      NaN      NA         NA  3      NA     NA
+FIRSTNET                0.00   0.04   0.0067    0.00      0.016  6   0.000   0.00
+H+ACUTE                99.00  99.00  99.0000   99.00      0.000  2  99.000  99.00
+HOPITAL MANAGER       100.00 100.00 100.0000  100.00      0.000  2 100.000 100.00
+M-PLUS                 16.80  16.80  16.8000   16.80         NA  1  16.800  16.80
+MEDIBASE               65.70  65.70  65.7000   65.70         NA  1  65.700  65.70
+MEDIBOARD              99.53  99.96  99.7840   99.95      0.232  9  99.530  99.95
+MÉDICAL OBJECT         49.52  90.67  70.0950   70.09     23.758  4  49.520  90.67
+MEDINTUX              100.00 100.00 100.0000  100.00         NA  1 100.000 100.00
+MEDIS                  13.50  13.50  13.5000   13.50         NA  1  13.500  13.50
+MEDIWERE                 Inf   -Inf      NaN      NA         NA  1      NA     NA
+NAFAMA                 99.80  99.80  99.8000   99.80         NA  1  99.800  99.80
+ORBIS                  19.80 100.00  73.2667  100.00     46.303  6  59.900 100.00
+ORUV2                  39.45  99.92  84.2700   98.85     27.668  8  83.880  99.25
+OSIRIS                100.00 100.00 100.0000  100.00      0.000  2 100.000 100.00
+OSOFT                 100.00 100.00 100.0000  100.00         NA  2 100.000 100.00
+POLYMEDIS              99.30  99.90  99.6800   99.80      0.268  5  99.500  99.90
+QCARE                   0.00   0.00   0.0000    0.00         NA  1   0.000   0.00
+RESURGENCES             0.00 100.00  81.3941   99.00     38.782 47  99.000 100.00
+RPUEXPRESS             93.58  94.01  93.7950   93.80      0.248  4  93.580  94.01
+SANOCOM               100.00 100.00 100.0000  100.00      0.000  2 100.000 100.00
+SHAREGATE             100.00 100.00 100.0000  100.00      0.000  2 100.000 100.00
+SIDSU                  98.20 100.00  99.4556   99.50      0.566  9  99.200  99.90
+SIGEMS                 99.90  99.90  99.9000   99.90         NA  3  99.900  99.90
+SILLAGE DMU            98.80 100.00  99.4000   99.40      0.849  2  99.100  99.70
+SILLAGE URGENCES       68.50  99.90  94.3750   98.75     10.776  8  96.675  99.45
+SPEC 4D                99.97  99.97  99.9700   99.97         NA  1  99.970  99.97
+TRACK CARE             98.30  98.30  98.3000   98.30         NA  1  98.300  98.30
+TU-ORUPACA              0.00 100.00  94.8843   99.85     15.360 47  96.875  99.92
+URGEST                   Inf   -Inf      NaN      NA         NA  1      NA     NA
+URQUAL                 14.29 100.00  94.5350   99.62     15.321 40  96.150 100.00
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-29-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-29-2.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-31-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-31-2.png) 
 
 - taux de exhaustivité:
 
@@ -855,7 +919,7 @@ SIGEMS          55 100      77      77         32  3 66.22  89  22
 DOPASOIN        72 100      86      87         12  6 76.00  97  21
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-31-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-31-2.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-33-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-33-2.png) 
 
 Conformité par région
 =====================
@@ -878,7 +942,7 @@ PACA                 0 100      98     100     14.142 50 100 100
 RHONE ALPES        100 100     100     100      0.000 70 100 100
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-32-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-34-1.png) 
 
 Diagnostic (DP)
 ---------------
@@ -898,27 +962,27 @@ PACA                 0  99      89      98       23.6 50  92.3  98
 RHONE ALPES         95  95      95      95        0.0 70  95.0  95
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-33-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-35-1.png) 
 
 Mode de sortie (MS)
 -------------------
 
 ```
-                   Min  Max moyenne médiane ecart.type Nb Q25 Q75
-ALSACE              15   15    15.0      15        0.0 29  15  15
-AQUITAINE            1  104    46.9      37       37.4 35  14  83
-BOURGOGNE            2   79    27.2      13       27.1 23  13  54
-BRETAGNE            14  110    49.8      54       33.0 30  14  74
-CHAMPAGNE ARDENNES  14  104    62.3      68       36.3 16  29  96
-FRANCHE COMTE        4   11     6.2       5        2.6 13   4   8
-LIMOUSIN            15  112    52.2      15       45.1  9  15  90
-LORRAINE            62   75    74.4      75        2.7 23  75  75
-MIDI PYRENEES        4  111    55.7      47       35.0 74  21  87
-PACA                 4  113    68.1      81       37.5 50  35 103
-RHONE ALPES        Inf -Inf     NaN      NA         NA 70  NA  NA
+                   Min    Max moyenne médiane ecart.type Nb Q25    Q75
+ALSACE             100 100.00 100.000  100.00       0.00 29 100 100.00
+AQUITAINE            0 100.00  89.242   99.70      27.60 35  98 100.00
+BOURGOGNE            0 100.00  81.182  100.00      39.19 23  97 100.00
+BRETAGNE            14 100.00  91.545   99.30      21.62 30  98 100.00
+CHAMPAGNE ARDENNES  69 100.00  94.844   99.75       9.62 16  96  99.90
+FRANCHE COMTE        0   0.31   0.072    0.03       0.11 13   0   0.06
+LIMOUSIN            99 100.00  99.887  100.00       0.22  9 100 100.00
+LORRAINE            98  99.00  98.957   99.00       0.21 23  99  99.00
+MIDI PYRENEES        0 100.00  89.864   99.43      20.72 74  91  99.93
+PACA                 0 100.00  87.246   99.65      29.08 50  94  99.91
+RHONE ALPES        Inf   -Inf     NaN      NA         NA 70  NA     NA
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-34-1.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-36-1.png) 
 
 Exhaustivié et conformité par région
 ======================
@@ -941,8 +1005,6 @@ PACA                 0  100      98     100     14.142 50 100 100
 RHONE ALPES        100  100     100     100      0.000 70 100 100
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-35-1.png) 
-
 Diagnostic (DP)
 ---------------
 
@@ -961,7 +1023,7 @@ PACA                 0 100      89      98     23.628 50  92.9  98
 RHONE ALPES          0 100      72      92     36.685 70  66.0  96
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-36-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-36-2.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-38-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-38-2.png) 
 
 Mode de sortie (MS)
 -------------------
@@ -981,7 +1043,7 @@ PACA                0.0 100      87     100      29.08 50  94 100
 RHONE ALPES         0.0 100      87     100      31.72 70  97 100
 ```
 
-![](septembre2015_files/figure-html/unnamed-chunk-37-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-37-2.png) 
+![](septembre2015_files/figure-html/unnamed-chunk-39-1.png) ![](septembre2015_files/figure-html/unnamed-chunk-39-2.png) 
 
 Résultats secondaires
 =====================
@@ -1017,4 +1079,48 @@ Messages:
 Analyse de Urqual
 =================
   
+
+
+Indicateurs et top10
+====================
+
+
+```r
+t <- sort(table(d$Logiciel_2015), decreasing = TRUE)
+t10 <- t[10:1]
+
+# dataframe des top10
+top10 <- d[d$Logiciel_2015 %in% names(t10),]
+
+# DP exhaustivité
+boxplot(as.numeric(top10$DP_exhaus) ~ factor(top10$Logiciel_2015), las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Top10 - Diagnostic principal - exhaustivité")
+```
+
+![](septembre2015_files/figure-html/top10-1.png) 
+
+```r
+# DP Conformité
+boxplot(as.numeric(top10$DP_confor) ~ factor(top10$Logiciel_2015), las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% conformité", main = "Top10 - Diagnostic principal - conformité")
+```
+
+![](septembre2015_files/figure-html/top10-2.png) 
+
+```r
+# mode de sortie
+boxplot(as.numeric(top10$MS_exhaus) ~ factor(top10$Logiciel_2015), las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Top10 - Mode de sortie - exhaustivité")
+```
+
+![](septembre2015_files/figure-html/top10-3.png) 
+
+```r
+# MS Conformité
+# svg("../SVG/Top10_Mode de sortie_conformité.svg")
+boxplot(as.numeric(top10$MS_confor) ~ factor(top10$Logiciel_2015), las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% conformité", main = "Top10 - Mode de sortie - conformité")
+```
+
+![](septembre2015_files/figure-html/top10-4.png) 
+
+```r
+# dev.off()
+```
 

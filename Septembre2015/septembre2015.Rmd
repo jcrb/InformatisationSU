@@ -3,12 +3,12 @@ title: "Enquête logiciels SU - Septembre 2015"
 author: "FEDORU"
 date: "07/09/2015"
 output:
-  pdf_document:
-    keep_tex: yes
-    number_sections: yes
-    toc: yes
   html_document:
     keep_md: yes
+    number_sections: yes
+    toc: yes
+  pdf_document:
+    keep_tex: yes
     number_sections: yes
     toc: yes
   word_document: default
@@ -130,6 +130,28 @@ source("routines.R") # source("Septembre2015/routines.R")
 
 library(stringr)
 
+# suppression des %
+d$DN_exhaus <- gsub("%", "", d$DN_exhaus)
+d$DN_confor <- gsub("%", "", d$DN_confor)
+d$DP_exhaus <- gsub("%", "", d$DP_exhaus)
+d$DP_confor <- gsub("%", "", d$DP_confor)
+d$DP_confor <- gsub(">", "", d$DP_confor)
+d$MS_exhaus <- gsub("%", "", d$MS_exhaus)
+d$MS_confor <- gsub("%", "", d$MS_confor)
+
+# ajout d'une colonne n° de région
+d$reg.id <- NA
+d$reg.id[d$Region == "ALSACE"] <- 42
+d$reg.id[d$Region == "AQUITAINE"] <- 72
+d$reg.id[d$Region == "BOURGOGNE"] <- 26
+d$reg.id[d$Region == "BRETAGNE"] <- 53
+d$reg.id[d$Region == "CHAMPAGNE ARDENNES"] <- 21
+d$reg.id[d$Region == "LIMOUSIN"] <- 74
+d$reg.id[d$Region == "PACA"] <- 93
+d$reg.id[d$Region == "RHONE ALPES"] <- 82
+d$reg.id[d$Region == "FRANCHE COMTE"] <- 43
+d$reg.id[d$Region == "MIDI PYRENEES"] <- 73
+d$reg.id[d$Region == "LORRAINE"] <- 41
 
 ```
 
@@ -423,7 +445,21 @@ n
 
 Nombre de jours manquants
 -------------------------
-  
+### nombre de jours
+
+```{r}
+n.jours <- as.numeric(difftime(as.Date("2015-03-31"), as.Date("2015-01-01")))
+
+# nombre de jours logiciels
+t2 <- summary(d$Logiciel_2015) * n.jours
+
+# nombre total de jours-logiciels attendus
+n.jour.logiciel = sum(t2)
+n.jour.logiciel
+
+```
+
+
 ### Par logiciel
   
 ```{r, echo=FALSE, comment=""}
@@ -434,7 +470,37 @@ n
 
 summary.par.logiciel(d$Jours_manquants, d$Logiciel_2015)
 
+# nombre de jours manquants
+n.jour.manquants <- sum(d$Jours_manquants, na.rm = TRUE)
+n.jour.manquants
+
+# % de jours manquants
+p.jour.manquant <- round(n.jour.manquants * 100 / n.jour.logiciel, 2)
 ```
+
+### par jour-logiciel
+
+Le nombre de jours logiciels est le produit de la durée de l'étude en jours par le nombre de SU utilisant un logiciel donné.
+```{r}
+par(mar = c(8,4,2,2))
+t3 <- cbind(t, t2, round(t * 100/t2, 2))
+colnames(t3) <- c("nb jours manquants", "nb jour-logiciel", "% jours manquants")
+barplot(t3[,3], las = 2, cex.axis=0.6, col = "cornflowerblue", ylab = "% de jours manquants")
+# on ne garde que les jours manquants
+t4 <- t3[, 3]
+t5 <- t4[t4 > 0]
+barplot(t5, las = 2, cex.axis=0.6, col = "cornflowerblue", ylab = "% de jours manquants", main = "Jours manquants selon le logiciel")
+
+# nombre de logiciels où le nombre de jours manquants est sup à 10%
+which(t5 > 10)
+# donne le nom et le rang du logiciel: 3 logiciels
+```
+
+- nombre de jours de l'étude: `r n.jours`
+- nombre de jours logiciel: `r n.jour.logiciel`
+- nombre de jours manquants: `r n.jour.manquants`
+- % de jours manquants: `r p.jour.manquant`
+- Logicielsoùle nombre de jours manquants est supérieur à 10%: `r which(t5 > 10)`
 
 ### Par région
 
@@ -636,7 +702,6 @@ Date de naissance
 a <- summary.par.logiciel(d$DN_exhaus, d$Region)
 a
 
-boxplot(d$DN_exhaus ~ d$Region, las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Date de naissance - exhaustivité par région")
 ```
 
 Diagnostic (DP)
@@ -702,3 +767,29 @@ Analyse de Urqual
 uq <- d[d$Logiciel_2015 == "URQUAL",]
 
 ```
+
+Indicateurs et top10
+====================
+
+```{r top10}
+t <- sort(table(d$Logiciel_2015), decreasing = TRUE)
+t10 <- t[10:1]
+
+# dataframe des top10
+top10 <- d[d$Logiciel_2015 %in% names(t10),]
+
+# DP exhaustivité
+boxplot(as.numeric(top10$DP_exhaus) ~ factor(top10$Logiciel_2015), las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Top10 - Diagnostic principal - exhaustivité")
+
+# DP Conformité
+boxplot(as.numeric(top10$DP_confor) ~ factor(top10$Logiciel_2015), las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% conformité", main = "Top10 - Diagnostic principal - conformité")
+
+# mode de sortie
+boxplot(as.numeric(top10$MS_exhaus) ~ factor(top10$Logiciel_2015), las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% exhaustivité", main = "Top10 - Mode de sortie - exhaustivité")
+
+# MS Conformité
+# svg("../SVG/Top10_Mode de sortie_conformité.svg")
+boxplot(as.numeric(top10$MS_confor) ~ factor(top10$Logiciel_2015), las = 2, par(cex.axis=0.6), col = "cornflowerblue", ylab = "% conformité", main = "Top10 - Mode de sortie - conformité")
+# dev.off()
+```
+
